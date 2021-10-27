@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from 'react'
 import { Spinner } from 'react-bootstrap'
 import { withRouter, Link } from 'react-router-dom'
-import BookMart from '../../../components/BookMart'
-import SearchComputerBackStage from '../../../components/SearchComputerBackStage'
-import SearchBackStage from '../../../components/SearchBackStage'
-import ProductsManagementItem from '../../../components/ProductsManagementItem'
-import ProductsPaginationSearchBackStage from '../../../components/ProductsPaginationSearchBackStage'
+import BookMart from '../../../../components/ben/BookMart'
+import SearchComputerBackStage from '../../../../components/ben/SearchComputerBackStage'
+import SearchBackStage from '../../../../components/ben/SearchBackStage'
+import ProductsManagementItem from '../../../../components/ben/ProductsManagementItem'
+import ProductsPaginationSearchBackStage from '../../../../components/ben/ProductsPaginationSearchBackStage'
 import './index.css'
 
 function ProductsSearchPageBackStage(props) {

@@ -5,7 +5,7 @@ function AddFormInput(props) {
   return (
     <>
       <label htmlFor="sid">編號</label>
-      <input type="text" id="sid" name="sid" disabled="true" />
+      <input type="text" id="sid" name="sid" disabled={true} />
 
       <label htmlFor="Name">商品名稱</label>
       <input type="text" id="Name" name="Name" />

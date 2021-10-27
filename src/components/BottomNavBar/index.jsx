@@ -40,14 +40,12 @@ function BottomNavBar() {
       <div className="bottom-navbar">
         {navBarContent.map((v, i) => {
           return (
-            <Link to={v.link}>
-              <div key={i} className={v.item}>
-                <a href="#/">
-                  <div className={v.icon}>
-                    <img src={v.src} alt="" />
-                  </div>
-                  <div className="text">{v.text}</div>
-                </a>
+            <Link to={v.link} key={i}>
+              <div className={v.item}>
+                <div className={v.icon}>
+                  <img src={v.src} alt="" />
+                </div>
+                <div className="text">{v.text}</div>
               </div>
             </Link>
           )

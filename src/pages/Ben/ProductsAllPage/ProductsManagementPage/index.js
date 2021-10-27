@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from 'react'
 import { Spinner } from 'react-bootstrap'
 import { withRouter, Link } from 'react-router-dom'
-import BookMart from '../../../components/BookMart'
-import SearchComputerBackStage from '../../../components/SearchComputerBackStage'
-import SearchBackStage from '../../../components/SearchBackStage'
-import ProductsManagementItem from '../../../components/ProductsManagementItem'
-import ProductsPaginationBackStage from '../../../components/ProductsPaginationBackStage'
+import BookMart from '../../../../components/ben/BookMart'
+import SearchComputerBackStage from '../../../../components/ben/SearchComputerBackStage'
+import SearchBackStage from '../../../../components/ben/SearchBackStage'
+import ProductsManagementItem from '../../../../components/ben/ProductsManagementItem'
+import ProductsPaginationBackStage from '../../../../components/ben/ProductsPaginationBackStage'
 import './index.css'
 
 function ProductsManagementPage(props) {
@@ -135,7 +135,9 @@ function ProductsManagementPage(props) {
                 ? spinner
                 : data.rows
                 ? data.rows.map((product) => {
-                    return <ProductsManagementItem {...product} />
+                    return (
+                      <ProductsManagementItem {...product} key={product.sid} />
+                    )
                   })
                 : ''}
             </div>

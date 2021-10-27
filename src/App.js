@@ -6,7 +6,8 @@ import {
   NavLink,
 } from 'react-router-dom'
 // 頁面元件
-import ProductsAllPage from './pages/ProductsAllPage'
+// 所有商品頁面
+import ProductsAllPage from './pages/ben/ProductsAllPage'
 // 共用元件
 import MainContent from './components/MainContent'
 import ScrollToTop from './components/ScrollToTop'
@@ -17,7 +18,7 @@ import Footer from './components/Footer'
 import './App.css'
 
 function App() {
-  // navbar 商品種類顏色切換
+  // navbar 商品類別欄顏色切換
   const [controlCate, setControlCate] = useState('')
   const [controlSmallCate, setControlSmallCate] = useState('')
   const [controlSmallBody, setControlSmallBody] = useState('')

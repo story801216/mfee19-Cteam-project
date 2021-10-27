@@ -72,7 +72,16 @@ function LinkArea(props) {
           </div>
           <div className="shop">
             <p>
-              <Link to={'/shop'}>線上購物</Link>
+              <Link
+                to={'/shop'}
+                onClick={() => {
+                  setControlCate('')
+                  setControlSmallCate('')
+                  setControlSmallBody('')
+                }}
+              >
+                線上購物
+              </Link>
             </p>
             <p>
               <Link

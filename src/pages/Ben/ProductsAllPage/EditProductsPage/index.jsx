@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import { withRouter } from 'react-router-dom'
-import EditFormInput from '../../../components/EditFormInput'
+import EditFormInput from '../../../../components/ben/EditFormInput'
 import './index.css'
 
 function EditProductsPage(props) {
