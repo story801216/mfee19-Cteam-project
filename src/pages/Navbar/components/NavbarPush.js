@@ -25,7 +25,7 @@ function NavbarPush() {
                   rel="noreferrer"
                 >
                   <img
-                    src={`../../../../images/encyclopedia/${v}.png`}
+                    src={`http://localhost:3000/images/encyclopedia/${v}.png`}
                     alt={v}
                   />
                   <p>{v}</p>
@@ -93,7 +93,7 @@ function NavbarPush() {
         </div>
         <div className="arrowEnterAgain">
           <a href="">
-            <img src="../../../../images/photo/enter.png" alt="" />
+            <img src="http://localhost:3000/images/photo/enter.png" alt="" />
           </a>
         </div>
       </div>

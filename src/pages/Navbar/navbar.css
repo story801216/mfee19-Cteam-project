@@ -1,7 +1,3 @@
-.navbarDesTop img {
-  object-fit: contain;
-}
-
 .navbarDesTop {
   width: 100%;
   height: auto;
@@ -17,6 +13,11 @@
   display: flex;
   align-items: center;
 }
+
+.homeIconLogo img {
+  object-fit: contain;
+}
+
 .navbarLinkDesTop {
   display: flex;
   flex-direction: column;
@@ -56,7 +57,7 @@
 }
 
 .navbarIconLineAbouts {
-  padding-left: 40px;
+  margin-left: 40px;
 }
 
 /*把navbar加入白色底*/
@@ -71,7 +72,7 @@
   position: fixed;
   background-color: #eef7fc;
   width: 100%;
-  height: 45%;
+  height: 500px;
   top: 120px;
   right: 0%;
   z-index: 999;

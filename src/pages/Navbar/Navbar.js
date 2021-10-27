@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { NavLink } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 import './navbar.css'
 
 import { BsCart2 } from 'react-icons/bs' //購物車
@@ -10,12 +10,13 @@ import { MdOutlineAssignment } from 'react-icons/md' //處方籤
 import NavbarPush from './components/NavbarPush' //活動頁籤
 import NewPush from './components/NewPush' //最新消息頁籤
 
+const halfCirclePic = 'http://localhost:3000/images/encyclopedia/halfcircle.png' //半圓的圖
+const LogoPic = 'http://localhost:3000/images/Logo.jpg' //Logo圖
+
 function Navbar(props) {
+  const { setControlCate, setControlSmallCate, setControlSmallBody } = props
   /*下拉式選單狀態 */
   const [buttonIndex, setButtonIndex] = useState(0)
-  // 商品 控制選取的動態效果
-  const { setControlCate, setControlSmallCate, setControlSmallBody } = props
-
   return (
     <>
       <div
@@ -26,20 +27,20 @@ function Navbar(props) {
       >
         <div className="navbarDesTop">
           <div className="homeIconLogo">
-            <img src="http://localhost:3000/images/Logo.jpg" alt="" />
+            <img src={LogoPic} alt="" />
           </div>
           <div className="navbarLinkDesTop">
             <div className="navbarLinkDesTop1">
               <a href="https://www.youtube.com/" className="navChandePageEnc">
-                <p className="positionIconA">
+                <div className="positionIconA">
                   <MdOutlineAssignment />
                   <p>處方領藥</p>
-                </p>
+                </div>
               </a>
               <div className="navbarAllIcon">
-                <NavLink to="/followdPage" className="navChandePageEnc">
+                <Link to={'/followdPage'} className="navChandePageEnc">
                   <FiHeart />
-                </NavLink>
+                </Link>
                 <a href="https://www.youtube.com/" className="navChandePageEnc">
                   <BsCart2 />
                 </a>
@@ -49,17 +50,16 @@ function Navbar(props) {
               </div>
             </div>
             <div className="navbarLinkDesTop2">
-              <NavLink
-                to="/shop"
+              <Link
+                to={'/shop'}
                 onClick={() => {
-                  setButtonIndex(0)
                   setControlCate('')
                   setControlSmallCate('')
                   setControlSmallBody('')
                 }}
               >
                 <p className="navbarIconLine1">線上購物</p>
-              </NavLink>
+              </Link>
               <div className="forCenter">
                 <p
                   className="navbarIconLine1"
@@ -75,7 +75,7 @@ function Navbar(props) {
                       ? 'halfCircleMove'
                       : 'halfCircleMove hideClass'
                   }
-                  src="../../../images/encyclopedia/halfcircle.png"
+                  src={halfCirclePic}
                   alt="半圓"
                 />
               </div>
@@ -94,7 +94,7 @@ function Navbar(props) {
                       ? 'halfCircleMove'
                       : 'halfCircleMove hideClass'
                   }
-                  src="../../../images/encyclopedia/halfcircle.png"
+                  src={halfCirclePic}
                   alt="半圓"
                 />
               </div>
@@ -113,7 +113,7 @@ function Navbar(props) {
                       ? 'halfCircleMove navbarIconLineAbouts'
                       : 'halfCircleMove hideClass'
                   }
-                  src="../../../images/encyclopedia/halfcircle.png"
+                  src={halfCirclePic}
                   alt="半圓"
                 />
               </div>

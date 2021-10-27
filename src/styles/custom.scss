@@ -1,5 +1,20 @@
 @import '~bootstrap/scss/bootstrap.scss';
 
+// 字型
+@font-face {
+    font-family: MyGenSenRounded;
+    src: url(/fonts/GenSenRounded-B.ttc);
+    src: url(/fonts/GenSenRounded-EL.ttc);
+    src: url(/fonts/GenSenRounded-H.ttc);
+    src: url(/fonts/GenSenRounded-L.ttc);
+    src: url(/fonts/GenSenRounded-M.ttc);
+    src: url(/fonts/GenSenRounded-R.ttc);
+}
+
+#root {
+    font-family: MyGenSenRounded;
+}
+
 // ========== navbar：bootstrpa手風琴的css覆蓋 =============
 .card {
     border: transparent;
