@@ -9,22 +9,24 @@ import './index.css'
 class SpecialOfferSlider extends Component {
   constructor(props) {
     super(props)
-    this.state = { data: '', specialPriceProduct: [] }
+    this.state = { data: '' }
   }
 
   componentDidMount() {
     ;(async () => {
-      let r = await fetch('http://localhost:3001/productAll')
+      let r = await fetch('http://localhost:3001/product?special_offer=0')
       let j = await r.json()
       if (j.totalRows) {
         this.setState({ data: j.rows })
       }
-      const specialPriceArray = this.state.data
-        ? this.state.data.filter((product) => {
-            return product.special_offer !== ''
-          })
-        : ''
-      this.setState({ specialPriceProduct: specialPriceArray })
+
+      // react篩選法
+      // const specialPriceArray = this.state.data
+      //   ? this.state.data.filter((product) => {
+      //       return product.special_offer !== ''
+      //     })
+      //   : ''
+      // this.setState({ specialPriceProduct: specialPriceArray })
     })()
   }
 
@@ -35,7 +37,7 @@ class SpecialOfferSlider extends Component {
       infinite: true,
       speed: 500,
       slidesToShow: 4,
-      slidesToScroll: 2,
+      slidesToScroll: 4,
       responsive: [
         {
           // 螢幕寬度小於992
@@ -63,19 +65,24 @@ class SpecialOfferSlider extends Component {
           </div>
         </div>
         <Slider className="specialOfferSlider" {...settings}>
-          {this.state.specialPriceProduct.map((product) => {
-            return (
-              <Link
-                key={product.sid}
-                to={'/prod-list/prod/' + product.sid}
-                onClick={() => {
-                  this.props.updateBrowseRecordToLocalStorage(product)
-                }}
-              >
-                <SpecialOfferProductItem {...product} />
-              </Link>
-            )
-          })}
+          {/* 亂數排序 */}
+          {this.state.data
+            ? this.state.data
+                .sort(() => Math.random() - 0.5)
+                .map((product) => {
+                  return (
+                    <Link
+                      key={product.sid}
+                      to={'/prod-list/prod/' + product.sid}
+                      onClick={() => {
+                        this.props.updateBrowseRecordToLocalStorage(product)
+                      }}
+                    >
+                      <SpecialOfferProductItem {...product} />
+                    </Link>
+                  )
+                })
+            : ''}
         </Slider>
       </div>
     )

@@ -9,34 +9,37 @@ import './index.css'
 class OtherProducts extends Component {
   constructor(props) {
     super(props)
-    this.state = { otherData: [], otherProducts: [], Location: '' }
+    this.state = { otherData: [], location: '' }
   }
 
   componentDidMount() {
-    ;(async () => {
-      let r = await fetch('http://localhost:3001/productAll')
-      let j = await r.json()
-      if (j.totalRows) {
-        this.setState({ otherData: j.rows })
-      }
-    })()
     ;(async () => {
       let r = await fetch(
         'http://localhost:3001/product/' + this.props.match.params.sid
       )
       let j = await r.json()
       if (j) {
-        this.setState({ Location: j.data.Location })
+        this.setState({ location: j.data.Location })
       }
+      ;(async () => {
+        let r = await fetch(
+          'http://localhost:3001/product?location=' + this.state.location
+        )
+        let j = await r.json()
+        if (j.totalRows) {
+          this.setState({ otherData: j.rows })
+        }
+      })()
 
-      let otherProducts = []
-      otherProducts = this.state.otherData
-        ? this.state.otherData.filter((v) => {
-            return v.Location === j.data.Location
-          })
-        : ''
+      // react篩選法
+      // let otherProducts = []
+      // otherProducts = this.state.otherData
+      //   ? this.state.otherData.filter((v) => {
+      //       return v.location === j.data.location
+      //     })
+      //   : ''
 
-      this.setState({ otherProducts: otherProducts })
+      // this.setState({ otherProducts: otherProducts })
     })()
   }
 
@@ -47,10 +50,8 @@ class OtherProducts extends Component {
       infinite: true,
       speed: 500,
       slidesToShow:
-        this.state.otherProducts.length < 4
-          ? this.state.otherProducts.length
-          : 4,
-      slidesToScroll: 1,
+        this.state.otherData.length < 4 ? this.state.otherData.length : 4,
+      slidesToScroll: 4,
       responsive: [
         {
           // 螢幕寬度小於992
@@ -79,8 +80,8 @@ class OtherProducts extends Component {
           </div>
         </div>
         <Slider className="otherProductsSlider" {...settings}>
-          {this.state.otherProducts
-            ? this.state.otherProducts.map((product) => {
+          {this.state.otherData
+            ? this.state.otherData.map((product) => {
                 return (
                   <Link
                     key={product.sid}
