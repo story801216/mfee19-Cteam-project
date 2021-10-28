@@ -4,12 +4,8 @@ import ProductsFirstPage from './ProductsFirstPage'
 import ProductsClickedPage from './ProductsClickedPage'
 import ProductsCategoryPage from './ProductsCategoryPage'
 import ProductsSearchPage from './ProductsSearchPage'
-import ProductsSearchPageBackStage from './ProductsSearchPageBackStage'
 import ProductsFollowPage from './ProductsFollowPage'
 import ProductsDetailPage from './ProductsDetailPage'
-import ProductsManagementPage from './ProductsManagementPage'
-import EditProductsPage from './EditProductsPage'
-import AddProductsPage from './AddProductsPage'
 import './index.css'
 // forceRefresh={true}
 function ProductsAllPage(props) {
@@ -119,9 +115,6 @@ function ProductsAllPage(props) {
   const [cateWord, setCateWord] = useState('')
   const [locationWord, setLocationWord] = useState('')
 
-  // 後臺搜索關鍵字
-  const [backStageSearchWord, setBackStageSearchWord] = useState('')
-
   // 瀏覽過商品資料
   const [myBrowseRecord, setMyBrowseRecord] = useState([])
 
@@ -200,13 +193,6 @@ function ProductsAllPage(props) {
             bodySelect={bodySelect}
           />
         </Route>
-        {/* 後台商品搜索頁 */}
-        <Route path="/back-stage/products/page/search/:word/:number">
-          <ProductsSearchPageBackStage
-            backStageSearchWord={backStageSearchWord}
-            setBackStageSearchWord={setBackStageSearchWord}
-          />
-        </Route>
         {/* 商品詳細頁 */}
         <Route path="/prod-list/prod/:sid">
           <ProductsDetailPage
@@ -260,21 +246,6 @@ function ProductsAllPage(props) {
             updateBrowseRecordToLocalStorage={updateBrowseRecordToLocalStorage}
             cateSelect={cateSelect}
           />
-        </Route>
-        {/* 後台商品列表頁 */}
-        <Route path="/back-stage/products/page/:page">
-          <ProductsManagementPage
-            backStageSearchWord={backStageSearchWord}
-            setBackStageSearchWord={setBackStageSearchWord}
-          />
-        </Route>
-        {/* 後台商品編輯頁 */}
-        <Route path="/back-stage/products/edit/:sid">
-          <EditProductsPage />
-        </Route>
-        {/* 後台新增商品頁 */}
-        <Route path="/back-stage/products/add">
-          <AddProductsPage />
         </Route>
         {/* 商品主頁 */}
         <Route path="/shop">

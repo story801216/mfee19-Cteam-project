@@ -132,6 +132,9 @@ function ProductsClickedPage(props) {
           <SearchComputer
             searchWord={searchWord}
             setSearchWord={setSearchWord}
+            setControlCate={setControlCate}
+            setControlSmallCate={setControlSmallCate}
+            setControlSmallBody={setControlSmallBody}
           />
         </div>
         <div className="productsClickedPage">
@@ -158,7 +161,13 @@ function ProductsClickedPage(props) {
               </div>
               <div className="line"></div>
             </div>
-            <Search searchWord={searchWord} setSearchWord={setSearchWord} />
+            <Search
+              searchWord={searchWord}
+              setSearchWord={setSearchWord}
+              setControlCate={setControlCate}
+              setControlSmallCate={setControlSmallCate}
+              setControlSmallBody={setControlSmallBody}
+            />
 
             {/* 商品類別 + 身體部位 選單 手機 */}
             <AccordionCategories

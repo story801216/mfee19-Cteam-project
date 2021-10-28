@@ -96,6 +96,9 @@ function ProductsFirstPage(props) {
           <SearchComputer
             searchWord={searchWord}
             setSearchWord={setSearchWord}
+            setControlCate={setControlCate}
+            setControlSmallCate={setControlSmallCate}
+            setControlSmallBody={setControlSmallBody}
           />
         </div>
         <div className="productsFirstPage">
@@ -122,7 +125,13 @@ function ProductsFirstPage(props) {
               <div className="line"></div>
             </div>
             {/* 手機版搜索框 */}
-            <Search searchWord={searchWord} setSearchWord={setSearchWord} />
+            <Search
+              searchWord={searchWord}
+              setSearchWord={setSearchWord}
+              setControlCate={setControlCate}
+              setControlSmallCate={setControlSmallCate}
+              setControlSmallBody={setControlSmallBody}
+            />
             {/* 熱門商品 */}
             {/* title */}
             <div className="hot">

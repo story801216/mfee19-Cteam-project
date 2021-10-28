@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import { withRouter } from 'react-router-dom'
-import EditFormInput from '../../../../components/ben/EditFormInput'
+import EditFormInput from '../../../components/ben/EditFormInput'
 import './index.css'
 
 function EditProductsPage(props) {
@@ -32,7 +32,7 @@ function EditProductsPage(props) {
       .then((obj) => {
         console.log(JSON.stringify(obj, null, 4))
       })
-       props.history.push('/back-stage/products/page/1')
+    props.history.push('/back-stage/products/page/1')
   }
 
   return (

@@ -8,6 +8,8 @@ import {
 // 頁面元件
 // 所有商品頁面
 import ProductsAllPage from './pages/ben/ProductsAllPage'
+// 後台頁面
+import BackStage from './pages/BackStage'
 // 共用元件
 import MainContent from './components/MainContent'
 import ScrollToTop from './components/ScrollToTop'
@@ -46,6 +48,7 @@ function App() {
               setControlSmallCate={setControlSmallCate}
               setControlSmallBody={setControlSmallBody}
             />
+            <BackStage />
           </MainContent>
         </Switch>
         {/* </ScrollToTop> */}

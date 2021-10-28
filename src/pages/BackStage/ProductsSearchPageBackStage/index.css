@@ -189,14 +189,6 @@ p {
   width: 100%;
 }
 
-.productsSearchPage .products-item-group .product .item .title {
-  /* font-size: 14px; */
-}
-
-.productsSearchPage .products-item-group .product .item .price {
-  /* font-size: 16px; */
-}
-
 
 @media screen and (min-width: 992px) {
   /* 商品顯示區 */

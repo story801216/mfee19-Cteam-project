@@ -4,7 +4,7 @@ import { withRouter } from 'react-router-dom'
 import './index.scss'
 
 function ProductsPaginationSearch(props) {
-  const { totalPages, backStageSearchWord } = props
+  const { backStageProdSearchWord, backStageProdsTotalPages } = props
   return (
     <div className="pagination-wrap">
       <ul className="pagination">
@@ -18,7 +18,9 @@ function ProductsPaginationSearch(props) {
           <Link
             className="page-link"
             to={
-              '/back-stage/products/page/search/' + backStageSearchWord + '/1'
+              '/back-stage/products/page/search/' +
+              backStageProdSearchWord +
+              '/1'
             }
           >
             第一頁
@@ -35,7 +37,7 @@ function ProductsPaginationSearch(props) {
             className="page-link"
             to={
               '/back-stage/products/page/search/' +
-              backStageSearchWord +
+              backStageProdSearchWord +
               '/' +
               (props.match.params.number - 1)
             }
@@ -51,7 +53,7 @@ function ProductsPaginationSearch(props) {
               className="page-link"
               to={
                 '/back-stage/products/page/search/' +
-                backStageSearchWord +
+                backStageProdSearchWord +
                 '/' +
                 (props.match.params.number - 1)
               }
@@ -65,7 +67,7 @@ function ProductsPaginationSearch(props) {
             className="page-link"
             to={
               '/back-stage/products/page/search/' +
-              backStageSearchWord +
+              backStageProdSearchWord +
               '/' +
               props.match.params.number
             }
@@ -73,7 +75,7 @@ function ProductsPaginationSearch(props) {
             {props.match.params.number}
           </Link>
         </li>
-        {props.match.params.number >= totalPages ? (
+        {props.match.params.number >= backStageProdsTotalPages ? (
           ''
         ) : (
           <li className="page-item number-btn">
@@ -81,7 +83,7 @@ function ProductsPaginationSearch(props) {
               className="page-link"
               to={
                 '/back-stage/products/page/search/' +
-                backStageSearchWord +
+                backStageProdSearchWord +
                 '/' +
                 (props.match.params.number * 1 + 1)
               }
@@ -93,7 +95,7 @@ function ProductsPaginationSearch(props) {
 
         <li
           className={
-            props.match.params.number >= totalPages
+            props.match.params.number >= backStageProdsTotalPages
               ? 'page-item disabled'
               : 'page-item'
           }
@@ -102,7 +104,7 @@ function ProductsPaginationSearch(props) {
             className="page-link"
             to={
               '/back-stage/products/page/search/' +
-              backStageSearchWord +
+              backStageProdSearchWord +
               '/' +
               (props.match.params.number * 1 + 1)
             }
@@ -112,7 +114,7 @@ function ProductsPaginationSearch(props) {
         </li>
         <li
           className={
-            props.match.params.number >= totalPages
+            props.match.params.number >= backStageProdsTotalPages
               ? 'page-item disabled'
               : 'page-item'
           }
@@ -121,9 +123,9 @@ function ProductsPaginationSearch(props) {
             className="page-link"
             to={
               '/back-stage/products/page/search/' +
-              backStageSearchWord +
+              backStageProdSearchWord +
               '/' +
-              totalPages
+              backStageProdsTotalPages
             }
           >
             最後一頁

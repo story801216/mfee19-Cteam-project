@@ -3,23 +3,23 @@ import { Link } from 'react-router-dom'
 import './index.css'
 
 function Search(props) {
-  const { backStageSearchWord, setBackStageSearchWord } = props
+  const { backStageProdSearchWord, setBackStageProdSearchWord } = props
   return (
     <div className="search">
       <input
         className="search-input"
         type="text"
         placeholder="請輸入商品名稱"
-        value={backStageSearchWord}
+        value={backStageProdSearchWord}
         onChange={(e) => {
-          setBackStageSearchWord(e.target.value)
+          setBackStageProdSearchWord(e.target.value)
         }}
       />
       <Link
         // 有搜索內容就跳轉，沒有就轉到商品列表
         to={
-          backStageSearchWord
-            ? `/back-stage/products/page/search/${backStageSearchWord}/1`
+          backStageProdSearchWord
+            ? `/back-stage/products/page/search/${backStageProdSearchWord}/1`
             : '/back-stage/products/page/1'
         }
       >

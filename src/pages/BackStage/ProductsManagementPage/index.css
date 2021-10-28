@@ -34,15 +34,6 @@ p {
   width: 100%;
 }
 
-/* 大標題 */
-.productsManagementPage .main>.title {
-  text-align: center;
-  font-weight: 500;
-  font-size: 36px;
-  margin-bottom: 40px;
-
-}
-
 /* 新增商品按鈕mb */
 .productsManagementPage .add {
   margin-bottom: 35px;
@@ -121,8 +112,7 @@ p {
 
 /* 標題欄位 */
 .products-list .title-mobile p,
-.products-list .title-computer p
- {
+.products-list .title-computer p {
   white-space: normal;
   width: 25%;
   text-align: center;
@@ -162,10 +152,6 @@ p {
     display: flex
   }
 
-  /* 大標題 */
-  .productsManagementPage .main>.title {
-    margin-bottom: 30px;
-    text-align: left;
-  }
-  
+
+
 }

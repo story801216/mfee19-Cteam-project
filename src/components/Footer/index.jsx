@@ -7,52 +7,74 @@ function Footer(props) {
   const topLink = [
     {
       theClass: 'login',
-      one: '會員註冊',
-      two: '會員登入',
-      three: '處方簽查詢',
+      content: [
+        { name: '會員註冊', link: '' },
+        { name: '會員登入', link: '' },
+        { name: '處方簽查詢', link: '' },
+      ],
     },
     {
       theClass: 'shop',
-      one: '線上購物',
-      two: '商品分類',
-      three: '依身體部位',
-      four: '訂單查詢',
+      content: [
+        {
+          name: '線上購物',
+          link: '/shop',
+        },
+        {
+          name: '商品分類',
+          link: '/prod-list/page/1',
+        },
+        {
+          name: '依身體部位',
+          link: '/prod-list/page/categories/頭部/1',
+        },
+        { name: '訂單查詢', link: '' },
+      ],
     },
     {
       theClass: 'health-knowledge',
-      one: '保健知識',
-      two: '保健百科',
-      three: '症狀篩檢',
-      four: '醫院|藥局',
+      content: [
+        { name: '保健知識', link: '' },
+        { name: '保健百科', link: '' },
+        { name: '症狀篩檢', link: '' },
+        { name: '醫院|藥局', link: '' },
+      ],
     },
     {
       theClass: 'latest-news d-none d-lg-block',
-      one: '最新消息',
-      two: '活動專區',
-      three: '相關連結',
+      content: [
+        { name: '最新消息', link: '' },
+        { name: '活動專區', link: '' },
+        { name: '相關連結', link: '' },
+      ],
     },
     {
       theClass: 'contact d-none d-lg-block',
-      one: '聯絡我們',
-      two: '品牌介紹',
-      three: '最新消息',
-      four: '門市資訊',
+      content: [
+        { name: '聯絡我們', link: '' },
+        { name: '品牌介紹', link: '' },
+        { name: '最新消息', link: '' },
+        { name: '門市資訊', link: '' },
+      ],
     },
   ]
-
   const bottomLink = [
     {
-      theClass: 'latest-news',
-      one: '最新消息',
-      two: '活動專區',
-      three: '相關連結',
+      theClass: 'latest-news d-none d-lg-block',
+      content: [
+        { name: '最新消息', link: '' },
+        { name: '活動專區', link: '' },
+        { name: '相關連結', link: '' },
+      ],
     },
     {
-      theClass: 'contact',
-      one: '聯絡我們',
-      two: '品牌介紹',
-      three: '最新消息',
-      four: '門市資訊',
+      theClass: 'contact d-none d-lg-block',
+      content: [
+        { name: '聯絡我們', link: '' },
+        { name: '品牌介紹', link: '' },
+        { name: '最新消息', link: '' },
+        { name: '門市資訊', link: '' },
+      ],
     },
   ]
 
@@ -110,6 +132,8 @@ function Footer(props) {
 
             {/* 站內連結 */}
             <LinkArea
+              topLink={topLink}
+              bottomLink={bottomLink}
               setControlCate={setControlCate}
               setControlSmallCate={setControlSmallCate}
               setControlSmallBody={setControlSmallBody}

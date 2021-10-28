@@ -1,17 +1,21 @@
 import React, { useState, useEffect } from 'react'
 import { Spinner } from 'react-bootstrap'
 import { withRouter, Link } from 'react-router-dom'
-import BookMart from '../../../../components/ben/BookMart'
-import SearchComputerBackStage from '../../../../components/ben/SearchComputerBackStage'
-import SearchBackStage from '../../../../components/ben/SearchBackStage'
-import ProductsManagementItem from '../../../../components/ben/ProductsManagementItem'
-import ProductsPaginationSearchBackStage from '../../../../components/ben/ProductsPaginationSearchBackStage'
+import BookMart from '../../../components/ben/BookMart'
+import SearchComputerBackStage from '../../../components/ben/SearchComputerBackStage'
+import SearchBackStage from '../../../components/ben/SearchBackStage'
+import ProductsManagementItem from '../../../components/ben/ProductsManagementItem'
+import ProductsPaginationSearchBackStage from '../../../components/ben/ProductsPaginationSearchBackStage'
 import './index.css'
 
 function ProductsSearchPageBackStage(props) {
-  const { backStageSearchWord, setBackStageSearchWord } = props
+  const {
+    backStageProdSearchWord,
+    setBackStageProdSearchWord,
+    backStageProdsTotalPages,
+    setBackStageProdsTotalPages,
+  } = props
   let [data, setData] = useState({})
-  let [totalPages, setTotalPages] = useState(0)
 
   const [isLoading, setIsloading] = useState(true)
 
@@ -27,7 +31,7 @@ function ProductsSearchPageBackStage(props) {
         let j = await r.json()
         if (j.totalRows) {
           setData(j)
-          setTotalPages(j.totalPages)
+          setBackStageProdsTotalPages(j.totalPages)
         }
       })()
     }
@@ -36,7 +40,7 @@ function ProductsSearchPageBackStage(props) {
   useEffect(() => {
     setIsloading(true)
     // 傳遞給按鈕
-    setBackStageSearchWord(props.match.params.word)
+    setBackStageProdSearchWord(props.match.params.word)
 
     handleSearch()
 
@@ -50,7 +54,7 @@ function ProductsSearchPageBackStage(props) {
     setIsloading(true)
 
     // 傳遞給按鈕
-    setBackStageSearchWord(props.match.params.word)
+    setBackStageProdSearchWord(props.match.params.word)
 
     handleSearch()
 
@@ -66,16 +70,10 @@ function ProductsSearchPageBackStage(props) {
       <div className="container">
         <div className="productsManagementPage">
           <div className="main">
-            {/* 大標題 */}
-            <h2 className="title">後台管理</h2>
-
-            {/* 頁簽 */}
-            <BookMart />
-
             {/* 手機搜索框 */}
             <SearchBackStage
-              backStageSearchWord={backStageSearchWord}
-              setBackStageSearchWord={setBackStageSearchWord}
+              backStageProdSearchWord={backStageProdSearchWord}
+              setBackStageProdSearchWord={setBackStageProdSearchWord}
             />
             <div className="control">
               {/* 空白div 調整位置用 */}
@@ -86,8 +84,8 @@ function ProductsSearchPageBackStage(props) {
               </div>
               {/* 桌機搜索框 */}
               <SearchComputerBackStage
-                backStageSearchWord={backStageSearchWord}
-                setBackStageSearchWord={setBackStageSearchWord}
+                backStageProdSearchWord={backStageProdSearchWord}
+                setBackStageProdSearchWord={setBackStageProdSearchWord}
               />
             </div>
 
@@ -143,8 +141,8 @@ function ProductsSearchPageBackStage(props) {
             </div>
             {/* 分頁按鈕 */}
             <ProductsPaginationSearchBackStage
-              totalPages={totalPages}
-              backStageSearchWord={backStageSearchWord}
+              backStageProdSearchWord={backStageProdSearchWord}
+              backStageProdsTotalPages={backStageProdsTotalPages}
             />
           </div>
         </div>

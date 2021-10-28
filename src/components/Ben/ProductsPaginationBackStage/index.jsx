@@ -4,7 +4,7 @@ import { withRouter } from 'react-router-dom'
 import './index.scss'
 
 function ProductsPaginationBackStage(props) {
-  const { totalPages } = props
+  const { backStageProdsTotalPages } = props
   return (
     <div className="pagination-wrap">
       <ul className="pagination">
@@ -53,7 +53,7 @@ function ProductsPaginationBackStage(props) {
             {props.match.params.page}
           </Link>
         </li>
-        {props.match.params.page >= totalPages ? (
+        {props.match.params.page >= backStageProdsTotalPages ? (
           ''
         ) : (
           <li className="page-item number-btn">
@@ -70,7 +70,7 @@ function ProductsPaginationBackStage(props) {
 
         <li
           className={
-            props.match.params.page >= totalPages
+            props.match.params.page >= backStageProdsTotalPages
               ? 'page-item disabled'
               : 'page-item'
           }
@@ -86,14 +86,14 @@ function ProductsPaginationBackStage(props) {
         </li>
         <li
           className={
-            props.match.params.page >= totalPages
+            props.match.params.page >= backStageProdsTotalPages
               ? 'page-item disabled'
               : 'page-item'
           }
         >
           <Link
             className="page-link"
-            to={'/back-stage/products/page/' + totalPages}
+            to={'/back-stage/products/page/' + backStageProdsTotalPages}
           >
             最後一頁
           </Link>

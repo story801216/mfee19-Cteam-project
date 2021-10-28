@@ -1,3 +1,10 @@
+.back-stage-title {
+    text-align: center;
+    font-weight: 500;
+    font-size: 36px;
+    margin-bottom: 40px;
+}
+
 .bookMark {
     display: flex;
     justify-content: space-between;
@@ -22,12 +29,12 @@
 /* 手機 option為隱藏狀態 只有添加show的才顯示 */
 .bookMark .option-mobile-now div {
     display: none;
-    
+
 }
 
 /* 點擊後顯示 */
-.bookMark .option-mobile-now div.show{
-    display:inline-block;
+.bookMark .option-mobile-now div.show {
+    display: inline-block;
 }
 
 /* 手機 ...圖示 */
@@ -81,6 +88,11 @@
 }
 
 @media screen and (min-width: 992px) {
+
+    .back-stage-title {
+        margin-bottom: 30px;
+        text-align: left;
+    }
 
     /* 關閉手機現在顯示的頁簽 */
     .bookMark .option-mobile-now {

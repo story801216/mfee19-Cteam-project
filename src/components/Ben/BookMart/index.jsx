@@ -12,54 +12,20 @@ function BookMart(props) {
     '營業數據',
   ]
   return (
-    <div className="bookMark">
-      {/* 電腦 */}
-      {/* className 添加 now 變色 */}
-      <ul className="option-list-computer">
-        {optionName.map((v, i) => {
-          return (
-            <li className="option" key={i}>
-              <a
-                href="#/"
-                className={optionNow === i ? 'now' : ''}
-                onClick={() => {
-                  setOptionNow(i)
-                }}
-              >
-                {v}
-              </a>
-            </li>
-          )
-        })}
-      </ul>
-
-      {/* 手機 */}
-      <div className="option-mobile-now">
-        {optionName.map((v, i) => {
-          return (
-            <div href="#/" key={i} className={optionNow === i ? 'show' : ''}>
-              {v}
-            </div>
-          )
-        })}
-      </div>
-      <div className="icon">
-        <a
-          href="#/"
-          onClick={() => {
-            MobileListRef.current.className.includes('show')
-              ? MobileListRef.current.classList.remove('show')
-              : MobileListRef.current.classList.add('show')
-          }}
-        >
-          <img src="http://localhost:3000/images/icon/other.jpg" alt="" />
-        </a>
-        <ul className="option-list-mobile" ref={MobileListRef}>
+    <div class="container">
+      {/* 大標題 */}
+      <h2 className="back-stage-title">後台管理</h2>
+      {/* 頁簽 */}
+      <div className="bookMark">
+        {/* 電腦 */}
+        {/* className 添加 now 變色 */}
+        <ul className="option-list-computer">
           {optionName.map((v, i) => {
             return (
               <li className="option" key={i}>
                 <a
                   href="#/"
+                  className={optionNow === i ? 'now' : ''}
                   onClick={() => {
                     setOptionNow(i)
                   }}
@@ -70,6 +36,44 @@ function BookMart(props) {
             )
           })}
         </ul>
+        {/* 手機 */}
+        <div className="option-mobile-now">
+          {optionName.map((v, i) => {
+            return (
+              <div href="#/" key={i} className={optionNow === i ? 'show' : ''}>
+                {v}
+              </div>
+            )
+          })}
+        </div>
+        <div className="icon">
+          <a
+            href="#/"
+            onClick={() => {
+              MobileListRef.current.className.includes('show')
+                ? MobileListRef.current.classList.remove('show')
+                : MobileListRef.current.classList.add('show')
+            }}
+          >
+            <img src="http://localhost:3000/images/icon/other.jpg" alt="" />
+          </a>
+          <ul className="option-list-mobile" ref={MobileListRef}>
+            {optionName.map((v, i) => {
+              return (
+                <li className="option" key={i}>
+                  <a
+                    href="#/"
+                    onClick={() => {
+                      setOptionNow(i)
+                    }}
+                  >
+                    {v}
+                  </a>
+                </li>
+              )
+            })}
+          </ul>
+        </div>
       </div>
     </div>
   )

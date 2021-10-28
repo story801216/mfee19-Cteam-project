@@ -187,12 +187,21 @@ function ProductsDetailPage(props) {
     <>
       <Banner />
       <div className="container">
-        <Search searchWord={searchWord} setSearchWord={setSearchWord} />
+        <Search
+          searchWord={searchWord}
+          setSearchWord={setSearchWord}
+          setControlCate={setControlCate}
+          setControlSmallCate={setControlSmallCate}
+          setControlSmallBody={setControlSmallBody}
+        />
         <div className="breadcrumb-search">
           <MultiLevelBreadcrumb />
           <SearchComputer
             searchWord={searchWord}
             setSearchWord={setSearchWord}
+            setControlCate={setControlCate}
+            setControlSmallCate={setControlSmallCate}
+            setControlSmallBody={setControlSmallBody}
           />
           {/* <Search /> */}
         </div>

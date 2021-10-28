@@ -1,7 +1,8 @@
-import AddFormInput from '../../../../components/ben/AddFormInput'
+import AddFormInput from '../../../components/ben/AddFormInput'
 import { withRouter } from 'react-router-dom'
 import './index.css'
 function AddProductsPage(props) {
+  const { backStageProdsTotalPages } = props
   const addForm = () => {
     const fd = new FormData(document.add_form)
     fetch('http://localhost:3001/product', {
@@ -15,7 +16,7 @@ function AddProductsPage(props) {
       .then((obj) => {
         console.log(JSON.stringify(obj, null, 4))
       })
-       props.history.push('/back-stage/products/page/11')
+    props.history.push('/back-stage/products/page/' + backStageProdsTotalPages)
   }
 
   return (

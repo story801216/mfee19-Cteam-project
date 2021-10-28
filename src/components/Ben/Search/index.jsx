@@ -3,7 +3,13 @@ import { Link } from 'react-router-dom'
 import './index.css'
 
 function Search(props) {
-  const { searchWord, setSearchWord } = props
+  const {
+    searchWord,
+    setSearchWord,
+    setControlCate,
+    setControlSmallCate,
+    setControlSmallBody,
+  } = props
   return (
     <div className="search">
       <input
@@ -22,6 +28,11 @@ function Search(props) {
             ? `/prod-list/page/search/${searchWord}/1`
             : '/prod-list/page/1'
         }
+        onClick={() => {
+          setControlCate(0)
+          setControlSmallCate('全部商品')
+          setControlSmallBody('')
+        }}
       >
         <button className="search-button">
           <img src="http://localhost:3000/images/icon/717122.png" alt="" />
