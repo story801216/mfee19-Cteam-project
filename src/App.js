@@ -25,6 +25,9 @@ function App() {
   const [controlSmallCate, setControlSmallCate] = useState('')
   const [controlSmallBody, setControlSmallBody] = useState('')
 
+  // 後台商品編輯sid
+  const [editSid, setEditSid] = useState(0)
+
   return (
     <Router>
       <>
@@ -49,7 +52,7 @@ function App() {
                 setControlSmallBody={setControlSmallBody}
               />
               {/* 後臺管理頁面 */}
-              <BackStage />
+              <BackStage editSid={editSid} setEditSid={setEditSid} />
             </MainContent>
           </Switch>
         </ScrollToTop>
@@ -58,6 +61,7 @@ function App() {
           setControlCate={setControlCate}
           setControlSmallCate={setControlSmallCate}
           setControlSmallBody={setControlSmallBody}
+          editSid={editSid}
         />
       </>
     </Router>

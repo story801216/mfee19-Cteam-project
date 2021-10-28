@@ -99,7 +99,7 @@ function ProductsClickedPage(props) {
 
       setTimeout(() => {
         setIsloading(false)
-      }, 1000)
+      }, 500)
     })()
   }, [])
 
@@ -118,7 +118,7 @@ function ProductsClickedPage(props) {
     })()
     setTimeout(() => {
       setIsloading(false)
-    }, 1000)
+    }, 500)
   }, [props.match.params.page])
 
   const spinner = <Spinner animation="grow" variant="primary" />

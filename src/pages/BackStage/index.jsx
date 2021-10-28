@@ -8,6 +8,8 @@ import AddProductsPage from './AddProductsPage'
 import './index.css'
 // forceRefresh={true}
 function BackStage(props) {
+  // 回傳給footer商品sid
+  const { editSid, setEditSid } = props
   // 後臺商品搜索關鍵字
   const [backStageProdSearchWord, setBackStageProdSearchWord] = useState('')
 
@@ -16,10 +18,10 @@ function BackStage(props) {
 
   return (
     <>
+      <BookMart editSid={editSid} />
       <Switch>
         {/* 後台商品搜索頁 */}
         <Route path="/back-stage/products/page/search/:word/:number">
-          <BookMart />
           <ProductsSearchPageBackStage
             backStageProdSearchWord={backStageProdSearchWord}
             setBackStageProdSearchWord={setBackStageProdSearchWord}
@@ -29,7 +31,6 @@ function BackStage(props) {
         </Route>
         {/* 後台商品列表頁 */}
         <Route path="/back-stage/products/page/:page">
-          <BookMart />
           <ProductsManagementPage
             backStageProdSearchWord={backStageProdSearchWord}
             setBackStageProdSearchWord={setBackStageProdSearchWord}
@@ -39,7 +40,7 @@ function BackStage(props) {
         </Route>
         {/* 後台商品編輯頁 */}
         <Route path="/back-stage/products/edit/:sid">
-          <EditProductsPage />
+          <EditProductsPage setEditSid={setEditSid} />
         </Route>
         {/* 後台新增商品頁 */}
         <Route path="/back-stage/products/add">

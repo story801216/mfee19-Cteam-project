@@ -127,7 +127,7 @@ function ProductsDetailPage(props) {
 
     setTimeout(() => {
       setIsloading(false)
-    }, 1000)
+    }, 500)
   }, [])
 
   // 更新
@@ -143,12 +143,9 @@ function ProductsDetailPage(props) {
       }
     })()
 
-    // follow狀態按鈕
-    // getFollowFromLocalStorage()
-
     setTimeout(() => {
       setIsloading(false)
-    }, 1000)
+    }, 500)
   }, [props.match.params.sid])
 
   // 追蹤

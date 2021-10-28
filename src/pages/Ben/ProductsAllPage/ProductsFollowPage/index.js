@@ -75,7 +75,7 @@ function ProductsFollowPage(props) {
 
     setTimeout(() => {
       setIsloading(false)
-    }, 1000)
+    }, 500)
   }, [])
 
   useEffect(() => {
@@ -91,7 +91,7 @@ function ProductsFollowPage(props) {
 
     setTimeout(() => {
       setIsloading(false)
-    }, 1000)
+    }, 500)
   }, [searchWord, categoryTag, myFollow])
 
   // 載入中

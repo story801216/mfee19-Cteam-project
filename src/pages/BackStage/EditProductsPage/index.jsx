@@ -4,6 +4,8 @@ import EditFormInput from '../../../components/ben/EditFormInput'
 import './index.css'
 
 function EditProductsPage(props) {
+  // 回傳給footer的狀態
+  const { setEditSid } = props
   const [data, setData] = useState('')
 
   useEffect(() => {
@@ -17,6 +19,9 @@ function EditProductsPage(props) {
         setData(j.data)
       }
     })()
+
+    // 回傳給footer的狀態
+    setEditSid(props.match.params.sid)
   }, [])
 
   const editForm = () => {

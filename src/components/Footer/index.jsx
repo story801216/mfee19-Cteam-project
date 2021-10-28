@@ -1,9 +1,21 @@
-import './index.css'
+import React from 'react'
+import { withRouter } from 'react-router-dom'
 import LinkArea from './LinkArea'
+import './index.css'
 
 function Footer(props) {
-  const { setControlCate, setControlSmallCate, setControlSmallBody } = props
+  const {
+    setControlCate,
+    setControlSmallCate,
+    setControlSmallBody,
+    location,
+    editSid,
+  } = props
 
+  // console.log('footer', location.pathname)
+  // console.log('footer', props)
+
+  // 連結資料
   const topLink = [
     {
       theClass: 'login',
@@ -58,6 +70,7 @@ function Footer(props) {
       ],
     },
   ]
+  // 連結資料
   const bottomLink = [
     {
       theClass: 'latest-news d-none d-lg-block',
@@ -91,7 +104,15 @@ function Footer(props) {
 
   return (
     <>
-      <footer>
+      <footer
+        // 後台的添加商品頁和編輯商品頁，不加mb
+        style={
+          location.pathname === '/back-stage/products/add' ||
+          location.pathname === '/back-stage/products/edit/' + editSid
+            ? { marginTop: 0 }
+            : { marginTop: '80px' }
+        }
+      >
         {/* 回到最上層 */}
         <div className="return-top">
           {/* 手機 */}
@@ -148,4 +169,4 @@ function Footer(props) {
   )
 }
 
-export default Footer
+export default withRouter(Footer)

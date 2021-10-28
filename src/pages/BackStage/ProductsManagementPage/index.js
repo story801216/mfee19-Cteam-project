@@ -35,7 +35,7 @@ function ProductsManagementPage(props) {
 
       setTimeout(() => {
         setIsloading(false)
-      }, 1000)
+      }, 500)
     })()
   }, [])
 
@@ -56,7 +56,7 @@ function ProductsManagementPage(props) {
 
       setTimeout(() => {
         setIsloading(false)
-      }, 1000)
+      }, 500)
     })()
   }, [props.match.params.page])
 

@@ -42,7 +42,7 @@ p {
 .editProductsPage .background {
   background: url('http://localhost:3000/images/banner/banner3.jpg') no-repeat;
   background-size: cover;
-  padding: 45px 0;
+  padding: 80px 0;
 }
 
 .editProductsPage .main {

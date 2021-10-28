@@ -1,7 +1,9 @@
 import React, { useState, useRef } from 'react'
+import { withRouter } from 'react-router-dom'
 import './index.css'
 
 function BookMart(props) {
+  const { location, editSid } = props
   const MobileListRef = useRef(null)
   const [optionNow, setOptionNow] = useState(0)
   const optionName = [
@@ -11,8 +13,19 @@ function BookMart(props) {
     '商城訂單管理',
     '營業數據',
   ]
+
+  console.log(props)
   return (
-    <div class="container">
+    <div
+      class="container"
+      // 到這兩個頁面，就不顯示頁簽
+      style={
+        location.pathname === '/back-stage/products/add' ||
+        location.pathname === '/back-stage/products/edit/' + editSid
+          ? { display: 'none' }
+          : { display: 'block' }
+      }
+    >
       {/* 大標題 */}
       <h2 className="back-stage-title">後台管理</h2>
       {/* 頁簽 */}
@@ -79,4 +92,4 @@ function BookMart(props) {
   )
 }
 
-export default BookMart
+export default withRouter(BookMart)
