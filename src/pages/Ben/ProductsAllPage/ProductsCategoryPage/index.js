@@ -93,7 +93,7 @@ function ProductsCategoryPage(props) {
 
     setTimeout(() => {
       setIsloading(false)
-    }, 500)
+    }, 1000)
   }, [])
 
   // 換頁時更新狀態請求
@@ -108,7 +108,7 @@ function ProductsCategoryPage(props) {
 
     setTimeout(() => {
       setIsloading(false)
-    }, 500)
+    }, 1000)
   }, [props.match.params.cate, props.match.params.number])
 
   const spinner = <Spinner animation="grow" variant="primary" />

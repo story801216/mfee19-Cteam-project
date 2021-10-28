@@ -36,22 +36,23 @@ function App() {
           setControlSmallBody={setControlSmallBody}
         />
         <MobileNavBar />
-        {/* <ScrollToTop> */}
-        <Switch>
-          <MainContent>
-            {/* 所有商品頁面 */}
-            <ProductsAllPage
-              controlCate={controlCate}
-              controlSmallCate={controlSmallCate}
-              controlSmallBody={controlSmallBody}
-              setControlCate={setControlCate}
-              setControlSmallCate={setControlSmallCate}
-              setControlSmallBody={setControlSmallBody}
-            />
-            <BackStage />
-          </MainContent>
-        </Switch>
-        {/* </ScrollToTop> */}
+        <ScrollToTop>
+          <Switch>
+            <MainContent>
+              {/* 所有商品頁面 */}
+              <ProductsAllPage
+                controlCate={controlCate}
+                controlSmallCate={controlSmallCate}
+                controlSmallBody={controlSmallBody}
+                setControlCate={setControlCate}
+                setControlSmallCate={setControlSmallCate}
+                setControlSmallBody={setControlSmallBody}
+              />
+              {/* 後臺管理頁面 */}
+              <BackStage />
+            </MainContent>
+          </Switch>
+        </ScrollToTop>
         <BottomNavBar />
         <Footer
           setControlCate={setControlCate}

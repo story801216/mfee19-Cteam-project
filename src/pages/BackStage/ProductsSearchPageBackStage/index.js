@@ -46,7 +46,7 @@ function ProductsSearchPageBackStage(props) {
 
     setTimeout(() => {
       setIsloading(false)
-    }, 500)
+    }, 1000)
   }, [])
 
   // 換頁時更新狀態請求
@@ -60,7 +60,7 @@ function ProductsSearchPageBackStage(props) {
 
     setTimeout(() => {
       setIsloading(false)
-    }, 500)
+    }, 1000)
   }, [props.match.params.word, props.match.params.number])
 
   const spinner = <Spinner animation="grow" variant="primary" />
