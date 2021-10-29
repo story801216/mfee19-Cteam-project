@@ -1,8 +1,12 @@
 /* 點擊添加now樣式 */
 .cate-nav .cate .title .text.now,
 .cate-nav .arrow .right.now,
-.cate-nav .cate .content li a.now {
+.cate-nav .cate .content li div.now {
     color: #00A0F0;
+}
+
+.cate-nav .cate .content li div{
+    cursor: pointer;
 }
 
 /* ul區顯示隱藏 */

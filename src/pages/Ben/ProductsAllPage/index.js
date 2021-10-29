@@ -147,124 +147,126 @@ function ProductsAllPage(props) {
 
   return (
     <>
-      {/* 商品分類頁 */}
-      <Route path="/prod-list/page/categories/:cate/:number">
-        <ProductsCategoryPage
-          cates={cates}
-          bodys={bodys}
-          cateWord={cateWord}
-          setCateWord={setCateWord}
-          locationWord={locationWord}
-          setLocationWord={setLocationWord}
-          controlCate={controlCate}
-          setControlCate={setControlCate}
-          controlSmallCate={controlSmallCate}
-          setControlSmallCate={setControlSmallCate}
-          controlSmallBody={controlSmallBody}
-          setControlSmallBody={setControlSmallBody}
-          updateBrowseRecordToLocalStorage={updateBrowseRecordToLocalStorage}
-          searchWord={searchWord}
-          setSearchWord={setSearchWord}
-          cateSelect={cateSelect}
-          bodySelect={bodySelect}
-        />
-      </Route>
-      {/* 商品搜索頁 */}
-      <Route path="/prod-list/page/search/:word/:number">
-        <ProductsSearchPage
-          cates={cates}
-          bodys={bodys}
-          cateWord={cateWord}
-          setCateWord={setCateWord}
-          locationWord={locationWord}
-          setLocationWord={setLocationWord}
-          controlCate={controlCate}
-          setControlCate={setControlCate}
-          controlSmallCate={controlSmallCate}
-          setControlSmallCate={setControlSmallCate}
-          controlSmallBody={controlSmallBody}
-          setControlSmallBody={setControlSmallBody}
-          updateBrowseRecordToLocalStorage={updateBrowseRecordToLocalStorage}
-          searchWord={searchWord}
-          setSearchWord={setSearchWord}
-          cateSelect={cateSelect}
-          bodySelect={bodySelect}
-        />
-      </Route>
-      {/* 商品詳細頁 */}
-      <Route path="/prod-list/prod/:sid">
-        <ProductsDetailPage
-          cates={cates}
-          bodys={bodys}
-          cateWord={cateWord}
-          setCateWord={setCateWord}
-          locationWord={locationWord}
-          setLocationWord={setLocationWord}
-          controlCate={controlCate}
-          setControlCate={setControlCate}
-          controlSmallCate={controlSmallCate}
-          setControlSmallCate={setControlSmallCate}
-          controlSmallBody={controlSmallBody}
-          setControlSmallBody={setControlSmallBody}
-          updateBrowseRecordToLocalStorage={updateBrowseRecordToLocalStorage}
-          myBrowseRecord={myBrowseRecord}
-          setMyBrowseRecord={setMyBrowseRecord}
-          searchWord={searchWord}
-          setSearchWord={setSearchWord}
-        />
-      </Route>
-      {/* 商品列表頁 */}
-      <Route path="/prod-list/page/:page">
-        <ProductsClickedPage
-          cates={cates}
-          bodys={bodys}
-          cateWord={cateWord}
-          setCateWord={setCateWord}
-          locationWord={locationWord}
-          setLocationWord={setLocationWord}
-          controlCate={controlCate}
-          setControlCate={setControlCate}
-          controlSmallCate={controlSmallCate}
-          setControlSmallCate={setControlSmallCate}
-          controlSmallBody={controlSmallBody}
-          setControlSmallBody={setControlSmallBody}
-          updateBrowseRecordToLocalStorage={updateBrowseRecordToLocalStorage}
-          myBrowseRecord={myBrowseRecord}
-          setMyBrowseRecord={setMyBrowseRecord}
-          searchWord={searchWord}
-          setSearchWord={setSearchWord}
-          cateSelect={cateSelect}
-          bodySelect={bodySelect}
-        />
-      </Route>
-      {/* 商品追蹤頁 */}
-      <Route path="/followdPage">
-        <ProductsFollowPage
-          cates={cates}
-          updateBrowseRecordToLocalStorage={updateBrowseRecordToLocalStorage}
-          cateSelect={cateSelect}
-        />
-      </Route>
-      {/* 商品主頁 */}
-      <Route path="/shop">
-        <ProductsFirstPage
-          cates={cates}
-          bodys={bodys}
-          cateWord={cateWord}
-          setCateWord={setCateWord}
-          locationWord={locationWord}
-          setLocationWord={setLocationWord}
-          controlCate={controlCate}
-          setControlCate={setControlCate}
-          controlSmallCate={controlSmallCate}
-          setControlSmallCate={setControlSmallCate}
-          controlSmallBody={controlSmallBody}
-          setControlSmallBody={setControlSmallBody}
-          updateBrowseRecordToLocalStorage={updateBrowseRecordToLocalStorage}
-          searchWord={searchWord}
-          setSearchWord={setSearchWord}
-        />
-      </Route>
+      <Switch>
+        {/* 商品分類頁 */}
+        <Route path="/prod-list/page/categories/:cate/:number">
+          <ProductsCategoryPage
+            cates={cates}
+            bodys={bodys}
+            cateWord={cateWord}
+            setCateWord={setCateWord}
+            locationWord={locationWord}
+            setLocationWord={setLocationWord}
+            controlCate={controlCate}
+            setControlCate={setControlCate}
+            controlSmallCate={controlSmallCate}
+            setControlSmallCate={setControlSmallCate}
+            controlSmallBody={controlSmallBody}
+            setControlSmallBody={setControlSmallBody}
+            updateBrowseRecordToLocalStorage={updateBrowseRecordToLocalStorage}
+            searchWord={searchWord}
+            setSearchWord={setSearchWord}
+            cateSelect={cateSelect}
+            bodySelect={bodySelect}
+          />
+        </Route>
+        {/* 商品搜索頁 */}
+        <Route path="/prod-list/page/search/:word/:number">
+          <ProductsSearchPage
+            cates={cates}
+            bodys={bodys}
+            cateWord={cateWord}
+            setCateWord={setCateWord}
+            locationWord={locationWord}
+            setLocationWord={setLocationWord}
+            controlCate={controlCate}
+            setControlCate={setControlCate}
+            controlSmallCate={controlSmallCate}
+            setControlSmallCate={setControlSmallCate}
+            controlSmallBody={controlSmallBody}
+            setControlSmallBody={setControlSmallBody}
+            updateBrowseRecordToLocalStorage={updateBrowseRecordToLocalStorage}
+            searchWord={searchWord}
+            setSearchWord={setSearchWord}
+            cateSelect={cateSelect}
+            bodySelect={bodySelect}
+          />
+        </Route>
+        {/* 商品詳細頁 */}
+        <Route path="/prod-list/prod/:sid">
+          <ProductsDetailPage
+            cates={cates}
+            bodys={bodys}
+            cateWord={cateWord}
+            setCateWord={setCateWord}
+            locationWord={locationWord}
+            setLocationWord={setLocationWord}
+            controlCate={controlCate}
+            setControlCate={setControlCate}
+            controlSmallCate={controlSmallCate}
+            setControlSmallCate={setControlSmallCate}
+            controlSmallBody={controlSmallBody}
+            setControlSmallBody={setControlSmallBody}
+            updateBrowseRecordToLocalStorage={updateBrowseRecordToLocalStorage}
+            myBrowseRecord={myBrowseRecord}
+            setMyBrowseRecord={setMyBrowseRecord}
+            searchWord={searchWord}
+            setSearchWord={setSearchWord}
+          />
+        </Route>
+        {/* 商品列表頁 */}
+        <Route path="/prod-list/page/:page">
+          <ProductsClickedPage
+            cates={cates}
+            bodys={bodys}
+            cateWord={cateWord}
+            setCateWord={setCateWord}
+            locationWord={locationWord}
+            setLocationWord={setLocationWord}
+            controlCate={controlCate}
+            setControlCate={setControlCate}
+            controlSmallCate={controlSmallCate}
+            setControlSmallCate={setControlSmallCate}
+            controlSmallBody={controlSmallBody}
+            setControlSmallBody={setControlSmallBody}
+            updateBrowseRecordToLocalStorage={updateBrowseRecordToLocalStorage}
+            myBrowseRecord={myBrowseRecord}
+            setMyBrowseRecord={setMyBrowseRecord}
+            searchWord={searchWord}
+            setSearchWord={setSearchWord}
+            cateSelect={cateSelect}
+            bodySelect={bodySelect}
+          />
+        </Route>
+        {/* 商品追蹤頁 */}
+        <Route path="/followdPage">
+          <ProductsFollowPage
+            cates={cates}
+            updateBrowseRecordToLocalStorage={updateBrowseRecordToLocalStorage}
+            cateSelect={cateSelect}
+          />
+        </Route>
+        {/* 商品主頁 */}
+        <Route path="/shop">
+          <ProductsFirstPage
+            cates={cates}
+            bodys={bodys}
+            cateWord={cateWord}
+            setCateWord={setCateWord}
+            locationWord={locationWord}
+            setLocationWord={setLocationWord}
+            controlCate={controlCate}
+            setControlCate={setControlCate}
+            controlSmallCate={controlSmallCate}
+            setControlSmallCate={setControlSmallCate}
+            controlSmallBody={controlSmallBody}
+            setControlSmallBody={setControlSmallBody}
+            updateBrowseRecordToLocalStorage={updateBrowseRecordToLocalStorage}
+            searchWord={searchWord}
+            setSearchWord={setSearchWord}
+          />
+        </Route>
+      </Switch>
     </>
   )
 }

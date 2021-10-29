@@ -18,34 +18,38 @@ function BackStage(props) {
 
   return (
     <>
-      {/* 後台商品搜索頁 */}
-      <Route path="/back-stage/products/page/search/:word/:number">
-        <BookMart />
-        <ProductsSearchPageBackStage
-          backStageProdSearchWord={backStageProdSearchWord}
-          setBackStageProdSearchWord={setBackStageProdSearchWord}
-          backStageProdsTotalPages={backStageProdsTotalPages}
-          setBackStageProdsTotalPages={setBackStageProdsTotalPages}
-        />
-      </Route>
-      {/* 後台商品列表頁 */}
-      <Route path="/back-stage/products/page/:page">
-        <BookMart />
-        <ProductsManagementPage
-          backStageProdSearchWord={backStageProdSearchWord}
-          setBackStageProdSearchWord={setBackStageProdSearchWord}
-          backStageProdsTotalPages={backStageProdsTotalPages}
-          setBackStageProdsTotalPages={setBackStageProdsTotalPages}
-        />
-      </Route>
-      {/* 後台商品編輯頁 */}
-      <Route path="/back-stage/products/edit/:sid">
-        <EditProductsPage setEditSid={setEditSid} />
-      </Route>
-      {/* 後台新增商品頁 */}
-      <Route path="/back-stage/products/add">
-        <AddProductsPage backStageProdsTotalPages={backStageProdsTotalPages} />
-      </Route>
+      <Switch>
+        {/* 後台商品搜索頁 */}
+        <Route path="/back-stage/products/page/search/:word/:number">
+          <BookMart />
+          <ProductsSearchPageBackStage
+            backStageProdSearchWord={backStageProdSearchWord}
+            setBackStageProdSearchWord={setBackStageProdSearchWord}
+            backStageProdsTotalPages={backStageProdsTotalPages}
+            setBackStageProdsTotalPages={setBackStageProdsTotalPages}
+          />
+        </Route>
+        {/* 後台商品列表頁 */}
+        <Route path="/back-stage/products/page/:page">
+          <BookMart />
+          <ProductsManagementPage
+            backStageProdSearchWord={backStageProdSearchWord}
+            setBackStageProdSearchWord={setBackStageProdSearchWord}
+            backStageProdsTotalPages={backStageProdsTotalPages}
+            setBackStageProdsTotalPages={setBackStageProdsTotalPages}
+          />
+        </Route>
+        {/* 後台商品編輯頁 */}
+        <Route path="/back-stage/products/edit/:sid">
+          <EditProductsPage setEditSid={setEditSid} />
+        </Route>
+        {/* 後台新增商品頁 */}
+        <Route path="/back-stage/products/add">
+          <AddProductsPage
+            backStageProdsTotalPages={backStageProdsTotalPages}
+          />
+        </Route>
+      </Switch>
     </>
   )
 }

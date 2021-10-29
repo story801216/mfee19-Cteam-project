@@ -43,8 +43,7 @@ function FollowCateNav(props) {
         {/* 內容 */}
         <ul className={controlCate === 0 ? 'content now' : 'content'}>
           <li>
-            <a
-              href="#/"
+            <div
               className={controlSmallCate === '全部商品' ? 'now' : ''}
               onClick={(e) => {
                 setControlCate(0)
@@ -53,13 +52,12 @@ function FollowCateNav(props) {
               }}
             >
               全部商品
-            </a>
+            </div>
           </li>
           {cates.map((v, i) => {
             return (
               <li key={i}>
-                <a
-                  href="#/"
+                <div
                   className={controlSmallCate === i ? 'now' : ''}
                   onClick={(e) => {
                     setControlCate(0)
@@ -68,7 +66,7 @@ function FollowCateNav(props) {
                   }}
                 >
                   {v.name}
-                </a>
+                </div>
               </li>
             )
           })}

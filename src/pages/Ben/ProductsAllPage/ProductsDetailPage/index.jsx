@@ -49,6 +49,11 @@ function ProductsDetailPage(props) {
     JSON.parse(localStorage.getItem('follow') || '[]')
   )
 
+  // 購物車的商品 (初始直接從localtorage拿資料設定)
+  const [myCart, setMyCart] = useState(
+    JSON.parse(localStorage.getItem('cart') || '[]')
+  )
+
   // 資料庫的資料
   let [data, setData] = useState([])
 
@@ -59,7 +64,7 @@ function ProductsDetailPage(props) {
     setMyBrowseRecord(JSON.parse(newBrowseRecord))
   }
 
-  // localtorage有這筆資料，設定isFollow狀態為true
+  // localtorage有這筆follow資料，設定isFollow狀態為true
   const getFollowFromLocalStorage = () => {
     // console.log(myFollow)
 
@@ -67,6 +72,19 @@ function ProductsDetailPage(props) {
       myFollow.map((v) => {
         if (v.sid === props.match.params.sid * 1) {
           return setIsFollow(true)
+        }
+      })
+    }
+  }
+
+  // localtorage有這筆cart資料，設定isCart狀態為true
+  const getCartFromLocalStorage = () => {
+    // console.log(myCart)
+
+    if (myCart.length > 0) {
+      myCart.map((v) => {
+        if (v.sid === props.match.params.sid * 1) {
+          return setIsCart(true)
         }
       })
     }
@@ -125,6 +143,9 @@ function ProductsDetailPage(props) {
     // follow狀態按鈕
     getFollowFromLocalStorage()
 
+    // cart狀態按鈕
+    getCartFromLocalStorage()
+
     setTimeout(() => {
       setIsloading(false)
     }, 500)
@@ -162,6 +183,20 @@ function ProductsDetailPage(props) {
     setIsFollow(true)
   }
 
+  // 購物車
+  const updateCartToLocalStorage = (product) => {
+    const currentCart = JSON.parse(localStorage.getItem('cart')) || []
+
+    currentCart.push(product)
+
+    localStorage.setItem('cart', JSON.stringify(currentCart))
+
+    // 設定資料
+    setMyCart(currentCart)
+
+    setIsCart(true)
+  }
+
   // 取消追蹤
   const deleteFollowToLocalStorage = (product) => {
     const localStorageData = JSON.parse(localStorage.getItem('follow')) || []
@@ -176,6 +211,22 @@ function ProductsDetailPage(props) {
     localStorage.setItem('follow', JSON.stringify(newLocalStorageData))
 
     setIsFollow(false)
+  }
+
+  // 取消購物車
+  const deleteCartToLocalStorage = (product) => {
+    const localStorageData = JSON.parse(localStorage.getItem('cart')) || []
+    const currentProduct = product
+    // console.log(localStorageData)
+    // console.log(currentProduct)
+
+    const newLocalStorageData =
+      localStorageData.filter((v) => {
+        return v.sid !== currentProduct.sid
+      }) || []
+    localStorage.setItem('cart', JSON.stringify(newLocalStorageData))
+
+    setIsCart(false)
   }
 
   const spinner = <Spinner animation="grow" variant="primary" />
@@ -268,7 +319,6 @@ function ProductsDetailPage(props) {
                       className={
                         isFollow ? 'follow-button hide' : 'follow-button'
                       }
-                      href="#/"
                       onClick={() => {
                         updateFollowToLocalStorage(data)
                         // setIsFollow(true)
@@ -282,7 +332,6 @@ function ProductsDetailPage(props) {
                           ? 'cancel-follow-button show'
                           : 'cancel-follow-button'
                       }
-                      href="#/"
                       onClick={() => {
                         deleteFollowToLocalStorage(data)
                         // setIsFollow(false)
@@ -294,7 +343,7 @@ function ProductsDetailPage(props) {
                     <div
                       className={isCart ? 'cart-button hide' : 'cart-button'}
                       onClick={() => {
-                        setIsCart(true)
+                        updateCartToLocalStorage(data)
                       }}
                     >
                       購物車
@@ -306,7 +355,7 @@ function ProductsDetailPage(props) {
                           : 'cancel-cart-button'
                       }
                       onClick={() => {
-                        setIsCart(false)
+                        deleteCartToLocalStorage(data)
                       }}
                     >
                       已加入購物車
