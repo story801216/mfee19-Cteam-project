@@ -37,7 +37,10 @@ function EditProductsPage(props) {
       .then((obj) => {
         console.log(JSON.stringify(obj, null, 4))
       })
+
+    alert('商品更新成功')
     props.history.push('/back-stage/products/page/1')
+    window.location.reload()
   }
 
   return (

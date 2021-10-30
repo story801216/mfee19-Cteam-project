@@ -16,7 +16,9 @@ function AddProductsPage(props) {
       .then((obj) => {
         console.log(JSON.stringify(obj, null, 4))
       })
+    alert('商品添加成功')
     props.history.push('/back-stage/products/page/' + backStageProdsTotalPages)
+    window.location.reload()
   }
 
   return (

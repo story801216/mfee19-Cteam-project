@@ -13,13 +13,16 @@ function ProductsManagementItem(props) {
     quantity,
     price,
     place_origin,
+    backStageProdsTotalPages,
   } = props
 
   const handleDelect = () => {
     fetch('http://localhost:3001/product/' + sid, {
       method: 'DELETE',
     })
-    props.history.push('/back-stage/products/page/1')
+    alert('商品刪除成功')
+    props.history.push('/back-stage/products/page/' + backStageProdsTotalPages)
+    window.location.reload()
   }
 
   return (

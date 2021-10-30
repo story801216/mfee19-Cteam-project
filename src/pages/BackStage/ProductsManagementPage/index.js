@@ -133,7 +133,11 @@ function ProductsManagementPage(props) {
                 : data.rows
                 ? data.rows.map((product) => {
                     return (
-                      <ProductsManagementItem {...product} key={product.sid} />
+                      <ProductsManagementItem
+                        {...product}
+                        key={product.sid}
+                        backStageProdsTotalPages={backStageProdsTotalPages}
+                      />
                     )
                   })
                 : ''}
