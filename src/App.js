@@ -25,11 +25,17 @@ import IconSearch_p2 from './pages/Chiao/IconSearch_p2/IconSearch_p2'
 import HospitalPage from './pages/Chiao/HospitalPage/HospitalPage'
 //品喬---------------------------------------------------------------
 
+//羿伶頁面
+import PortiaAllPage from './pages/Yiling/PortiaAllPage/PortiaAllPage'
+
 function App() {
   // navbar 商品類別欄顏色切換
   const [controlCate, setControlCate] = useState('')
   const [controlSmallCate, setControlSmallCate] = useState('')
   const [controlSmallBody, setControlSmallBody] = useState('')
+
+  //給梓庭抓最近門市資料
+  const [closeStore, setCloseStore] = useState({})
 
   // 後台商品編輯sid
   const [editSid, setEditSid] = useState(0)
@@ -59,6 +65,9 @@ function App() {
               />
               {/* 後臺管理頁面 */}
               <BackStage editSid={editSid} setEditSid={setEditSid} />
+
+              {/* 首頁門市資訊地圖 */}
+              <PortiaAllPage setCloseStore={setCloseStore} />
               {/* 症狀頁 */}
               <Route path="/IconSearch_p1">
                 <IconSearch_p1 />

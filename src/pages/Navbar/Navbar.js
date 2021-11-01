@@ -27,7 +27,9 @@ function Navbar(props) {
       >
         <div className="navbarDesTop">
           <div className="homeIconLogo">
-            <img src={LogoPic} alt="" />
+            <Link to="/HomePage">
+              <img src={LogoPic} alt="" />
+            </Link>
           </div>
           <div className="navbarLinkDesTop">
             <div className="navbarLinkDesTop1">
@@ -125,14 +127,14 @@ function Navbar(props) {
         </div>
         <div className={buttonIndex === 2 ? 'buttonAndIconPush' : ''}>
           {buttonIndex === 2 ? (
-            <NewPush name1="活動專區" name2="相關連結" />
+            <NewPush name1="活動專區" name2="相關連結"  pos1={1700}  pos2={4300} path1='/HomePage' path2='/HomePage' />
           ) : (
             ''
           )}
         </div>
         <div className={buttonIndex === 3 ? 'buttonAndIconPush' : ''}>
           {buttonIndex === 3 ? (
-            <NewPush name1="品牌介紹" name2="門市資訊" />
+            <NewPush name1="品牌介紹" name2="門市資訊" pos1={3200}  pos2={100} path1='/HomePage' path2='/StoresMap' />
           ) : (
             ''
           )}
