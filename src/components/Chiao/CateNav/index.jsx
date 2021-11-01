@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { AiOutlineRight } from 'react-icons/ai'
+import { IoIosArrowDown } from 'react-icons/io'
 import './index.css'
 
 function CateNav(props) {
@@ -30,7 +30,7 @@ function CateNav(props) {
               保健百科
             </div>
             <div className="arrow">
-              <AiOutlineRight
+              <IoIosArrowDown
                 className={
                   controlCate === 0 ? 'right now' : 'right'
                 }
@@ -59,7 +59,7 @@ function CateNav(props) {
               症狀篩檢
             </div>
             <div className="arrow">
-              <AiOutlineRight
+              <IoIosArrowDown
                 className={
                   controlCate === 1 ? 'right now' : 'right'
                 }
@@ -88,7 +88,7 @@ function CateNav(props) {
               醫院｜診所
             </div>
             <div className="arrow">
-              <AiOutlineRight
+              <IoIosArrowDown
                 className={
                   controlCate === 2 ? 'right now' : 'right'
                 }

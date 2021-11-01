@@ -17,12 +17,12 @@
 
 /* ul區顯示隱藏 */
 .cate-nav .body .content.now {
-    height: 616px;
+    height: 504px;
     transition: .5s;
 }
 
 .cate-nav .cate .content.now{
-    height: 176px;
+    height: 144px;
     transition: .5s;
 }
 
