@@ -57,7 +57,7 @@
   margin-top: 10px;
 }
 
-.card-text {
+.chiao-card-text {
   font-size: 16px;
   text-align: center;
   /* margin-top: -3px; */
@@ -116,19 +116,19 @@
 }
 
 
-.chiao-accordion label {
+/* .chiao-accordion label {
   display: block;
   text-align: center;
-  /* background-color : #ccc; */
+  background-color : #ccc;
   border-bottom: 1px solid #66cbff;
-  /* margin-top: 10px; */
+  margin-top: 10px;
   padding: 6px 12px;
   cursor: pointer;
-}
+} */
 
-input[type='radio']:checked+.chiao-content {
+/* input[type='radio']:checked+.chiao-content {
   background-color: rgb(255, 255, 255);
-}
+} */
 
 .chiao-content {
   height: 0px;
@@ -137,15 +137,15 @@ input[type='radio']:checked+.chiao-content {
   transition: 0.5s;
 }
 
-input[type='radio']:checked+.chiao-content {
+/* input[type='radio']:checked+.chiao-content {
   height: auto;
-}
+} */
 
 
 
-input[type='radio'] {
+/* input[type='radio'] {
   display: none;
-}
+} */
 
 .chiao-accordion-icon {
   display: flex;
@@ -173,6 +173,7 @@ input[type='radio'] {
 
 .suggest img {
   margin: 0 20px 10px 20px;
+  width: 8%;
 }
 
 .suggest span {
@@ -182,6 +183,7 @@ input[type='radio'] {
   border-radius: 10px;
   margin: 10px;
   position: relative;
+  color: #000;
 }
 
 .suggest span:after {
@@ -199,6 +201,8 @@ input[type='radio'] {
   margin-left: -20px;
 }
 
+
+
 .suggest-1 {
   /* margin: 50px; */
   width: 100%;
@@ -207,7 +211,10 @@ input[type='radio'] {
   border-bottom: 1px solid #c0c9d0;
   line-height: 40px;
   color: #66cbff;
+  margin-top: 25px;
 }
+
+
 
 .suggest>p {
   font-size: 20px;
@@ -245,6 +252,7 @@ input[type='radio'] {
 .yourproduct {
   width: 800px;
   height: auto;
+  margin-top: 25px;
 }
 
 .yourproduct .product .item {
@@ -272,7 +280,9 @@ input[type='radio'] {
 
 }
 
-
+.accordion>.card{
+  margin-bottom: 0;
+}
 
 
 /* 以下為與scss相衝所改 */
@@ -288,11 +298,10 @@ input[type='radio'] {
 
 .chiao-accordion-icon {
   background-color: #fff;
+  margin-bottom: 15px;
 }
 
-.suggest span {
-  color: #000;
-}
+
 
 /* 以下為與scss相衝所改 */
 
@@ -356,7 +365,7 @@ input[type='radio'] {
   }
 
   .suggest-btn {
-    margin: 20px;
+    margin: 10px;
 
   }
 
@@ -370,9 +379,13 @@ input[type='radio'] {
     width: 85%;
   }
 
-  input[type='radio']:checked+.chiao-content {
-    height: auto;
+  .suggest img {
+    width: 25%;
   }
+
+  /* input[type='radio']:checked+.chiao-content {
+    height: auto;
+  } */
 
 
 

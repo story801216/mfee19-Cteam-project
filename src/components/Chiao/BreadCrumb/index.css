@@ -1,6 +1,6 @@
 .chiao-breadcrumb{
-  width:100%;
-  margin: auto;
+  width:100px;
+  margin:auto;
   display:flex;
   background-color: #fff;
   margin-bottom: 30px;
@@ -16,7 +16,7 @@
 
 
 .chiao-breadcrumb li + li:before{
-  content: '>';
+  content: '/';
   color: #7F7F7F;
   margin-right: 10px;
 }
@@ -26,6 +26,10 @@
   color: #00A0F0;
   padding-left: 0;
 }
+
+
+
+
 
 @media  screen and (max-width:992px) {
   .chiao-breadcrumb{

@@ -10,10 +10,14 @@ import { AiOutlineCheckCircle } from 'react-icons/ai'
 import { IoMdArrowDropdown } from 'react-icons/io'
 
 import ProductItem from '../../../components/Chiao/ProductItem'
+import ProductItem1 from '../../../components/Chiao/ProductItem1'
+import ProductItem2 from '../../../components/Chiao/ProductItem2'
+
 import CateNav from '../../../components/Chiao/CateNav'
 import CateButton from '../../../components/Chiao/CateButton'
 import CateButtonComputer from '../../../components/Chiao/CateButtonComputer'
 import BreadCrumb from '../../../components/Chiao/BreadCrumb'
+
 const Banner = './images/page_topbanner.png'
 
 function IconSearch_p1(props) {
@@ -57,7 +61,7 @@ function IconSearch_p1(props) {
                 </div>
 
                 <div className="chiao-card-body">
-                  <p className="card-text">流鼻水</p>
+                  <p className="chiao-card-text">流鼻水</p>
                 </div>
               </Link>
 
@@ -78,7 +82,7 @@ function IconSearch_p1(props) {
                 </div>
 
                 <div className="chiao-card-body">
-                  <p className="card-text">疲憊</p>
+                  <p className="chiao-card-text">疲憊</p>
                 </div>
               </Link>
 
@@ -99,7 +103,7 @@ function IconSearch_p1(props) {
                 </div>
 
                 <div className="chiao-card-body">
-                  <p className="card-text">心悸</p>
+                  <p className="chiao-card-text">心悸</p>
                 </div>
               </Link>
 
@@ -113,7 +117,7 @@ function IconSearch_p1(props) {
                 </div>
 
                 <div className="chiao-card-body">
-                  <p className="card-text">噁心/嘔吐</p>
+                  <p className="chiao-card-text">噁心/嘔吐</p>
                 </div>
               </Link>
               <Link href="/" className="chiao-card">
@@ -126,7 +130,7 @@ function IconSearch_p1(props) {
                 </div>
 
                 <div className="chiao-card-body">
-                  <p className="card-text">咳嗽</p>
+                  <p className="chiao-card-text">咳嗽</p>
                 </div>
               </Link>
               <Link href="/" className="chiao-card">
@@ -139,7 +143,7 @@ function IconSearch_p1(props) {
                 </div>
 
                 <div className="chiao-card-body">
-                  <p className="card-text">呼吸困難</p>
+                  <p className="chiao-card-text">呼吸困難</p>
                 </div>
               </Link>
               <Link href="/" className="chiao-card">
@@ -152,7 +156,7 @@ function IconSearch_p1(props) {
                 </div>
 
                 <div className="chiao-card-body">
-                  <p className="card-text">頭暈</p>
+                  <p className="chiao-card-text">頭暈</p>
                 </div>
               </Link>
               <Link href="/" className="chiao-card">
@@ -165,7 +169,7 @@ function IconSearch_p1(props) {
                 </div>
 
                 <div className="chiao-card-body">
-                  <p className="card-text">昏倒</p>
+                  <p className="chiao-card-text">昏倒</p>
                 </div>
               </Link>
               <Link href="/" className="chiao-card">
@@ -178,7 +182,7 @@ function IconSearch_p1(props) {
                 </div>
 
                 <div className="chiao-card-body">
-                  <p className="card-text">體重減輕</p>
+                  <p className="chiao-card-text">體重減輕</p>
                 </div>
               </Link>
               <Link href="/" className="chiao-card">
@@ -191,7 +195,7 @@ function IconSearch_p1(props) {
                 </div>
 
                 <div className="chiao-card-body">
-                  <p className="card-text">體重增加</p>
+                  <p className="chiao-card-text">體重增加</p>
                 </div>
               </Link>
             </div>
@@ -211,7 +215,7 @@ function IconSearch_p1(props) {
                 </div>
 
                 <div className="chiao-card-body">
-                  <p className="card-text">頭痛</p>
+                  <p className="chiao-card-text">頭痛</p>
                 </div>
               </div>
               <div className="chiao-card">
@@ -224,7 +228,7 @@ function IconSearch_p1(props) {
                 </div>
 
                 <div className="chiao-card-body">
-                  <p className="card-text">胸痛</p>
+                  <p className="chiao-card-text">胸痛</p>
                 </div>
               </div>
               <div className="chiao-card">
@@ -237,7 +241,7 @@ function IconSearch_p1(props) {
                 </div>
 
                 <div className="chiao-card-body">
-                  <p className="card-text">腹痛</p>
+                  <p className="chiao-card-text">腹痛</p>
                 </div>
               </div>
               <div className="chiao-card">
@@ -250,7 +254,7 @@ function IconSearch_p1(props) {
                 </div>
 
                 <div className="chiao-card-body">
-                  <p className="card-text">喉嚨痛</p>
+                  <p className="chiao-card-text">喉嚨痛</p>
                 </div>
               </div>
               <div className="chiao-card">
@@ -263,7 +267,7 @@ function IconSearch_p1(props) {
                 </div>
 
                 <div className="chiao-card-body">
-                  <p className="card-text">背部疼痛</p>
+                  <p className="chiao-card-text">背部疼痛</p>
                 </div>
               </div>
               <div className="chiao-card">
@@ -276,7 +280,7 @@ function IconSearch_p1(props) {
                 </div>
 
                 <div className="chiao-card-body">
-                  <p className="card-text">肩頸痛</p>
+                  <p className="chiao-card-text">肩頸痛</p>
                 </div>
               </div>
               <div className="chiao-card">
@@ -289,7 +293,7 @@ function IconSearch_p1(props) {
                 </div>
 
                 <div className="chiao-card-body">
-                  <p className="card-text">關節痛</p>
+                  <p className="chiao-card-text">關節痛</p>
                 </div>
               </div>
               <div className="chiao-card">
@@ -302,7 +306,7 @@ function IconSearch_p1(props) {
                 </div>
 
                 <div className="chiao-card-body">
-                  <p className="card-text">牙痛</p>
+                  <p className="chiao-card-text">牙痛</p>
                 </div>
               </div>
             </div>
@@ -322,7 +326,7 @@ function IconSearch_p1(props) {
                 </div>
 
                 <div className="chiao-card-body">
-                  <p className="card-text">腫脹</p>
+                  <p className="chiao-card-text">腫脹</p>
                 </div>
               </div>
               <div className="chiao-card">
@@ -335,7 +339,7 @@ function IconSearch_p1(props) {
                 </div>
 
                 <div className="chiao-card-body">
-                  <p className="card-text">皮疹</p>
+                  <p className="chiao-card-text">皮疹</p>
                 </div>
               </div>
               <div className="chiao-card">
@@ -348,7 +352,7 @@ function IconSearch_p1(props) {
                 </div>
 
                 <div className="chiao-card-body">
-                  <p className="card-text">癢</p>
+                  <p className="chiao-card-text">癢</p>
                 </div>
               </div>
             </div>
@@ -368,7 +372,7 @@ function IconSearch_p1(props) {
                 </div>
 
                 <div className="chiao-card-body">
-                  <p className="card-text">便秘</p>
+                  <p className="chiao-card-text">便秘</p>
                 </div>
               </div>
               <div className="chiao-card">
@@ -381,7 +385,7 @@ function IconSearch_p1(props) {
                 </div>
 
                 <div className="chiao-card-body">
-                  <p className="card-text">腹瀉</p>
+                  <p className="chiao-card-text">腹瀉</p>
                 </div>
               </div>
               <div className="chiao-card">
@@ -394,7 +398,7 @@ function IconSearch_p1(props) {
                 </div>
 
                 <div className="chiao-card-body">
-                  <p className="card-text">血尿</p>
+                  <p className="chiao-card-text">血尿</p>
                 </div>
               </div>
               <div className="chiao-card">
@@ -407,7 +411,7 @@ function IconSearch_p1(props) {
                 </div>
 
                 <div className="chiao-card-body">
-                  <p className="card-text">血便</p>
+                  <p className="chiao-card-text">血便</p>
                 </div>
               </div>
               <div className="chiao-card">
@@ -420,7 +424,7 @@ function IconSearch_p1(props) {
                 </div>
 
                 <div className="chiao-card-body">
-                  <p className="card-text">頻尿</p>
+                  <p className="chiao-card-text">頻尿</p>
                 </div>
               </div>
             </div>
@@ -440,7 +444,7 @@ function IconSearch_p1(props) {
                 </div>
 
                 <div className="chiao-card-body">
-                  <p className="card-text">失眠</p>
+                  <p className="chiao-card-text">失眠</p>
                 </div>
               </div>
               <div className="chiao-card">
@@ -453,7 +457,7 @@ function IconSearch_p1(props) {
                 </div>
 
                 <div className="chiao-card-body">
-                  <p className="card-text">焦慮/憂鬱</p>
+                  <p className="chiao-card-text">焦慮/憂鬱</p>
                 </div>
               </div>
               <div className="chiao-card">
@@ -466,7 +470,7 @@ function IconSearch_p1(props) {
                 </div>
 
                 <div className="chiao-card-body">
-                  <p className="card-text">沮喪</p>
+                  <p className="chiao-card-text">沮喪</p>
                 </div>
               </div>
               <div className="chiao-card">
@@ -479,7 +483,7 @@ function IconSearch_p1(props) {
                 </div>
 
                 <div className="chiao-card-body">
-                  <p className="card-text">厭食症</p>
+                  <p className="chiao-card-text">厭食症</p>
                 </div>
               </div>
             </div>
@@ -551,8 +555,8 @@ function IconSearch_p1(props) {
                           </span>
                           <div className="yourproduct">
                             <ProductItem />
-                            <ProductItem />
-                            <ProductItem />
+                            <ProductItem1 />
+                            <ProductItem2 />
                           </div>
                         </div>
                       </div>

@@ -9,7 +9,7 @@ function ProductItem(props) {
       <div className="item">
         {/* 圖片 */}
         <div className="pic">
-          <img src={'./images/products/products(6).jpeg'} alt="" />
+          <img src={'./images/products/products(3).jpeg'} alt="" />
           {/* 追蹤愛心 */}
           {/* <div
             className="heart"
@@ -25,13 +25,13 @@ function ProductItem(props) {
         <div className="text">
           {/* 商品名稱 */}
           <div className="title">
-            <p>順暢酵素益生菌粉包</p>
+            <p>三多 高纖乳酸菌PP粉末食品-2gx20</p>
           </div>
           {/* 下層線 */}
           <div className="line-bottom"></div>
           {/* 價格 */}
           <div className="price">
-            <p>$580</p>
+            <p>$499</p>
           </div>
         </div>
       </div>
