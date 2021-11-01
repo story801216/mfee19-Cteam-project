@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { Route, Switch, NavLink } from 'react-router-dom'
-import BookMart from '../../components/ben/BookMart'
+import BookMart from '../../components/Ben/BookMart'
 import ProductsSearchPageBackStage from './ProductsSearchPageBackStage'
 import ProductsManagementPage from './ProductsManagementPage'
 import EditProductsPage from './EditProductsPage'

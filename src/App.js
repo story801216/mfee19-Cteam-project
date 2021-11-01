@@ -7,7 +7,7 @@ import {
 } from 'react-router-dom'
 // 頁面元件
 // 所有商品頁面
-import ProductsAllPage from './pages/ben/ProductsAllPage'
+import ProductsAllPage from './pages/Ben/ProductsAllPage'
 // 後台頁面
 import BackStage from './pages/BackStage'
 // 共用元件

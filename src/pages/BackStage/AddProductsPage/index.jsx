@@ -1,4 +1,4 @@
-import AddFormInput from '../../../components/ben/AddFormInput'
+import AddFormInput from '../../../components/Ben/AddFormInput'
 import { withRouter } from 'react-router-dom'
 import './index.css'
 function AddProductsPage(props) {
