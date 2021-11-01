@@ -19,6 +19,13 @@ import BottomNavBar from './components/BottomNavBar'
 import Footer from './components/Footer'
 import './App.css'
 
+//品喬---------------------------------------------------------------
+import IconSearch_p1 from './pages/Chiao/IconSearch_p1/IconSearch_p1'
+import IconSearch_p2 from './pages/Chiao/IconSearch_p2/IconSearch_p2'
+import HospitalPage from './pages/Chiao/HospitalPage/HospitalPage'
+//品喬---------------------------------------------------------------
+
+
 function App() {
   // navbar 商品類別欄顏色切換
   const [controlCate, setControlCate] = useState('')
@@ -53,6 +60,17 @@ function App() {
               />
               {/* 後臺管理頁面 */}
               <BackStage editSid={editSid} setEditSid={setEditSid} />
+              {/* 症狀頁 */}
+              <Route path="/IconSearch_p1">
+                <IconSearch_p1 />
+              </Route>
+              <Route path="/IconSearch_p2">
+                <IconSearch_p2 />
+              </Route>
+              {/* 地圖頁 */}
+              <Route path="/HospitalPage">
+                <HospitalPage />
+              </Route>
             </MainContent>
           </Switch>
         </ScrollToTop>
