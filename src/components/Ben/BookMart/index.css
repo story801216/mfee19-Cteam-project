@@ -109,6 +109,7 @@
         display: flex;
         width: 100%;
         justify-content: space-between;
+        margin-bottom: 0;
     }
 
     /* 電腦選單條個別寬度 */

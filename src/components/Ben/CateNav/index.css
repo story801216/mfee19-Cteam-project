@@ -17,12 +17,12 @@
 
 /* ul區顯示隱藏 */
 .cate-nav .body .content.now {
-    height: 504px;
+    height: 616px;
     transition: .5s;
 }
 
 .cate-nav .cate .content.now{
-    height: 144px;
+    height: 176px;
     transition: .5s;
 }
 
@@ -48,6 +48,7 @@
     font-size: 25px;
     font-weight: 700;
     text-align: center;
+    margin-bottom: 0;
 }
 
 /* 標題前的藍線 */
@@ -76,6 +77,7 @@
 .cate-nav .cate .title div,
 .cate-nav .body .title div {
     display: flex;
+    align-items: center;
     justify-content: space-between;
     cursor: pointer;
 }
@@ -92,6 +94,11 @@
 .cate-nav .body .title .arrow {
     width: 22px;
     height: 22px;
+}
+
+.cate-nav .cate ul,
+.cate-nav .body ul {
+    margin-bottom: 0;
 }
 
 /* 類別內容 */

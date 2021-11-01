@@ -18,7 +18,7 @@
 
 /* ul區顯示隱藏 */
 .cate-nav .cate .content.now{
-    height: 144px;
+    height: 176px;
     transition: .5s;
 }
 
@@ -69,6 +69,7 @@
 /* 小標題 文字和箭頭排列 */
 .cate-nav .cate .title div {
     display: flex;
+    align-items: center;
     justify-content: space-between;
     cursor: pointer;
 }
