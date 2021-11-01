@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useImperativeHandle } from 'react'
 import { withRouter } from 'react-router-dom' //Refs節點
 import _ from 'lodash' //引入方法函示庫，react內建不需安裝
-import { GoogleKey } from '../Key'
+// import { GoogleKey } from '../Key'
 import GoogleMapReact from 'google-map-react'
 import { MdLocationOn } from 'react-icons/md' //座標
 import { FcBusinessman } from 'react-icons/fc' //人物招手
@@ -148,13 +148,13 @@ function HospitalMap(props) {
   }, [])
 
   //地址轉經緯度
-  const fetchLatLng = async (addr) => {
-    const result = await fetch(
-      `https://maps.google.com/maps/api/geocode/json?&address=${addr}&result_type=street_address&language=zh-TW&sensor=true&key=${GoogleKey}`
-    ).then((res) => res.json())
-    // console.log(result.results[0].geometry.location)
-    return result.results[0].geometry.location
-  }
+  // const fetchLatLng = async (addr) => {
+  //   const result = await fetch(
+  //     `https://maps.google.com/maps/api/geocode/json?&address=${addr}&result_type=street_address&language=zh-TW&sensor=true&key=${GoogleKey}`
+  //   ).then((res) => res.json())
+  //   // console.log(result.results[0].geometry.location)
+  //   return result.results[0].geometry.location
+  // }
 
   //定位 getG
   const getG = () => {
@@ -286,7 +286,7 @@ function HospitalMap(props) {
         <div className="mapright" style={{ height: '80vh' }}>
           <GoogleMapReact
             center={getGps}
-            bootstrapURLKeys={{ key: GoogleKey }}
+            // bootstrapURLKeys={{ key: GoogleKey }}
             defaultCenter={defaultProps.center}
             defaultZoom={defaultProps.zoom}
             yesIWantToUseGoogleMapApiInternals

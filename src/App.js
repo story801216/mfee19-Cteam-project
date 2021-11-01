@@ -25,7 +25,6 @@ import IconSearch_p2 from './pages/Chiao/IconSearch_p2/IconSearch_p2'
 import HospitalPage from './pages/Chiao/HospitalPage/HospitalPage'
 //品喬---------------------------------------------------------------
 
-
 function App() {
   // navbar 商品類別欄顏色切換
   const [controlCate, setControlCate] = useState('')

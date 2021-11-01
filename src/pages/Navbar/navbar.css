@@ -36,7 +36,11 @@
 
 .positionIconA {
   display: flex;
+  align-items: center;
   gap: 10px;
+}
+.positionIconA  p{
+  margin-bottom: 0;
 }
 .navbarLinkDesTop2 {
   display: flex;
