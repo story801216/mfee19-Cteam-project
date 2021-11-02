@@ -4,6 +4,10 @@
   margin-top: 30px;
 }
 
+.choose-btn3{
+  margin-top: 50px;
+}
+
 
 /* 搜尋欄 */
 .flex-container1 {
@@ -205,6 +209,12 @@
 
   .maptext {
     text-align: center;
+  }
+
+  .choose-btn3>.cate-button{
+    width: 345px;
+    margin: auto;
+    margin-bottom: 20px;
   }
 
 }

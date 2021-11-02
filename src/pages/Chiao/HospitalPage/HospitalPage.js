@@ -8,6 +8,8 @@ import { AiOutlineSearch } from 'react-icons/ai'
 import { MdMyLocation } from 'react-icons/md'
 import { withRouter } from 'react-router-dom'
 import CardStores from '../../../components/Chiao/CardForMap/CardStores'
+import BreadCrumb from '../../../components/Chiao/BreadCrumb'
+
 const Banner = './images/page_topbanner.png'
 
 function HospitalPage(props) {
@@ -137,6 +139,7 @@ function HospitalPage(props) {
       </div>
       <div className="chiao-container2">
         <div className="choose-btn3">
+          <BreadCrumb />
           <CateButtonComputer3 />
           <CateButton3 />
         </div>

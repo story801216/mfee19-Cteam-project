@@ -306,7 +306,7 @@ function HospitalMap(props) {
               <AnyReactComponent
                 lat={getGps.lat}
                 lng={getGps.lng}
-                text={''}
+                text={'您所在的位置'}
                 src={<FcBusinessman style={{ color: 'red' }} size="4em" />}
               />
             )}
