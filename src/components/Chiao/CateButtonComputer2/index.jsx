@@ -12,7 +12,7 @@ function CateButton() {
         <div className="cate-option">
           <Link
             to="/iconsearch_p1"
-            className={controlCateButton === 0 ? 'now' : ''}
+            className={controlCateButton === 1 ? 'now' : ''}
             onClick={() => {
               setControlCateButton(1)
             }}
@@ -23,7 +23,7 @@ function CateButton() {
         <div className="body-option">
           <Link
             to="/iconsearch_p2"
-            className={controlCateButton === 1 ? 'now' : ''}
+            className={controlCateButton === 0 ? 'now' : ''}
             onClick={() => {
               setControlCateButton(0)
             }}
