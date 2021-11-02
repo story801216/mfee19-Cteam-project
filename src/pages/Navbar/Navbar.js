@@ -53,7 +53,7 @@ function Navbar(props) {
                 <Link to={'/followdPage'} className="navChandePageEnc">
                   <FiHeart />
                 </Link>
-                <a href="https://www.youtube.com/" className="navChandePageEnc">
+                <a href="/cart" className="navChandePageEnc">
                   <BsCart2 />
                 </a>
                 <Link to="/Login">

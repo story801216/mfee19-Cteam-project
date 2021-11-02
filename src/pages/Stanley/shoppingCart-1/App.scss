@@ -1,0 +1,93 @@
+.SC1 {
+
+
+  /* 送貨及付款方式 */
+  .delivery-payment-box {
+    height: 430px;
+    outline: 1px solid #ecebeb;
+  }
+
+  /* 共用的title大小 */
+  .delivery-payment-title,
+  .summary-title {
+    width: 100%;
+    height: 70px;
+    background-color: #ecebeb;
+    font-size: 30px;
+    line-height: 70px;
+    padding-left: 25px;
+  }
+
+  .dp-select-area {
+    padding: 15px 25px;
+    font-size: 20px;
+  }
+  .subtitle {
+    font-size: 20px;
+    margin-bottom: 10px;
+  }
+
+  select {
+    width: 100%;
+    height: 65px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    border: 1px solid #aaa8a8;
+    padding: 0 15px;
+    font-size: 20px;
+    margin-bottom: 20px;
+  }
+
+  /* =========== 手機版 ================ */
+
+  /* 購物車 */
+  @media screen and (max-width: 376px) {
+    
+
+    /* 送貨及付款方式 */
+    .delivery-payment-box {
+      height: auto;
+      outline: 1px solid #ecebeb;
+      margin-bottom: 30px;
+    }
+
+    /* 共用的title大小 */
+    .delivery-payment-title,
+    .summary-title {
+      width: 100%;
+      height: 45px;
+      background-color: #ecebeb;
+      font-size: 18px;
+      line-height: 45px;
+      padding-left: 15px;
+    }
+
+    .dp-select-area {
+      padding: 15px;
+      font-size: 16px;
+    }
+    .subtitle {
+      font-size: 16px;
+      margin-bottom: 10px;
+    }
+
+    /* 選擇框大小 */
+    .dp-select {
+      width: 100%;
+      height: 55px;
+      margin-bottom: 15px;
+    }
+
+    select {
+      width: 100%;
+      height: 55px;
+      margin-bottom: 10px;
+      border-radius: 5px;
+      border: 1px solid #aaa8a8;
+      padding: 0 15px;
+      font-size: 16px;
+      margin-bottom: 10px;
+    }
+
+  }
+}

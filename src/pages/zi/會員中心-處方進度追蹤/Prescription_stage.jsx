@@ -49,7 +49,10 @@ function Prescription_stage() {
             <div className="zi-prescription_stage-prescription-card">
               <div className="zi-prescription_stage-infolist">
                 <div className="zi-prescription_stage-hidden-bar">
-                  <img src="http://localhost:3000/images/icon/up-arrow.png" alt="" />
+                  <img
+                    src="http://localhost:3000/images/icon/up-arrow.png"
+                    alt=""
+                  />
                 </div>
                 <ul>
                   <div>

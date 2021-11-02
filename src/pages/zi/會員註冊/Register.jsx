@@ -25,7 +25,7 @@ function Register() {
       })
         .then((res) => {
           alert('註冊成功，將轉跳到登入頁!')
-          window.location.href='./Login';
+          window.location.href = './Login'
         })
         .catch((err) => {
           console.log(err)
@@ -37,7 +37,11 @@ function Register() {
   return (
     <>
       <div className="zi-register">
-        <img className="zi-register-background" src="http://localhost:3000/images/background/loginBackground.png" alt="" />
+        <img
+          className="zi-register-background"
+          src="http://localhost:3000/images/background/loginBackground.png"
+          alt=""
+        />
         <div className="zi-register-card">
           <div className="zi-register-card-content">
             <h1>會員註冊</h1>

@@ -32,7 +32,7 @@ function Prescription_Reserve() {
       })
         .then((res) => {
           console.log('上傳成功')
-          window.location.href='./Select_Shop';
+          window.location.href = './Select_Shop'
         })
         .catch((err) => {
           console.log(err)
@@ -43,7 +43,11 @@ function Prescription_Reserve() {
   return (
     <>
       <div className="zi-Prescription">
-        <img className="zi-Prescription-background" src="http://localhost:3000/images/background/Prescription_Reserve_background.jpg" alt="" />
+        <img
+          className="zi-Prescription-background"
+          src="http://localhost:3000/images/background/Prescription_Reserve_background.jpg"
+          alt=""
+        />
         <div className="zi-Prescription-form-list">
           <div className="zi-Prescription-card-content">
             <h1>填寫處方資料</h1>

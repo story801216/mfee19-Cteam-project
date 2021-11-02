@@ -34,6 +34,9 @@ import ZiAllPage from './pages/zi'
 //會員中心
 import MemberCenter from './pages/MemberCenter'
 
+// 相宸-------------------------------------------------------
+import StanleyAllPage from './pages/Stanley/App'
+
 function App() {
   // navbar 商品類別欄顏色切換
   const [controlCate, setControlCate] = useState('')
@@ -91,6 +94,8 @@ function App() {
               <Route path="/HospitalPage">
                 <HospitalPage />
               </Route>
+              {/* 購物車 */}
+              <StanleyAllPage />
             </MainContent>
           </Switch>
         </ScrollToTop>

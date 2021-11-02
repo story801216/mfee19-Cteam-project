@@ -1,6 +1,5 @@
 import './Member_revise.css'
 
-
 function Member_revise() {
   return (
     <>
