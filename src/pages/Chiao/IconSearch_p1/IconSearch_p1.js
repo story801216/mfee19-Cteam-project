@@ -536,7 +536,13 @@ function IconSearch_p1(props) {
                         </div>
 
                         <div className="suggest-btn">
-                          <button className="search-btn">
+                          <button
+                            className="search-btn"
+                            onClick={(e) => {
+                              e.preventDefault()
+                              window.location.href = '/HospitalPage'
+                            }}
+                          >
                             <span>找尋附近醫院｜診所</span>
                             <AiOutlineArrowRight />
                           </button>
@@ -605,7 +611,13 @@ function IconSearch_p1(props) {
                         </div>
 
                         <div className="suggest-btn">
-                          <button className="search-btn">
+                          <button
+                            className="search-btn"
+                            onClick={(e) => {
+                              e.preventDefault()
+                              window.location.href = '/HospitalPage'
+                            }}
+                          >
                             <span>找尋附近醫院｜診所</span>
                             <AiOutlineArrowRight />
                           </button>
@@ -671,7 +683,13 @@ function IconSearch_p1(props) {
                         </div>
 
                         <div className="suggest-btn">
-                          <button className="search-btn">
+                          <button
+                            className="search-btn"
+                            onClick={(e) => {
+                              e.preventDefault()
+                              window.location.href = '/HospitalPage'
+                            }}
+                          >
                             <span>找尋附近醫院｜診所</span>
                             <AiOutlineArrowRight />
                           </button>
@@ -735,7 +753,13 @@ function IconSearch_p1(props) {
                         </div>
 
                         <div className="suggest-btn">
-                          <button className="search-btn">
+                          <button
+                            className="search-btn"
+                            onClick={(e) => {
+                              e.preventDefault()
+                              window.location.href = '/HospitalPage'
+                            }}
+                          >
                             <span>找尋附近醫院｜診所</span>
                             <AiOutlineArrowRight />
                           </button>
@@ -798,7 +822,13 @@ function IconSearch_p1(props) {
                         </div>
 
                         <div className="suggest-btn">
-                          <button className="search-btn">
+                          <button
+                            className="search-btn"
+                            onClick={(e) => {
+                              e.preventDefault()
+                              window.location.href = '/HospitalPage'
+                            }}
+                          >
                             <span>找尋附近醫院｜診所</span>
                             <AiOutlineArrowRight />
                           </button>
@@ -864,7 +894,13 @@ function IconSearch_p1(props) {
                         </div>
 
                         <div className="suggest-btn">
-                          <button className="search-btn">
+                          <button
+                            className="search-btn"
+                            onClick={(e) => {
+                              e.preventDefault()
+                              window.location.href = '/HospitalPage'
+                            }}
+                          >
                             <span>找尋附近醫院｜診所</span>
                             <AiOutlineArrowRight />
                           </button>
@@ -927,7 +963,13 @@ function IconSearch_p1(props) {
                         </div>
 
                         <div className="suggest-btn">
-                          <button className="search-btn">
+                          <button
+                            className="search-btn"
+                            onClick={(e) => {
+                              e.preventDefault()
+                              window.location.href = '/HospitalPage'
+                            }}
+                          >
                             <span>找尋附近醫院｜診所</span>
                             <AiOutlineArrowRight />
                           </button>
@@ -990,7 +1032,13 @@ function IconSearch_p1(props) {
                         </div>
 
                         <div className="suggest-btn">
-                          <button className="search-btn">
+                          <button
+                            className="search-btn"
+                            onClick={(e) => {
+                              e.preventDefault()
+                              window.location.href = '/HospitalPage'
+                            }}
+                          >
                             <span>找尋附近醫院｜診所</span>
                             <AiOutlineArrowRight />
                           </button>
@@ -1053,7 +1101,13 @@ function IconSearch_p1(props) {
                         </div>
 
                         <div className="suggest-btn">
-                          <button className="search-btn">
+                          <button
+                            className="search-btn"
+                            onClick={(e) => {
+                              e.preventDefault()
+                              window.location.href = '/HospitalPage'
+                            }}
+                          >
                             <span>找尋附近醫院｜診所</span>
                             <AiOutlineArrowRight />
                           </button>
@@ -1116,7 +1170,13 @@ function IconSearch_p1(props) {
                         </div>
 
                         <div className="suggest-btn">
-                          <button className="search-btn">
+                          <button
+                            className="search-btn"
+                            onClick={(e) => {
+                              e.preventDefault()
+                              window.location.href = '/HospitalPage'
+                            }}
+                          >
                             <span>找尋附近醫院｜診所</span>
                             <AiOutlineArrowRight />
                           </button>
@@ -1179,7 +1239,13 @@ function IconSearch_p1(props) {
                         </div>
 
                         <div className="suggest-btn">
-                          <button className="search-btn">
+                          <button
+                            className="search-btn"
+                            onClick={(e) => {
+                              e.preventDefault()
+                              window.location.href = '/HospitalPage'
+                            }}
+                          >
                             <span>找尋附近醫院｜診所</span>
                             <AiOutlineArrowRight />
                           </button>
@@ -1247,7 +1313,13 @@ function IconSearch_p1(props) {
                         </div>
 
                         <div className="suggest-btn">
-                          <button className="search-btn">
+                          <button
+                            className="search-btn"
+                            onClick={(e) => {
+                              e.preventDefault()
+                              window.location.href = '/HospitalPage'
+                            }}
+                          >
                             <span>找尋附近醫院｜診所</span>
                             <AiOutlineArrowRight />
                           </button>
@@ -1310,7 +1382,13 @@ function IconSearch_p1(props) {
                         </div>
 
                         <div className="suggest-btn">
-                          <button className="search-btn">
+                          <button
+                            className="search-btn"
+                            onClick={(e) => {
+                              e.preventDefault()
+                              window.location.href = '/HospitalPage'
+                            }}
+                          >
                             <span>找尋附近醫院｜診所</span>
                             <AiOutlineArrowRight />
                           </button>
@@ -1376,7 +1454,13 @@ function IconSearch_p1(props) {
                         </div>
 
                         <div className="suggest-btn">
-                          <button className="search-btn">
+                          <button
+                            className="search-btn"
+                            onClick={(e) => {
+                              e.preventDefault()
+                              window.location.href = '/HospitalPage'
+                            }}
+                          >
                             <span>找尋附近醫院｜診所</span>
                             <AiOutlineArrowRight />
                           </button>
@@ -1442,7 +1526,13 @@ function IconSearch_p1(props) {
                         </div>
 
                         <div className="suggest-btn">
-                          <button className="search-btn">
+                          <button
+                            className="search-btn"
+                            onClick={(e) => {
+                              e.preventDefault()
+                              window.location.href = '/HospitalPage'
+                            }}
+                          >
                             <span>找尋附近醫院｜診所</span>
                             <AiOutlineArrowRight />
                           </button>
@@ -1508,7 +1598,13 @@ function IconSearch_p1(props) {
                         </div>
 
                         <div className="suggest-btn">
-                          <button className="search-btn">
+                          <button
+                            className="search-btn"
+                            onClick={(e) => {
+                              e.preventDefault()
+                              window.location.href = '/HospitalPage'
+                            }}
+                          >
                             <span>找尋附近醫院｜診所</span>
                             <AiOutlineArrowRight />
                           </button>
@@ -1574,7 +1670,13 @@ function IconSearch_p1(props) {
                         </div>
 
                         <div className="suggest-btn">
-                          <button className="search-btn">
+                          <button
+                            className="search-btn"
+                            onClick={(e) => {
+                              e.preventDefault()
+                              window.location.href = '/HospitalPage'
+                            }}
+                          >
                             <span>找尋附近醫院｜診所</span>
                             <AiOutlineArrowRight />
                           </button>
@@ -1637,7 +1739,13 @@ function IconSearch_p1(props) {
                         </div>
 
                         <div className="suggest-btn">
-                          <button className="search-btn">
+                          <button
+                            className="search-btn"
+                            onClick={(e) => {
+                              e.preventDefault()
+                              window.location.href = '/HospitalPage'
+                            }}
+                          >
                             <span>找尋附近醫院｜診所</span>
                             <AiOutlineArrowRight />
                           </button>
@@ -1700,7 +1808,13 @@ function IconSearch_p1(props) {
                         </div>
 
                         <div className="suggest-btn">
-                          <button className="search-btn">
+                          <button
+                            className="search-btn"
+                            onClick={(e) => {
+                              e.preventDefault()
+                              window.location.href = '/HospitalPage'
+                            }}
+                          >
                             <span>找尋附近醫院｜診所</span>
                             <AiOutlineArrowRight />
                           </button>
@@ -1763,7 +1877,13 @@ function IconSearch_p1(props) {
                         </div>
 
                         <div className="suggest-btn">
-                          <button className="search-btn">
+                          <button
+                            className="search-btn"
+                            onClick={(e) => {
+                              e.preventDefault()
+                              window.location.href = '/HospitalPage'
+                            }}
+                          >
                             <span>找尋附近醫院｜診所</span>
                             <AiOutlineArrowRight />
                           </button>
@@ -1826,7 +1946,13 @@ function IconSearch_p1(props) {
                         </div>
 
                         <div className="suggest-btn">
-                          <button className="search-btn">
+                          <button
+                            className="search-btn"
+                            onClick={(e) => {
+                              e.preventDefault()
+                              window.location.href = '/HospitalPage'
+                            }}
+                          >
                             <span>找尋附近醫院｜診所</span>
                             <AiOutlineArrowRight />
                           </button>
@@ -1892,7 +2018,13 @@ function IconSearch_p1(props) {
                         </div>
 
                         <div className="suggest-btn">
-                          <button className="search-btn">
+                          <button
+                            className="search-btn"
+                            onClick={(e) => {
+                              e.preventDefault()
+                              window.location.href = '/HospitalPage'
+                            }}
+                          >
                             <span>找尋附近醫院｜診所</span>
                             <AiOutlineArrowRight />
                           </button>
@@ -1958,7 +2090,13 @@ function IconSearch_p1(props) {
                         </div>
 
                         <div className="suggest-btn">
-                          <button className="search-btn">
+                          <button
+                            className="search-btn"
+                            onClick={(e) => {
+                              e.preventDefault()
+                              window.location.href = '/HospitalPage'
+                            }}
+                          >
                             <span>找尋附近醫院｜診所</span>
                             <AiOutlineArrowRight />
                           </button>
@@ -2024,7 +2162,13 @@ function IconSearch_p1(props) {
                         </div>
 
                         <div className="suggest-btn">
-                          <button className="search-btn">
+                          <button
+                            className="search-btn"
+                            onClick={(e) => {
+                              e.preventDefault()
+                              window.location.href = '/HospitalPage'
+                            }}
+                          >
                             <span>找尋附近醫院｜診所</span>
                             <AiOutlineArrowRight />
                           </button>
@@ -2087,7 +2231,13 @@ function IconSearch_p1(props) {
                         </div>
 
                         <div className="suggest-btn">
-                          <button className="search-btn">
+                          <button
+                            className="search-btn"
+                            onClick={(e) => {
+                              e.preventDefault()
+                              window.location.href = '/HospitalPage'
+                            }}
+                          >
                             <span>找尋附近醫院｜診所</span>
                             <AiOutlineArrowRight />
                           </button>
@@ -2150,7 +2300,13 @@ function IconSearch_p1(props) {
                         </div>
 
                         <div className="suggest-btn">
-                          <button className="search-btn">
+                          <button
+                            className="search-btn"
+                            onClick={(e) => {
+                              e.preventDefault()
+                              window.location.href = '/HospitalPage'
+                            }}
+                          >
                             <span>找尋附近醫院｜診所</span>
                             <AiOutlineArrowRight />
                           </button>
@@ -2213,7 +2369,13 @@ function IconSearch_p1(props) {
                         </div>
 
                         <div className="suggest-btn">
-                          <button className="search-btn">
+                          <button
+                            className="search-btn"
+                            onClick={(e) => {
+                              e.preventDefault()
+                              window.location.href = '/HospitalPage'
+                            }}
+                          >
                             <span>找尋附近醫院｜診所</span>
                             <AiOutlineArrowRight />
                           </button>
@@ -2277,7 +2439,13 @@ function IconSearch_p1(props) {
                         </div>
 
                         <div className="suggest-btn">
-                          <button className="search-btn">
+                          <button
+                            className="search-btn"
+                            onClick={(e) => {
+                              e.preventDefault()
+                              window.location.href = '/HospitalPage'
+                            }}
+                          >
                             <span>找尋附近醫院｜診所</span>
                             <AiOutlineArrowRight />
                           </button>
@@ -2344,7 +2512,13 @@ function IconSearch_p1(props) {
                         </div>
 
                         <div className="suggest-btn">
-                          <button className="search-btn">
+                          <button
+                            className="search-btn"
+                            onClick={(e) => {
+                              e.preventDefault()
+                              window.location.href = '/HospitalPage'
+                            }}
+                          >
                             <span>找尋附近醫院｜診所</span>
                             <AiOutlineArrowRight />
                           </button>
@@ -2408,7 +2582,13 @@ function IconSearch_p1(props) {
                         </div>
 
                         <div className="suggest-btn">
-                          <button className="search-btn">
+                          <button
+                            className="search-btn"
+                            onClick={(e) => {
+                              e.preventDefault()
+                              window.location.href = '/HospitalPage'
+                            }}
+                          >
                             <span>找尋附近醫院｜診所</span>
                             <AiOutlineArrowRight />
                           </button>
