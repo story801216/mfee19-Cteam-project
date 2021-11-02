@@ -21,6 +21,7 @@ function CreditCard() {
     }
 
     document.querySelector('.expire-date').oninput = () => {
+      // TODO：修改輸入為0時正確顯示值
       if (document.querySelector('.expire-date').value.length <= 2) {
         const mm = document.querySelector('.expire-date').value.slice(0, 2)
         document.querySelector('.exp-month').innerText = mm
@@ -117,7 +118,7 @@ function CreditCard() {
                     </div>
                     <div className="card-number-box">#### #### #### ####</div>
                     <div className="flexbox">
-                      <div className="box"></div>
+                      <div className="exp-box"></div>
                       <div className="exp-box">
                         <span>expires</span>
                         <div className="expiration">
