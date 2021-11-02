@@ -3,6 +3,11 @@
     justify-content: center;
 }
 
+ul.pagination .page-item.active{
+    width: auto;
+    height: auto;
+}
+
 /* 按鈕li */
 ul.pagination li.page-item {
     display: flex;

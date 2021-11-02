@@ -8,6 +8,11 @@ ol.breadcrumb {
     padding: 0.75rem 1rem;
 }
 
+.breadcrumb-item.active{
+    width: auto;
+    height: auto;
+}
+
 .breadcrumb a:hover {
     color: #fff;
     border-radius: 35px;
@@ -17,8 +22,6 @@ ol.breadcrumb {
 
 
 .breadcrumb li+li:before {
-    content: '>';
-    color: #7F7F7F;
     margin-right: 10px;
 }
 
