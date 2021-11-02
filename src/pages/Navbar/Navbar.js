@@ -33,12 +33,22 @@ function Navbar(props) {
           </div>
           <div className="navbarLinkDesTop">
             <div className="navbarLinkDesTop1">
-              <a href="https://www.youtube.com/" className="navChandePageEnc">
-                <div className="positionIconA">
-                  <MdOutlineAssignment />
-                  <p>處方領藥</p>
-                </div>
-              </a>
+              <Link to="/Prescription_Reserve">
+                <a href="/Prescription_Reserve" className="navChandePageEnc">
+                  <div className="positionIconA">
+                    <MdOutlineAssignment />
+                    <p>處方領藥</p>
+                  </div>
+                </a>
+              </Link>
+              <Link to="/User">
+                <a href="/User" className="navChandePageEnc">
+                  <div className="positionIconA">
+                    <FaRegUserCircle />
+                    <p>會員中心</p>
+                  </div>
+                </a>
+              </Link>
               <div className="navbarAllIcon">
                 <Link to={'/followdPage'} className="navChandePageEnc">
                   <FiHeart />
@@ -46,9 +56,11 @@ function Navbar(props) {
                 <a href="https://www.youtube.com/" className="navChandePageEnc">
                   <BsCart2 />
                 </a>
-                <a href="https://www.youtube.com/" className="navChandePageEnc">
-                  <FaRegUserCircle />
-                </a>
+                <Link to="/Login">
+                  <a href="/Login" className="navChandePageEnc">
+                    <FaRegUserCircle />
+                  </a>
+                </Link>
               </div>
             </div>
             <div className="navbarLinkDesTop2">
@@ -127,14 +139,28 @@ function Navbar(props) {
         </div>
         <div className={buttonIndex === 2 ? 'buttonAndIconPush' : ''}>
           {buttonIndex === 2 ? (
-            <NewPush name1="活動專區" name2="相關連結"  pos1={1700}  pos2={4300} path1='/HomePage' path2='/HomePage' />
+            <NewPush
+              name1="活動專區"
+              name2="相關連結"
+              pos1={1700}
+              pos2={4300}
+              path1="/HomePage"
+              path2="/HomePage"
+            />
           ) : (
             ''
           )}
         </div>
         <div className={buttonIndex === 3 ? 'buttonAndIconPush' : ''}>
           {buttonIndex === 3 ? (
-            <NewPush name1="品牌介紹" name2="門市資訊" pos1={3200}  pos2={100} path1='/HomePage' path2='/StoresMap' />
+            <NewPush
+              name1="品牌介紹"
+              name2="門市資訊"
+              pos1={3200}
+              pos2={100}
+              path1="/HomePage"
+              path2="/StoresMap"
+            />
           ) : (
             ''
           )}

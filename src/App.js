@@ -28,6 +28,12 @@ import HospitalPage from './pages/Chiao/HospitalPage/HospitalPage'
 //羿伶頁面
 import PortiaAllPage from './pages/Yiling/PortiaAllPage/PortiaAllPage'
 
+//梓庭頁面
+import ZiAllPage from './pages/zi'
+
+//會員中心
+import MemberCenter from './pages/MemberCenter'
+
 function App() {
   // navbar 商品類別欄顏色切換
   const [controlCate, setControlCate] = useState('')
@@ -54,6 +60,12 @@ function App() {
         <ScrollToTop>
           <Switch>
             <MainContent>
+              {/* 註冊、登入、預約領藥 */}
+              <ZiAllPage />
+              {/* 會員資料修改、會員處方資料列表 */}
+              <Route path="/User">
+                <MemberCenter />
+              </Route>
               {/* 所有商品頁面 */}
               <ProductsAllPage
                 controlCate={controlCate}

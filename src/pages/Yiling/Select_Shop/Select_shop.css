@@ -1,13 +1,11 @@
 .zi-select-shop {
   position: relative;
-  top: 120px;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 @media (max-width: 375px) {
   .zi-select-shop {
-    top: 55px;
     align-items: stretch;
     justify-content:stretch;
   }
@@ -87,7 +85,7 @@
   padding-right: 10px;
   color: white;
   margin-top: 44px;
-  margin-left: 26%;
+  margin-left: 21%;
   width: 266px;
   height: 56px;
   background-color: #7f7f7f;
