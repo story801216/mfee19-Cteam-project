@@ -4,7 +4,7 @@ import './Summary.css'
 function Summary(props) {
   const {
     total,
-    mycartDisplay,
+    mycart,
     productCount,
     deliveryLocation,
     deliveryMethod,
@@ -15,7 +15,7 @@ function Summary(props) {
   const handlecheckout = () => {
     const obj = {
       total: total,
-      mycartDisplay: mycartDisplay,
+      mycart: mycart,
       productCount: productCount(),
       deliveryLocation: deliveryLocation,
       deliveryMethod: deliveryMethod,
