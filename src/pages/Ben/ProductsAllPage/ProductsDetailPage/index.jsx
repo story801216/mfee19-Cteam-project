@@ -194,12 +194,7 @@ function ProductsDetailPage(props) {
     localStorage.setItem('cart', JSON.stringify(newMycartDisplay))
 
     // 設定資料
-<<<<<<< HEAD
     setMyCart(newMycartDisplay)
-    setIsCart(true)
-=======
-    setMyCart(currentCart)
->>>>>>> a04af4a586d44136050ae32078d9be6119460669
   }
 
   // 取消追蹤
