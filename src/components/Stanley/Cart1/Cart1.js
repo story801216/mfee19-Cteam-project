@@ -4,7 +4,7 @@ import ProductItem from './ProductItem/ProductItem'
 
 // Cart1是結帳第一步還可以選取商品數量的地方
 function Cart1(props) {
-  const { mycartDisplay, setMycartDisplay } = props
+  const { mycart, setMycart } = props
 
   return (
     <>
@@ -22,13 +22,13 @@ function Cart1(props) {
           </div>
         </div>
         {/* 商品*1 */}
-        {mycartDisplay.map((v, i) => {
+        {mycart.map((v, i) => {
           return (
             <ProductItem
-              mycartDisplay={mycartDisplay}
-              setMycartDisplay={setMycartDisplay}
+              mycart={mycart}
+              setMycart={setMycart}
               key={v.id}
-              id={v.id}
+              sid={v.sid}
               picture={v.image}
               name={v.Name}
               price={v.price}
@@ -36,14 +36,14 @@ function Cart1(props) {
               setCount={(newCount) => {
                 // 針對react state(狀態)為 obj,array時所作的處理
                 //1. 先從原本的陣列拷貝出一個新陣列(在這上面處理)
-                const newProductsInOrder = [...mycartDisplay]
+                const newProductsInOrder = [...mycart]
 
                 //2. 運算處理：更新陣列中對應商品數量
                 // 更新陣列中本商品索引值，如果小於1以1來更新
                 newProductsInOrder[i].amount = newCount < 1 ? 1 : newCount
 
                 // //3. 設定回原本的狀態
-                setMycartDisplay(newProductsInOrder)
+                setMycart(newProductsInOrder)
               }}
             />
           )

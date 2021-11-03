@@ -3,7 +3,7 @@ import './ProductItem2.css'
 
 // item2是已經進行到不能調整數量的狀態
 function ProductItem2(props) {
-  const { mycart } = props
+  const { image, Name, price, amount, subtotal } = props
   return (
     <>
       <div className="productItem2">
@@ -13,17 +13,13 @@ function ProductItem2(props) {
             <div className="row align-items-center ">
               <div className="col-6 d-flex align-items-center">
                 <div className="product-img">
-                  <img src={mycart.picture} alt="" />
+                  <img src={image} alt="" />
                 </div>
-                <div className="product-description">{mycart.name}</div>
+                <div className="product-description">{Name}</div>
               </div>
-              <div className="col-2 text-center">NT${mycart.price}</div>
-              <div className="col-2 text-center">
-                <div className="number">{mycart.amount}</div>
-              </div>
-              <div className="col-2 text-right">
-                NT${mycart.price * mycart.amount}
-              </div>
+              <div className="col-2 text-center">NT${price}</div>
+              <div className="col-2 text-center">{amount}</div>
+              <div className="col-2 text-right">NT${subtotal}</div>
             </div>
           </div>
         </div>
@@ -35,7 +31,7 @@ function ProductItem2(props) {
               {/* 商品圖片區(左) */}
               <div className="col-4">
                 <div className="product-img">
-                  <img src={mycart.picture} alt="" />
+                  <img src={image} alt="" />
                 </div>
               </div>
               {/* 其他文字區(右) */}
@@ -43,14 +39,14 @@ function ProductItem2(props) {
                 {/* 商品介紹&X(上區) */}
                 <div className="row">
                   <div className="col-9">
-                    <div className="product-description">{mycart.name}</div>
+                    <div className="product-description">{Name}</div>
                   </div>
                   <div className="col-3">x1</div>
                 </div>
                 {/* 價格(中區) */}
                 <div className="row">
                   <div className="col">
-                    <div className="price text-left">NT${mycart.price}</div>
+                    <div className="price text-left">NT${price}</div>
                   </div>
                 </div>
               </div>

@@ -12,65 +12,30 @@ function App() {
   const [deliveryLocation, setDeliveryLocation] = useState('')
   const [deliveryMethod, setDeliveryMethod] = useState('')
   const [paymentMethod, setPaymentMethod] = useState('')
+
   // localStorage裡面加入購物車的商品
   const [mycart, setMycart] = useState([])
-  // 在購物車中會顯示的商品狀態
-  const [mycartDisplay, setMycartDisplay] = useState([])
 
-  // didMount 讀 localStorage
+  // didmount & didupdate時 讀 localStorage
   useEffect(() => {
-    const myCart = localStorage.getItem('cart')
+    const currentCart = localStorage.getItem('cart')
       ? JSON.parse(localStorage.getItem('cart'))
       : []
 
-    setMycart(myCart)
-  }, [])
-
-  //  componentDidUpdate
-  useEffect(() => {
-    // mycartDisplay運算
-    let newMycartDisplay = []
-
-    //尋找mycartDisplay
-    for (let i = 0; i < mycart.length; i++) {
-      //尋找mycartDisplay中有沒有此mycart[i].id
-      //有找到會返回陣列成員的索引值
-      //沒找到會返回-1
-      const index = newMycartDisplay.findIndex(
-        (value) => value.sid === mycart[i].sid
-      )
-      //有的話就數量+1
-      if (index !== -1) {
-        //每次只有加1個數量
-        //newMycartDisplay[index].amount++
-        //假設是加數量的
-        newMycartDisplay[index].amount += mycart[i].amount
-      } else {
-        //沒有的話就把項目加入，數量為1
-        const newItem = { ...mycart[i] }
-        newMycartDisplay = [...newMycartDisplay, newItem]
-      }
-    }
-
-    console.log(newMycartDisplay)
-    setMycartDisplay(newMycartDisplay)
-    // 把整理好的商品清單存到local
-    localStorage.setItem('cart', JSON.stringify(newMycartDisplay))
+    setMycart(currentCart)
   }, [mycart])
 
-  // Summary
-  // 計算目前所有的不重複商品數量
+  // 計算目前所有的不重複商品數量 
   const productCount = () => {
-    let totalCount = mycartDisplay.length
-    
+    let totalCount = mycart.length
+
     return totalCount
   }
-
   // 計算目前所有的商品總價
   const total = () => {
     let sum = 0
-    for (let i = 0; i < mycartDisplay.length; i++) {
-      sum += mycartDisplay[i].amount * mycartDisplay[i].price
+    for (let i = 0; i < mycart.length; i++) {
+      sum += mycart[i].amount * mycart[i].price
     }
     console.log(sum)
     return sum
@@ -82,10 +47,7 @@ function App() {
         <div className="container">
           {/* checkline 進度條 */}
           <Checkline state={state} />
-          <Cart1
-            mycartDisplay={mycartDisplay}
-            setMycartDisplay={setMycartDisplay}
-          />
+          <Cart1 mycart={mycart} setMycart={setMycart} />
 
           {/* 送貨及付款方式(左)、訂單資訊(右) */}
           <div className="row justify-content-between">
@@ -141,7 +103,7 @@ function App() {
               {/* 訂單資訊框(右) */}
               <Summary
                 total={total()}
-                mycartDisplay={mycartDisplay}
+                mycart={mycart}
                 productCount={productCount}
                 deliveryLocation={deliveryLocation}
                 deliveryMethod={deliveryMethod}

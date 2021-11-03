@@ -22,7 +22,7 @@ function Cart2(props) {
     setDh(dh)
     // 3.先給定明確的高，transition才有效果
     droplist.style.height = dh + 'px'
-  }, [dh])  // componentdidUpdata時才能有正確的高
+  }, [dh]) // componentdidUpdata時才能有正確的高
 
   // 購物車開合的處理
   const handleShow = () => {
@@ -47,7 +47,7 @@ function Cart2(props) {
       <div className="cart-box">
         {/* 購物車標題 */}
         <div className="cart-title text-center " onClick={handleShow}>
-          合計：NT${orderInfo.total}(共2件商品)
+          合計：NT${orderInfo.total} (共{mycart.length}件商品)
           <div>
             <RiArrowDownSLine className="arrow-icon" />
           </div>
@@ -64,7 +64,16 @@ function Cart2(props) {
           </div>
           {/* 商品 */}
           {mycart.map((mycart, i) => {
-            return <ProductItem2 mycart={mycart} key={i} />
+            return (
+              <ProductItem2
+                image={mycart.image}
+                Name={mycart.Name}
+                price={mycart.price}
+                amount={mycart.amount}
+                subtotal={mycart.price * mycart.amount}
+                key={i}
+              />
+            )
           })}
 
           {/* 下方優惠與價格 */}

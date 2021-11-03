@@ -1,54 +1,36 @@
-import React, { useState ,useEffect} from 'react'
+import React from 'react'
 import './ProductItem.css'
 import { AiOutlineMinus, AiOutlinePlus } from 'react-icons/ai'
 import { FaTimes } from 'react-icons/fa'
 
 function ProductItem(props) {
   // 加入購物車的產品資訊
-  const {
-    mycartDisplay,
-    setMycartDisplay,
-    id,
-    picture,
-    name,
-    price,
-    count,
-    setCount,
-  } = props
+  const { mycart, setMycart, sid, picture, name, price, count, setCount } =
+    props
 
   // 移除購物車內的商品
-  const removeCartItem = (id) => {
-    // 讀取原本的資料
-    const myCart = localStorage.getItem('cart')
-      ? JSON.parse(localStorage.getItem('cart'))
-      : []
-
-    // 弄一個空陣列，把指定id以外的商品放進去
+  const removeCartItem = (sid) => {
     let newMyCart = []
 
-    for (let i = 0; i < myCart.length; i++) {
-      if (myCart[i].id !== id) {
-        newMyCart.push(myCart[i])
+    // 把指定sid以外的商品放進去新陣列
+    for (let i = 0; i < mycart.length; i++) {
+      if (mycart[i].sid !== sid) {
+        newMyCart.push(mycart[i])
       }
     }
     // 儲存到localStorage
     localStorage.setItem('cart', JSON.stringify(newMyCart))
-    setMycartDisplay(newMyCart)
+    setMycart(newMyCart)
   }
 
   // 增減購物車內的商品
   const updateToLocalStorage = (value) => {
-    // 讀取localstorage的商品清單
-    const myCart = localStorage.getItem('cart')
-      ? JSON.parse(localStorage.getItem('cart'))
-      : []
-
     // 複製一個新的陣列
-    const newMyCart = [...myCart]
+    const newMyCart = [...mycart]
 
     // 跑回圈，找到id相符的商品，並更動amount數量
-    for (let i = 0; i < myCart.length; i++) {
-      if (newMyCart[i].id === value.id) {
+    for (let i = 0; i < mycart.length; i++) {
+      if (newMyCart[i].sid === value.sid) {
         if ((newMyCart[i].amount += value.amount) < 1) {
           newMyCart[i].amount = 1
         }
@@ -59,9 +41,8 @@ function ProductItem(props) {
 
     // 改變畫面上的數字
     setCount(count + value.amount)
-    setMycartDisplay(newMyCart)
+    setMycart(newMyCart)
   }
-  // 產品數量
   return (
     <>
       {/* 桌機版商品(一列)*/}
@@ -86,7 +67,7 @@ function ProductItem(props) {
                   className="minus d-flex"
                   onClick={() => {
                     updateToLocalStorage({
-                      id: id,
+                      sid: sid,
                       amount: -1,
                     })
                   }}
@@ -98,7 +79,7 @@ function ProductItem(props) {
                   className="plus d-flex"
                   onClick={() => {
                     updateToLocalStorage({
-                      id: id,
+                      sid: sid,
                       amount: 1,
                     })
                   }}
@@ -111,7 +92,7 @@ function ProductItem(props) {
             <div
               className="col-1 text-center"
               onClick={() => {
-                removeCartItem(id)
+                removeCartItem(sid)
               }}
             >
               <FaTimes />
@@ -157,7 +138,7 @@ function ProductItem(props) {
                       className="minus d-flex"
                       onClick={() => {
                         updateToLocalStorage({
-                          id: id,
+                          sid: sid,
                           amount: -1,
                         })
                       }}
@@ -169,7 +150,7 @@ function ProductItem(props) {
                       className="plus d-flex"
                       onClick={() => {
                         updateToLocalStorage({
-                          id: id,
+                          sid: sid,
                           amount: 1,
                         })
                       }}

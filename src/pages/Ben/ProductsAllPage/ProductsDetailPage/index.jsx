@@ -168,16 +168,38 @@ function ProductsDetailPage(props) {
   // 購物車
   const updateCartToLocalStorage = (product) => {
     const currentCart = JSON.parse(localStorage.getItem('cart')) || []
-    // 複製一個新物件
+
+    // 加入的商品添加amount =1 資訊
     const newproduct = { ...product }
-    // 添加amount =1
     newproduct.amount = 1
     currentCart.push(newproduct)
 
-    localStorage.setItem('cart', JSON.stringify(currentCart))
+    // mycartDisplay運算
+    let newMycartDisplay = []
+
+    //尋找mycartDisplay
+    for (let i = 0; i < currentCart.length; i++) {
+      const index = newMycartDisplay.findIndex(
+        (value) => value.sid === currentCart[i].sid
+      )
+      //有的話就數量+1
+      if (index !== -1) {
+        newMycartDisplay[index].amount += currentCart[i].amount
+      } else {
+        //沒有的話就把項目加入，數量為1
+        const newItem = { ...currentCart[i] }
+        newMycartDisplay = [...newMycartDisplay, newItem]
+      }
+    }
+    localStorage.setItem('cart', JSON.stringify(newMycartDisplay))
 
     // 設定資料
+<<<<<<< HEAD
+    setMyCart(newMycartDisplay)
+    setIsCart(true)
+=======
     setMyCart(currentCart)
+>>>>>>> a04af4a586d44136050ae32078d9be6119460669
   }
 
   // 取消追蹤

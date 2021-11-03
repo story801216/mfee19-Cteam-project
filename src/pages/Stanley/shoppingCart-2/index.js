@@ -137,7 +137,7 @@ function App() {
 
     setMycart(mycart)
     setOrderInfo(orderInfo)
-    console.log(orderInfo)
+    // console.log(orderInfo)
   }, [])
 
   return (
@@ -392,7 +392,7 @@ function App() {
                 {/* 返回上一步按鈕(桌機) */}
                 <div className="btn-group d-xl-block d-none">
                   <IoIosArrowBack />
-                  <a className="goback-btn" href="/sc1">
+                  <a className="goback-btn" href="/cart">
                     返回購物車
                   </a>
                 </div>
@@ -412,7 +412,7 @@ function App() {
           {/* 返回上一步按鈕(手機) */}
           <div className="btn-group d-xl-none">
             <IoIosArrowBack />
-            <a className="goback-btn" href="/sc1">
+            <a className="goback-btn" href="/cart">
               返回購物車
             </a>
           </div>
