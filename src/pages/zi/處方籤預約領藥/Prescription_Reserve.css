@@ -11,6 +11,7 @@
     /* display: inline-flex; */
     justify-content: stretch;
     align-items: stretch;
+    height: 1470px;
   }
 }
 .zi-Prescription-background {
@@ -182,7 +183,7 @@
 @media (max-width: 375px) {
   .zi-Prescription-button-flex {
     position: absolute;
-    top: 1470px;
+    top: 1340px;
     left: 36%;
     height: 49px;
     font-size: 18px;
