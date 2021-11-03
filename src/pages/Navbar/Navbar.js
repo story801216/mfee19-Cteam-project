@@ -48,8 +48,8 @@ function Navbar(props) {
                   </div>
                 </a>
               </Link>
-              <Link to="/User">
-                <a href="/User" className="navChandePageEnc">
+              <Link to="/User/Member_revise">
+                <a href="/User/Member_revise" className="navChandePageEnc">
                   <div className="positionIconA">
                     <FaRegUserCircle />
                     <p>會員中心</p>

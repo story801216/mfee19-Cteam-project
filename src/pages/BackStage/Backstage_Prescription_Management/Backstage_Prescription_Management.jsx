@@ -82,7 +82,7 @@ function Backstage_Prescription_Management() {
                       </select>
                     </li>
                     <li>病患姓名:{val.name}</li>
-                    <li>上傳時間:2021.09.10 09:00</li>
+                    <li>連絡電話:{val.phone}</li>
                     <li>領藥門市:中正店</li>
                   </div>
                   <div>
