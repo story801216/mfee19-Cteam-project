@@ -155,7 +155,7 @@
     margin: auto;
 }
 
-.specialOfferSlider .item {
+.specialOfferSlider .product .item {
     position: relative;
     display: flex;
     flex-direction: column;
