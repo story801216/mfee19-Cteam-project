@@ -53,10 +53,12 @@ function BackStage(props) {
         </Route>
         {/* 後台會員管理列表頁面 */}
         <Route path="/back-stage/Backstage_Member_Management">
+          <BookMart />
           <Backstage_Member_Management />
         </Route>
         {/* 後台處方管理列表頁面 */}
         <Route path="/back-stage/Backstage_Prescription_Management">
+          <BookMart />
           <Backstage_Prescription_Management />
         </Route>
       </Switch>

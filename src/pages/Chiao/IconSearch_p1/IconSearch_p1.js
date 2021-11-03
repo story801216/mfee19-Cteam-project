@@ -200,8 +200,8 @@ function IconSearch_p1(props) {
               </Link>
             </div>
 
-            <div class="box"></div>
-            <div class="icontext">
+            <div className="box"></div>
+            <div className="icontext">
               <p>疼痛</p>
             </div>
             <div className="icon-btn-1">
@@ -311,8 +311,8 @@ function IconSearch_p1(props) {
               </div>
             </div>
 
-            <div class="box"></div>
-            <div class="icontext">
+            <div className="box"></div>
+            <div className="icontext">
               <p>皮膚異常</p>
             </div>
             <div className="icon-btn-1">
@@ -357,8 +357,8 @@ function IconSearch_p1(props) {
               </div>
             </div>
 
-            <div class="box"></div>
-            <div class="icontext">
+            <div className="box"></div>
+            <div className="icontext">
               <p>大便/尿液異常</p>
             </div>
             <div className="icon-btn-1">
@@ -429,8 +429,8 @@ function IconSearch_p1(props) {
               </div>
             </div>
 
-            <div class="box"></div>
-            <div class="icontext">
+            <div className="box"></div>
+            <div className="icontext">
               <p>精神症狀</p>
             </div>
             <div className="icon-btn-1">

@@ -6,12 +6,12 @@ function OrderDetail(props) {
   return (
     <>
       {/* 訂單明細  */}
-      <div class="order-detail-box">
-        <div class="order-detail-title">訂單明細</div>
-        <div class="row">
-          <div class="col-xl-4 col-12">
-            <div class="subtitle">訂購人資訊</div>
-            <div class="detail-box">
+      <div className="order-detail-box">
+        <div className="order-detail-title">訂單明細</div>
+        <div className="row">
+          <div className="col-xl-4 col-12">
+            <div className="subtitle">訂購人資訊</div>
+            <div className="detail-box">
               {/* 訂購人姓名 */}
               姓名：{order_list.member_name}
               <br />
@@ -22,9 +22,9 @@ function OrderDetail(props) {
               信箱：xiaohai@gmail.com
             </div>
           </div>
-          <div class="col-xl-4 col-12">
-            <div class="subtitle">送貨資訊</div>
-            <div class="detail-box">
+          <div className="col-xl-4 col-12">
+            <div className="subtitle">送貨資訊</div>
+            <div className="detail-box">
               {/* 收件人姓名 */}
               姓名：{order_list.addressee_name}
               <br />
@@ -44,9 +44,9 @@ function OrderDetail(props) {
               訂單備註：{order_list.order_note}
             </div>
           </div>
-          <div class="col-xl-4 col-12">
-            <div class="subtitle">付款資訊</div>
-            <div class="detail-box">付款方式：{order_list.payment_method}</div>
+          <div className="col-xl-4 col-12">
+            <div className="subtitle">付款資訊</div>
+            <div className="detail-box">付款方式：{order_list.payment_method}</div>
           </div>
         </div>
       </div>

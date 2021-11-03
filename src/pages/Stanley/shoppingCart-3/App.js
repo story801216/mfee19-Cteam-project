@@ -36,7 +36,7 @@ function App(props) {
           <Checkline state={state} />
 
           {/*  完成訂單文字  */}
-          <div class="finished-word text-center">
+          <div className="finished-word text-center">
             <FaCheckCircle className="finished-icon" />
             訂單送出成功 <br />
             可至

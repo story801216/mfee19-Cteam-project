@@ -5,11 +5,6 @@ import {
   Switch,
   NavLink,
 } from 'react-router-dom'
-// 頁面元件
-// 所有商品頁面
-import ProductsAllPage from './pages/Ben/ProductsAllPage'
-// 後台頁面
-import BackStage from './pages/BackStage'
 // 共用元件
 import MainContent from './components/MainContent'
 import ScrollToTop from './components/ScrollToTop'
@@ -17,7 +12,10 @@ import Navbar from './pages/Navbar/Navbar'
 import MobileNavBar from './components/MobileNavBar'
 import BottomNavBar from './components/BottomNavBar'
 import Footer from './components/Footer'
-import './App.css'
+
+// 頁面元件
+// 柏兪 所有商品頁面
+import ProductsAllPage from './pages/Ben/ProductsAllPage'
 
 //品喬---------------------------------------------------------------
 import IconSearch_p1 from './pages/Chiao/IconSearch_p1/IconSearch_p1'
@@ -37,6 +35,11 @@ import MemberCenter from './pages/MemberCenter'
 // 相宸-------------------------------------------------------
 import StanleyAllPage from './pages/Stanley/App'
 
+// 後台頁面
+import BackStage from './pages/BackStage'
+
+import './App.css'
+
 function App() {
   // navbar 商品類別欄顏色切換
   const [controlCate, setControlCate] = useState('')
@@ -52,7 +55,7 @@ function App() {
   return (
     <Router>
       <>
-        <NavLink to="/back-stage/products/page/1">後臺管理</NavLink>
+        <NavLink to="/back-stage/Backstage_Member_Management">後臺管理</NavLink>
 
         <Navbar
           setControlCate={setControlCate}
