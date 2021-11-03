@@ -82,8 +82,8 @@ function NavbarPush() {
               <p>症狀篩檢</p>
               <RiArrowDropRightLine />
             </button>
-            <a
-              href="https://yahoo.com.tw"
+            <Link
+              to="/HospitalPage"
               target="_blank"
               className="changeHos"
             >
@@ -100,14 +100,14 @@ function NavbarPush() {
                 <p>醫院 | 診所</p>
                 <RiArrowDropRightLine />
               </button>
-            </a>
+            </Link>
           </div>
           <div>
             {buttonIndex === 0 ? iconRender(iconList) : iconRender(iconSick)}
           </div>
         </div>
         <div className="arrowEnterAgain">
-          <Link to={buttonIndex === 0 ? "/HealthEnCyc" : "#"}
+          <Link to={buttonIndex === 0 ? "/HealthEnCyc" : "/IconSearch_p1"}
           >
             <img src="http://localhost:3000/images/photo/enter.png" alt="" />
           </Link>
