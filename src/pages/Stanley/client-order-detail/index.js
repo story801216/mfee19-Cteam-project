@@ -1,5 +1,5 @@
 import React from 'react'
-import './App.scss'
+import './index.scss'
 import Cart2 from '../../../components/Stanley/Cart2/Cart2'
 import OrderDetail from '../../../components/Stanley/ClientOrderDetail/ClientOrderDetail'
 

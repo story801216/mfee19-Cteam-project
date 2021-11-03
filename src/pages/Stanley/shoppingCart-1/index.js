@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react'
-import './App.scss'
+import './index.scss'
 import Checkline from '../../../components/Stanley/Checkline/Checkline'
 import Cart1 from '../../../components/Stanley/Cart1/Cart1'
 import Summary from '../../../components/Stanley/Summary/Summary'
@@ -37,7 +37,7 @@ function App() {
       //有找到會返回陣列成員的索引值
       //沒找到會返回-1
       const index = newMycartDisplay.findIndex(
-        (value) => value.id === mycart[i].id
+        (value) => value.sid === mycart[i].sid
       )
       //有的話就數量+1
       if (index !== -1) {

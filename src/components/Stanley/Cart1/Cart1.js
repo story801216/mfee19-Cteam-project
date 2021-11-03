@@ -29,8 +29,8 @@ function Cart1(props) {
               setMycartDisplay={setMycartDisplay}
               key={v.id}
               id={v.id}
-              picture={v.picture}
-              name={v.name}
+              picture={v.image}
+              name={v.Name}
               price={v.price}
               count={v.amount}
               setCount={(newCount) => {

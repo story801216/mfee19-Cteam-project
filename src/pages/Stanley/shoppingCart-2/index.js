@@ -1,13 +1,13 @@
 import React, { useEffect, useState } from 'react'
 import { useHistory } from 'react-router-dom'
-import './App.scss'
+import './index.scss'
 import axios from 'axios'
 import { IoIosArrowBack } from 'react-icons/io'
 import Checkline from '../../../components/Stanley/Checkline/Checkline'
 import Cart2 from '../../../components/Stanley/Cart2/Cart2'
-import storeDataCD from './../../../hotData/7-11CD.json'
-import storeDataDS from './../../../hotData/7-11DS.json'
-import storeDataSS from './../../../hotData/7-11SS.json'
+import storeDataCD from '../../../hotData/7-11CD.json'
+import storeDataDS from '../../../hotData/7-11DS.json'
+import storeDataSS from '../../../hotData/7-11SS.json'
 import CreditCard from '../../../components/Stanley/CreditCard/CreditCard'
 const cities = [
   '台北市',

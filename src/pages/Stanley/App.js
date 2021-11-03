@@ -1,12 +1,12 @@
 import React from 'react'
 import { BrowserRouter as Router, Route, Link, Switch } from 'react-router-dom'
-import ShoppingCart1 from './shoppingCart-1/App'
-import ShoppingCart2 from './shoppingCart-2/App'
-import ShoppingCart3 from './shoppingCart-3/App'
-import ClientOrderList from './client-order-list/App'
-import ClientOrderDetail from './client-order-detail/App'
-import ManagerOrderList from './manager-order-list/App'
-import ManagerOrderDetail from './managert-order-detail/App'
+import ShoppingCart1 from './shoppingCart-1/index'
+import ShoppingCart2 from './shoppingCart-2/index'
+import ShoppingCart3 from './shoppingCart-3/index'
+import ClientOrderList from './client-order-list/index'
+import ClientOrderDetail from './client-order-detail/index'
+import ManagerOrderList from './manager-order-list/index'
+import ManagerOrderDetail from './managert-order-detail/index'
 
 function App() {
   return (

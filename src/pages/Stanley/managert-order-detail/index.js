@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import { withRouter } from 'react-router-dom'
-import './App.css'
+import './index.css'
 import axios from 'axios'
 import Cart3 from '../../../components/Stanley/Cart3/Cart3'
 import Checkline2 from '../../../components/Stanley/Checkline2/Checkline2'

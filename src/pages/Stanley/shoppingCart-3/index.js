@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import { withRouter } from 'react-router-dom'
-import './App.scss'
+import './index.scss'
 import axios from 'axios'
 import { FaCheckCircle } from 'react-icons/fa'
 import Checkline from '../../../components/Stanley/Checkline/Checkline'

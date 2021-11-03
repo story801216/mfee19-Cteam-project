@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import './App.scss'
+import './index.scss'
 import axios from 'axios'
 import { AiFillFileExcel, AiFillDelete } from 'react-icons/ai'
 import { BsSearch } from 'react-icons/bs'

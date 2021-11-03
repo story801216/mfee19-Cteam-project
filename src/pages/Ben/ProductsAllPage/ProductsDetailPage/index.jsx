@@ -186,14 +186,16 @@ function ProductsDetailPage(props) {
   // 購物車
   const updateCartToLocalStorage = (product) => {
     const currentCart = JSON.parse(localStorage.getItem('cart')) || []
-
-    currentCart.push(product)
+    // 複製一個新物件
+    const newproduct = { ...product }
+    // 添加amount =1
+    newproduct.amount = 1
+    currentCart.push(newproduct)
 
     localStorage.setItem('cart', JSON.stringify(currentCart))
 
     // 設定資料
     setMyCart(currentCart)
-
     setIsCart(true)
   }
 
@@ -341,24 +343,12 @@ function ProductsDetailPage(props) {
                     </div>
                     {/* 加入購物車 */}
                     <div
-                      className={isCart ? 'cart-button hide' : 'cart-button'}
+                      className="cart-button"
                       onClick={() => {
                         updateCartToLocalStorage(data)
                       }}
                     >
-                      購物車
-                    </div>
-                    <div
-                      className={
-                        isCart
-                          ? 'cancel-cart-button show'
-                          : 'cancel-cart-button'
-                      }
-                      onClick={() => {
-                        deleteCartToLocalStorage(data)
-                      }}
-                    >
-                      已加入購物車
+                      加入購物車
                     </div>
                   </div>
                 </div>
