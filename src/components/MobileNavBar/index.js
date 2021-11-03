@@ -50,11 +50,11 @@ function MobileNavBar(props) {
         },
         {
           name: '症狀篩檢',
-          link: '/link2',
+          link: '/IconSearch_p1',
         },
         {
           name: '醫院|藥局',
-          link: '/link3',
+          link: '/HospitalPage',
         },
       ],
     },
