@@ -1,5 +1,6 @@
 .accordion {
     display: block;
+    margin-bottom: 20px;
 }
 
 .accordion .cate-title, 
@@ -16,9 +17,18 @@
     margin-bottom: 25px;
 }
 
-.card-body{
-    padding: 15px;
+.productsClickedPage .card-body,
+.productsCategoryPage .card-body,
+.productsSearchPage .card-body {
+    padding: 10px 15px;
     color:#000;
+}
+
+/* 解決css衝突 */
+.productsClickedPage .accordion>.card>.card-header, 
+.productsCategoryPage .accordion>.card>.card-header,
+.productsSearchPage .accordion>.card>.card-header {
+    margin-bottom: 10px;
 }
 
 @media screen and (min-width:992px){

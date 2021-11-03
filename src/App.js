@@ -52,6 +52,13 @@ function App() {
   // 後台商品編輯sid
   const [editSid, setEditSid] = useState(0)
 
+  // 購物車的商品數量(不重複的)
+  const [productCount, setProductCount] = useState(
+    localStorage.getItem('cart')
+      ? JSON.parse(localStorage.getItem('cart')).length
+      : 0
+  )
+
   return (
     <Router>
       <>
@@ -61,6 +68,7 @@ function App() {
           setControlCate={setControlCate}
           setControlSmallCate={setControlSmallCate}
           setControlSmallBody={setControlSmallBody}
+          productCount={productCount}
         />
         <MobileNavBar />
         <ScrollToTop>
@@ -80,6 +88,8 @@ function App() {
                 setControlCate={setControlCate}
                 setControlSmallCate={setControlSmallCate}
                 setControlSmallBody={setControlSmallBody}
+                productCount={productCount}
+                setProductCount={setProductCount}
               />
               {/* 後臺管理頁面 */}
               <BackStage editSid={editSid} setEditSid={setEditSid} />
@@ -98,7 +108,10 @@ function App() {
                 <HospitalPage />
               </Route>
               {/* 購物車 */}
-              <StanleyAllPage />
+              <StanleyAllPage
+                productCount={productCount}
+                setProductCount={setProductCount}
+              />
             </MainContent>
           </Switch>
         </ScrollToTop>

@@ -32,6 +32,8 @@ function ProductsDetailPage(props) {
     setMyBrowseRecord,
     searchWord,
     setSearchWord,
+    productCount,
+    setProductCount,
   } = props
 
   // 是否載入中
@@ -192,6 +194,7 @@ function ProductsDetailPage(props) {
       }
     }
     localStorage.setItem('cart', JSON.stringify(newMycartDisplay))
+    setProductCount(newMycartDisplay.length)
 
     // 設定資料
     setMyCart(newMycartDisplay)

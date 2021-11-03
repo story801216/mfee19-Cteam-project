@@ -4,7 +4,7 @@ import ProductItem from './ProductItem/ProductItem'
 
 // Cart1是結帳第一步還可以選取商品數量的地方
 function Cart1(props) {
-  const { mycart, setMycart } = props
+  const { mycart, setMycart, productCount, setProductCount } = props
 
   return (
     <>
@@ -25,9 +25,11 @@ function Cart1(props) {
         {mycart.map((v, i) => {
           return (
             <ProductItem
+              productCount={productCount}
+              setProductCount={setProductCount}
               mycart={mycart}
               setMycart={setMycart}
-              key={v.id}
+              key={v.sid}
               sid={v.sid}
               picture={v.image}
               name={v.Name}

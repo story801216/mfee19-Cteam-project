@@ -120,8 +120,8 @@ function App() {
     // 4. 如果回傳值是成功，則跳轉到下一步的頁面
     if (r.data.success) {
       alert('訂單送出成功!')
-
       history.push(`/order-check/${r.data.order_sid}`)
+      localStorage.removeItem('cart')
     }
   }
 
