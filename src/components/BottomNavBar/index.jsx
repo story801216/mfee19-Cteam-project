@@ -9,7 +9,7 @@ function BottomNavBar() {
       icon: 'icon',
       src: 'http://localhost:3000/images/icon/receive.png',
       text: '處方領藥',
-      link: '',
+      link: '/Prescription_Reserve',
     },
     {
       item: 'item',
@@ -30,7 +30,7 @@ function BottomNavBar() {
       icon: 'icon',
       src: 'http://localhost:3000/images/icon/login.png',
       text: '會員登入',
-      link: '',
+      link: '/Login',
     },
   ]
 

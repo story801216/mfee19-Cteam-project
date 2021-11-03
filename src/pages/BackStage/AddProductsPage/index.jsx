@@ -2,7 +2,7 @@ import AddFormInput from '../../../components/Ben/AddFormInput'
 import { withRouter } from 'react-router-dom'
 import './index.css'
 function AddProductsPage(props) {
-  const { backStageProdsTotalPages } = props
+  const { backStageProdsTotalPages, setOptionNow } = props
   const addForm = () => {
     const fd = new FormData(document.add_form)
     fetch('http://localhost:3001/product', {
@@ -18,7 +18,7 @@ function AddProductsPage(props) {
       })
     alert('商品添加成功')
     props.history.push('/back-stage/products/page/' + backStageProdsTotalPages)
-    window.location.reload()
+    // window.location.reload()
   }
 
   return (

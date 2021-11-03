@@ -19,10 +19,10 @@ app.use(express.json())
 
 /* 連線設定 */
 const db = mysql.createConnection({
-  user: 'ben' /* 帳號 */,
+  user: 'story801216' /* 帳號 */,
   host: 'localhost' /* 主機 */,
-  password: 'admin' /* 密碼 */,
-  database: 'healthour' /* 資料庫名稱 */,
+  password: '123' /* 密碼 */,
+  database: 'finalproject' /* 資料庫名稱 */,
 })
 
 /* 註冊功能 */
@@ -79,7 +79,7 @@ app.get('/Backstage_Member_Management', (req, res) => {
 
 /* 處方籤資料寫入功能 */
 app.post('/Prescription_Reserve', (req, res) => {
-  console.log(req.body)
+  // console.log(req.body)
   const name = req.body.name
   const idNumber = req.body.idNumber
   const birthday = req.body.birthday
@@ -92,6 +92,21 @@ app.post('/Prescription_Reserve', (req, res) => {
   /* 將處方資料寫入資料庫 */
   db.query(
     `INSERT INTO prescription (name, idNumber, birthday, hospital,  phone, selectFreq) VALUES ('${name}', '${idNumber}', '${birthday}', '${hospital}', '${phone}', '${selectFreq}')`,
+    (err, result) => {
+      if (err) {
+        console.log(err)
+      } else {
+        res.send('寫入成功')
+      }
+    }
+  )
+})
+
+/* 將選取店家寫入處方資料庫 */
+app.post('/Select_Shop', (req, res) => {
+  const Shop = req.body.setCloseStore
+  db.query(
+    `INSERT INTO prescription (valueShop) VALUES (''${Shop}')`,
     (err, result) => {
       if (err) {
         console.log(err)

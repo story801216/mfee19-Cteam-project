@@ -5,7 +5,7 @@ import './index.css'
 
 function EditProductsPage(props) {
   // 回傳給footer的狀態
-  const { setEditSid } = props
+  const { setEditSid, setOptionNow } = props
   const [data, setData] = useState('')
 
   useEffect(() => {
@@ -40,7 +40,7 @@ function EditProductsPage(props) {
 
     alert('商品更新成功')
     props.history.push('/back-stage/products/page/1')
-    window.location.reload()
+    // window.location.reload()
   }
 
   return (

@@ -3,8 +3,8 @@ import { Link } from 'react-router-dom'
 import './index.css'
 
 function BookMart(props) {
+  const { optionNow, setOptionNow } = props
   const MobileListRef = useRef(null)
-  const [optionNow, setOptionNow] = useState(0)
   const optionName = [
     { name: '所有會員資料', link: '/back-stage/Backstage_Member_Management' },
     {

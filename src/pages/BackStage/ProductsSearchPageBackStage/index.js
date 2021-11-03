@@ -14,6 +14,8 @@ function ProductsSearchPageBackStage(props) {
     setBackStageProdSearchWord,
     backStageProdsTotalPages,
     setBackStageProdsTotalPages,
+    optionNow,
+    setOptionNow,
   } = props
   let [data, setData] = useState({})
 
@@ -61,7 +63,18 @@ function ProductsSearchPageBackStage(props) {
     setTimeout(() => {
       setIsloading(false)
     }, 500)
-  }, [props.match.params.word, props.match.params.number])
+  }, [
+    props.match.params.word,
+    props.match.params.number,
+    props.location.pathname,
+  ])
+
+  useEffect(() => {
+    setOptionNow(2)
+  }, [
+    props.location.pathname ===
+      '/back-stage/products/page/' + props.match.params.page,
+  ])
 
   const spinner = <Spinner animation="grow" variant="primary" />
 

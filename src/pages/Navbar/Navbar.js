@@ -9,6 +9,7 @@ import { MdOutlineAssignment } from 'react-icons/md' //處方籤
 
 import NavbarPush from './components/NavbarPush' //活動頁籤
 import NewPush from './components/NewPush' //最新消息頁籤
+import NavbarShopPush from './components/NavbarShopPush' //線上購物
 
 const halfCirclePic = 'http://localhost:3000/images/encyclopedia/halfcircle.png' //半圓的圖
 const LogoPic = 'http://localhost:3000/images/Logo.jpg' //Logo圖
@@ -75,16 +76,25 @@ function Navbar(props) {
               </div>
             </div>
             <div className="navbarLinkDesTop2">
-              <Link
-                to={'/shop'}
-                onClick={() => {
-                  setControlCate('')
-                  setControlSmallCate('')
-                  setControlSmallBody('')
-                }}
-              >
-                <p className="navbarIconLine1">線上購物</p>
-              </Link>
+              <div className="forCenter">
+                <p
+                  className="navbarIconLine1"
+                  onMouseEnter={() => {
+                    setButtonIndex(4)
+                  }}
+                >
+                  線上購物
+                </p>
+                <img
+                  className={
+                    buttonIndex === 4
+                      ? 'halfCircleMove'
+                      : 'halfCircleMove hideClass'
+                  }
+                  src={halfCirclePic}
+                  alt="半圓"
+                />
+              </div>
               <div className="forCenter">
                 <p
                   className="navbarIconLine1"
@@ -171,6 +181,17 @@ function Navbar(props) {
               pos2={100}
               path1="/HomePage"
               path2="/StoresMap"
+            />
+          ) : (
+            ''
+          )}
+        </div>
+        <div className={buttonIndex === 4 ? 'buttonAndIconPush' : ''}>
+          {buttonIndex === 4 ? (
+            <NavbarShopPush
+              setControlCate={setControlCate}
+              setControlSmallCate={setControlSmallCate}
+              setControlSmallBody={setControlSmallBody}
             />
           ) : (
             ''
