@@ -1,27 +1,28 @@
 /* eslint-disable no-unused-vars */
-import "./Select_shop.css";
+import './Select_shop.css'
 
 // import Googlemap from './Googlemap.js'
-import _ from "lodash"; //引入方法函示庫，react內建不需安裝
-import StoresMapForGoogle from "../../../components/Yiling/StoresMap/StoresMapForGoogle";
-import React, { useState, useEffect } from "react";
-import { GrMapLocation } from "react-icons/gr"; //引用map icon
-import CardStores from "../../../components/Yiling/StoresMap/CardStores"; //門市卡片
-const Background = "./images/photo/預約領藥背景圖.jpg";
-const Placeholder = "./images/photo/placeholder.png"; //map定位地圖
+import _ from 'lodash' //引入方法函示庫，react內建不需安裝
+import StoresMapForGoogle from '../../../components/Yiling/StoresMap/StoresMapForGoogle'
+import React, { useState, useEffect } from 'react'
+import { GrMapLocation } from 'react-icons/gr' //引用map icon
+import CardStores from '../../../components/Yiling/StoresMap/CardStores' //門市卡片
+import Axios from 'axios'
+const Background = './images/photo/預約領藥背景圖.jpg'
+const Placeholder = './images/photo/placeholder.png' //map定位地圖
 
 function Select_shop(props) {
   //最近門市資訊狀態
-  const [nearShop, setNearShop] = useState("");
-  
-  const { setCloseStore } = props; //給梓庭用
+  const [nearShop, setNearShop] = useState('')
+
+  const { setCloseStore } = props //給梓庭用
 
   useEffect(() => {
-    setCloseStore(nearShop);
-  }, [nearShop]);
+    setCloseStore(nearShop)
+  }, [nearShop])
 
   //要傳遞狀態至最近門市的按鈕(定位)，給子元素
-  let getGRef = React.createRef();
+  let getGRef = React.createRef()
 
   //全部門市資訊狀態
   // 參考
@@ -36,75 +37,96 @@ function Select_shop(props) {
 
   // ];
 
-  const [allShop, setAllShop] = useState([]);
+  const [allShop, setAllShop] = useState([])
 
   //過濾完Select的資料狀態
-  const [selectShop, setSelectShop] = useState([]);
+  const [selectShop, setSelectShop] = useState([])
   //做Select 的狀態 有city, site, shop 三個
-  const [valueCity, setValueCity] = useState(""); //城市
-  const [valueSite, setValueSite] = useState(""); //區域
-  const [valueShop, setValueShop] = useState(""); //門市
+  const [valueCity, setValueCity] = useState('') //城市
+  const [valueSite, setValueSite] = useState('') //區域
+  const [valueShop, setValueShop] = useState('') //門市
 
   //做兩個空陣列給區域跟門市
   // const optionSite = [];
-  const optionShop = [];
+  const optionShop = []
   //給select抓資料項目
-  const [dataSite, setDataSite] = useState([]);
-  const [dataShop, setDataShop] = useState([]);
+  const [dataSite, setDataSite] = useState([])
+  const [dataShop, setDataShop] = useState([])
 
-  useEffect(() => {
-    if (nearShop !== "") {
-      setValueCity(nearShop.sCity);
-      setValueSite(nearShop.sSite);
-      setValueShop(nearShop.sName);
+  //上傳選取門市到處方資料庫裡
+  const submit = (e) => {
+    e.preventDefault()
+    if (setCloseStore !== '') {
+      Axios.post('http://localhost:3001/Select_Shop', {
+        setCloseStore: setCloseStore,
+      })
+        .then((res) => {
+          alert('上傳成功，調劑完畢後會在第一時間連絡您')
+          window.location.href = './'
+        })
+        .catch((err) => {
+          console.log(err)
+        })
     }
-  }, [nearShop]); //最近門市改變
+  }
+
+  //回到上一頁
+  const backpage = (e) => {
+    e.preventDefault()
+    window.location.href = './Prescription_Reserve'
+  }
 
   useEffect(() => {
-    const v = _.find(allShop, { sName: valueShop });
+    if (nearShop !== '') {
+      setValueCity(nearShop.sCity)
+      setValueSite(nearShop.sSite)
+      setValueShop(nearShop.sName)
+    }
+  }, [nearShop]) //最近門市改變
+
+  useEffect(() => {
+    const v = _.find(allShop, { sName: valueShop })
     if (v !== undefined) {
-      setNearShop(v);
+      setNearShop(v)
     }
-  }, [valueShop]); //門市改變
+  }, [valueShop]) //門市改變
 
   useEffect(() => {
     const cityIndex = _.findIndex(selectShop, function (o) {
-      return o.city === valueCity;
-    });
+      return o.city === valueCity
+    })
     // console.log(cityIndex);
-    if (valueCity !== "") {
-      const optionSite = JSON.parse(
-        JSON.stringify(selectShop[cityIndex].sites)
-      );
-      setDataSite(optionSite);
+    if (valueCity !== '') {
+      const optionSite = JSON.parse(JSON.stringify(selectShop[cityIndex].sites))
+      setDataSite(optionSite)
     }
-  }, [valueCity]); //城市改變
+  }, [valueCity]) //城市改變
 
   useEffect(() => {
-    let SiteIndex = 0;
+    let SiteIndex = 0
     const cityIndex2 = _.findIndex(selectShop, function (o) {
-      return o.city === valueCity;
-    });
+      return o.city === valueCity
+    })
     if (cityIndex2 > -1) {
       SiteIndex = _.findIndex(selectShop[cityIndex2].sites, function (o) {
-        return o.site === valueSite;
-      });
+        return o.site === valueSite
+      })
       // console.log(SiteIndex)
     }
 
     // console.log(selectShop[cityIndex2].sites);
 
-    if (valueCity !== "" && valueSite !== "") {
+    if (valueCity !== '' && valueSite !== '') {
       const optionShop = JSON.parse(
         JSON.stringify(selectShop[cityIndex2].sites[SiteIndex].shop)
-      );
-      setDataShop(optionShop);
+      )
+      setDataShop(optionShop)
     }
-  }, [valueSite]); //區域改變
+  }, [valueSite]) //區域改變
 
   function handleClick() {
-    setNearShop("");
-    getGRef.current.getG();
+    setNearShop('')
+    getGRef.current.getG()
   }
   return (
     <>
@@ -169,7 +191,7 @@ function Select_shop(props) {
               </label>
               <select
                 onChange={(e) => {
-                  setValueCity(e.target.value);
+                  setValueCity(e.target.value)
                 }}
                 value={valueCity}
               >
@@ -182,7 +204,7 @@ function Select_shop(props) {
 
               <select
                 onChange={(e) => {
-                  setValueSite(e.target.value);
+                  setValueSite(e.target.value)
                 }}
                 value={valueSite}
               >
@@ -194,7 +216,7 @@ function Select_shop(props) {
               <label>門市</label>
               <select
                 onChange={(e) => {
-                  setValueShop(e.target.value);
+                  setValueShop(e.target.value)
                 }}
                 value={valueShop}
               >
@@ -206,7 +228,7 @@ function Select_shop(props) {
 
             {/* 卡片元件 */}
             <div className="cardAddWithMap">
-              {nearShop !== "" ? <CardStores storeHome={nearShop} /> : ""}
+              {nearShop !== '' ? <CardStores storeHome={nearShop} /> : ''}
             </div>
           </div>
 
@@ -224,16 +246,16 @@ function Select_shop(props) {
           </div>
         </div>
         <div className="zi-select-shop-button-flex">
-          <button type="submit" className="zi-select-shop-backstep">
+          <button type="submit" className="zi-select-shop-backstep" onClick={backpage}>
             上一步
           </button>
-          <button type="submit" className="zi-select-shop-form-submit">
+          <button type="submit" className="zi-select-shop-form-submit" onClick={submit}>
             送出
           </button>
         </div>
       </div>
     </>
-  );
+  )
 }
 
-export default Select_shop;
+export default Select_shop
