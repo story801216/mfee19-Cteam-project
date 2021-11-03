@@ -1,10 +1,15 @@
 import React, { useState, useRef } from 'react'
+import { Link } from 'react-router-dom'
 import './Member_BookMark.css'
 
 function BookMart(props) {
   const MobileListRef = useRef(null)
   const [optionNow, setOptionNow] = useState(0)
-  const optionName = ['會員資料', '會員處方簽進度與追蹤', '訂單查詢']
+  const optionName = [
+    { name: '會員資料', link: '/User/Member_revise' },
+    { name: '會員處方簽進度與追蹤', link: '/User/Prescription_stage' },
+    { name: '訂單查詢', link: '' },
+  ]
   return (
     <>
       <h2 className="Member-bookMark-title">會員中心</h2>
@@ -15,15 +20,15 @@ function BookMart(props) {
           {optionName.map((v, i) => {
             return (
               <li className="option" key={i}>
-                <a
-                  href="#/"
+                <Link
+                  to={v.link}
                   className={optionNow === i ? 'now' : ''}
                   onClick={() => {
                     setOptionNow(i)
                   }}
                 >
-                  {v}
-                </a>
+                  {v.name}
+                </Link>
               </li>
             )
           })}
@@ -34,7 +39,7 @@ function BookMart(props) {
           {optionName.map((v, i) => {
             return (
               <div href="#/" key={i} className={optionNow === i ? 'show' : ''}>
-                {v}
+                {v.name}
               </div>
             )
           })}
@@ -64,7 +69,7 @@ function BookMart(props) {
                       setOptionNow(i)
                     }}
                   >
-                    {v}
+                    {v.name}
                   </a>
                 </li>
               )
