@@ -8,13 +8,14 @@ function MemberCenter() {
   return (
     <>
       <Switch>
-        <Member_BookMark />
         {/* 會員中心-會員資料修改 */}
         <Route path="/User/Member_revise">
+          <Member_BookMark />
           <Member_revise />
         </Route>
         {/* 會員中心-處方進度追蹤 */}
         <Route path="/User/Prescription_stage">
+          <Member_BookMark />
           <Prescription_stage />
         </Route>
       </Switch>
