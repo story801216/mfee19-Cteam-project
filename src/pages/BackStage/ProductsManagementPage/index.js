@@ -8,11 +8,14 @@ import ProductsPaginationBackStage from '../../../components/Ben/ProductsPaginat
 import './index.css'
 
 function ProductsManagementPage(props) {
+  console.log(props)
   const {
     backStageProdSearchWord,
     setBackStageProdSearchWord,
     backStageProdsTotalPages,
     setBackStageProdsTotalPages,
+    optionNow,
+    setOptionNow,
   } = props
 
   let [data, setData] = useState({})
@@ -58,7 +61,14 @@ function ProductsManagementPage(props) {
         setIsloading(false)
       }, 500)
     })()
-  }, [props.match.params.page])
+  }, [props.match.params.page, props.location.pathname])
+
+  useEffect(() => {
+    setOptionNow(2)
+  }, [
+    props.location.pathname ===
+      '/back-stage/products/page/' + props.match.params.page,
+  ])
 
   const spinner = <Spinner animation="grow" variant="primary" />
 

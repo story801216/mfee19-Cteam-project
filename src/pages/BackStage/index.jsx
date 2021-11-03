@@ -10,6 +10,8 @@ import Backstage_Prescription_Management from './Backstage_Prescription_Manageme
 import './index.css'
 // forceRefresh={true}
 function BackStage(props) {
+  // 控制頁簽Now顏色
+  const [optionNow, setOptionNow] = useState(0)
   // 回傳給footer商品sid
   const { editSid, setEditSid } = props
   // 後臺商品搜索關鍵字
@@ -23,22 +25,24 @@ function BackStage(props) {
       <Switch>
         {/* 後台商品搜索頁 */}
         <Route path="/back-stage/products/page/search/:word/:number">
-          <BookMart />
+          <BookMart optionNow={optionNow} setOptionNow={setOptionNow} />
           <ProductsSearchPageBackStage
             backStageProdSearchWord={backStageProdSearchWord}
             setBackStageProdSearchWord={setBackStageProdSearchWord}
             backStageProdsTotalPages={backStageProdsTotalPages}
             setBackStageProdsTotalPages={setBackStageProdsTotalPages}
+            setOptionNow={setOptionNow}
           />
         </Route>
         {/* 後台商品列表頁 */}
         <Route path="/back-stage/products/page/:page">
-          <BookMart />
+          <BookMart optionNow={optionNow} setOptionNow={setOptionNow} />
           <ProductsManagementPage
             backStageProdSearchWord={backStageProdSearchWord}
             setBackStageProdSearchWord={setBackStageProdSearchWord}
             backStageProdsTotalPages={backStageProdsTotalPages}
             setBackStageProdsTotalPages={setBackStageProdsTotalPages}
+            setOptionNow={setOptionNow}
           />
         </Route>
         {/* 後台商品編輯頁 */}
@@ -53,12 +57,12 @@ function BackStage(props) {
         </Route>
         {/* 後台會員管理列表頁面 */}
         <Route path="/back-stage/Backstage_Member_Management">
-          <BookMart />
+          <BookMart optionNow={optionNow} setOptionNow={setOptionNow} />
           <Backstage_Member_Management />
         </Route>
         {/* 後台處方管理列表頁面 */}
         <Route path="/back-stage/Backstage_Prescription_Management">
-          <BookMart />
+          <BookMart optionNow={optionNow} setOptionNow={setOptionNow} />
           <Backstage_Prescription_Management />
         </Route>
       </Switch>

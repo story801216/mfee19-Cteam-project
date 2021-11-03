@@ -14,7 +14,7 @@
 
 /* 電腦選單條樣式 + 手機目前選中的選單樣式 */
 .bookMark .option-list-computer .option a,
-.bookMark .option-mobile-now div {
+.bookMark .option-mobile-now a {
     display: inline-block;
     font-size: 20px;
     color: #fff;
@@ -27,13 +27,13 @@
 }
 
 /* 手機 option為隱藏狀態 只有添加show的才顯示 */
-.bookMark .option-mobile-now div {
+.bookMark .option-mobile-now a {
     display: none;
 
 }
 
 /* 點擊後顯示 */
-.bookMark .option-mobile-now div.show {
+.bookMark .option-mobile-now a.show {
     display: inline-block;
 }
 
@@ -53,7 +53,7 @@
     position: absolute;
     top: 50px;
     right: 50%;
-    transform: translate(32px);
+    transform: translate(25px);
     width: 345px;
     z-index: 10;
 }
