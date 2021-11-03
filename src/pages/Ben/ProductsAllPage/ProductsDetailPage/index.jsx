@@ -38,8 +38,6 @@ function ProductsDetailPage(props) {
   const [isLoading, setIsloading] = useState(true)
   // 追蹤按鈕 (是否追蹤中)
   const [isFollow, setIsFollow] = useState(false)
-  // 購物車按鈕 (是否在購物車中) (未做)
-  const [isCart, setIsCart] = useState(false)
 
   // 頁簽切換
   const [changeBookMark, setChangeBookMark] = useState(0)
@@ -72,19 +70,6 @@ function ProductsDetailPage(props) {
       myFollow.map((v) => {
         if (v.sid === props.match.params.sid * 1) {
           return setIsFollow(true)
-        }
-      })
-    }
-  }
-
-  // localtorage有這筆cart資料，設定isCart狀態為true
-  const getCartFromLocalStorage = () => {
-    // console.log(myCart)
-
-    if (myCart.length > 0) {
-      myCart.map((v) => {
-        if (v.sid === props.match.params.sid * 1) {
-          return setIsCart(true)
         }
       })
     }
@@ -143,9 +128,6 @@ function ProductsDetailPage(props) {
     // follow狀態按鈕
     getFollowFromLocalStorage()
 
-    // cart狀態按鈕
-    getCartFromLocalStorage()
-
     setTimeout(() => {
       setIsloading(false)
     }, 500)
@@ -196,7 +178,6 @@ function ProductsDetailPage(props) {
 
     // 設定資料
     setMyCart(currentCart)
-    setIsCart(true)
   }
 
   // 取消追蹤
@@ -213,22 +194,6 @@ function ProductsDetailPage(props) {
     localStorage.setItem('follow', JSON.stringify(newLocalStorageData))
 
     setIsFollow(false)
-  }
-
-  // 取消購物車
-  const deleteCartToLocalStorage = (product) => {
-    const localStorageData = JSON.parse(localStorage.getItem('cart')) || []
-    const currentProduct = product
-    // console.log(localStorageData)
-    // console.log(currentProduct)
-
-    const newLocalStorageData =
-      localStorageData.filter((v) => {
-        return v.sid !== currentProduct.sid
-      }) || []
-    localStorage.setItem('cart', JSON.stringify(newLocalStorageData))
-
-    setIsCart(false)
   }
 
   const spinner = <Spinner animation="grow" variant="primary" />
