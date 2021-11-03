@@ -5,8 +5,18 @@ import { FaTimes } from 'react-icons/fa'
 
 function ProductItem(props) {
   // 加入購物車的產品資訊
-  const { mycart, setMycart, sid, picture, name, price, count, setCount } =
-    props
+  const {
+    mycart,
+    setMycart,
+    sid,
+    picture,
+    name,
+    price,
+    count,
+    setCount,
+    productCount,
+    setProductCount,
+  } = props
 
   // 移除購物車內的商品
   const removeCartItem = (sid) => {
@@ -21,7 +31,9 @@ function ProductItem(props) {
     // 儲存到localStorage
     localStorage.setItem('cart', JSON.stringify(newMyCart))
     setMycart(newMyCart)
+    setProductCount(newMyCart.length)
   }
+  
 
   // 增減購物車內的商品
   const updateToLocalStorage = (value) => {

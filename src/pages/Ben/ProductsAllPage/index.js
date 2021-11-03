@@ -16,6 +16,8 @@ function ProductsAllPage(props) {
     setControlCate,
     setControlSmallCate,
     setControlSmallBody,
+    productCount,
+    setProductCount
   } = props
   const cates = [
     {
@@ -212,6 +214,8 @@ function ProductsAllPage(props) {
             setMyBrowseRecord={setMyBrowseRecord}
             searchWord={searchWord}
             setSearchWord={setSearchWord}
+            productCount={productCount}
+            setProductCount={setProductCount}
           />
         </Route>
         {/* 商品列表頁 */}
