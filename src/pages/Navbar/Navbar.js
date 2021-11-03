@@ -27,7 +27,7 @@ function Navbar(props) {
       >
         <div className="navbarDesTop">
           <div className="homeIconLogo">
-            <Link to="/HomePage">
+            <Link to="/">
               <img src={LogoPic} alt="" />
             </Link>
           </div>

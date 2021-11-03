@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useImperativeHandle } from 'react'
 import { withRouter } from 'react-router-dom' //Refs節點
 import _ from 'lodash' //引入方法函示庫，react內建不需安裝
-// import { GoogleKey } from "./Key";
+//import { GoogleKey } from "./Key";
 import './storesMapForGoogle.css'
 import GoogleMapReact from 'google-map-react'
 import { FaMapMarkerAlt } from 'react-icons/fa' //座標
@@ -138,7 +138,7 @@ function StoresMapForGoogle(props) {
   //地址轉經緯度
   const fetchLatLng = async (addr) => {
     const result = await fetch().then((res) => res.json())
-    // `https://maps.google.com/maps/api/geocode/json?&address=${addr}&result_type=street_address&language=zh-TW&sensor=true&key=${GoogleKey}`
+    //`https://maps.google.com/maps/api/geocode/json?&address=${addr}&result_type=street_address&language=zh-TW&sensor=true&key=${GoogleKey}`
     // console.log(result.results[0].geometry.location)
     return result.results[0].geometry.location
   }
@@ -273,7 +273,7 @@ function StoresMapForGoogle(props) {
       <div style={{ height: '863px', width: '585px' }}>
         <GoogleMapReact
           center={getGps}
-          // bootstrapURLKeys={{ key: GoogleKey }}
+          //bootstrapURLKeys={{ key: GoogleKey }}
           defaultCenter={defaultProps.center}
           defaultZoom={defaultProps.zoom}
           yesIWantToUseGoogleMapApiInternals

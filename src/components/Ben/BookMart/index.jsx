@@ -1,20 +1,24 @@
 import React, { useState, useRef } from 'react'
+import { Link } from 'react-router-dom'
 import './index.css'
 
 function BookMart(props) {
   const MobileListRef = useRef(null)
   const [optionNow, setOptionNow] = useState(0)
   const optionName = [
-    '所有會員資料',
-    '會員處方簽管理',
-    '所有商品',
-    '商城訂單管理',
-    '營業數據',
+    { name: '所有會員資料', link: '/back-stage/Backstage_Member_Management' },
+    {
+      name: '會員處方簽管理',
+      link: '/back-stage/Backstage_Prescription_Management',
+    },
+    { name: '所有商品', link: '/back-stage/products/page/1' },
+    { name: '商城訂單管理', link: '' },
+    { name: '營業數據', link: '' },
   ]
 
   console.log(props)
   return (
-    <div class="container">
+    <div className="container">
       {/* 大標題 */}
       <h2 className="back-stage-title">後台管理</h2>
       {/* 頁簽 */}
@@ -25,15 +29,15 @@ function BookMart(props) {
           {optionName.map((v, i) => {
             return (
               <li className="option" key={i}>
-                <a
-                  href="#/"
+                <Link
+                  to={v.link}
                   className={optionNow === i ? 'now' : ''}
                   onClick={() => {
                     setOptionNow(i)
                   }}
                 >
-                  {v}
-                </a>
+                  {v.name}
+                </Link>
               </li>
             )
           })}
@@ -42,15 +46,18 @@ function BookMart(props) {
         <div className="option-mobile-now">
           {optionName.map((v, i) => {
             return (
-              <div href="#/" key={i} className={optionNow === i ? 'show' : ''}>
-                {v}
-              </div>
+              <Link
+                to={v.link}
+                key={i}
+                className={optionNow === i ? 'show' : ''}
+              >
+                {v.name}
+              </Link>
             )
           })}
         </div>
         <div className="icon">
-          <a
-            href="#/"
+          <div
             onClick={() => {
               MobileListRef.current.className.includes('show')
                 ? MobileListRef.current.classList.remove('show')
@@ -58,19 +65,19 @@ function BookMart(props) {
             }}
           >
             <img src="http://localhost:3000/images/icon/other.jpg" alt="" />
-          </a>
+          </div>
           <ul className="option-list-mobile" ref={MobileListRef}>
             {optionName.map((v, i) => {
               return (
                 <li className="option" key={i}>
-                  <a
-                    href="#/"
+                  <Link
+                    to={v.link}
                     onClick={() => {
                       setOptionNow(i)
                     }}
                   >
-                    {v}
-                  </a>
+                    {v.name}
+                  </Link>
                 </li>
               )
             })}

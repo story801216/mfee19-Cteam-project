@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import { Link } from 'react-router-dom'
 //引入套件
 import Slider from 'react-slick'
 import 'slick-carousel/slick/slick.css'
@@ -63,11 +64,21 @@ export default class PopularProduct extends Component {
           <h1 className="text-divider1">熱門商品</h1>
           <div className="SliderP">
             <Slider className="hotSilder" {...settings} className="portiaMove">
-              <NewPopularProduct />
-              <NewPopularProduct1 />
-              <NewPopularProduct2 />
-              <NewPopularProduct3 />
-              <NewPopularProduct4 />
+              <Link to="/prod-list/prod/33">
+                <NewPopularProduct />
+              </Link>
+              <Link to="/prod-list/prod/38">
+                <NewPopularProduct1 />
+              </Link>
+              <Link to="/prod-list/prod/21">
+                <NewPopularProduct2 />
+              </Link>
+              <Link to="/prod-list/prod/72">
+                <NewPopularProduct3 />
+              </Link>
+              <Link to="/prod-list/prod/53">
+                <NewPopularProduct4 />
+              </Link>
             </Slider>
           </div>
           <div

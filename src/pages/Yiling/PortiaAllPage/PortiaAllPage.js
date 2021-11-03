@@ -16,9 +16,6 @@ function PortiaAllPage(props) {
     <>
       {/* 主要內容 */}
       <Switch>
-        <Route path="/HomePage">
-          <HomePage />
-        </Route>
         <Route path="/StoresMap">
           <StoresMap />
         </Route>
@@ -30,6 +27,9 @@ function PortiaAllPage(props) {
         </Route>
         <Route path="/Select_shop">
           <Select_shop setCloseStore={setCloseStore} />
+        </Route>
+        <Route exact path="/">
+          <HomePage />
         </Route>
       </Switch>
     </>

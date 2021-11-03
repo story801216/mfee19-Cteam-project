@@ -155,7 +155,7 @@
     margin: auto;
 }
 
-.otherProductsSlider .item {
+.otherProductsSlider .product .item {
     position: relative;
     display: flex;
     flex-direction: column;

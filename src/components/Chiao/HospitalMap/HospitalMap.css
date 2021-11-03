@@ -10,4 +10,8 @@
   padding: 5px;
 }
 
-
+@media  screen and (max-width:992px) {
+  .googleIconColorFor1 {
+    width: 24vw;
+  }
+}
