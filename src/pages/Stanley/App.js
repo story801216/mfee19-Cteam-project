@@ -8,12 +8,16 @@ import ClientOrderDetail from './client-order-detail/index'
 import ManagerOrderList from './manager-order-list/index'
 import ManagerOrderDetail from './managert-order-detail/index'
 
-function App() {
+function App(props) {
+  const { productCount, setProductCount } = props
   return (
     <>
       <Switch>
         <Route path="/cart">
-          <ShoppingCart1 />
+          <ShoppingCart1
+            productCount={productCount}
+            setProductCount={setProductCount}
+          />
         </Route>
         <Route path="/checkout">
           <ShoppingCart2 />

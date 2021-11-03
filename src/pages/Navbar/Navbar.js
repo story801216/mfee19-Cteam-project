@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import './navbar.css'
 
@@ -15,9 +15,16 @@ const halfCirclePic = 'http://localhost:3000/images/encyclopedia/halfcircle.png'
 const LogoPic = 'http://localhost:3000/images/Logo.jpg' //Logo圖
 
 function Navbar(props) {
-  const { setControlCate, setControlSmallCate, setControlSmallBody } = props
+  const {
+    setControlCate,
+    setControlSmallCate,
+    setControlSmallBody,
+    productCount,
+  } = props
+
   /*下拉式選單狀態 */
   const [buttonIndex, setButtonIndex] = useState(0)
+
   return (
     <>
       <div
@@ -54,8 +61,12 @@ function Navbar(props) {
                 <Link to={'/followdPage'} className="navChandePageEnc">
                   <FiHeart />
                 </Link>
-                <a href="/cart" className="navChandePageEnc">
+                <a href="/cart" className="navChandePageEnc cart-count-box">
+                  {/* 商品購物車數量 */}
                   <BsCart2 />
+                  {productCount !== 0 && (
+                    <span className="cart-count">{productCount}</span>
+                  )}
                 </a>
                 <Link to="/Login">
                   <a href="/Login" className="navChandePageEnc">

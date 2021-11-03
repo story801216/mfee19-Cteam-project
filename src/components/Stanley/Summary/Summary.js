@@ -16,7 +16,7 @@ function Summary(props) {
     const obj = {
       total: total,
       mycart: mycart,
-      productCount: productCount(),
+      productCount: productCount,
       deliveryLocation: deliveryLocation,
       deliveryMethod: deliveryMethod,
       paymentMethod: paymentMethod,
