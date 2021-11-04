@@ -56,13 +56,14 @@ function Select_shop(props) {
   //上傳選取門市到處方資料庫裡
   const submit = (e) => {
     e.preventDefault()
-    if (setCloseStore !== '') {
-      Axios.post('http://localhost:3001/Select_Shop', {
-        setCloseStore: setCloseStore,
+    if (valueShop !== '') {
+      Axios.post('http://localhost:3003/Select_Shop', {
+        Shop: valueShop,
       })
         .then((res) => {
+          console.log(valueShop)
           alert('上傳成功，調劑完畢後會在第一時間連絡您')
-          window.location.href = './'
+          window.location.href = '/'
         })
         .catch((err) => {
           console.log(err)
