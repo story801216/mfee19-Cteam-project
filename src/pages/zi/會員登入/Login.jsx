@@ -16,7 +16,7 @@ function Login() {
       })
         .then((res) => {
           alert('登入成功，將回到首頁!')
-          window.location.href = './HomePage'
+          window.location.href = '/'
         })
         .catch((e) => {
           if (e.response.status === 500) {
