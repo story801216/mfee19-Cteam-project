@@ -21,6 +21,7 @@ function Navbar(props) {
     setControlSmallCate,
     setControlSmallBody,
     productCount,
+    isAuth,
   } = props
 
   /*下拉式選單狀態 */
@@ -42,8 +43,8 @@ function Navbar(props) {
           </div>
           <div className="navbarLinkDesTop">
             <div className="navbarLinkDesTop1">
-              <Link to="/Prescription_Reserve">
-                <a href="/Prescription_Reserve" className="navChandePageEnc">
+              <Link to="/Select_Shop">
+                <a href="/Select_Shop" className="navChandePageEnc">
                   <div className="positionIconA">
                     <MdOutlineAssignment />
                     <p>處方領藥</p>
@@ -72,12 +73,16 @@ function Navbar(props) {
                 <Link to="/Login" className="navChandePageEnc">
                   <FaRegUserCircle />
                 </Link>
-                <Link
-                  to="/back-stage/Backstage_Member_Management"
-                  className="navChandePageEnc"
-                >
-                  <GrUserManager />
-                </Link>
+                {isAuth ? (
+                  <Link
+                    to="/back-stage/Backstage_Member_Management"
+                    className="navChandePageEnc"
+                  >
+                    <GrUserManager />
+                  </Link>
+                ) : (
+                  ''
+                )}
               </div>
             </div>
             <div className="navbarLinkDesTop2">

@@ -6,7 +6,7 @@ function Backstage_Prescription_Management() {
   const [getPrescription, setPrescription] = useState([])
 
   const getPrescriptions = (e) => {
-    Axios.get('http://localhost:3001/Backstage_Prescription_Management').then(
+    Axios.get('http://localhost:3003/Backstage_Prescription_Management').then(
       (response) => {
         setPrescription(response.data)
       }
@@ -83,7 +83,7 @@ function Backstage_Prescription_Management() {
                     </li>
                     <li>病患姓名:{val.name}</li>
                     <li>連絡電話:{val.phone}</li>
-                    <li>領藥門市:中正店</li>
+                    <li>領藥門市:{val.Shop}</li>
                   </div>
                   <div>
                     <li>看診日期:{val.birthday.substr(0, 10)}</li>

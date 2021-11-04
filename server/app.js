@@ -104,9 +104,10 @@ app.post('/Prescription_Reserve', (req, res) => {
 
 /* 將選取店家寫入處方資料庫 */
 app.post('/Select_Shop', (req, res) => {
-  const Shop = req.body.setCloseStore
+  const Shop = req.body.Shop
+  console.log(Shop)
   db.query(
-    `INSERT INTO prescription (valueShop) VALUES (''${Shop}')`,
+    `INSERT INTO prescription (Shop) VALUES ('${Shop}')`,
     (err, result) => {
       if (err) {
         console.log(err)
@@ -138,6 +139,6 @@ app.post(
 )
 
 /* 阜號 */
-app.listen(3001, () => {
-  console.log('yey, your server is running on port 3001')
+app.listen(3003, () => {
+  console.log('yey, your server is running on port 3003')
 })

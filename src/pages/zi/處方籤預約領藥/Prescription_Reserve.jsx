@@ -3,7 +3,9 @@ import { useState } from 'react'
 import Axios from 'axios'
 const prescriptionimg = document.querySelector('#prescriptionimg')
 
-function Prescription_Reserve() {
+function Prescription_Reserve(props) {
+  const {closeStore} = props
+  console.log(closeStore)
   // const prescriptionimg = document.querySelector('#prescriptionimg')
   const [name, setName] = useState('')
   const [idNumber, setIdNumber] = useState('')
@@ -11,6 +13,14 @@ function Prescription_Reserve() {
   const [hospital, setHospital] = useState('')
   const [phone, setPhone] = useState('')
   const [selectFreq, setSelectFreq] = useState('')
+  const [prescriptionImg, setPrescriptionImg] = useState('')
+
+  const onChange = (e) => {
+    const file = e.target.files.item(0) // 取得選中檔案們的一個檔案
+    const fileReader = new FileReader() // FileReader為瀏覽器內建類別，用途為讀取瀏覽器選中的檔案
+    fileReader.addEventListener('load', this.fileLoad)
+    fileReader.readAsDataURL(file) // 讀取完檔案後，變成URL
+  }
 
   const submit = (e) => {
     e.preventDefault()
@@ -22,7 +32,7 @@ function Prescription_Reserve() {
       phone !== '' &&
       selectFreq !== ''
     ) {
-      Axios.post('http://localhost:3001/Prescription_Reserve', {
+      Axios.post('http://localhost:3003/Prescription_Reserve', {
         name: name,
         idNumber: idNumber,
         birthday: birthday,
@@ -31,8 +41,9 @@ function Prescription_Reserve() {
         selectFreq: selectFreq,
       })
         .then((res) => {
+          alert('上傳成功，調劑完畢後會在第一時間連絡您')
           console.log('上傳成功')
-          window.location.href = './Select_Shop'
+          window.location.href = '/'
         })
         .catch((err) => {
           console.log(err)
@@ -183,7 +194,7 @@ function Prescription_Reserve() {
             className="zi-Prescription-submit"
             onClick={submit}
           >
-            下一步
+            送出
           </button>
         </div>
       </div>

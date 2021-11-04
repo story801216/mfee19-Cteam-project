@@ -6,7 +6,7 @@ function Backstage_Member_Management() {
   const [getMember, setGetMembers] = useState([])
 
   const getMembers = (e) => {
-    Axios.get('http://localhost:3001/Backstage_Member_Management').then(
+    Axios.get('http://localhost:3003/Backstage_Member_Management').then(
       (response) => {
         setGetMembers(response.data)
       }
