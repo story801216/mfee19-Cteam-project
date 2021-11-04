@@ -43,7 +43,6 @@ function NavbarPush() {
                 <HashLink
                   smooth
                   to={`${v.enName}`}
-                  offset="-150"
                   className="navChandePageEnc"
                 >
                   <img
