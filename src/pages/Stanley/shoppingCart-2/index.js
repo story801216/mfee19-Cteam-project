@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useState, useRef } from 'react'
 import { useHistory } from 'react-router-dom'
 import './index.scss'
 import axios from 'axios'
@@ -41,6 +41,9 @@ function App() {
 
   const [mycart, setMycart] = useState([])
   const [orderInfo, setOrderInfo] = useState('')
+  const [memberInfo, setMemberInfo] = useState(
+    JSON.parse(localStorage.getItem('Member')) || []
+  )
 
   const [storeOption, setStoreOption] = useState('')
   const [mycity, setMycity] = useState('')
@@ -49,6 +52,17 @@ function App() {
   const [mystore, setMystore] = useState('')
 
   let history = useHistory('')
+
+  useEffect(() => {
+    if (memberInfo) {
+      const a = (document.getElementById('member_name').value =
+        memberInfo[0].name)
+      const b = (document.getElementById('member_mobile').value =
+        memberInfo[0].mobile)
+      const c = (document.getElementById('member_email').value =
+        memberInfo[0].email)
+    }
+  }, [])
 
   // TODO：表單驗證
   const handleChange = (e) => {
@@ -186,6 +200,7 @@ function App() {
                   className="email-input"
                   type="text"
                   name="member_email"
+                  id="member_email"
                   placeholder="請輸入連絡信箱"
                   disabled
                 />

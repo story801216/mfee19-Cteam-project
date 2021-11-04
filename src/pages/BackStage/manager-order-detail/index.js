@@ -7,13 +7,14 @@ import Checkline2 from '../../../components/Stanley/Checkline2/Checkline2'
 
 function App(props) {
   const [orderInfo, setOrderInfo] = useState('')
-  const [orderStatus, setOrderStatus] = useState()
+  const [orderStatus, setOrderStatus] = useState(
+    orderInfo ? orderInfo.order_list[0].order_status : ''
+  )
   const order_sid = props.match.params.order_sid
 
   console.log(props)
   // componentdidMount：讀取完成的訂單資訊
   useEffect(() => {
-    // fetch 最新一筆資料
     const getInfo = async () => {
       const r = await axios.get(
         `http://localhost:3001/cart/order-detail/${order_sid}`
@@ -25,14 +26,25 @@ function App(props) {
     getInfo()
   }, [])
 
-  // TODO：修改訂單狀態
+  // 修改訂單狀態
   const handleSubmit = async () => {
-    const r = await axios.put
+    const data = {
+      order_status: orderStatus,
+    }
+    const r = await axios.put(
+      `http://localhost:3001/cart/order-detail/${order_sid}`,
+      data
+    )
+    console.log(r)
+    if (r.data.success) {
+      alert(`訂單狀態已修改為「${orderStatus}」`)
+    }
   }
+
   return (
     <>
       <div className="container">
-        <Checkline2 />
+        <Checkline2 orderStatus={orderStatus}/>
         <Cart3 orderInfo={orderInfo} />
 
         {/* 訂單明細 */}
@@ -86,6 +98,7 @@ function App(props) {
                   <select
                     name=""
                     id=""
+                    value={orderStatus}
                     onChange={(e) => {
                       setOrderStatus(e.target.value)
                     }}
