@@ -14,7 +14,7 @@ function Register() {
   const submit = (e) => {
     e.preventDefault()
     if (email !== '' && password !== '') {
-      Axios.post('http://localhost:3001/create', {
+      Axios.post('http://localhost:3002/create', {
         email: email,
         password: password,
         name: name,

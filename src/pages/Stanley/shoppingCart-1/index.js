@@ -20,8 +20,6 @@ function App(props) {
     JSON.parse(localStorage.getItem('cart')) || []
   )
 
-
-
   const total = () => {
     let sum = 0
     for (let i = 0; i < mycart.length; i++) {

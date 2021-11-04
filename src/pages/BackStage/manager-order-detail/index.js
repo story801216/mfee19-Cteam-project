@@ -10,6 +10,7 @@ function App(props) {
   const [orderStatus, setOrderStatus] = useState()
   const order_sid = props.match.params.order_sid
 
+  console.log(props)
   // componentdidMount：讀取完成的訂單資訊
   useEffect(() => {
     // fetch 最新一筆資料
@@ -35,11 +36,12 @@ function App(props) {
         <Cart3 orderInfo={orderInfo} />
 
         {/* 訂單明細 */}
-        <div className="order-detail-box">
-          <div className="order-detail-title d-flex justify-content-between align-items-center">
-            訂單明細
-          </div>
-          {orderInfo && (
+        {orderInfo && (
+          <div className="order-detail-box">
+            <div className="order-detail-title d-flex justify-content-between align-items-center">
+              訂單編號：{orderInfo.order_list[0].sid}
+            </div>
+
             <div className="row">
               <div className="col-xl-6 col-12">
                 <div className="subtitle">訂購人資訊</div>
@@ -78,7 +80,8 @@ function App(props) {
                 <div className="detail-box">
                   訂單編號：{orderInfo.order_list[0].sid}
                   <br />
-                  {/* 訂單日期：{orderInfo.order_date.slice(0, 10)} */}
+                  訂單日期：{orderInfo.order_list[0].order_date.slice(0, 10)}
+                  <br />
                   訂單狀態：
                   <select
                     name=""
@@ -95,14 +98,14 @@ function App(props) {
                 </div>
               </div>
             </div>
-          )}
 
-          <div className="save-change-box">
-            <div className="save-change-btn" onClick={handleSubmit}>
-              儲存變更
+            <div className="save-change-box">
+              <div className="save-change-btn" onClick={handleSubmit}>
+                儲存變更
+              </div>
             </div>
           </div>
-        </div>
+        )}
       </div>
     </>
   )

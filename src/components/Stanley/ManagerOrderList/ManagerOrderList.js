@@ -1,7 +1,7 @@
 import React from 'react'
 import './ManagerOrderList.css'
 import { devUrl } from './../../../config/index'
-import EditProductsPage from '../../../pages/BackStage/EditProductsPage'
+import { Route, Switch, NavLink, Link } from 'react-router-dom'
 
 function ManagerOrderList(props) {
   const { sid, member_name, amount, order_date, order_status } = props
@@ -29,11 +29,11 @@ function ManagerOrderList(props) {
               </div>
               <div className="col-1">
                 <div className="buttons">
-                  <a href={'/admin/order-detail/' + sid} className="edit">
+                  <Link to={'/back-stage/order-detail/' + sid} className="edit">
                     <div>
                       <img src={`${devUrl}/images/icon/edit.png`} alt="" />
                     </div>
-                  </a>
+                  </Link>
                 </div>
               </div>
             </div>

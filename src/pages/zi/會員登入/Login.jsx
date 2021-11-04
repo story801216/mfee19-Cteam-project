@@ -10,7 +10,7 @@ function Login() {
   const login = (e) => {
     e.preventDefault() // prevent form refresh
     if (email !== '' && password !== '') {
-      Axios.post('http://localhost:3001/login', {
+      Axios.post('http://localhost:3002/login', {
         email: email,
         password: password,
       })

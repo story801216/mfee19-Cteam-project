@@ -1,6 +1,7 @@
 import React from 'react'
 import './ClientOrderList.css'
 import { MdKeyboardArrowRight } from 'react-icons/md'
+import { Link, NavLink } from 'react-router-dom'
 
 function ClientOrderList(props) {
   const { sid, order_date, order_status, amount } = props
@@ -19,7 +20,7 @@ function ClientOrderList(props) {
             </div>
           </div>
           <div className="col-2">
-            <a href="/order-detail">查閱內容</a>
+            <Link to={'/order-detail'}>查閱內容 </Link>
           </div>
         </div>
       </div>
@@ -39,9 +40,9 @@ function ClientOrderList(props) {
               <div className="row">
                 <div className="col-8">訂單總額：NT${amount}</div>
                 <div className="col-4 text-right">
-                  <a href="/order-detail">
+                  <Link to={'/order-detail'}>
                     <MdKeyboardArrowRight />
-                  </a>
+                  </Link>
                 </div>
               </div>
             </div>
