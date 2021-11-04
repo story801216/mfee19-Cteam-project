@@ -86,28 +86,13 @@ app.post('/Prescription_Reserve', (req, res) => {
   const hospital = req.body.hospital
   const phone = req.body.phone
   const selectFreq = req.body.selectFreq
+  const Shop = req.body.shop
   // const fm = 'YYYY-MM-DD HH:mm:ss'
   // const created_at = moment().format(fm)
   // const image = ''
   /* 將處方資料寫入資料庫 */
   db.query(
-    `INSERT INTO prescription (name, idNumber, birthday, hospital,  phone, selectFreq) VALUES ('${name}', '${idNumber}', '${birthday}', '${hospital}', '${phone}', '${selectFreq}')`,
-    (err, result) => {
-      if (err) {
-        console.log(err)
-      } else {
-        res.send('寫入成功')
-      }
-    }
-  )
-})
-
-/* 將選取店家寫入處方資料庫 */
-app.post('/Select_Shop', (req, res) => {
-  const Shop = req.body.Shop
-  console.log(Shop)
-  db.query(
-    `INSERT INTO prescription (Shop) VALUES ('${Shop}')`,
+    `INSERT INTO prescription (name, idNumber, birthday, hospital,  phone, selectFreq, Shop) VALUES ('${name}', '${idNumber}', '${birthday}', '${hospital}', '${phone}', '${selectFreq}', '${Shop}')`,
     (err, result) => {
       if (err) {
         console.log(err)
