@@ -100,6 +100,7 @@ function App() {
                 setControlSmallBody={setControlSmallBody}
                 productCount={productCount}
                 setProductCount={setProductCount}
+                isAuth={isAuth}
               />
               {/* 後臺管理頁面 */}
               <BackStage editSid={editSid} setEditSid={setEditSid} />

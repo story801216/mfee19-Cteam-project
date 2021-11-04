@@ -19,10 +19,10 @@ app.use(express.json())
 
 /* 連線設定 */
 const db = mysql.createConnection({
-  user: 'story801216' /* 帳號 */,
+  user: 'ben' /* 帳號 */,
   host: 'localhost' /* 主機 */,
-  password: '123' /* 密碼 */,
-  database: 'finalproject' /* 資料庫名稱 */,
+  password: 'admin' /* 密碼 */,
+  database: 'healthour' /* 資料庫名稱 */,
 })
 
 /* 註冊功能 */

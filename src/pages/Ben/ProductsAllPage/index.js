@@ -17,7 +17,8 @@ function ProductsAllPage(props) {
     setControlSmallCate,
     setControlSmallBody,
     productCount,
-    setProductCount
+    setProductCount,
+    isAuth,
   } = props
   const cates = [
     {
@@ -127,6 +128,7 @@ function ProductsAllPage(props) {
 
     const index = currentBrowseRecord.findIndex((v) => v.sid === product.sid)
 
+    // index > -1 等於已在瀏覽過的商品裡，不需要重複加入
     if (index > -1) {
       return
     } else {
@@ -216,6 +218,7 @@ function ProductsAllPage(props) {
             setSearchWord={setSearchWord}
             productCount={productCount}
             setProductCount={setProductCount}
+            isAuth={isAuth}
           />
         </Route>
         {/* 商品列表頁 */}

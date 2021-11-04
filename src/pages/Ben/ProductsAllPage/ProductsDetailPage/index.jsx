@@ -34,6 +34,7 @@ function ProductsDetailPage(props) {
     setSearchWord,
     productCount,
     setProductCount,
+    isAuth,
   } = props
 
   // 是否載入中
@@ -302,17 +303,22 @@ function ProductsDetailPage(props) {
                   {/* 按鈕區 flex水平 */}
                   <div className="button-area">
                     {/* 追蹤商品 */}
-                    <div
-                      className={
-                        isFollow ? 'follow-button hide' : 'follow-button'
-                      }
-                      onClick={() => {
-                        updateFollowToLocalStorage(data)
-                        // setIsFollow(true)
-                      }}
-                    >
-                      加入追蹤
-                    </div>
+                    <Link to={isAuth ? '#' : '/login'}>
+                      <div
+                        className={
+                          isFollow ? 'follow-button hide' : 'follow-button'
+                        }
+                        onClick={
+                          isAuth
+                            ? () => {
+                                updateFollowToLocalStorage(data)
+                              }
+                            : ''
+                        }
+                      >
+                        加入追蹤
+                      </div>
+                    </Link>
                     <div
                       className={
                         isFollow
@@ -321,7 +327,6 @@ function ProductsDetailPage(props) {
                       }
                       onClick={() => {
                         deleteFollowToLocalStorage(data)
-                        // setIsFollow(false)
                       }}
                     >
                       已追蹤
