@@ -19,6 +19,7 @@ function ProductsAllPage(props) {
     productCount,
     setProductCount,
     isAuth,
+    setIsAuth,
   } = props
   const cates = [
     {
@@ -219,6 +220,7 @@ function ProductsAllPage(props) {
             productCount={productCount}
             setProductCount={setProductCount}
             isAuth={isAuth}
+            setIsAuth={setIsAuth}
           />
         </Route>
         {/* 商品列表頁 */}

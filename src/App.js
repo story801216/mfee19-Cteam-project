@@ -101,6 +101,7 @@ function App() {
                 productCount={productCount}
                 setProductCount={setProductCount}
                 isAuth={isAuth}
+                setIsAuth={setIsAuth}
               />
               {/* 後臺管理頁面 */}
               <BackStage editSid={editSid} setEditSid={setEditSid} />
