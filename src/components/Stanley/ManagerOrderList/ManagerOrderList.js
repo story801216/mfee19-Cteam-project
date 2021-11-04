@@ -1,6 +1,6 @@
 import React from 'react'
 import './ManagerOrderList.css'
-import {devUrl} from './../../../config/index'
+import { devUrl } from './../../../config/index'
 import EditProductsPage from '../../../pages/BackStage/EditProductsPage'
 
 function ManagerOrderList(props) {

@@ -3,60 +3,6 @@
   margin-left: 30px;
 }
 
-.outer-container form {
-  background: #fff;
-  border-radius: 5px;
-  box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
-  padding: 20px;
-  width: 600px;
-  padding-top: 160px;
-}
-
-.outer-container form .inputBox {
-  margin-top: 20px;
-}
-
-.outer-container form .inputBox span {
-  display: block;
-  color: #999;
-  padding-bottom: 5px;
-}
-
-.outer-container form .inputBox input,
-.outer-container form .inputBox select {
-  width: 100%;
-  padding: 10px;
-  border-radius: 10px;
-  border: 1px solid rgba(0, 0, 0, 0.3);
-  color: #444;
-}
-
-.outer-container form .flexbox {
-  display: flex;
-  gap: 15px;
-}
-
-.outer-container form .flexbox .inputBox {
-  flex: 1 1 150px;
-}
-
-.outer-container form .submit-btn {
-  width: 100%;
-  background: linear-gradient(45deg, blueviolet, deeppink);
-  margin-top: 20px;
-  padding: 10px;
-  font-size: 20px;
-  color: #fff;
-  border-radius: 10px;
-  cursor: pointer;
-  transition: 0.2s linear;
-}
-
-.outer-container form .submit-btn:hover {
-  letter-spacing: 2px;
-  opacity: 0.8;
-}
-
 .outer-container .card-container {
   margin-bottom: -150px;
   position: relative;
