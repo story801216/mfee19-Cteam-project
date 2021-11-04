@@ -13,7 +13,7 @@ function Member_revise() {
             className="zi-member-revise-Email-text"
             placeholder="請輸入電子郵件"
             disabled="disabled"
-            value="123@yahoo.com,tw"
+            value="123@yahoo.com.tw"
           />
 
           <label for="Password">密碼</label>
