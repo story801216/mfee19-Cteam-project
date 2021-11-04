@@ -6,7 +6,7 @@ function Backstage_Prescription_Management() {
   const [getPrescription, setPrescription] = useState([])
 
   const getPrescriptions = (e) => {
-    Axios.get('http://localhost:3001/Backstage_Prescription_Management').then(
+    Axios.get('http://localhost:3003/Backstage_Prescription_Management').then(
       (response) => {
         setPrescription(response.data)
       }

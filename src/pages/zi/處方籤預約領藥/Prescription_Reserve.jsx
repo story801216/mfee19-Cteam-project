@@ -11,6 +11,14 @@ function Prescription_Reserve() {
   const [hospital, setHospital] = useState('')
   const [phone, setPhone] = useState('')
   const [selectFreq, setSelectFreq] = useState('')
+  const [prescriptionImg, setPrescriptionImg] = useState('')
+
+  const onChange = (e) => {
+    const file = e.target.files.item(0) // 取得選中檔案們的一個檔案
+    const fileReader = new FileReader() // FileReader為瀏覽器內建類別，用途為讀取瀏覽器選中的檔案
+    fileReader.addEventListener('load', this.fileLoad)
+    fileReader.readAsDataURL(file) // 讀取完檔案後，變成URL
+  }
 
   const submit = (e) => {
     e.preventDefault()
@@ -22,7 +30,7 @@ function Prescription_Reserve() {
       phone !== '' &&
       selectFreq !== ''
     ) {
-      Axios.post('http://localhost:3001/Prescription_Reserve', {
+      Axios.post('http://localhost:3003/Prescription_Reserve', {
         name: name,
         idNumber: idNumber,
         birthday: birthday,
