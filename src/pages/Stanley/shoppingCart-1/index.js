@@ -14,11 +14,11 @@ function App(props) {
   const [deliveryLocation, setDeliveryLocation] = useState('')
   const [deliveryMethod, setDeliveryMethod] = useState('')
   const [paymentMethod, setPaymentMethod] = useState('')
-
   // localStorage裡面加入購物車的商品
   const [mycart, setMycart] = useState(
     JSON.parse(localStorage.getItem('cart')) || []
   )
+  
 
   const total = () => {
     let sum = 0

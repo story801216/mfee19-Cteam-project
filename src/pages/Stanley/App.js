@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 import { BrowserRouter as Router, Route, Link, Switch } from 'react-router-dom'
 import ShoppingCart1 from './shoppingCart-1/index'
 import ShoppingCart2 from './shoppingCart-2/index'
@@ -8,6 +8,7 @@ import ClientOrderDetail from './client-order-detail/index'
 
 function App(props) {
   const { productCount, setProductCount } = props
+ 
   return (
     <>
       <Switch>
@@ -18,7 +19,7 @@ function App(props) {
           />
         </Route>
         <Route path="/checkout">
-          <ShoppingCart2 />
+          <ShoppingCart2/>
         </Route>
         <Route path="/order-check/:order_sid?">
           <ShoppingCart3 />
