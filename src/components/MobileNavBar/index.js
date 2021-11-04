@@ -14,11 +14,11 @@ function MobileNavBar(props) {
   const navBarItem = [
     {
       mainNav: '關於我們',
-      mainNavLink: '/HomePage',
+      mainNavLink: '/',
       subNav: [
         {
           name: '品牌介紹',
-          link: '/HomePage',
+          link: '/',
         },
         {
           name: '門市資訊',
@@ -28,21 +28,21 @@ function MobileNavBar(props) {
     },
     {
       mainNav: '消息專區',
-      mainNavLink: '/HomePage',
+      mainNavLink: '/',
       subNav: [
         {
           name: '活動專區',
-          link: '/HomePage',
+          link: '/',
         },
         {
           name: '相關連結',
-          link: '/HomePage',
+          link: '/',
         },
       ],
     },
     {
       mainNav: '保健知識',
-      mainNavLink: '/HomePage',
+      mainNavLink: '/',
       subNav: [
         {
           name: '保健百科',

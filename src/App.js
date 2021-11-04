@@ -41,6 +41,9 @@ import BackStage from './pages/BackStage'
 import './App.css'
 
 function App() {
+  // 是否為登入狀態
+  const [isAuth, setIsAuth] = useState(false)
+
   // navbar 商品類別欄顏色切換
   const [controlCate, setControlCate] = useState('')
   const [controlSmallCate, setControlSmallCate] = useState('')
@@ -62,13 +65,13 @@ function App() {
   return (
     <Router>
       <>
-        <NavLink to="/back-stage/Backstage_Member_Management">後臺管理</NavLink>
-
         <Navbar
           setControlCate={setControlCate}
           setControlSmallCate={setControlSmallCate}
           setControlSmallBody={setControlSmallBody}
           productCount={productCount}
+          isAuth={isAuth}
+          setIsAuth={setIsAuth}
         />
         <MobileNavBar />
         <ScrollToTop>
