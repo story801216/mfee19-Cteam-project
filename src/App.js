@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import {
   BrowserRouter as Router,
   Route,
@@ -62,6 +62,14 @@ function App() {
       : 0
   )
 
+  // 確認是否有登入 有的話就讓isAuth顯示true
+  useEffect(() => {
+    const userLogin = JSON.parse(localStorage.getItem('Member') || '[]')
+    if (userLogin.length > 0) {
+      setIsAuth(true)
+    }
+  }, [])
+
   return (
     <Router>
       <>
@@ -71,7 +79,6 @@ function App() {
           setControlSmallBody={setControlSmallBody}
           productCount={productCount}
           isAuth={isAuth}
-          setIsAuth={setIsAuth}
         />
         <MobileNavBar />
         <ScrollToTop>
