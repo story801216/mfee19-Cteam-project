@@ -19,6 +19,7 @@ function Login() {
           alert('登入成功，將回到首頁!')
           console.log(res)
           localStorage.setItem('Member', JSON.stringify(res.data))
+          window.location.href = '/'
         })
         .catch((e) => {
           if (e.res.status === 500) {
