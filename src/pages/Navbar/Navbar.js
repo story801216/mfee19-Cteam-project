@@ -5,6 +5,7 @@ import './navbar.css'
 import { BsCart2 } from 'react-icons/bs' //購物車
 import { FaRegUserCircle } from 'react-icons/fa' //會員
 import { FiHeart } from 'react-icons/fi' //愛心
+import { GrUserManager } from 'react-icons/gr' //後臺管理
 import { MdOutlineAssignment } from 'react-icons/md' //處方籤
 
 import NavbarPush from './components/NavbarPush' //活動頁籤
@@ -61,17 +62,21 @@ function Navbar(props) {
                 <Link to={'/followdPage'} className="navChandePageEnc">
                   <FiHeart />
                 </Link>
-                <a href="/cart" className="navChandePageEnc cart-count-box">
+                <Link to="/cart" className="navChandePageEnc cart-count-box">
                   {/* 商品購物車數量 */}
                   <BsCart2 />
                   {productCount !== 0 && (
                     <span className="cart-count">{productCount}</span>
                   )}
-                </a>
-                <Link to="/Login">
-                  <a href="/Login" className="navChandePageEnc">
-                    <FaRegUserCircle />
-                  </a>
+                </Link>
+                <Link to="/Login" className="navChandePageEnc">
+                  <FaRegUserCircle />
+                </Link>
+                <Link
+                  to="/back-stage/Backstage_Member_Management"
+                  className="navChandePageEnc"
+                >
+                  <GrUserManager />
                 </Link>
               </div>
             </div>
@@ -165,8 +170,8 @@ function Navbar(props) {
               name2="相關連結"
               pos1={1700}
               pos2={4300}
-              path1="/HomePage"
-              path2="/HomePage"
+              path1="/"
+              path2="/"
             />
           ) : (
             ''
@@ -179,7 +184,7 @@ function Navbar(props) {
               name2="門市資訊"
               pos1={3200}
               pos2={100}
-              path1="/HomePage"
+              path1="/"
               path2="/StoresMap"
             />
           ) : (

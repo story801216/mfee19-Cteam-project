@@ -15,7 +15,7 @@ function EditFormInput(props) {
         name="Name"
         value={data.Name}
         onChange={(e) => {
-          setData(e.target.value)
+          setData({ ...data, Name: e.target.value })
         }}
       />
 
@@ -26,7 +26,7 @@ function EditFormInput(props) {
         name="image"
         value={data.image}
         onChange={(e) => {
-          setData(e.target.value)
+          setData({ ...data, image: e.target.value })
         }}
       />
 
@@ -41,7 +41,7 @@ function EditFormInput(props) {
         name="categories"
         value={data.categories}
         onChange={(e) => {
-          setData(e.target.value)
+          setData({ ...data, categories: e.target.value })
         }}
       />
 
@@ -52,7 +52,7 @@ function EditFormInput(props) {
         name="Location"
         value={data.Location}
         onChange={(e) => {
-          setData(e.target.value)
+          setData({ ...data, Location: e.target.value })
         }}
       />
 
@@ -63,7 +63,7 @@ function EditFormInput(props) {
         name="brand_company"
         value={data.brand_company}
         onChange={(e) => {
-          setData(e.target.value)
+          setData({ ...data, brand_company: e.target.value })
         }}
       />
 
@@ -74,7 +74,18 @@ function EditFormInput(props) {
         name="quantity"
         value={data.quantity}
         onChange={(e) => {
-          setData(e.target.value)
+          setData({ ...data, quantity: e.target.value })
+        }}
+      />
+
+      <label htmlFor="nutrient"> 成分 / 材質</label>
+      <input
+        type="text"
+        id="nutrient"
+        name="nutrient"
+        value={data.nutrient}
+        onChange={(e) => {
+          setData({ ...data, nutrient: e.target.value })
         }}
       />
 
@@ -85,7 +96,18 @@ function EditFormInput(props) {
         name="price"
         value={data.price}
         onChange={(e) => {
-          setData(e.target.value)
+          setData({ ...data, price: e.target.value })
+        }}
+      />
+
+      <label htmlFor="price">特惠價</label>
+      <input
+        type="text"
+        id="special_offer"
+        name="special_offer"
+        value={data.special_offer}
+        onChange={(e) => {
+          setData({ ...data, special_offer: e.target.value })
         }}
       />
 
@@ -96,7 +118,7 @@ function EditFormInput(props) {
         name="Edible_Method"
         value={data.Edible_Method}
         onChange={(e) => {
-          setData(e.target.value)
+          setData({ ...data, Edible_Method: e.target.value })
         }}
       />
 
@@ -107,7 +129,7 @@ function EditFormInput(props) {
         name="place_origin"
         value={data.place_origin}
         onChange={(e) => {
-          setData(e.target.value)
+          setData({ ...data, place_origin: e.target.value })
         }}
       />
 
@@ -118,7 +140,7 @@ function EditFormInput(props) {
         name="EXP"
         value={data.EXP}
         onChange={(e) => {
-          setData(e.target.value)
+          setData({ ...data, EXP: e.target.value })
         }}
       />
 
@@ -129,7 +151,7 @@ function EditFormInput(props) {
         name="MFD"
         value={data.MFD}
         onChange={(e) => {
-          setData(e.target.value)
+          setData({ ...data, MFD: e.target.value })
         }}
       />
     </>

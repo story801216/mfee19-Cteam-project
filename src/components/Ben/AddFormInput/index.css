@@ -1,7 +1,7 @@
  .main form {
      display:flex;
      flex-direction: column;
-     align-items: center;
+     /* align-items: center; */
      padding: 35px 60px 0;
  }
 
@@ -12,18 +12,18 @@
      margin-bottom: 2px;
  }
 
- .main .control-input {
+ /* .main .control-input {
      position: relative;
      width: 100%;
- }
+ } */
 
  /* w設定80px，只讓按鈕顯示出來 */
- .main #file {
+ /* .main #file {
      position: absolute;
      top: 12.5px;
      right: 10px;
      width: 80px;
- }
+ } */
 
  .main input {
      width: 100%;

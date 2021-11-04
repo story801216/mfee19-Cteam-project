@@ -49,7 +49,7 @@ app.post('/create', (req, res) => {
   )
 })
 
-/* 登入功能 */
+/* 登入功能並將資料傳到前端 */
 app.post('/login', function (req, res) {
   console.log(req.body)
   const email = req.body.email
@@ -61,7 +61,7 @@ app.post('/login', function (req, res) {
       if (rows.length === 0) {
         return res.status(500).send('登入失敗!')
       }
-      return res.send('登入成功!')
+      return res.send(rows)
     }
   )
 })
