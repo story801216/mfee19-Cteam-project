@@ -15,11 +15,13 @@ function Login() {
         password: password,
       })
         .then((res) => {
+          // 將登入的資料存入localStorage
           alert('登入成功，將回到首頁!')
-          window.location.href = './HomePage'
+          console.log(res)
+          localStorage.setItem('Member', JSON.stringify(res.data))
         })
         .catch((e) => {
-          if (e.response.status === 500) {
+          if (e.res.status === 500) {
             alert('帳號或密碼錯誤！')
           }
         })
