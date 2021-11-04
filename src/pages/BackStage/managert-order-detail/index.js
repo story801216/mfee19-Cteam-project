@@ -15,7 +15,7 @@ function App(props) {
     // fetch 最新一筆資料
     const getInfo = async () => {
       const r = await axios.get(
-        `http://localhost:3001/cart/admin/order-detail/${order_sid}`
+        `http://localhost:3001/cart/order-detail/${order_sid}`
       )
       console.log(r)
       // data 是回傳的自動命名 (不太確定)

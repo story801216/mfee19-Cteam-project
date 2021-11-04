@@ -94,7 +94,7 @@ function CreditCard() {
                 </div>
               </div>
             </div>
-            <div className="col-xl-6 col-12">
+            <div className="col-xl-6 col-12 d-xl-block d-none">
               <div className="outer-container">
                 <div className="card-container">
                   <div className="front">
@@ -132,10 +132,9 @@ function CreditCard() {
 
                   <div className="back">
                     <div className="stripe"></div>
-                    <div className="box">
+                    <div className="exp-box">
                       <span>cvv</span>
                       <div className="cvv-box"></div>
-                      <img src="image/visa.png" alt="" />
                     </div>
                   </div>
                 </div>

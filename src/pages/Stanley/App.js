@@ -5,8 +5,6 @@ import ShoppingCart2 from './shoppingCart-2/index'
 import ShoppingCart3 from './shoppingCart-3/index'
 import ClientOrderList from './client-order-list/index'
 import ClientOrderDetail from './client-order-detail/index'
-import ManagerOrderList from './manager-order-list/index'
-import ManagerOrderDetail from './managert-order-detail/index'
 
 function App(props) {
   const { productCount, setProductCount } = props
@@ -30,12 +28,6 @@ function App(props) {
         </Route>
         <Route path="/order-detail">
           <ClientOrderDetail />
-        </Route>
-        <Route path="/admin/order-list">
-          <ManagerOrderList />
-        </Route>
-        <Route path="/admin/order-detail/:order_sid?">
-          <ManagerOrderDetail />
         </Route>
       </Switch>
     </>

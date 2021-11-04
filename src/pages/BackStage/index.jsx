@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import './index.css'
 import { Route, Switch, NavLink } from 'react-router-dom'
 import BookMart from '../../components/Ben/BookMart'
 import ProductsSearchPageBackStage from './ProductsSearchPageBackStage'
@@ -7,7 +8,10 @@ import EditProductsPage from './EditProductsPage'
 import AddProductsPage from './AddProductsPage'
 import Backstage_Member_Management from './Backstage_Member_Management/Backstage_Member_Management'
 import Backstage_Prescription_Management from './Backstage_Prescription_Management/Backstage_Prescription_Management'
-import './index.css'
+import ManagerOrderList from './manager-order-list/index'
+import ManagerOrderDetail from './managert-order-detail/index'
+// import ManagerOperationData from './manager-operation-data'
+
 // forceRefresh={true}
 function BackStage(props) {
   // 控制頁簽Now顏色
@@ -64,6 +68,18 @@ function BackStage(props) {
         <Route path="/back-stage/Backstage_Prescription_Management">
           <BookMart optionNow={optionNow} setOptionNow={setOptionNow} />
           <Backstage_Prescription_Management />
+        </Route>
+        <Route path="/back-stage/order-list">
+          <BookMart optionNow={optionNow} setOptionNow={setOptionNow} />
+          <ManagerOrderList />
+        </Route>
+        <Route path="/back-stage/order-list/order-detail/:order-sid?">
+          <BookMart optionNow={optionNow} setOptionNow={setOptionNow} />
+          <ManagerOrderDetail />
+        </Route>
+        <Route path="/back-stage/operation-data">
+          <BookMart optionNow={optionNow} setOptionNow={setOptionNow} />
+          {/* <ManagerOperationData /> */}
         </Route>
       </Switch>
     </>
