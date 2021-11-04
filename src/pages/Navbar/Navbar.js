@@ -43,8 +43,8 @@ function Navbar(props) {
           </div>
           <div className="navbarLinkDesTop">
             <div className="navbarLinkDesTop1">
-              <Link to="/Prescription_Reserve">
-                <a href="/Prescription_Reserve" className="navChandePageEnc">
+              <Link to="/Select_Shop">
+                <a href="/Select_Shop" className="navChandePageEnc">
                   <div className="positionIconA">
                     <MdOutlineAssignment />
                     <p>處方領藥</p>

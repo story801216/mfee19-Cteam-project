@@ -3,7 +3,9 @@ import { useState } from 'react'
 import Axios from 'axios'
 const prescriptionimg = document.querySelector('#prescriptionimg')
 
-function Prescription_Reserve() {
+function Prescription_Reserve(props) {
+  const {closeStore} = props
+  console.log(closeStore)
   // const prescriptionimg = document.querySelector('#prescriptionimg')
   const [name, setName] = useState('')
   const [idNumber, setIdNumber] = useState('')
@@ -39,8 +41,9 @@ function Prescription_Reserve() {
         selectFreq: selectFreq,
       })
         .then((res) => {
+          alert('上傳成功，調劑完畢後會在第一時間連絡您')
           console.log('上傳成功')
-          window.location.href = './Select_Shop'
+          window.location.href = '/'
         })
         .catch((err) => {
           console.log(err)
@@ -191,7 +194,7 @@ function Prescription_Reserve() {
             className="zi-Prescription-submit"
             onClick={submit}
           >
-            下一步
+            送出
           </button>
         </div>
       </div>

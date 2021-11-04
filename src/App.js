@@ -85,7 +85,7 @@ function App() {
           <Switch>
             <MainContent>
               {/* 註冊、登入、預約領藥 */}
-              <ZiAllPage />
+              <ZiAllPage closeStore={closeStore}/>
               {/* 會員資料修改、會員處方資料列表 */}
               <Route path="/User">
                 <MemberCenter />

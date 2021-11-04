@@ -72,7 +72,7 @@ function Select_shop(props) {
   }
 
   //回到上一頁
-  const backpage = (e) => {
+  const nextpage = (e) => {
     e.preventDefault()
     window.location.href = './Prescription_Reserve'
   }
@@ -247,11 +247,11 @@ function Select_shop(props) {
           </div>
         </div>
         <div className="zi-select-shop-button-flex">
-          <button type="submit" className="zi-select-shop-backstep" onClick={backpage}>
+          {/* <button type="submit" className="zi-select-shop-backstep" onClick={backpage}>
             上一步
-          </button>
-          <button type="submit" className="zi-select-shop-form-submit" onClick={submit}>
-            送出
+          </button> */}
+          <button type="submit" className="zi-select-shop-form-submit" onClick={nextpage}>
+            下一步
           </button>
         </div>
       </div>
