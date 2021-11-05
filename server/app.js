@@ -119,7 +119,7 @@ app.post(
   '/uploadprescription2',
   uploadprescription2.single('prescriptionimg'),
   async (req, res) => {
-    res.json(req.file)
+    res.json(req.file.filename)
   }
 )
 
