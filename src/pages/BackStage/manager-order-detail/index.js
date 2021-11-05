@@ -7,21 +7,21 @@ import Checkline2 from '../../../components/Stanley/Checkline2/Checkline2'
 
 function App(props) {
   const [orderInfo, setOrderInfo] = useState('')
-  const [orderStatus, setOrderStatus] = useState(
-    orderInfo ? orderInfo.order_list[0].order_status : ''
-  )
+  const [orderStatus, setOrderStatus] = useState('')
   const order_sid = props.match.params.order_sid
 
-  console.log(props)
-  // componentdidMount：讀取完成的訂單資訊
+  // componentdidMount：讀取訂單資訊
   useEffect(() => {
     const getInfo = async () => {
       const r = await axios.get(
         `http://localhost:3001/cart/order-detail/${order_sid}`
       )
       console.log(r)
-      // data 是回傳的自動命名 (不太確定)
+      // 設定訂單資訊
       setOrderInfo(r.data)
+
+      // 設定訂單狀態
+      setOrderStatus(r.data.order_list[0].order_status)
     }
     getInfo()
   }, [])
@@ -44,7 +44,7 @@ function App(props) {
   return (
     <>
       <div className="container">
-        <Checkline2 orderStatus={orderStatus}/>
+        <Checkline2 orderStatus={orderStatus} />
         <Cart3 orderInfo={orderInfo} />
 
         {/* 訂單明細 */}

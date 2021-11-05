@@ -24,6 +24,8 @@ function BackStage(props) {
   // 後台商品totalPages
   const [backStageProdsTotalPages, setBackStageProdsTotalPages] = useState(0)
 
+  // 後台訂單編號搜尋
+  const [orderSidSearch, setOrderSidSearch] = useState('')
   return (
     <>
       <Switch>
@@ -69,14 +71,20 @@ function BackStage(props) {
           <BookMart optionNow={optionNow} setOptionNow={setOptionNow} />
           <Backstage_Prescription_Management />
         </Route>
+        {/* 後台訂單列表 */}
         <Route path="/back-stage/order-list">
           <BookMart optionNow={optionNow} setOptionNow={setOptionNow} />
-          <ManagerOrderList />
+          <ManagerOrderList
+            orderSidSearch={orderSidSearch}
+            setOrderSidSearch={setOrderSidSearch}
+          />
         </Route>
+        {/* 後台訂單明細 */}
         <Route path="/back-stage/order-detail/:order_sid">
           <BookMart optionNow={optionNow} setOptionNow={setOptionNow} />
           <ManagerOrderDetail />
         </Route>
+        {/* TODO：後台營業數據 */}
         <Route path="/back-stage/operation-data">
           <BookMart optionNow={optionNow} setOptionNow={setOptionNow} />
           {/* <ManagerOperationData /> */}

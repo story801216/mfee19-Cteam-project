@@ -357,10 +357,10 @@ function App() {
                                           )
                                         // 因storeInfo是array，利用迴圈個別移除class
                                         storeInfo.forEach((el) => {
-                                          el.classList.remove('active')
+                                          el.classList.remove('storeActive')
                                         })
                                         // 為現在的目標增加active標籤
-                                        e.currentTarget.classList.add('active')
+                                        e.currentTarget.classList.add('storeActive')
                                       }}
                                     >
                                       <div className="store-name">

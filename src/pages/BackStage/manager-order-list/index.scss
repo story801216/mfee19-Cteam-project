@@ -39,7 +39,7 @@
     height: 38px;
     border-radius: 5px;
   }
-  .list-contral-box {
+  .list-control-box {
     padding: 15px 0;
     font-size: 20px;
   }
@@ -94,6 +94,11 @@
     height: 20px;
     margin: auto;
   }
+
+  .field-content-box .spinner-grow{
+    margin: 50px auto;
+  }
+
 
   @media screen and (max-width: 376px) {
     .search-computer {
