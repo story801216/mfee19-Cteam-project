@@ -33,7 +33,7 @@ function ProductItem3(props) {
               {/* 商品圖片區(左) */}
               <div className="col-4">
                 <div className="product-img">
-                  <img src={product.picture} alt="" />
+                  <img src={product.image} alt="" />
                 </div>
               </div>
               {/* 其他文字區(右) */}
@@ -41,14 +41,16 @@ function ProductItem3(props) {
                 {/* 商品介紹&X(上區) */}
                 <div className="row">
                   <div className="col-9">
-                    <div className="product-description">{product.name}</div>
+                    <div className="product-description">{product.Name}</div>
                   </div>
                   <div className="col-3">x1</div>
                 </div>
                 {/* 價格(中區) */}
                 <div className="row">
                   <div className="col">
-                    <div className="price text-left">NT${product.price}</div>
+                    <div className="price text-left">
+                      NT${product.unit_price}
+                    </div>
                   </div>
                 </div>
               </div>

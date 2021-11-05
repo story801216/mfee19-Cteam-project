@@ -1,14 +1,18 @@
 import React, { useEffect, useState } from 'react'
 import { withRouter } from 'react-router-dom'
+import { Spinner } from 'react-bootstrap'
 import axios from 'axios'
 import './index.scss'
 import ClientOrderList from '../../../components/Stanley/ClientOrderList/ClientOrderList'
 import MemberBookMark from '../../../components/Member_BookMark/Member_BookMark'
 function App(props) {
   const [orderlist, setOrderlist] = useState([])
+  const [isLoading, setIsloading] = useState(true)
 
   // componentdidMount：讀取某會員的所有訂單資訊
   useEffect(() => {
+    setIsloading(true)
+
     const id = JSON.parse(localStorage.getItem('Member'))[0].sid
     console.log(id)
 
@@ -19,9 +23,13 @@ function App(props) {
       setOrderlist(r.data)
     }
     getInfo()
+
+    setTimeout(() => {
+      setIsloading(false)
+    }, 500)
   }, [])
 
-  // console.log(orderlist) //測試用
+  const spinner = <Spinner animation="grow" variant="primary" />
   return (
     <>
       <div className="COList">
@@ -29,7 +37,7 @@ function App(props) {
           <MemberBookMark />
           {/* 桌機版 */}
           <div className="d-xl-block d-none">
-            <div className="order-list-box ">
+            <div className="order-list-box text-center">
               <div className="row list-title d-xl-block d-none">
                 <div className="col-10">
                   <div className="row">
@@ -41,18 +49,22 @@ function App(props) {
                 </div>
                 <div className="col-2"></div>
               </div>
-              {orderlist &&
-                orderlist.map((v, i) => {
-                  return (
-                    <ClientOrderList
-                      key={i}
-                      sid={v.sid}
-                      order_date={v.order_date}
-                      amount={v.amount}
-                      order_status={v.order_status}
-                    />
-                  )
-                })}
+              {isLoading
+                ? spinner
+                : orderlist
+                ? orderlist &&
+                  orderlist.map((v, i) => {
+                    return (
+                      <ClientOrderList
+                        key={i}
+                        sid={v.sid}
+                        order_date={v.order_date}
+                        amount={v.amount}
+                        order_status={v.order_status}
+                      />
+                    )
+                  })
+                : ''}
             </div>
           </div>
 

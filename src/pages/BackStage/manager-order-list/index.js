@@ -20,7 +20,7 @@ function App(props) {
     // fetch 最新一筆資料
     const getInfo = async () => {
       const r = await axios.get(`http://localhost:3001/cart/`)
-      // data 是回傳的自動命名 (不太確定)
+      // data 是回傳的自動命名 
       setOrderlist(r.data)
       // 拿到
       setTimeout(() => {

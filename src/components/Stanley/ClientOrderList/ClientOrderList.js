@@ -20,7 +20,9 @@ function ClientOrderList(props) {
             </div>
           </div>
           <div className="col-2">
-            <Link to={'/order-detail'} className="check-detail">查閱內容</Link>
+            <Link to={'/order-detail'} className="check-detail">
+              查閱內容
+            </Link>
           </div>
         </div>
       </div>
