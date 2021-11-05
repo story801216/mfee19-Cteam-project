@@ -106,3 +106,8 @@
 .arrowEnterAgain img{
   object-fit: contain;
 }
+
+
+.navallIcon:hover{
+  background-color: #c4c4c4;
+}
