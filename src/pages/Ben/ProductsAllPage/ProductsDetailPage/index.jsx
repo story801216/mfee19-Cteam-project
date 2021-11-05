@@ -14,6 +14,7 @@ import ProductItem from '../../../../components/Ben/ProductItem'
 import './index.css'
 
 function ProductsDetailPage(props) {
+  console.log(props)
   const {
     cates,
     bodys,
@@ -71,7 +72,7 @@ function ProductsDetailPage(props) {
     // console.log(myFollow)
 
     if (myFollow.length > 0) {
-      myFollow.map((v) => {
+      myFollow.filter((v) => {
         if (v.sid === props.match.params.sid * 1) {
           return setIsFollow(true)
         }
@@ -355,7 +356,7 @@ function ProductsDetailPage(props) {
                   {/* flex 水平 */}
                   <div className="spec">
                     <div
-                      className={changeBookMark === 0 ? 'spec now' : 'spec'}
+                      className={changeBookMark === 0 ? 'now' : ''}
                       onClick={() => {
                         setChangeBookMark(0)
                       }}
