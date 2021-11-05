@@ -156,14 +156,6 @@ function ProductsDetailPage(props) {
     }, 500)
   }, [props.match.params.sid])
 
-  // 確認是否有登入 有的話就讓isAuth顯示true
-  useEffect(() => {
-    const userLogin = JSON.parse(localStorage.getItem('Member') || '[]')
-    if (userLogin.length > 0) {
-      setIsAuth(true)
-    }
-  }, [props.location.pathname])
-
   // 追蹤
   const updateFollowToLocalStorage = (product) => {
     const currentFollow = JSON.parse(localStorage.getItem('follow')) || []

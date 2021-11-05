@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import { withRouter } from 'react-router-dom'
 import { Link } from 'react-scroll'
 import { Accordion, Card } from 'react-bootstrap'
@@ -21,6 +21,14 @@ import BreadCrumb from '../../../components/Chiao/BreadCrumb'
 const Banner = './images/page_topbanner.png'
 
 function IconSearch_p1(props) {
+  const { setIsAuth } = props
+  // 確認是否有登入 有的話就讓isAuth顯示true
+  useEffect(() => {
+    const userLogin = JSON.parse(localStorage.getItem('Member') || '[]')
+    if (userLogin.length > 0) {
+      setIsAuth(true)
+    }
+  }, [props.location.pathname])
   return (
     <>
       <div className="chiao-banner">

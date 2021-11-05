@@ -1,5 +1,6 @@
 /* eslint-disable react/jsx-pascal-case */
-import React from 'react'
+import React, { useEffect } from 'react'
+import { withRouter } from 'react-router-dom'
 import './PortiaAllPage.css'
 
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
@@ -11,7 +12,15 @@ import HealthEnIndex from '../HealthEnIndex/HealthEnIndex' //保健百科頁面�
 import Select_shop from '../Select_Shop/Select_shop' //處方籤預約領藥
 
 function PortiaAllPage(props) {
-  const { setCloseStore } = props
+  const { setCloseStore, setIsAuth } = props
+
+  // 確認是否有登入 有的話就讓isAuth顯示true
+  useEffect(() => {
+    const userLogin = JSON.parse(localStorage.getItem('Member') || '[]')
+    if (userLogin.length > 0) {
+      setIsAuth(true)
+    }
+  }, [props.location.pathname])
   return (
     <>
       {/* 主要內容 */}
@@ -36,4 +45,4 @@ function PortiaAllPage(props) {
   )
 }
 
-export default PortiaAllPage
+export default withRouter(PortiaAllPage)

@@ -85,7 +85,11 @@ function App() {
           <Switch>
             <MainContent>
               {/* 註冊、登入、預約領藥 */}
-              <ZiAllPage closeStore={closeStore}/>
+              <ZiAllPage
+                closeStore={closeStore}
+                setCloseStore={setCloseStore}
+                setIsAuth={setIsAuth}
+              />
               {/* 會員資料修改、會員處方資料列表 */}
               <Route path="/User">
                 <MemberCenter />
@@ -107,13 +111,16 @@ function App() {
               <BackStage editSid={editSid} setEditSid={setEditSid} />
 
               {/* 首頁門市資訊地圖 */}
-              <PortiaAllPage setCloseStore={setCloseStore} />
+              <PortiaAllPage
+                setCloseStore={setCloseStore}
+                setIsAuth={setIsAuth}
+              />
               {/* 症狀頁 */}
               <Route path="/IconSearch_p1">
-                <IconSearch_p1 />
+                <IconSearch_p1 setIsAuth={setIsAuth} />
               </Route>
               <Route path="/IconSearch_p2">
-                <IconSearch_p2 />
+                <IconSearch_p2 setIsAuth={setIsAuth} />
               </Route>
               {/* 地圖頁 */}
               <Route path="/HospitalPage">
@@ -123,6 +130,7 @@ function App() {
               <StanleyAllPage
                 productCount={productCount}
                 setProductCount={setProductCount}
+                setIsAuth={setIsAuth}
               />
             </MainContent>
           </Switch>
