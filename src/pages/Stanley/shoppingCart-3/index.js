@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react'
-import { withRouter } from 'react-router-dom'
+import { Link, withRouter } from 'react-router-dom'
 import './index.scss'
 import axios from 'axios'
 import { FaCheckCircle } from 'react-icons/fa'
@@ -40,8 +40,13 @@ function App(props) {
             <FaCheckCircle className="finished-icon" />
             訂單送出成功 <br />
             可至
-            <a href="/order-list">會員中心</a>
-            查看歷史訂單資訊，或<a href="">繼續購物</a>
+            <Link to={'/order-list'} className="link-style">
+              會員中心
+            </Link>
+            查看歷史訂單資訊，或
+            <Link to={'/shop'} className="link-style">
+              繼續購物
+            </Link>
           </div>
 
           {/* cart購物車 */}
