@@ -34,6 +34,7 @@ function Cart1(props) {
               picture={v.image}
               name={v.Name}
               price={v.price}
+              special_offer={v.special_offer}
               count={v.amount}
               setCount={(newCount) => {
                 // 針對react state(狀態)為 obj,array時所作的處理

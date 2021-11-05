@@ -6,20 +6,22 @@ import ClientOrderList from '../../../components/Stanley/ClientOrderList/ClientO
 import MemberBookMark from '../../../components/Member_BookMark/Member_BookMark'
 function App(props) {
   const [orderlist, setOrderlist] = useState([])
-  const id = props.match.params.id
 
   // componentdidMount：讀取某會員的所有訂單資訊
   useEffect(() => {
+    const id = JSON.parse(localStorage.getItem('Member'))[0].sid
+    console.log(id)
+
     // fetch 最新一筆資料
     const getInfo = async () => {
       const r = await axios.get(`http://localhost:3001/cart/order-list/${id}`)
-      console.log(r)
+      // console.log(r)   //測試用
       setOrderlist(r.data)
     }
     getInfo()
   }, [])
 
-  console.log(orderlist)
+  // console.log(orderlist) //測試用
   return (
     <>
       <div className="COList">

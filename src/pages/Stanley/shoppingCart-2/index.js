@@ -53,6 +53,8 @@ function App() {
 
   let history = useHistory('')
 
+  console.log(memberInfo[0].sid)
+
   useEffect(() => {
     if (memberInfo) {
       const a = (document.getElementById('member_name').value =
@@ -107,10 +109,12 @@ function App() {
     // 2. 利用formData Api 得到各欄位的值 or 利用狀態值
     // 所有要儲存進資料庫的data
     const dataObj = {
+      // 來自localStorage會員資料
+      member_id: memberInfo[0].sid,
       // 來自summary
       amount: orderInfo.total,
       productCount: orderInfo.productCount,
-      mycart: orderInfo.mycartDisplay,
+      mycart: orderInfo.mycart, //購物車內商品 (array)
       delivery_location: orderInfo.deliveryLocation,
       delivery_method: orderInfo.deliveryMethod,
       payment_method: orderInfo.paymentMethod,
@@ -136,6 +140,7 @@ function App() {
       alert('訂單送出成功!')
       history.push(`/order-check/${r.data.order_sid}`)
       localStorage.removeItem('cart')
+      localStorage.removeItem('orderInfo')
     }
   }
 
@@ -360,7 +365,9 @@ function App() {
                                           el.classList.remove('storeActive')
                                         })
                                         // 為現在的目標增加active標籤
-                                        e.currentTarget.classList.add('storeActive')
+                                        e.currentTarget.classList.add(
+                                          'storeActive'
+                                        )
                                       }}
                                     >
                                       <div className="store-name">

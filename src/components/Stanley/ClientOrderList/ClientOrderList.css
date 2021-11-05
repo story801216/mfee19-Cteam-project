@@ -19,6 +19,9 @@
   padding: 15px 0;
   border-bottom: 1px solid #b2b6b8;
 }
+.check-detail{
+  color: #00a0f0;
+}
 
 @media screen and (max-width: 376px) {
   .order-list-box {

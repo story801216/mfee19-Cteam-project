@@ -12,6 +12,7 @@ function ProductItem(props) {
     picture,
     name,
     price,
+    special_offer,
     count,
     setCount,
     productCount,
@@ -33,7 +34,6 @@ function ProductItem(props) {
     setMycart(newMyCart)
     setProductCount(newMyCart.length)
   }
-  
 
   // 增減購物車內的商品
   const updateToLocalStorage = (value) => {
@@ -71,7 +71,9 @@ function ProductItem(props) {
               </div>
             </div>
             {/* 單價 */}
-            <div className="col-2 text-center">{price}</div>
+            <div className="col-2 text-center">
+              {special_offer ? special_offer : price}
+            </div>
             {/* 增減按鈕 */}
             <div className="col-2 ">
               <div className="plus-minus-btn d-flex">
