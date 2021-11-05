@@ -16,7 +16,7 @@ function Login(props) {
       })
         .then((res) => {
           // 將登入的資料存入localStorage
-          alert('登入成功，將回到首頁!')
+          alert('登入成功!')
           console.log(res)
           localStorage.setItem('Member', JSON.stringify(res.data))
           props.history.goBack()

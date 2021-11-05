@@ -116,19 +116,27 @@ function Footer(props) {
         {/* 回到最上層 */}
         <div className="return-top">
           {/* 手機 */}
-          <a href="#/" className="d-block d-lg-none" onClick={goToTop}>
+          <div
+            className="d-block d-lg-none"
+            style={{ cursor: 'pointer' }}
+            onClick={goToTop}
+          >
             <img
               src="http://localhost:3000/images/icon/return-top.png"
               alt=""
             />
-          </a>
+          </div>
           {/* 桌機 */}
-          <a href="#/" className="d-none d-lg-block" onClick={goToTop}>
+          <div
+            className="d-none d-lg-block"
+            style={{ cursor: 'pointer' }}
+            onClick={goToTop}
+          >
             <img
               src="http://localhost:3000/images/icon/big-return-top.png"
               alt=""
             />
-          </a>
+          </div>
         </div>
         <div className="container">
           <div className="main">

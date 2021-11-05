@@ -38,7 +38,7 @@ function BookMart(props) {
         <div className="option-mobile-now">
           {optionName.map((v, i) => {
             return (
-              <div href="#/" key={i} className={optionNow === i ? 'show' : ''}>
+              <div key={i} className={optionNow === i ? 'show' : ''}>
                 {v.name}
               </div>
             )

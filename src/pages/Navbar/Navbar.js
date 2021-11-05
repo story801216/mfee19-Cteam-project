@@ -56,20 +56,20 @@ function Navbar(props) {
           <div className="navbarLinkDesTop">
             <div className="navbarLinkDesTop1">
               <Link to="/Select_Shop">
-                <a href="/Select_Shop" className="navChandePageEnc">
+                <Link to="/Select_Shop" className="navChandePageEnc">
                   <div className="positionIconA">
                     <MdOutlineAssignment />
                     <p>處方領藥</p>
                   </div>
-                </a>
+                </Link>
               </Link>
               <Link to="/User/Member_revise">
-                <a href="/User/Member_revise" className="navChandePageEnc">
+                <Link to="/User/Member_revise" className="navChandePageEnc">
                   <div className="positionIconA">
                     <FaRegUserCircle />
                     <p>會員中心</p>
                   </div>
-                </a>
+                </Link>
               </Link>
               <div className="navbarAllIcon">
                 <Link

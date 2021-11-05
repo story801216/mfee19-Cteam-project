@@ -25,7 +25,6 @@ function FollowCateNav(props) {
         {/* 小標題 */}
         <div className="title">
           <div
-            href="#/"
             onClick={() => {
               setControlCate(0)
             }}
