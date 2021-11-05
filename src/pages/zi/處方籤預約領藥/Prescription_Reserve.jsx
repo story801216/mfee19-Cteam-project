@@ -12,16 +12,23 @@ function Prescription_Reserve(props) {
   const [hospital, setHospital] = useState('')
   const [phone, setPhone] = useState('')
   const [selectFreq, setSelectFreq] = useState('')
-  const [prescriptionImg, setPrescriptionImg] = useState('')
+  const [file, setFile] = useState('')
   const shop = closeStore.sName
-  console.log(shop)
 
+  //上傳圖片並預覽(未上傳到後端)
   const onChange = (e) => {
     const file = e.target.files.item(0) // 取得選中檔案們的一個檔案
     const fileReader = new FileReader() // FileReader為瀏覽器內建類別，用途為讀取瀏覽器選中的檔案
-    fileReader.addEventListener('load', this.fileLoad)
+    const fileLoad = (e) => {
+      setFile({
+        img: e.target.result, // 讀取到DataURL後，儲存在result裡面，指定為img
+      })
+    }
+    fileReader.addEventListener('load', fileLoad)
     fileReader.readAsDataURL(file) // 讀取完檔案後，變成URL
   }
+  console.log(file)
+
 
   const submit = (e) => {
     e.preventDefault()
@@ -146,58 +153,30 @@ function Prescription_Reserve(props) {
                   <option value="3">第三次調劑</option>
                 </select>
               </section>
-              {/* <label htmlFor="pregnant">是否懷孕中</label>
-              <div className="zi-Prescription-radio-flex">
-                <label>
-                  <input type="radio" name="pregnant" value="First" />是
-                </label>
-                <label>
-                  <input type="radio" name="pregnant" value="Second" />否
-                </label>
-              </div> */}
-
-              {/* <label htmlFor="feeding">是否正在哺乳</label>
-              <div className="zi-Prescription-radio-flex">
-                <label>
-                  <input type="radio" name="feeding" value="First" />是
-                </label>
-                <label>
-                  <input type="radio" name="feeding" value="Second" />否
-                </label>
-              </div> */}
             </form>
           </div>
-          <form name="fake_form" onSubmit="return false">
+          <form>
             <div className="zi-Prescription-uploadimg-group">
-              <p>上傳處方(請上傳5MB以內JPG、PNG圖檔)</p>
-              <button
+              <p>上傳處方圖片(請上傳JPG或是PNG圖檔)</p>
+              <input
                 type="file"
                 className="zi-Prescriptionimg-submit"
-                // onClick={prescriptionimg}
-              >
-                上傳處方圖片
-              </button>
+                onChange={onChange}
+              />
               <div className="zi-Prescription-uploadpic">
-                {/* <a href="#/" className="zi-Prescription-uploadbtn">
-                  <div className="zi-Prescription-plus1"></div>
-                  <div className="zi-Prescription-plus2"></div>
-                </a> */}
-                {/* <a href="#/">如需縮圖請點這</a> */}
+                <img src={file.img} />
               </div>
             </div>
+            <div className="zi-Prescription-button-flex">
+              <button
+                type="submit"
+                className="zi-Prescription-submit"
+                onClick={submit}
+              >
+                送出
+              </button>
+            </div>
           </form>
-          <form name="form1" style={{ display: 'none' }}>
-            <input type="file" id="prescriptionimg" name="prescriptionimg" />
-          </form>
-        </div>
-        <div className="zi-Prescription-button-flex">
-          <button
-            type="submit"
-            className="zi-Prescription-submit"
-            onClick={submit}
-          >
-            送出
-          </button>
         </div>
       </div>
     </>
