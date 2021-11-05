@@ -14,6 +14,7 @@ import ProductItem from '../../../../components/Ben/ProductItem'
 import './index.css'
 
 function ProductsDetailPage(props) {
+  console.log(props)
   const {
     cates,
     bodys,
@@ -34,6 +35,8 @@ function ProductsDetailPage(props) {
     setSearchWord,
     productCount,
     setProductCount,
+    isAuth,
+    setIsAuth,
   } = props
 
   // 是否載入中
@@ -69,7 +72,7 @@ function ProductsDetailPage(props) {
     // console.log(myFollow)
 
     if (myFollow.length > 0) {
-      myFollow.map((v) => {
+      myFollow.filter((v) => {
         if (v.sid === props.match.params.sid * 1) {
           return setIsFollow(true)
         }
@@ -152,6 +155,14 @@ function ProductsDetailPage(props) {
       setIsloading(false)
     }, 500)
   }, [props.match.params.sid])
+
+  // 確認是否有登入 有的話就讓isAuth顯示true
+  useEffect(() => {
+    const userLogin = JSON.parse(localStorage.getItem('Member') || '[]')
+    if (userLogin.length > 0) {
+      setIsAuth(true)
+    }
+  }, [props.location.pathname])
 
   // 追蹤
   const updateFollowToLocalStorage = (product) => {
@@ -307,8 +318,9 @@ function ProductsDetailPage(props) {
                         isFollow ? 'follow-button hide' : 'follow-button'
                       }
                       onClick={() => {
-                        updateFollowToLocalStorage(data)
-                        // setIsFollow(true)
+                        isAuth
+                          ? updateFollowToLocalStorage(data)
+                          : props.history.push('/login')
                       }}
                     >
                       加入追蹤
@@ -321,7 +333,6 @@ function ProductsDetailPage(props) {
                       }
                       onClick={() => {
                         deleteFollowToLocalStorage(data)
-                        // setIsFollow(false)
                       }}
                     >
                       已追蹤
@@ -345,7 +356,7 @@ function ProductsDetailPage(props) {
                   {/* flex 水平 */}
                   <div className="spec">
                     <div
-                      className={changeBookMark === 0 ? 'spec now' : 'spec'}
+                      className={changeBookMark === 0 ? 'now' : ''}
                       onClick={() => {
                         setChangeBookMark(0)
                       }}

@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import './navbarPush.css'
 import { Link } from 'react-router-dom'
+import { HashLink } from 'react-router-hash-link'
 
 import { RiArrowDropRightLine } from 'react-icons/ri' //右邊箭頭
 
@@ -16,13 +17,13 @@ const iconList = [
   },
 ]
 const iconSick = [
-  { enName: '/HealthEnIndex/heart', chName: '流鼻水' },
-  { enName: '/HealthEnIndex/kidney', chName: '疲憊' },
-  { enName: '/HealthEnIndex/liver', chName: '心悸' },
-  { enName: '/HealthEnIndex/lung', chName: '噁心、嘔吐' },
-  { enName: '/HealthEnIndex/stomach', chName: '咳嗽' },
+  { enName: '/IconSearch_p1#item-1', chName: '流鼻水' },
+  { enName: '/IconSearch_p1#item-2', chName: '疲憊' },
+  { enName: '/IconSearch_p1#item-3', chName: '心悸' },
+  { enName: '/IconSearch_p1#item-4', chName: '噁心、嘔吐' },
+  { enName: '/IconSearch_p1#item-5', chName: '咳嗽' },
   {
-    enName: '/HealthEnIndex/Urinary_Tract',
+    enName: '/IconSearch_p1#item-6',
     chName: '呼吸困難',
   },
 ]
@@ -39,13 +40,17 @@ function NavbarPush() {
           {arr.map((v, i) => (
             <div className="navallIcon" key={i}>
               <div className="navliImg">
-                <Link to={`${v.enName}`} className="navChandePageEnc">
+                <HashLink
+                  smooth
+                  to={`${v.enName}`}
+                  className="navChandePageEnc"
+                >
                   <img
                     src={`http://localhost:3000/images/encyclopedia/${v.chName}.png`}
                     alt={v.chName}
                   />
                   <p>{v.chName}</p>
-                </Link>
+                </HashLink>
               </div>
             </div>
           ))}

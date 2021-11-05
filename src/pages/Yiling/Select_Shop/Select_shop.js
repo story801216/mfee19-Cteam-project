@@ -1,6 +1,6 @@
 /* eslint-disable no-unused-vars */
 import './Select_shop.css'
-
+import {Link} from "react-router-dom";
 // import Googlemap from './Googlemap.js'
 import _ from 'lodash' //引入方法函示庫，react內建不需安裝
 import StoresMapForGoogle from '../../../components/Yiling/StoresMap/StoresMapForGoogle'
@@ -74,7 +74,7 @@ function Select_shop(props) {
   //回到上一頁
   const nextpage = (e) => {
     e.preventDefault()
-    window.location.href = './Prescription_Reserve'
+    window.location.href = '/Prescription_Reserve'
   }
 
   useEffect(() => {
@@ -250,9 +250,11 @@ function Select_shop(props) {
           {/* <button type="submit" className="zi-select-shop-backstep" onClick={backpage}>
             上一步
           </button> */}
-          <button type="submit" className="zi-select-shop-form-submit" onClick={nextpage}>
+          <Link to='/Prescription_Reserve'>
+          <button type="submit" className="zi-select-shop-form-submit" >
             下一步
           </button>
+          </Link>
         </div>
       </div>
     </>

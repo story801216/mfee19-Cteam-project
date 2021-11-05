@@ -1,9 +1,9 @@
 import './Login.css'
-import { Link } from 'react-router-dom'
+import { Link, withRouter } from 'react-router-dom'
 import { useState } from 'react'
 import Axios from 'axios'
 
-function Login() {
+function Login(props) {
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
 
@@ -19,7 +19,7 @@ function Login() {
           alert('登入成功，將回到首頁!')
           console.log(res)
           localStorage.setItem('Member', JSON.stringify(res.data))
-          window.location.href = '/'
+          props.history.goBack()
         })
         .catch((e) => {
           if (e.res.status === 500) {
@@ -100,4 +100,4 @@ function Login() {
   )
 }
 
-export default Login
+export default withRouter(Login)

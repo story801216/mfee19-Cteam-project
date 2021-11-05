@@ -4,8 +4,7 @@ import Axios from 'axios'
 const prescriptionimg = document.querySelector('#prescriptionimg')
 
 function Prescription_Reserve(props) {
-  const {closeStore} = props
-  console.log(closeStore)
+  const { closeStore } = props
   // const prescriptionimg = document.querySelector('#prescriptionimg')
   const [name, setName] = useState('')
   const [idNumber, setIdNumber] = useState('')
@@ -14,6 +13,8 @@ function Prescription_Reserve(props) {
   const [phone, setPhone] = useState('')
   const [selectFreq, setSelectFreq] = useState('')
   const [prescriptionImg, setPrescriptionImg] = useState('')
+  const shop = closeStore.sName
+  console.log(shop)
 
   const onChange = (e) => {
     const file = e.target.files.item(0) // 取得選中檔案們的一個檔案
@@ -39,6 +40,7 @@ function Prescription_Reserve(props) {
         hospital: hospital,
         phone: phone,
         selectFreq: selectFreq,
+        shop: shop,
       })
         .then((res) => {
           alert('上傳成功，調劑完畢後會在第一時間連絡您')

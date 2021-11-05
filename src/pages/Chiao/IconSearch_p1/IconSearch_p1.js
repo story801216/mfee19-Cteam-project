@@ -718,7 +718,7 @@ function IconSearch_p1(props) {
 
                 <Card>
                   <Accordion.Toggle as={Card.Header} eventKey="3">
-                    <div className="chiao-accordion-icon">
+                    <div className="chiao-accordion-icon" id="item-4">
                       <img src={'./images/icons/symptom/vomit.png'} alt="" />
                       <p>
                         噁心/嘔吐
@@ -788,7 +788,7 @@ function IconSearch_p1(props) {
 
                 <Card>
                   <Accordion.Toggle as={Card.Header} eventKey="4">
-                    <div className="chiao-accordion-icon">
+                    <div className="chiao-accordion-icon" id="item-5">
                       <img src={'./images/icons/symptom/cough.png'} alt="" />
                       <p>
                         咳嗽 <IoMdArrowDropdown />
@@ -857,7 +857,7 @@ function IconSearch_p1(props) {
 
                 <Card>
                   <Accordion.Toggle as={Card.Header} eventKey="5">
-                    <div className="chiao-accordion-icon">
+                    <div className="chiao-accordion-icon" id="item-6">
                       <img
                         src={'./images/icons/symptom/difficulty-breathing.png'}
                         alt=""

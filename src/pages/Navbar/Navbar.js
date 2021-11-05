@@ -60,7 +60,10 @@ function Navbar(props) {
                 </a>
               </Link>
               <div className="navbarAllIcon">
-                <Link to={'/followdPage'} className="navChandePageEnc">
+                <Link
+                  to={isAuth ? '/followdPage' : '/Login'}
+                  className="navChandePageEnc"
+                >
                   <FiHeart />
                 </Link>
                 <Link to="/cart" className="navChandePageEnc cart-count-box">
