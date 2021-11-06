@@ -9,7 +9,8 @@ import ClientOrderDetail from '../../../components/Stanley/ClientOrderDetail/Cli
 
 function App(props) {
   const state = [1, 1, 1]
-  const [orderInfo, setOrderInfo] = useState('')
+  const [orderlist, setOrderlist] = useState('')
+  const [orderDetails, setOrderDetails] = useState('')
   window.scrollTo(0, 0)
 
   // 測試用
@@ -23,7 +24,8 @@ function App(props) {
       const r = await axios.get(`http://localhost:3001/cart/${order_sid}`)
       console.log(r)
       // data 是回傳的自動命名 (不太確定)
-      setOrderInfo(r.data)
+      setOrderDetails(r.data.order_details)
+      setOrderlist(r.data.order_list[0])
     }
     getInfo()
   }, [])
@@ -40,7 +42,7 @@ function App(props) {
             <FaCheckCircle className="finished-icon" />
             訂單送出成功 <br />
             可至
-            <Link to={'/order-list'} className="link-style">
+            <Link to={'/User/order-list'} className="link-style">
               會員中心
             </Link>
             查看歷史訂單資訊，或
@@ -50,11 +52,11 @@ function App(props) {
           </div>
 
           {/* cart購物車 */}
-          <Cart3 orderInfo={orderInfo} />
+          {orderDetails && (
+            <Cart3 order_details={orderDetails} order_list={orderlist} />
+          )}
 
-          <ClientOrderDetail
-            order_list={orderInfo.order_list ? orderInfo.order_list[0] : ''}
-          />
+          {orderlist && <ClientOrderDetail order_list={orderlist} />}
         </div>
       </div>
     </>

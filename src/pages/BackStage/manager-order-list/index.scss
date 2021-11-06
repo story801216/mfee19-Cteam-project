@@ -104,8 +104,21 @@
     .search-computer {
       display: flex;
       width: 100%;
-      margin: 15px 0 25px;
+      margin: 0 0 10px ;
     }
+    .search-computer .search-input {
+      height: 38px;
+      width: 100%;
+      border-radius: 50px;
+      font-size: 18px;
+      padding-right: 60px;
+      padding-left: 30px;
+      /* 不設定mb0會被其他css影響 */
+      margin-left: auto;
+      margin-bottom: 0;
+      line-height: 38px;
+    }
+    
     .field-content-box {
       background-color: #ebf8fda1;
       font-size: 10px;
@@ -121,6 +134,10 @@
       height: 38px;
       border-radius: 5px;
       margin-bottom: 15px;
+    }
+    .list-control-box {
+      padding: 0;
+      font-size: 20px;
     }
     .icon-group {
       text-align: right;

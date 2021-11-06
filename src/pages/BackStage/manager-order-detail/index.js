@@ -6,22 +6,31 @@ import Cart3 from '../../../components/Stanley/Cart3/Cart3'
 import Checkline2 from '../../../components/Stanley/Checkline2/Checkline2'
 
 function App(props) {
-  const [orderInfo, setOrderInfo] = useState('')
+  const [orderDetails, setOrderDetails] = useState('')
+  const [orderlist, setOrderlist] = useState('')
   const [orderStatus, setOrderStatus] = useState('')
+  const [isLoading, setIsloading] = useState(true)
+
   const order_sid = props.match.params.order_sid
 
   // componentdidMount：讀取訂單資訊
   useEffect(() => {
+    setIsloading(true)
+
     const getInfo = async () => {
       const r = await axios.get(
         `http://localhost:3001/cart/order-detail/${order_sid}`
       )
       console.log(r)
       // 設定訂單資訊
-      setOrderInfo(r.data)
-
+      setOrderDetails(r.data.order_details)
+      setOrderlist(r.data.order_list[0])
       // 設定訂單狀態
       setOrderStatus(r.data.order_list[0].order_status)
+
+      setTimeout(() => {
+        setIsloading(false)
+      }, 500)
     }
     getInfo()
   }, [])
@@ -45,13 +54,15 @@ function App(props) {
     <>
       <div className="container">
         <Checkline2 orderStatus={orderStatus} />
-        <Cart3 orderInfo={orderInfo} />
+        {orderDetails && (
+          <Cart3 order_details={orderDetails} order_list={orderlist} />
+        )}
 
         {/* 訂單明細 */}
-        {orderInfo && (
+        {orderlist && (
           <div className="order-detail-box">
             <div className="order-detail-title d-flex justify-content-between align-items-center">
-              訂單編號：{orderInfo.order_list[0].sid}
+              訂單編號：{orderlist.sid}
             </div>
 
             <div className="row">
@@ -59,10 +70,10 @@ function App(props) {
                 <div className="subtitle">訂購人資訊</div>
                 <div className="detail-box">
                   {/* 姓名：王曉華 */}
-                  姓名：{orderInfo.order_list[0].member_name}
+                  姓名：{orderlist.member_name}
                   <br />
                   {/* 電話：0928828818 */}
-                  電話：{orderInfo.order_list[0].member_mobile}
+                  電話：{orderlist.member_mobile}
                   <br />
                   信箱：xiaohai@gmail.com
                 </div>
@@ -70,29 +81,29 @@ function App(props) {
               <div className="col-xl-6 col-12">
                 <div className="subtitle">付款資訊</div>
                 <div className="detail-box">
-                  付款方式：{orderInfo.order_list[0].payment_method}
+                  付款方式：{orderlist.payment_method}
                 </div>
               </div>
               <div className="col-xl-6 col-12">
                 <div className="subtitle">送貨資訊</div>
                 <div className="detail-box">
-                  收件人姓名：{orderInfo.order_list[0].addressee_name}
+                  收件人姓名：{orderlist.addressee_name}
                   <br />
-                  收件人電話：{orderInfo.order_list[0].addressee_mobile}
+                  收件人電話：{orderlist.addressee_mobile}
                   <br />
-                  運送方式：{orderInfo.order_list[0].delivery_method}
+                  運送方式：{orderlist.delivery_method}
                   <br />
-                  運送地址：{orderInfo.order_list[0].address}
+                  運送地址：{orderlist.address}
                   <br />
-                  訂單備註：{orderInfo.order_list[0].order_note}
+                  訂單備註：{orderlist.order_note}
                 </div>
               </div>
               <div className="col-xl-6 col-12">
                 <div className="subtitle">訂單資訊</div>
                 <div className="detail-box">
-                  訂單編號：{orderInfo.order_list[0].sid}
+                  訂單編號：{orderlist.sid}
                   <br />
-                  訂單日期：{orderInfo.order_list[0].order_date.slice(0, 10)}
+                  訂單日期：{orderlist.order_date.slice(0, 10)}
                   <br />
                   訂單狀態：
                   <select

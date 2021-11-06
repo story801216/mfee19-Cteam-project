@@ -1,5 +1,5 @@
 /* 購物車欄位的最外框 */
-.cart-box {
+.cart3-box {
   width: 100%;
   height: 0%;
   outline: 1px solid #ecebeb;
@@ -21,10 +21,7 @@
   height: 100%;
   overflow: hidden;
 }
-/* 收合購物車內容的動畫class */
-.hide {
-  height: 0;
-}
+
 
 .arrow-icon {
   width: 45px;
@@ -51,7 +48,7 @@
 
 @media screen and (max-width: 376px) {
   /* 購物車欄位的最外框 */
-  .cart-box {
+  .cart3-box {
     width: 100%;
     height: 100%;
     border: 1px solid #ecebeb;

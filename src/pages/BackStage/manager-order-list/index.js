@@ -5,7 +5,6 @@ import axios from 'axios'
 import { AiFillFileExcel, AiFillDelete } from 'react-icons/ai'
 import { BsSearch } from 'react-icons/bs'
 import ManagerOrderList from '../../../components/Stanley/ManagerOrderList/ManagerOrderList'
-// import BackendBookMark from '../../components/BackendBookMark/BackendBookMark'
 
 function App(props) {
   const { orderSidSearch, setOrderSidSearch } = props
@@ -51,18 +50,19 @@ function App(props) {
     <>
       <div className="MOL">
         <div className="container">
-          {/* 後台頁簽 */}
-          {/* <BackendBookMark /> */}
+
 
           {/* 訂單操作按鈕 */}
           <div className="list-control-box">
             <div className="row">
               <div className="col-xl-6 col-12 order-xl-0 order-1">
                 <div className="icon-group">
+                {/* EXCEL匯出資料 */}
                   <AiFillFileExcel className="icon excel" />
                   <span className="d-xl-inline-block d-none">
                     匯出訂單 &nbsp;
                   </span>
+                  {/* 刪除資料 */}
                   <AiFillDelete className="icon delete" />
                   <span className="d-xl-inline-block d-none">
                     刪除訂單 &nbsp;

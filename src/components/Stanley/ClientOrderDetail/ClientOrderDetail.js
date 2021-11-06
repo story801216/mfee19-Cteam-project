@@ -1,8 +1,10 @@
 import React from 'react'
+import { withRouter } from 'react-router-dom'
 import './ClientOrderDetail.css'
 
 function OrderDetail(props) {
   const { order_list } = props
+
   return (
     <>
       {/* 訂單明細  */}
@@ -58,4 +60,4 @@ function OrderDetail(props) {
   )
 }
 
-export default OrderDetail
+export default withRouter(OrderDetail)

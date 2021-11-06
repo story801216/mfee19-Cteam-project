@@ -8,7 +8,7 @@ function BookMart(props) {
   const optionName = [
     { name: '會員資料', link: '/User/Member_revise' },
     { name: '會員處方簽進度與追蹤', link: '/User/Prescription_stage' },
-    { name: '訂單查詢', link: '/order-list' },
+    { name: '訂單查詢', link: '/User/order-list' },
   ]
   return (
     <>

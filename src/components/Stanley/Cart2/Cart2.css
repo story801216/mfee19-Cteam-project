@@ -21,10 +21,7 @@
   height: 100%;
   overflow: hidden;
 }
-/* 收合購物車內容的動畫class */
-.hide {
-  height: 0;
-}
+
 
 .arrow-icon {
   width: 45px;

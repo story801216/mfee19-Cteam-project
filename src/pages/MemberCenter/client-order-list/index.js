@@ -34,7 +34,6 @@ function App(props) {
     <>
       <div className="COList">
         <div className="container">
-          <MemberBookMark />
           {/* 桌機版 */}
           <div className="d-xl-block d-none">
             <div className="order-list-box text-center">
