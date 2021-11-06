@@ -178,23 +178,28 @@ function ProductsFollowPage(props) {
 
             {/* 商品顯示區 */}
             <h4 className="cate-title-blue">{myTitle}</h4>
-            <div className="products-item-group">
-              {isLoading
-                ? spinner
-                : displayMyFollow.map((product) => {
-                    return (
-                      <Link
-                        key={product.sid}
-                        to={'/prod-list/prod/' + product.sid}
-                        onClick={() => {
-                          updateBrowseRecordToLocalStorage(product)
-                        }}
-                      >
-                        <ProductItem {...product} />
-                      </Link>
-                    )
-                  })}
-            </div>
+
+            {myFollow.length > 0 ? (
+              <div className="products-item-group">
+                {isLoading
+                  ? spinner
+                  : displayMyFollow.map((product) => {
+                      return (
+                        <Link
+                          key={product.sid}
+                          to={'/prod-list/prod/' + product.sid}
+                          onClick={() => {
+                            updateBrowseRecordToLocalStorage(product)
+                          }}
+                        >
+                          <ProductItem {...product} />
+                        </Link>
+                      )
+                    })}
+              </div>
+            ) : (
+              <div className="no-follow">尚未追蹤任何商品</div>
+            )}
           </div>
         </div>
       </div>

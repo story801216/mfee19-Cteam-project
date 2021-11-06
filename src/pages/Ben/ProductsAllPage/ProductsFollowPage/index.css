@@ -159,6 +159,12 @@ p {
   height: 25px;
 }
 
+.productsFollowPage .no-follow {
+  text-align:center;
+  line-height: 150px;
+  font-size: 30px;
+}
+
 @media screen and (min-width: 992px) {
   .productsFollowPage .main-title-follow {
     display: none;
