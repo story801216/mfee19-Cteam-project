@@ -21,6 +21,9 @@
     margin-bottom: 30px;
   }
 
+  .order-info-detail label,.receiver-info-box label{
+    margin-bottom: 10px;
+  }
 
 
   /* 訂購人資訊 */
@@ -257,7 +260,9 @@
     }
 
   
-
+    .order-info-detail label,.receiver-info-box label{
+      margin-bottom: 5px;
+    }
 
     /* 訂購人資訊 */
     .order-info-box {

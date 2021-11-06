@@ -43,32 +43,34 @@ function ManagerOrderList(props) {
 
       {/* 手機版 */}
       <div className="d-xl-none">
-        <div className="field-content">
-          <div className="row">
-            <div className="col-6">訂單編號</div>
-            <div className="col-6 text-right">{sid}</div>
+        <Link to={'/back-stage/order-detail/' + sid}>
+          <div className="field-content">
+            <div className="row">
+              <div className="col-6 text-left">訂單編號</div>
+              <div className="col-6 text-right">{sid}</div>
+            </div>
+            <div className="row">
+              <div className="col-6 text-left">訂購日期</div>
+              <div className="col-6 text-right">{order_date.slice(0, 10)}</div>
+            </div>
+            <div className="row">
+              <div className="col-6 text-left">訂購人</div>
+              <div className="col-6 text-right">{member_name}</div>
+            </div>
+            <div className="row">
+              <div className="col-6 text-left">訂單總額</div>
+              <div className="col-6 text-right">NT${amount}</div>
+            </div>
+            <div className="row">
+              <div className="col-6 text-left">付款狀態</div>
+              <div className="col-6 text-right">已付款</div>
+            </div>
+            <div className="row">
+              <div className="col-6 text-left">訂單狀態</div>
+              <div className="col-6 text-right red-word">{order_status}</div>
+            </div>
           </div>
-          <div className="row">
-            <div className="col-6">訂購日期</div>
-            <div className="col-6 text-right">{order_date.slice(0, 10)}</div>
-          </div>
-          <div className="row">
-            <div className="col-6">訂購人</div>
-            <div className="col-6 text-right">{member_name}</div>
-          </div>
-          <div className="row">
-            <div className="col-6">訂單總額</div>
-            <div className="col-6 text-right">NT${amount}</div>
-          </div>
-          <div className="row">
-            <div className="col-6">付款狀態</div>
-            <div className="col-6 text-right">已付款</div>
-          </div>
-          <div className="row">
-            <div className="col-6">訂單狀態</div>
-            <div className="col-6 text-right red-word">{order_status}</div>
-          </div>
-        </div>
+        </Link>
       </div>
     </>
   )

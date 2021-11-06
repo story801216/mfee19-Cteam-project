@@ -2,7 +2,7 @@ import React from 'react'
 import './CartBottom2.css'
 
 function CartBottom(props) {
-  const { orderInfo } = props
+  const { order_list } = props
   return (
     <>
       {/* 全站優惠&訂單價格 */}
@@ -21,7 +21,7 @@ function CartBottom(props) {
             <div className="summary-detail-box ">
               <div className="summary-detail d-flex justify-content-between">
                 <div className="subject">小計</div>
-                <div className="price text-right">NT${orderInfo.amount}</div>
+                <div className="price text-right">NT${order_list.amount}</div>
               </div>
               <div className="summary-detail d-flex justify-content-between">
                 <div className="subject">運費</div>
@@ -30,7 +30,7 @@ function CartBottom(props) {
               <div className="border"></div>
               <div className="summary-detail total-number d-flex justify-content-between">
                 <div className="subject">總計</div>
-                <div className="price text-right ">NT${orderInfo.amount}</div>
+                <div className="price text-right ">NT${order_list.amount}</div>
               </div>
             </div>
           </div>

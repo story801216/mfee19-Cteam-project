@@ -38,7 +38,7 @@ function Cart2(props) {
     } else {
       droplist.style.height = 0
     }
-    arrowIcon.classList.toggle('rotate-nagative')
+    arrowIcon.classList.toggle('rotate-negative')
   }
 
   return (
@@ -49,7 +49,7 @@ function Cart2(props) {
         <div className="cart-title text-center " onClick={handleShow}>
           合計：NT${orderInfo.total} (共{mycart.length}件商品)
           <div>
-            <RiArrowDownSLine className="arrow-icon" />
+            <RiArrowDownSLine className="arrow-icon rotate-negative" />
           </div>
         </div>
         <div className="drop-list">

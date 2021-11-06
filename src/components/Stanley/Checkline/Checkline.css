@@ -48,7 +48,7 @@
     font-size: 16px;
   }
   .checkline-item {
-    width: 62px;
+    width: 45px;
   }
 
   /* 1是深色正在進行的圓圈 */
@@ -77,7 +77,7 @@
 
   .checkline-line {
     /* position: absolute; */
-    width: 140px;
+    width: 80px;
     height: 2px;
     background-color: #aad7ee;
     margin-top: 22.5px; /* 線要在圓心的一半 62/2=31 */

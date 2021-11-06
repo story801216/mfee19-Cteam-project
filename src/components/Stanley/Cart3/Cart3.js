@@ -4,10 +4,9 @@ import CartBottom2 from './CartBottom2/CartBottom2'
 import { RiArrowDownSLine } from 'react-icons/ri'
 import ProductItem3 from './ProductItem3/ProductItem3'
 
-// Cart2是第二階段的購物車(不能調整商品數量)
+// Cart3是資料由資料庫送來的購物車
 function Cart3(props) {
-  const { orderInfo } = props
-  const order_list = orderInfo.order_list ? orderInfo.order_list[0] : '' //防資料還沒跑進來的處理
+  const { order_details, order_list } = props
 
   // dh = droplist.height的狀態
   const [dh, setDh] = useState('')
@@ -18,12 +17,11 @@ function Cart3(props) {
 
     // 1.讀取droplist一開始大小
     const dh = droplist.scrollHeight
-
     // 2.設定給dh(之後不會做變動)
     setDh(dh)
     // 3.先給定明確的高，transition才有效果
     droplist.style.height = dh + 'px'
-  }, [orderInfo]) // componentdidUpdata時才能有正確的高
+  }, [dh]) // componentdidUpdata時才能有正確的高
 
   // 購物車開合的處理
   const handleShow = () => {
@@ -39,19 +37,24 @@ function Cart3(props) {
     } else {
       droplist.style.height = 0
     }
-    arrowIcon.classList.toggle('rotate-nagative')
+    arrowIcon.classList.toggle('rotate-negative')
   }
 
   return (
     <>
       {/* cart購物車 */}
-      <div className="cart-box">
+      <div className="cart3-box">
         {/* 購物車標題 */}
         <div className="cart-title text-center " onClick={handleShow}>
-          合計：NT${order_list.amount}(共
-          {order_list.product_count}件商品)
+          {order_list && (
+            <>
+              合計：NT${order_list.amount}(共
+              {order_list.product_count}件商品)
+            </>
+          )}
+
           <div>
-            <RiArrowDownSLine className="arrow-icon" />
+            <RiArrowDownSLine className="arrow-icon rotate-negative" />
           </div>
         </div>
         <div className="drop-list">
@@ -65,13 +68,12 @@ function Cart3(props) {
             </div>
           </div>
           {/* 顯示已購買商品 */}
-          {orderInfo &&
-            orderInfo.order_details.map((product, i) => {
+          {order_details &&
+            order_details.map((product, i) => {
               return <ProductItem3 product={product} key={i} />
             })}
-
           {/* 下方優惠與價格 */}
-          <CartBottom2 orderInfo={order_list} />
+          {order_list && <CartBottom2 order_list={order_list} />}
           {/* 在hook裡面，order_list是array */}
         </div>
       </div>
