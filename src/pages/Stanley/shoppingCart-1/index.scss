@@ -1,6 +1,29 @@
+.empty-cart{
+  width: 150px;
+  margin: 30px auto 5px;
+  transform: translateX(-20px);
+}
+
+.empty-cart img{
+  width: 100%;
+}
+
+.go-shop-btn{
+  width: 150px;
+  height: 50px;
+  background-color: rgb(243, 113, 26);
+  border-radius: 30px;
+  line-height: 50px;
+  margin: 30px auto;
+  color: white;
+}
+
+.go-shop-btn:hover{
+  background-color: rgb(231, 143, 84);
+  color: white;
+}
 .SC1 {
-
-
+ 
   /* 送貨及付款方式 */
   .delivery-payment-box {
     height: 430px;
