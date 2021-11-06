@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react'
-import { Link } from 'react-router-dom'
+import { Link, withRouter } from 'react-router-dom'
 import { Spinner, Accordion, Card } from 'react-bootstrap'
 import { IoIosArrowDown } from 'react-icons/io'
 import Banner from '../../../../components/Ben/Banner'
@@ -53,7 +53,7 @@ function ProductsFollowPage(props) {
 
     return newMyFollow
   }
-  // 搜索用函式
+  // 類別用函式
   const handleCategoryTag = (myFollow, categoryTag) => {
     let newMyFollow = []
 
@@ -202,4 +202,4 @@ function ProductsFollowPage(props) {
   )
 }
 
-export default ProductsFollowPage
+export default withRouter(ProductsFollowPage)

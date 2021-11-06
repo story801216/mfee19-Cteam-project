@@ -74,7 +74,7 @@ function ProductsDetailPage(props) {
     if (myFollow.length > 0) {
       myFollow.filter((v) => {
         if (v.sid === props.match.params.sid * 1) {
-          return setIsFollow(true)
+          setIsFollow(true)
         }
       })
     }
