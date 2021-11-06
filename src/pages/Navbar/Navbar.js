@@ -27,12 +27,24 @@ function Navbar(props) {
   /*下拉式選單狀態 */
   const [buttonIndex, setButtonIndex] = useState(0)
 
+  //執行滑鼠移出 class 事件
+  const navHide = (e) => {
+    if (
+      e !== 'forCenter' &&
+      e !== 'halfCircleMove navbarIconLineAbouts' &&
+      e !== 'halfCircleMove'
+    ) {
+      setButtonIndex(0)
+    }
+  }
+
   return (
     <>
       <div
         className="navbarAll"
-        onMouseLeave={() => {
-          setButtonIndex(0)
+        onMouseLeave={(e) => {
+          setButtonIndex(0);
+          // console.log(e.target);
         }}
       >
         <div className="navbarDesTop">
@@ -44,20 +56,20 @@ function Navbar(props) {
           <div className="navbarLinkDesTop">
             <div className="navbarLinkDesTop1">
               <Link to="/Select_Shop">
-                <a href="/Select_Shop" className="navChandePageEnc">
+                <Link to="/Select_Shop" className="navChandePageEnc">
                   <div className="positionIconA">
                     <MdOutlineAssignment />
                     <p>處方領藥</p>
                   </div>
-                </a>
+                </Link>
               </Link>
               <Link to="/User/Member_revise">
-                <a href="/User/Member_revise" className="navChandePageEnc">
+                <Link to="/User/Member_revise" className="navChandePageEnc">
                   <div className="positionIconA">
                     <FaRegUserCircle />
                     <p>會員中心</p>
                   </div>
-                </a>
+                </Link>
               </Link>
               <div className="navbarAllIcon">
                 <Link
@@ -88,7 +100,14 @@ function Navbar(props) {
                 )}
               </div>
             </div>
-            <div className="navbarLinkDesTop2">
+            <div
+              className="navbarLinkDesTop2"
+              onMouseLeave={(e) => {
+                {
+                  navHide(e.target.className)
+                }
+              }}
+            >
               <div className="forCenter">
                 <p
                   className="navbarIconLine1"

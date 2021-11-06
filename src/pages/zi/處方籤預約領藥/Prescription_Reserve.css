@@ -176,8 +176,9 @@
 
 /* ************下方按鈕部分 ***************************************/
 .zi-Prescription-button-flex {
-  position: absolute;
-  bottom: 255px;
+  position: relative;
+  left: -217px;
+  bottom: -70px;
 }
 
 @media (max-width: 375px) {
@@ -220,15 +221,10 @@
 /* 處方圖片上傳 */
 .zi-Prescriptionimg-submit{
   margin-bottom:20px;
-  width: 214px;
   height: 37px;
-  border: none;
-  border-radius: 10px;
   font-size: 20px;
   line-height: 21px;
-  letter-spacing: 0.25em;
-  color: #ffffff;
-  background-color: #00a0f0;
+  margin-left:160px ;
 }
 /* ************右邊部分 ***************************************/
 

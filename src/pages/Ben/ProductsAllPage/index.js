@@ -1,5 +1,5 @@
-import React, { useState } from 'react'
-import { Route, Switch, NavLink } from 'react-router-dom'
+import React, { useState, useEffect } from 'react'
+import { Route, Switch, NavLink, withRouter } from 'react-router-dom'
 import ProductsFirstPage from './ProductsFirstPage'
 import ProductsClickedPage from './ProductsClickedPage'
 import ProductsCategoryPage from './ProductsCategoryPage'
@@ -150,6 +150,14 @@ function ProductsAllPage(props) {
     setMyBrowseRecord(currentBrowseRecord)
   }
 
+  // 確認是否有登入 有的話就讓isAuth顯示true
+  useEffect(() => {
+    const userLogin = JSON.parse(localStorage.getItem('Member') || '[]')
+    if (userLogin.length > 0) {
+      setIsAuth(true)
+    }
+  }, [props.location.pathname])
+
   return (
     <>
       <Switch>
@@ -280,4 +288,4 @@ function ProductsAllPage(props) {
   )
 }
 
-export default ProductsAllPage
+export default withRouter(ProductsAllPage)

@@ -1,11 +1,25 @@
 import React, { useState, useEffect } from 'react'
-import { BrowserRouter as Router, Route, Link, Switch } from 'react-router-dom'
+import {
+  BrowserRouter as Router,
+  Route,
+  Link,
+  Switch,
+  withRouter,
+} from 'react-router-dom'
 import ShoppingCart1 from './shoppingCart-1/index'
 import ShoppingCart2 from './shoppingCart-2/index'
 import ShoppingCart3 from './shoppingCart-3/index'
 
 function App(props) {
-  const { productCount, setProductCount } = props
+  const { productCount, setProductCount, setIsAuth } = props
+
+  // 確認是否有登入 有的話就讓isAuth顯示true
+  useEffect(() => {
+    const userLogin = JSON.parse(localStorage.getItem('Member') || '[]')
+    if (userLogin.length > 0) {
+      setIsAuth(true)
+    }
+  }, [props.location.pathname])
 
   return (
     <>
@@ -27,4 +41,4 @@ function App(props) {
   )
 }
 
-export default App
+export default withRouter(App)
