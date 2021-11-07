@@ -13,7 +13,7 @@ function Member_revise() {
             className="zi-member-revise-Email-text"
             placeholder="請輸入電子郵件"
             disabled="disabled"
-            value="123@yahoo.com.tw"
+            value="123456@yahoo.com.tw"
           />
 
           <label for="Password">密碼</label>
@@ -42,7 +42,7 @@ function Member_revise() {
             id="zi-member-revise-Birthday"
             className="zi-member-revise-Birthday-text"
             placeholder="請輸入生日"
-            value="1991-12-16"
+            value="2021-01-01"
           />
 
           <label for="Id-number">
@@ -74,7 +74,7 @@ function Member_revise() {
             id="Address"
             className="zi-member-revise-Address"
             placeholder="請輸入聯絡地址"
-            value="新北市新莊區中正路1號"
+            value="中正區中正路"
           />
         </form>
         <div className="zi-member-revise-button-flex">
