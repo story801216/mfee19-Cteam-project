@@ -26,7 +26,7 @@ function LineChart(props) {
     datasets: [
       {
         label: '金額',
-        data: turnoverData.map((v)=>{
+        data: turnoverData.map((v) => {
           return v.turnover
         }),
         fill: false,
@@ -45,12 +45,10 @@ function LineChart(props) {
   }
   return (
     <>
-      <div className="container">
-        <div className="header">
-          <h1 className="title">每日營業額</h1>
-        </div>
-        <Line data={data} options={options} />
+      <div className="header">
+        <h1 className="title">每日營業額</h1>
       </div>
+      <Line data={data} options={options} />
     </>
   )
 }

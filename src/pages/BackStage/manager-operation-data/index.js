@@ -5,7 +5,7 @@ import LineChart from '../../../components/Stanley/LineChart/LineChart'
 function App() {
   const [isLoading, setIsloading] = useState(true)
   const [orderlist, setOrderlist] = useState([])
-
+  const [purchasedList, setPurchasedList] = useState([])
   // componentdidMount：讀取訂單資訊
   useEffect(() => {
     setIsloading(true)
@@ -13,8 +13,12 @@ function App() {
     // fetch 最新一筆資料
     const getInfo = async () => {
       const r = await axios.get(`http://localhost:3001/cart/`)
+      const r2 = await axios.get(
+        'http://localhost:3001/cart/purchased-product/all'
+      )
       // data 是回傳的自動命名
       setOrderlist(r.data)
+      setPurchasedList(r2.data)
       // 拿到
       setTimeout(() => {
         setIsloading(false)
@@ -23,6 +27,7 @@ function App() {
     getInfo()
   }, [])
 
+  console.log(purchasedList)
   let datalist = []
   let dataobj = {}
 
@@ -42,12 +47,23 @@ function App() {
     }
   })
 
-  // console.log('datalist：', datalist)
-  // console.log('dataobj：', dataobj)
+  // 計算商品銷量排行
+  // purchasedList.forEach(()=>{
 
+  // })
   return (
     <>
-      <LineChart datalist={datalist.reverse()}/>
+      <div className="container">
+        <div className="row">
+          {/* 營業額圖表 */}
+          <div className="col-8">
+            {/* datalist是orderDate DESC排序，後續需要 */}
+            <LineChart datalist={datalist.reverse()} />
+          </div>
+          {/* 商品銷量排行表 */}
+          <div className="col-4"></div>
+        </div>
+      </div>
     </>
   )
 }
