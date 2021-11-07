@@ -102,7 +102,9 @@ function ProductItem(props) {
                 </div>
               </div>
             </div>
-            <div className="col-2 text-center">NT${price * count}</div>
+            <div className="col-2 text-center">
+              NT${(special_offer ? special_offer : price) * count}
+            </div>
             <div
               className="col-1 text-center"
               onClick={() => {
@@ -141,7 +143,9 @@ function ProductItem(props) {
               {/* 價格(中區) */}
               <div className="row">
                 <div className="col-3">
-                  <div className="price">NT${price}</div>
+                  <div className="price">
+                    NT${special_offer ? special_offer : price}
+                  </div>
                 </div>
               </div>
               {/* 增減按鈕(下區) */}

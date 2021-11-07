@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
+import { IoIosArrowForward } from 'react-icons/io'
 import './index.scss'
 import Checkline from '../../../components/Stanley/Checkline/Checkline'
 import Cart1 from '../../../components/Stanley/Cart1/Cart1'
@@ -23,7 +24,9 @@ function App(props) {
   const total = () => {
     let sum = 0
     for (let i = 0; i < mycart.length; i++) {
-      sum += mycart[i].amount * mycart[i].price
+      sum +=
+        mycart[i].amount *
+        (mycart[i].special_offer ? mycart[i].special_offer : mycart[i].price)
     }
     return sum
   }
@@ -33,12 +36,15 @@ function App(props) {
       {mycart.length === 0 && (
         <div className="container text-center">
           <div className="empty-cart">
-            <img src={`${devUrl}/images/shopping-cart.png`} />
+            <img src={`${devUrl}/images/shopping-cart.png`} alt="" />
           </div>
           <span>購物車未加入商品，趕快去逛逛吧!</span>
 
           <Link to={'/prod-list/page/1'}>
-            <div className="go-shop-btn">前往購物</div>
+            <div className="go-shop-btn">
+              前往購物
+              <IoIosArrowForward className="arrow-right" />
+            </div>
           </Link>
         </div>
       )}

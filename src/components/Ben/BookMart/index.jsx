@@ -13,7 +13,7 @@ function BookMart(props) {
     },
     { name: '所有商品', link: '/back-stage/products/page/1' },
     { name: '商城訂單管理', link: '/back-stage/order-list' },
-    { name: '營業數據', link: 'back-stage/operation-data' },
+    { name: '營業數據', link: '/back-stage/operation-data' },
   ]
 
   console.log(props)

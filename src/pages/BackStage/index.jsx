@@ -10,7 +10,7 @@ import Backstage_Member_Management from './Backstage_Member_Management/Backstage
 import Backstage_Prescription_Management from './Backstage_Prescription_Management/Backstage_Prescription_Management'
 import ManagerOrderList from './manager-order-list/index'
 import ManagerOrderDetail from './manager-order-detail/index'
-// import ManagerOperationData from './manager-operation-data'
+import ManagerOperationData from './manager-operation-data'
 
 // forceRefresh={true}
 function BackStage(props) {
@@ -87,7 +87,7 @@ function BackStage(props) {
         {/* TODO：後台營業數據 */}
         <Route path="/back-stage/operation-data">
           <BookMart optionNow={optionNow} setOptionNow={setOptionNow} />
-          {/* <ManagerOperationData /> */}
+          <ManagerOperationData />
         </Route>
       </Switch>
     </>
