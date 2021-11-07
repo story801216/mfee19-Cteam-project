@@ -212,7 +212,7 @@ function ProductsDetailPage(props) {
 
   // 取消追蹤
   const deleteFollowToLocalStorage = (product) => {
-    const localStorageData = JSON.parse(localStorage.getItem('follow')  || '[]')
+    const localStorageData = JSON.parse(localStorage.getItem('follow') || '[]')
     const currentProduct = product
     // console.log(localStorageData)
     // console.log(currentProduct)

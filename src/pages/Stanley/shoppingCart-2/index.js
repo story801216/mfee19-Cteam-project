@@ -129,14 +129,13 @@ function App() {
       order_note: e.target.order_note.value,
     }
 
-
     // 3. 用fetch發送
     const r = await axios.post('http://localhost:3001/cart', dataObj)
 
     // 4. 如果回傳值是成功，則跳轉到下一步的頁面
     if (r.data.success) {
       alert('訂單送出成功!')
-      window.location.href= `./order-check/${r.data.order_sid}`   // 需要用整個重整的跳轉方式 (navbar購物車重新render)
+      window.location.href = `./order-check/${r.data.order_sid}` // 需要用整個重整的跳轉方式 (navbar購物車重新render)
       localStorage.removeItem('cart')
       localStorage.removeItem('orderInfo')
     }
