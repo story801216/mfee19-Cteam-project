@@ -10,6 +10,9 @@ import './index.css'
 // forceRefresh={true}
 function ProductsAllPage(props) {
   const {
+    myBrowseRecord,
+    setMyBrowseRecord,
+    updateBrowseRecordToLocalStorage,
     controlCate,
     controlSmallCate,
     controlSmallBody,
@@ -118,37 +121,6 @@ function ProductsAllPage(props) {
   // 商品種類關鍵字
   const [cateWord, setCateWord] = useState('')
   const [locationWord, setLocationWord] = useState('')
-
-  // 瀏覽過商品資料
-  const [myBrowseRecord, setMyBrowseRecord] = useState([])
-
-  // 更新瀏覽過的商品紀錄 (沒有就添加)
-  const updateBrowseRecordToLocalStorage = (product) => {
-    let currentBrowseRecord =
-      JSON.parse(localStorage.getItem('browseRecord')) || []
-
-    const index = currentBrowseRecord.findIndex((v) => v.sid === product.sid)
-
-    // index > -1 等於已在瀏覽過的商品裡，不需要重複加入
-    if (index > -1) {
-      return
-    } else {
-      currentBrowseRecord.push(product)
-    }
-
-    if (currentBrowseRecord.length > 4) {
-      // 如果localStorage資料超過4筆，就挑出最舊的資料[0]移除
-      currentBrowseRecord = currentBrowseRecord.filter((v, i) => {
-        return i !== 0
-      })
-      localStorage.setItem('browseRecord', JSON.stringify(currentBrowseRecord))
-    } else {
-      localStorage.setItem('browseRecord', JSON.stringify(currentBrowseRecord))
-    }
-
-    // 設定資料
-    setMyBrowseRecord(currentBrowseRecord)
-  }
 
   // 確認是否有登入 有的話就讓isAuth顯示true
   useEffect(() => {

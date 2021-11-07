@@ -72,11 +72,15 @@ function ProductsDetailPage(props) {
     // console.log(myFollow)
 
     if (myFollow.length > 0) {
-      myFollow.filter((v) => {
-        if (v.sid === props.match.params.sid * 1) {
-          return setIsFollow(true)
-        }
+      const index = myFollow.findIndex((v) => {
+        return v.sid === props.match.params.sid * 1
       })
+
+      if (index !== -1) {
+        setIsFollow(true)
+      } else {
+        setIsFollow(false)
+      }
     }
   }
 
@@ -150,6 +154,9 @@ function ProductsDetailPage(props) {
         setData(j.data)
       }
     })()
+
+    // follow狀態按鈕
+    getFollowFromLocalStorage()
 
     setTimeout(() => {
       setIsloading(false)

@@ -80,7 +80,7 @@ function CateNav(props) {
                 <Link
                   to={'/prod-list/page/categories/' + v.name + '/' + 1}
                   className={controlSmallCate === i ? 'now' : ''}
-                  onClick={handleCate}
+                  // onClick={handleCate}
                 >
                   {v.name}
                 </Link>
@@ -127,7 +127,7 @@ function CateNav(props) {
                 <Link
                   to={'/prod-list/page/categories/' + v.name + '/' + 1}
                   className={controlSmallBody === i ? 'now' : ''}
-                  onClick={handlelocation}
+                  // onClick={handlelocation}
                 >
                   {v.name}
                 </Link>

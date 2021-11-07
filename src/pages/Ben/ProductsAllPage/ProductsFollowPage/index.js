@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react'
-import { Link } from 'react-router-dom'
+import { Link, withRouter } from 'react-router-dom'
 import { Spinner, Accordion, Card } from 'react-bootstrap'
 import { IoIosArrowDown } from 'react-icons/io'
 import Banner from '../../../../components/Ben/Banner'
@@ -53,7 +53,7 @@ function ProductsFollowPage(props) {
 
     return newMyFollow
   }
-  // 搜索用函式
+  // 類別用函式
   const handleCategoryTag = (myFollow, categoryTag) => {
     let newMyFollow = []
 
@@ -178,23 +178,28 @@ function ProductsFollowPage(props) {
 
             {/* 商品顯示區 */}
             <h4 className="cate-title-blue">{myTitle}</h4>
-            <div className="products-item-group">
-              {isLoading
-                ? spinner
-                : displayMyFollow.map((product) => {
-                    return (
-                      <Link
-                        key={product.sid}
-                        to={'/prod-list/prod/' + product.sid}
-                        onClick={() => {
-                          updateBrowseRecordToLocalStorage(product)
-                        }}
-                      >
-                        <ProductItem {...product} />
-                      </Link>
-                    )
-                  })}
-            </div>
+
+            {myFollow.length > 0 ? (
+              <div className="products-item-group">
+                {isLoading
+                  ? spinner
+                  : displayMyFollow.map((product) => {
+                      return (
+                        <Link
+                          key={product.sid}
+                          to={'/prod-list/prod/' + product.sid}
+                          onClick={() => {
+                            updateBrowseRecordToLocalStorage(product)
+                          }}
+                        >
+                          <ProductItem {...product} />
+                        </Link>
+                      )
+                    })}
+              </div>
+            ) : (
+              <div className="no-follow">尚未追蹤任何商品</div>
+            )}
           </div>
         </div>
       </div>
@@ -202,4 +207,4 @@ function ProductsFollowPage(props) {
   )
 }
 
-export default ProductsFollowPage
+export default withRouter(ProductsFollowPage)
