@@ -1,16 +1,17 @@
-import "./homePage.css";
-import React, { useState } from "react";
+import './homePage.css'
+import React, { useState } from 'react'
 
 // 引入page
-import PHeader from "../PHeader/PHeader"; //header
-import PopularProduct from "../PopularProductPage/PopularProduct"; //熱門商品輪播
-import NewsPage from "../Newsnews/NewsPage"; //最新消息
-import Encyclopedia from "../Encyclopedia/Encyclopedia"; //百健保科
-import AboutUS from "../AboutUs/AboutUS"; //關於我們
-import Link from "../ContentLink/Link"; //相關連結
+import PHeader from '../PHeader/PHeader' //header
+import PopularProduct from '../PopularProductPage/PopularProduct' //熱門商品輪播
+import NewsPage from '../Newsnews/NewsPage' //最新消息
+import Encyclopedia from '../Encyclopedia/Encyclopedia' //百健保科
+import AboutUS from '../AboutUs/AboutUS' //關於我們
+import Link from '../ContentLink/Link' //相關連結
 
-function HomePage() {
-  const [dis, setDis] = useState(true);
+function HomePage(props) {
+  const { updateBrowseRecordToLocalStorage } = props
+  const [dis, setDis] = useState(true)
 
   return (
     <div className="homePage">
@@ -18,7 +19,7 @@ function HomePage() {
         <div
           className="activeBig"
           onClick={(e) => {
-            setDis(false);
+            setDis(false)
           }}
         >
           <div className="cancelMove">
@@ -36,7 +37,9 @@ function HomePage() {
       <div className="headerBack">
         <PHeader />
       </div>
-      <PopularProduct />
+      <PopularProduct
+        updateBrowseRecordToLocalStorage={updateBrowseRecordToLocalStorage}
+      />
       <NewsPage />
       <Encyclopedia />
       <div className="aboutUsMM">
@@ -46,7 +49,7 @@ function HomePage() {
         <Link />
       </div>
     </div>
-  );
+  )
 }
 
-export default HomePage;
+export default HomePage

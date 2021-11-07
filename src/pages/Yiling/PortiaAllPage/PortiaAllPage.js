@@ -12,7 +12,7 @@ import HealthEnIndex from '../HealthEnIndex/HealthEnIndex' //保健百科頁面�
 import Select_shop from '../Select_Shop/Select_shop' //處方籤預約領藥
 
 function PortiaAllPage(props) {
-  const { setCloseStore, setIsAuth } = props
+  const { setCloseStore, setIsAuth, updateBrowseRecordToLocalStorage } = props
 
   // 確認是否有登入 有的話就讓isAuth顯示true
   useEffect(() => {
@@ -38,7 +38,9 @@ function PortiaAllPage(props) {
           <Select_shop setCloseStore={setCloseStore} />
         </Route>
         <Route exact path="/">
-          <HomePage />
+          <HomePage
+            updateBrowseRecordToLocalStorage={updateBrowseRecordToLocalStorage}
+          />
         </Route>
       </Switch>
     </>

@@ -12,6 +12,7 @@ import NewPopularProduct1 from '../../../components/Yiling/PopularProduct/NewPop
 import NewPopularProduct2 from '../../../components/Yiling/PopularProduct/NewPopularProduct2'
 import NewPopularProduct3 from '../../../components/Yiling/PopularProduct/NewPopularProduct3'
 import NewPopularProduct4 from '../../../components/Yiling/PopularProduct/NewPopularProduct4'
+import { hotData } from '../../../hotData'
 
 export default class PopularProduct extends Component {
   render() {
@@ -58,25 +59,51 @@ export default class PopularProduct extends Component {
         },
       ],
     }
+
     return (
       <>
         <div className="bgColorProduct">
           <h1 className="text-divider1">熱門商品</h1>
           <div className="SliderP">
             <Slider className="hotSilder" {...settings} className="portiaMove">
-              <Link to="/prod-list/prod/33">
+              <Link
+                to="/prod-list/prod/33"
+                onClick={() => {
+                  this.props.updateBrowseRecordToLocalStorage(hotData[0])
+                }}
+              >
                 <NewPopularProduct />
               </Link>
-              <Link to="/prod-list/prod/38">
+              <Link
+                to="/prod-list/prod/38"
+                onClick={() => {
+                  this.props.updateBrowseRecordToLocalStorage(hotData[1])
+                }}
+              >
                 <NewPopularProduct1 />
               </Link>
-              <Link to="/prod-list/prod/21">
+              <Link
+                to="/prod-list/prod/21"
+                onClick={() => {
+                  this.props.updateBrowseRecordToLocalStorage(hotData[2])
+                }}
+              >
                 <NewPopularProduct2 />
               </Link>
-              <Link to="/prod-list/prod/72">
+              <Link
+                to="/prod-list/prod/72"
+                onClick={() => {
+                  this.props.updateBrowseRecordToLocalStorage(hotData[3])
+                }}
+              >
                 <NewPopularProduct3 />
               </Link>
-              <Link to="/prod-list/prod/53">
+              <Link
+                to="/prod-list/prod/53"
+                onClick={() => {
+                  this.props.updateBrowseRecordToLocalStorage(hotData[4])
+                }}
+              >
                 <NewPopularProduct4 />
               </Link>
             </Slider>
