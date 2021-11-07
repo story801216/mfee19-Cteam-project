@@ -45,7 +45,7 @@ function ProductsClickedPage(props) {
 
   // 獲取localStorage瀏覽商品紀錄
   function getBrowseRecordFromLocalStorage() {
-    const newBrowseRecord = localStorage.getItem('browseRecord') || []
+    const newBrowseRecord = localStorage.getItem('browseRecord') || '[]'
 
     setMyBrowseRecord(JSON.parse(newBrowseRecord))
   }

@@ -67,8 +67,9 @@ function App() {
 
   // 更新瀏覽過的商品紀錄 (沒有就添加)
   const updateBrowseRecordToLocalStorage = (product) => {
-    let currentBrowseRecord =
-      JSON.parse(localStorage.getItem('browseRecord')) || []
+    let currentBrowseRecord = JSON.parse(
+      localStorage.getItem('browseRecord') || '[]'
+    )
 
     const index = currentBrowseRecord.findIndex((v) => v.sid === product.sid)
 
@@ -95,7 +96,7 @@ function App() {
 
   // 確認是否有登入 有的話就讓isAuth顯示true
   useEffect(() => {
-    const userLogin = JSON.parse(localStorage.getItem('Member')) || []
+    const userLogin = JSON.parse(localStorage.getItem('Member') || '[]')
     if (userLogin.length > 0) {
       setIsAuth(true)
     }

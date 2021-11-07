@@ -31,7 +31,7 @@ function ProductsFollowPage(props) {
   const [isLoading, setIsloading] = useState(true)
 
   function getFollowFromLocalStorage() {
-    const newFollow = localStorage.getItem('follow') || []
+    const newFollow = localStorage.getItem('follow') || '[]'
 
     // console.log(JSON.parse(newFollow))
 
