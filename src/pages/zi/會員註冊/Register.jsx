@@ -24,8 +24,8 @@ function Register() {
         address: address,
       })
         .then((res) => {
-          alert('註冊成功，將轉跳到登入頁!')
-          window.location.href = './Login'
+          alert('註冊成功，將轉跳到首頁!')
+          window.location.href = '/'
         })
         .catch((err) => {
           console.log(err)
