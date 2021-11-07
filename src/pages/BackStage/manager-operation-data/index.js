@@ -29,7 +29,7 @@ function App() {
   // 計算每天個別的營業額
   orderlist.forEach((el) => {
     // 判斷這筆訂單的日期
-    const orderDate = el.order_date.slice(5, 10)
+    const orderDate = el.order_date.slice(5, 10).split('-').join('/')
     if (!dataobj[orderDate]) {
       const item = {
         orderDate: orderDate,
@@ -47,7 +47,7 @@ function App() {
 
   return (
     <>
-      <LineChart datalist={datalist}/>
+      <LineChart datalist={datalist.reverse()}/>
     </>
   )
 }
