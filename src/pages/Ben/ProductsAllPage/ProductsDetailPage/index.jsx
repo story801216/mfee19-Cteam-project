@@ -49,12 +49,12 @@ function ProductsDetailPage(props) {
 
   // 追蹤的商品 (初始直接從localtorage拿資料設定)
   const [myFollow, setMyFollow] = useState(
-    JSON.parse(localStorage.getItem('follow') || '[]')
+    JSON.parse(localStorage.getItem('follow')) || []
   )
 
   // 購物車的商品 (初始直接從localtorage拿資料設定)
   const [myCart, setMyCart] = useState(
-    JSON.parse(localStorage.getItem('cart') || '[]')
+    JSON.parse(localStorage.getItem('cart'))  || []
   )
 
   // 資料庫的資料
@@ -62,7 +62,7 @@ function ProductsDetailPage(props) {
 
   // 獲取localtorage 瀏覽過的商品並設定狀態
   const getBrowseRecordFromLocalStorage = () => {
-    const newBrowseRecord = localStorage.getItem('browseRecord') || '[]'
+    const newBrowseRecord = localStorage.getItem('browseRecord') || []
 
     setMyBrowseRecord(JSON.parse(newBrowseRecord))
   }

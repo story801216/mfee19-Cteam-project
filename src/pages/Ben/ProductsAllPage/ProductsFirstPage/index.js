@@ -77,7 +77,7 @@ function ProductsFirstPage(props) {
   }
 
   const getBrowseRecordFromLocalStorage = () => {
-    const newBrowseRecord = localStorage.getItem('browseRecord') || '[]'
+    const newBrowseRecord = localStorage.getItem('browseRecord') || []
 
     setMyBrowseRecord(JSON.parse(newBrowseRecord))
   }

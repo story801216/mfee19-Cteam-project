@@ -13,7 +13,7 @@ export default class BrowseRecordSlider extends Component {
   }
 
   getBrowseRecordFromLocalStorage = () => {
-    const newBrowseRecord = localStorage.getItem('browseRecord') || '[]'
+    const newBrowseRecord = localStorage.getItem('browseRecord') || []
 
     this.setState({ myBrowseRecord: JSON.parse(newBrowseRecord) })
   }

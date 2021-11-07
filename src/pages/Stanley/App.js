@@ -15,7 +15,7 @@ function App(props) {
 
   // 確認是否有登入 有的話就讓isAuth顯示true
   useEffect(() => {
-    const userLogin = JSON.parse(localStorage.getItem('Member') || '[]')
+    const userLogin = JSON.parse(localStorage.getItem('Member')) || []
     if (userLogin.length > 0) {
       setIsAuth(true)
     }
