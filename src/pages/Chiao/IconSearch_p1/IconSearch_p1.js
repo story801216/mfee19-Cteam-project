@@ -21,13 +21,18 @@ import BreadCrumb from '../../../components/Chiao/BreadCrumb'
 const Banner = './images/page_topbanner.png'
 
 function IconSearch_p1(props) {
-  const { setIsAuth } = props
+  const { setIsAuth,setIsManager } = props
   // 確認是否有登入 有的話就讓isAuth顯示true
   useEffect(() => {
     const userLogin = JSON.parse(localStorage.getItem('Member') || '[]')
     if (userLogin.length > 0) {
       setIsAuth(true)
+       // 如果登入的是這個帳號，就讓管理者狀態顯示true
+      if (userLogin[0].email === '123@yahoo.com.tw') {
+        setIsManager(true)
+      }
     }
+    
   }, [props.location.pathname])
   return (
     <>

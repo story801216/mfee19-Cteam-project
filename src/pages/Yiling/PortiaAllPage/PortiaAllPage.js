@@ -12,13 +12,17 @@ import HealthEnIndex from '../HealthEnIndex/HealthEnIndex' //保健百科頁面�
 import Select_shop from '../Select_Shop/Select_shop' //處方籤預約領藥
 
 function PortiaAllPage(props) {
-  const { setCloseStore, setIsAuth, updateBrowseRecordToLocalStorage } = props
+  const { setCloseStore, setIsAuth,setIsManager, updateBrowseRecordToLocalStorage } = props
 
   // 確認是否有登入 有的話就讓isAuth顯示true
   useEffect(() => {
     const userLogin = JSON.parse(localStorage.getItem('Member') || '[]')
     if (userLogin.length > 0) {
       setIsAuth(true)
+       // 如果登入的是這個帳號，就讓管理者狀態顯示true
+      if (userLogin[0].email === '123@yahoo.com.tw') {
+        setIsManager(true)
+      }
     }
   }, [props.location.pathname])
   return (

@@ -24,7 +24,8 @@ function EditProductsPage(props) {
     setEditSid(props.match.params.sid)
   }, [])
 
-  const editForm = () => {
+  const editForm = (e) => {
+    e.preventDefault()
     const fd = new FormData(document.edit_form)
     fetch('http://localhost:3001/product/' + props.match.params.sid, {
       method: 'PUT',

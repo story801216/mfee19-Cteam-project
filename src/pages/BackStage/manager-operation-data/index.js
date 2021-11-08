@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react'
+import './index.css'
 import axios from 'axios'
 import LineChart from '../../../components/Stanley/LineChart/LineChart'
 
@@ -47,21 +48,65 @@ function App() {
     }
   })
 
+  let saleslist = []
+  let salesobj = {}
   // 計算商品銷量排行
-  // purchasedList.forEach(()=>{
+  purchasedList.forEach((el) => {
+    if (!salesobj[el.product_id]) {
+      const item = {
+        product_id: el.product_id,
+        Name: el.Name,
+        quantity: el.quantity,
+      }
+      salesobj[el.product_id] = item
+      saleslist.push(item)
+    } else {
+      salesobj[el.product_id].quantity += el.quantity
+    }
+  })
 
-  // })
+  // 把銷量進行排序
+  saleslist.sort(function (a, b) {
+    if (a.quantity < b.quantity) {
+      return 1
+    }
+    if (a.quantity > b.quantity) {
+      return -1
+    }
+    return 0
+  })
+  console.log(saleslist)
   return (
     <>
       <div className="container">
         <div className="row">
           {/* 營業額圖表 */}
-          <div className="col-8">
+          <div className="col-xl-8 col-12">
             {/* datalist是orderDate DESC排序，後續需要 */}
             <LineChart datalist={datalist.reverse()} />
           </div>
           {/* 商品銷量排行表 */}
-          <div className="col-4"></div>
+          <div className="col-xl-4 col-12">
+            <div className="product-sales-box">
+              <div className="title">
+                <div className="row">
+                  <div className="col-2">排行</div>
+                  <div className="col-7">品項</div>
+                  <div className="col-3">銷量</div>
+                </div>
+              </div>
+              <div className="content">
+              {/* {saleslist.map((v,i)=>{
+
+              })} */}
+                <div className="row mb-4">
+                  <div className="col-2">1</div>
+                  <div className="col-7">保佳兆UCII複合錠60PC</div>
+                  <div className="col-3">100000</div>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </>

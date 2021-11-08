@@ -23,6 +23,7 @@ function ProductsAllPage(props) {
     setProductCount,
     isAuth,
     setIsAuth,
+    setIsManager
   } = props
   const cates = [
     {
@@ -127,6 +128,10 @@ function ProductsAllPage(props) {
     const userLogin = JSON.parse(localStorage.getItem('Member') || '[]')
     if (userLogin.length > 0) {
       setIsAuth(true)
+       // 如果登入的是這個帳號，就讓管理者狀態顯示true
+      if (userLogin[0].email === '123@yahoo.com.tw') {
+        setIsManager(true)
+      }
     }
   }, [props.location.pathname])
 
