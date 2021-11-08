@@ -4,7 +4,7 @@
 
 .chiao-container {
   display: flex;
-  max-width: 1140px;
+  max-width: 1390px;
   margin: auto;
 
 }
@@ -25,10 +25,10 @@
   background-color: #f4f4f4;
   border-radius: 30px;
   border: none;
-  width: calc(20% - 30px);
-  /* width: 150px;
-  height: 150px; */
-  padding: 10px 0;
+  /* width: calc(20% - 30px); */
+  width: 150px;
+  height: 150px;
+  padding: 20px 0;
   /* height: 130px; */
   /* padding: 5px; */
   box-shadow: 0 5px #c4c4c4;
@@ -95,7 +95,7 @@
 /* box */
 
 .side-menu {
-  width: 100%;
+  width: 30%;
   margin: 50px 0 0 0;
 
 }
@@ -103,7 +103,7 @@
 .chiao-container .main {
   margin-top: 75px;
   margin-bottom: 30px;
-
+  width: 100%;
 }
 
 /* accordion */
@@ -278,6 +278,7 @@
   justify-content: space-between;
   flex-wrap: wrap;
   margin-left: 10px;
+  gap: 10px;
 
 }
 

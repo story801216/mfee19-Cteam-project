@@ -4,7 +4,7 @@
 
 .chiao-container{
   display: flex;
-  max-width: 1140px;
+  max-width: 1390px;
   margin: auto;
   /* margin: 15px; */
 }
@@ -123,7 +123,7 @@
 /* box */
 
 .side-menu-2{
-  width: 47%;
+  width: 30%;
   margin: 50px 0 0 0;
 }
 
