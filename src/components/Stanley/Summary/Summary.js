@@ -1,4 +1,5 @@
 import React from 'react'
+import { useHistory } from 'react-router-dom'
 import './Summary.css'
 
 function Summary(props) {
@@ -11,8 +12,22 @@ function Summary(props) {
     paymentMethod,
   } = props
 
+  let history = useHistory()
+
   // 傳送表單(儲存資料到local，給下一步去讀取用)
   const handlecheckout = () => {
+    if (!deliveryLocation) {
+      alert('未選取送貨地點')
+      return
+    }
+    if (!deliveryMethod) {
+      alert('未選取送貨方式')
+      return
+    }
+    if (!paymentMethod) {
+      alert('未選取付款方式')
+      return
+    }
     const obj = {
       total: total,
       mycart: mycart,
@@ -23,6 +38,7 @@ function Summary(props) {
     }
 
     localStorage.setItem('orderInfo', JSON.stringify(obj))
+    history.push('/checkout')
   }
   return (
     <>
@@ -44,9 +60,12 @@ function Summary(props) {
           </div>
         </div>
         <div className="checkout-box">
-          <a href="/checkout" onClick={handlecheckout}>
-            <div className="checkout-btn text-center mx-auto">前往結帳</div>
-          </a>
+          <button
+            className="checkout-btn text-center mx-auto"
+            onClick={handlecheckout}
+          >
+            前往結帳
+          </button>
         </div>
       </div>
     </>

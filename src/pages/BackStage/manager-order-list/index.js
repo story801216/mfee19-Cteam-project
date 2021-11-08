@@ -19,7 +19,7 @@ function App(props) {
     // fetch 最新一筆資料
     const getInfo = async () => {
       const r = await axios.get(`http://localhost:3001/cart/`)
-      // data 是回傳的自動命名 
+      // data 是回傳的自動命名
       setOrderlist(r.data)
       // 拿到
       setTimeout(() => {
@@ -50,25 +50,10 @@ function App(props) {
     <>
       <div className="MOL">
         <div className="container">
-
-
           {/* 訂單操作按鈕 */}
           <div className="list-control-box">
             <div className="row">
-              <div className="col-xl-6 col-12 order-xl-0 order-1">
-                <div className="icon-group">
-                {/* EXCEL匯出資料 */}
-                  <AiFillFileExcel className="icon excel" />
-                  <span className="d-xl-inline-block d-none">
-                    匯出訂單 &nbsp;
-                  </span>
-                  {/* 刪除資料 */}
-                  <AiFillDelete className="icon delete" />
-                  <span className="d-xl-inline-block d-none">
-                    刪除訂單 &nbsp;
-                  </span>
-                </div>
-              </div>
+              <div className="col-xl-6 col-12 order-xl-0 order-1"></div>
               <div className="col-xl-6 col-12">
                 <div className="row">
                   <div className="col-xl-8 col-12">
@@ -113,8 +98,8 @@ function App(props) {
           <div className="field-content-box text-center">
             <div className="field-title d-xl-block d-none">
               <div className="row">
-                <div className="col-1"></div>
-                <div className="col-10">
+                {/* <div className="col-1"></div> */}
+                <div className="col-11">
                   <div className="row">
                     <div className="col-2">訂單編號</div>
                     <div className="col-2">訂單日期</div>

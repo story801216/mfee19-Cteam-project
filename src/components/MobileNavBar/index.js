@@ -110,7 +110,7 @@ function MobileNavBar(props) {
                     <div className="row">
                       <div className="col">
                         {/* 主連結的名稱 & 連結 */}
-                        <Link to={v.mainNavLink}>{v.mainNav}</Link>
+                        <Link to={v.mainNavLink} className="mainNav">{v.mainNav}</Link>
                       </div>
                       <div className="col text-right">
                         <IoIosArrowDown className="down-arrow" />

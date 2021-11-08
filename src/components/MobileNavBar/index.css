@@ -9,6 +9,8 @@
   color: #00a0f0;
 }
 
+
+
 @media screen and (max-width: 992px) {
   .navbar-box {
     width: 100%;
@@ -69,4 +71,7 @@
     color: #00a0f0;
   }
   
+  .mainNav{
+    color: #00a0f0;
+  }
 }

@@ -3,11 +3,13 @@ import './index.css'
 import axios from 'axios'
 import { Spinner } from 'react-bootstrap'
 import LineChart from '../../../components/Stanley/LineChart/LineChart'
+import { AiOutlineArrowLeft, AiOutlineArrowRight } from 'react-icons/ai'
 
 function App() {
   const [isLoading, setIsloading] = useState(true)
   const [orderlist, setOrderlist] = useState([])
   const [purchasedList, setPurchasedList] = useState([])
+  const [count, setCount] = useState(1)
   // componentdidMount：讀取訂單資訊
   useEffect(() => {
     setIsloading(true)
@@ -29,10 +31,11 @@ function App() {
     getInfo()
   }, [])
 
-  // 計算每天個別的營業額
+  // 計算營業額
   let datalist = []
   let dataobj = {}
 
+  // 計算每日營業額
   orderlist.forEach((el) => {
     // 判斷這筆訂單的日期
     const orderDate = el.order_date.slice(5, 10).split('-').join('/')
@@ -49,7 +52,7 @@ function App() {
     }
   })
 
-  // 計算商品銷量排行
+  // 計算商品銷量加總
   let saleslist = []
   let salesobj = {}
 
@@ -67,7 +70,7 @@ function App() {
     }
   })
 
-  // 把銷量進行排序
+  // 銷量進行排序(大->小)
   saleslist.sort(function (a, b) {
     if (a.quantity < b.quantity) {
       return 1
@@ -77,6 +80,12 @@ function App() {
     }
     return 0
   })
+
+  // 銷量的前10名
+  let Top10list = []
+  for (let i = 0; i < 10; i++) {
+    Top10list.push(saleslist[i])
+  }
 
   // spinner動畫
   const spinner = (
@@ -92,11 +101,29 @@ function App() {
           <div className="row">
             {/* 營業額圖表 */}
             <div className="col-xl-8 col-12">
-              {/* datalist是orderDate DESC排序，後續需要 */}
-              <LineChart datalist={datalist.reverse()} />
+              <div className="line-chart">
+                {/* datalist是orderDate DESC排序，後續需要 */}
+                <LineChart datalist={datalist.reverse()} count={count} />
+                <div className="control-arrow">
+                  <AiOutlineArrowLeft
+                    onClick={() => {
+                      setCount(count + 1)
+                    }}
+                    className="pointer"
+                  />
+                  <AiOutlineArrowRight
+                    onClick={() => {
+                      setCount(count - 1)
+                    }}
+                    className="ml-3 pointer"
+                  />
+                </div>
+              </div>
             </div>
+
             {/* 商品銷量排行表 */}
             <div className="col-xl-4 col-12">
+              <h1 className="chart-title">熱銷商品排行</h1>
               <div className="product-sales-box">
                 <div className="title">
                   <div className="row">
@@ -107,7 +134,7 @@ function App() {
                 </div>
                 <div className="content-box">
                   {/* 銷量內容 */}
-                  {saleslist.map((v, i) => {
+                  {Top10list.map((v, i) => {
                     return (
                       <>
                         <div className="content">

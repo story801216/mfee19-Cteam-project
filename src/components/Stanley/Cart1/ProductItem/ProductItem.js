@@ -2,6 +2,7 @@ import React from 'react'
 import './ProductItem.css'
 import { AiOutlineMinus, AiOutlinePlus } from 'react-icons/ai'
 import { FaTimes } from 'react-icons/fa'
+import { Link } from 'react-router-dom'
 
 function ProductItem(props) {
   // 加入購物車的產品資訊
@@ -21,7 +22,6 @@ function ProductItem(props) {
 
   // 移除購物車內的商品
   const removeCartItem = (sid) => {
-
     let newMyCart = []
 
     // 把指定sid以外的商品放進去新陣列
@@ -66,7 +66,9 @@ function ProductItem(props) {
             <div className="col-5 ">
               <div className="product-info d-flex align-items-center">
                 <div className="product-img">
-                  <img src={picture} alt="" />
+                  <Link to={`prod-list/prod/${sid}`}>
+                    <img src={picture} alt="" />
+                  </Link>
                 </div>
                 <div className="product-description">{name}</div>
               </div>

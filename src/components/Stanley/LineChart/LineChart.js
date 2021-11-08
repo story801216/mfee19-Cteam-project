@@ -3,13 +3,13 @@ import { Line } from 'react-chartjs-2'
 import moment from 'moment'
 
 function LineChart(props) {
-  const { datalist } = props
+  const { datalist, count } = props
 
   // 最近7天的日期
   let last7days = []
   for (let i = 1; i <= 7; i++) {
     const date = moment()
-      .subtract(7 - i, 'days')
+      .subtract(7 * count - i, 'days')
       .format('MM/DD')
     last7days.push(date)
   }
@@ -18,6 +18,11 @@ function LineChart(props) {
     return last7days.includes(v.orderDate)
   })
 
+  // for (let i = 0; i < 7; i++) {
+  //   if (!turnoverData[i].orderDate[last7days[i]]) {
+  //     turnoverData[i] = { turnover: 0 }
+  //   }
+  // }
   console.log(turnoverData)
   const data = {
     // 最近的七天
@@ -46,7 +51,7 @@ function LineChart(props) {
   return (
     <>
       <div className="header">
-        <h1 className="title">每日營業額</h1>
+        <h1 className="chart-title">營業額</h1>
       </div>
       <Line data={data} options={options} />
     </>

@@ -14,10 +14,10 @@ function ManagerOrderList(props) {
           {/* 訂單內容*1 */}
           <div className="field-content">
             <div className="row">
-              <div className="col-1 text-center">
+              {/* <div className="col-1 text-center">
                 <input type="checkbox" />
-              </div>
-              <div className="col-10">
+              </div> */}
+              <div className="col-11">
                 <div className="row">
                   <div className="col-2">{sid}</div>
                   <div className="col-2">{order_date.slice(0, 10)}</div>
