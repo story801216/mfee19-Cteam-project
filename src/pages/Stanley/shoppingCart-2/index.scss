@@ -21,10 +21,10 @@
     margin-bottom: 30px;
   }
 
-  .order-info-detail label,.receiver-info-box label{
+  .order-info-detail label,
+  .receiver-info-box label {
     margin-bottom: 10px;
   }
-
 
   /* 訂購人資訊 */
   .order-info-box {
@@ -229,7 +229,7 @@
   .checkout-btn {
     height: 60px;
     width: 400px;
-    background-color: #00a0f0;
+    background-color: #00a0f0d8;
     border: none;
     border-radius: 10px;
     font-size: 20px;
@@ -237,9 +237,11 @@
     line-height: 60px;
     font-weight: bolder;
   }
+  .checkout-btn:hover {
+    background-color: #00a0f0;
+  }
 
-
-  .error{
+  .error {
     box-shadow: 0px 0px 0px 1px red;
   }
   /* ========== 手機版 ======================================== */
@@ -259,8 +261,8 @@
       padding: 15px;
     }
 
-  
-    .order-info-detail label,.receiver-info-box label{
+    .order-info-detail label,
+    .receiver-info-box label {
       margin-bottom: 5px;
     }
 
@@ -498,5 +500,6 @@
       line-height: 50px;
       font-weight: bolder;
     }
+    
   }
 }

@@ -3,8 +3,7 @@
   width: 100%;
   height: 0%;
   outline: 1px solid #ecebeb;
-  margin-bottom:30px;
-  cursor: pointer;
+  margin-bottom: 30px;
 }
 
 /* 購物車欄位 */
@@ -14,14 +13,14 @@
   background-color: #ecebeb;
   font-size: 30px;
   line-height: 50px;
+  cursor: pointer;
 }
 
-.drop-list{
-  transition: .3s;
+.drop-list {
+  transition: 0.3s;
   height: 100%;
   overflow: hidden;
 }
-
 
 .arrow-icon {
   width: 45px;
@@ -55,7 +54,6 @@
     margin-bottom: 30px;
     overflow: hidden;
     transition: 0.3s;
-    cursor: pointer;
   }
 
   /* 購物車欄位 */
@@ -65,9 +63,9 @@
     background-color: #ecebeb;
     line-height: 30px;
     font-size: 18px;
+    cursor: pointer;
   }
   /* 收合購物車內容的動畫class */
- 
 
   .arrow-icon {
     width: 15px;
