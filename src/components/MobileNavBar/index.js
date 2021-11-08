@@ -86,7 +86,7 @@ function MobileNavBar(props) {
         <div className="header">
           <div className="d-flex">
             <div className="Logo-img">
-              <img src={`${devUrl}/images/Logo.png`} alt="#" />
+              <img className="logoCut" src={`${devUrl}/images/Logo.png`} alt="#" />
             </div>
             <div className="icon-area">
               <HiOutlineMenu className="menu-icon" onClick={handleClose} />
