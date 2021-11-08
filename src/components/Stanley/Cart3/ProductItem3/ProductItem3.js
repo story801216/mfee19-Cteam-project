@@ -18,9 +18,7 @@ function ProductItem3(props) {
                 <div className="product-description">{product.Name}</div>
               </div>
               <div className="col-2 text-center">NT${product.unit_price}</div>
-              <div className="col-2 text-center">
-                <div className="number">{product.quantity}</div>
-              </div>
+              <div className="col-2 text-center">{product.quantity}</div>
               <div className="col-2 text-right">NT${product.subtotal}</div>
             </div>
           </div>
