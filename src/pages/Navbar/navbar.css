@@ -7,6 +7,8 @@
   background-color: white;
   position: fixed;
   z-index: 9999;
+  font-size: 18px;
+
 }
 
 .homeIconLogo {
@@ -49,7 +51,7 @@
 
 .navbarAllIcon {
   display: flex;
-  gap: 10px;
+  gap: 20px;
 }
 .navbarIconLine1 {
   padding: 0 40px;
@@ -109,7 +111,7 @@
 .cart-count{
   position: absolute;
   color: red;
-  border: 1px solid black;
+  border: 1px solid rgb(133, 129, 129);
   border-radius: 15px;
   background-color: rgb(255, 255, 255);
   padding: 2px 6px;

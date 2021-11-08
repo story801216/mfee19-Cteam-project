@@ -111,7 +111,7 @@ function ProductItem(props) {
                 removeCartItem(sid)
               }}
             >
-              <FaTimes />
+              <FaTimes className="FaTimes-icon" />
             </div>
           </div>
         </div>
@@ -136,7 +136,12 @@ function ProductItem(props) {
                 </div>
                 <div className="col-2">
                   <div className="text-right">
-                    <i className="fas fa-times"></i>
+                    <FaTimes
+                      className="FaTimes-icon"
+                      onClick={() => {
+                        removeCartItem(sid)
+                      }}
+                    />
                   </div>
                 </div>
               </div>
@@ -163,7 +168,7 @@ function ProductItem(props) {
                     >
                       <AiOutlineMinus />
                     </div>
-                    <div className="number text-center">1</div>
+                    <div className="number text-center">{count}</div>
                     <div
                       className="plus d-flex"
                       onClick={() => {

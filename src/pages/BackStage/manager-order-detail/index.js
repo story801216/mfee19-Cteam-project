@@ -75,7 +75,7 @@ function App(props) {
                   {/* 電話：0928828818 */}
                   電話：{orderlist.member_mobile}
                   <br />
-                  信箱：xiaohai@gmail.com
+                  信箱：{orderlist.member_email}
                 </div>
               </div>
               <div className="col-xl-6 col-12">

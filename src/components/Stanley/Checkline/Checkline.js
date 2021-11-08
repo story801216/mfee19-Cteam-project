@@ -9,14 +9,14 @@ function Checkline(props) {
       {/* checkline 進度條 */}
       <div className="checkline-box d-flex justify-content-center">
         <div className="checkline-item">
-          <a href="/sc1">
+          <a href="/cart">
             <div className={'checkline-circle-' + state[0]}>1</div>
           </a>
           <div className="row justify-content-center">購物車</div>
         </div>
         <div className="checkline-line"></div>
         <div className="checkline-item">
-          <a href="/sc2">
+          <a href="/checkout">
             <div className={'checkline-circle-' + state[1]}>2</div>
           </a>
           <div className="row justify-content-center">填寫資料</div>

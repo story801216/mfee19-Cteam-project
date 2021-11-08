@@ -1,18 +1,29 @@
-.product-sales-box{
-    background-color: rgb(226, 179, 179);
-    width: 100%;
-    height: 100%;
+.product-sales-box {
+  background-color: rgb(243, 242, 242);
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
 }
 
-.product-sales-box .title{
-    padding: 10px;
-    border-bottom: 1px solid black;
+.product-sales-box .title {
+  padding: 10px;
+  border-bottom: 1px solid black;
+  font-weight: bold;
 }
 
-.product-sales-box .content{
-    padding: 10px;
+.product-sales-box .content-box {
+  padding: 10px;
 }
 
-.product-sales-box .col-2{
-    padding-right: 0px;
+.product-sales-box .content {
+  padding: 5px 0;
+  height: 40px;
+}
+
+.product-sales-box .col-2,.col-7{
+  padding-right: 0px;
+}
+
+.spinner{
+  margin: 20px 50%;
 }

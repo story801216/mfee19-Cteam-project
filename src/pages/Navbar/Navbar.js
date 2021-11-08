@@ -22,7 +22,7 @@ function Navbar(props) {
     setControlSmallBody,
     productCount,
     isAuth,
-    isManager
+    isManager,
   } = props
 
   /*下拉式選單狀態 */
