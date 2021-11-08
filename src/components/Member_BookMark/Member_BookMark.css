@@ -1,6 +1,7 @@
 
 .Member-bookMark-title {
-  margin-left: 102px;
+  position: relative;
+  left: 20%;
   font-weight: 500;
   font-size: 36px;
   margin-bottom: 40px;
@@ -9,7 +10,8 @@
   .Member-bookMark-title  {
     margin-top: 30px;
     margin-bottom: 30px;
-    margin-left:0px
+    position: relative;
+    left: 27%;
 
   }
 }
