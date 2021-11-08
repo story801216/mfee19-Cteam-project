@@ -648,8 +648,8 @@ function IconSearch_p1(props) {
                           </span>
                           <div className="yourproduct">
                             <ProductItem />
-                            <ProductItem />
-                            <ProductItem />
+                            <ProductItem1 />
+                            <ProductItem2 />
 
                             {/* <ProductSlider /> */}
                           </div>

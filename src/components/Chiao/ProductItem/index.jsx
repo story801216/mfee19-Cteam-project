@@ -5,7 +5,7 @@ import './index.css'
 function ProductItem(props) {
   const [follow, setFollow] = useState(0)
   return (
-    <a href="#/" className="product">
+    <a href="prod-list/prod/6" className="product">
       <div className="item">
         {/* 圖片 */}
         <div className="pic">
@@ -31,7 +31,7 @@ function ProductItem(props) {
           <div className="line-bottom"></div>
           {/* 價格 */}
           <div className="price">
-            <p>$580</p>
+            <p>$980</p>
           </div>
         </div>
       </div>
