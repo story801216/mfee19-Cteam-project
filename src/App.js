@@ -43,6 +43,8 @@ import './App.css'
 function App() {
   // 是否為登入狀態
   const [isAuth, setIsAuth] = useState(false)
+  // 是否為登入狀態
+  const [isManager, setIsManager] = useState(false)
 
   // navbar 商品類別欄顏色切換
   const [controlCate, setControlCate] = useState('')
@@ -99,6 +101,10 @@ function App() {
     const userLogin = JSON.parse(localStorage.getItem('Member') || '[]')
     if (userLogin.length > 0) {
       setIsAuth(true)
+      // 如果登入的是這個帳號，就讓管理者狀態顯示true
+      if (userLogin[0].email === '123@yahoo.com.tw') {
+        setIsManager(true)
+      }
     }
   }, [])
 
@@ -111,6 +117,7 @@ function App() {
           setControlSmallBody={setControlSmallBody}
           productCount={productCount}
           isAuth={isAuth}
+          isManager={isManager}
         />
         <MobileNavBar />
         <ScrollToTop>
@@ -121,6 +128,7 @@ function App() {
                 closeStore={closeStore}
                 setCloseStore={setCloseStore}
                 setIsAuth={setIsAuth}
+                setIsManager={setIsManager}
               />
               {/* 會員資料修改、會員處方資料列表 */}
               <Route path="/User">
@@ -137,6 +145,7 @@ function App() {
                 productCount={productCount}
                 setProductCount={setProductCount}
                 isAuth={isAuth}
+                setIsManager={setIsManager}
                 setIsAuth={setIsAuth}
                 myBrowseRecord={myBrowseRecord}
                 setMyBrowseRecord={setMyBrowseRecord}
@@ -151,16 +160,23 @@ function App() {
               <PortiaAllPage
                 setCloseStore={setCloseStore}
                 setIsAuth={setIsAuth}
+                setIsManager={setIsManager}
                 updateBrowseRecordToLocalStorage={
                   updateBrowseRecordToLocalStorage
                 }
               />
               {/* 症狀頁 */}
               <Route path="/IconSearch_p1">
-                <IconSearch_p1 setIsAuth={setIsAuth} />
+                <IconSearch_p1
+                  setIsAuth={setIsAuth}
+                  setIsManager={setIsManager}
+                />
               </Route>
               <Route path="/IconSearch_p2">
-                <IconSearch_p2 setIsAuth={setIsAuth} />
+                <IconSearch_p2
+                  setIsAuth={setIsAuth}
+                  setIsManager={setIsManager}
+                />
               </Route>
               {/* 地圖頁 */}
               <Route path="/HospitalPage">
@@ -171,6 +187,7 @@ function App() {
                 productCount={productCount}
                 setProductCount={setProductCount}
                 setIsAuth={setIsAuth}
+                setIsManager={setIsManager}
               />
             </MainContent>
           </Switch>

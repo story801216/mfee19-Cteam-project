@@ -3,7 +3,8 @@ import { withRouter } from 'react-router-dom'
 import './index.css'
 function AddProductsPage(props) {
   const { backStageProdsTotalPages, setOptionNow } = props
-  const addForm = () => {
+  const addForm = (e) => {
+    e.preventDefault()
     const fd = new FormData(document.add_form)
     fetch('http://localhost:3001/product', {
       method: 'POST',
