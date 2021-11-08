@@ -21,6 +21,7 @@ function ProductItem(props) {
 
   // 移除購物車內的商品
   const removeCartItem = (sid) => {
+
     let newMyCart = []
 
     // 把指定sid以外的商品放進去新陣列

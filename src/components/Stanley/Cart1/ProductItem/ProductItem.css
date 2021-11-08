@@ -51,6 +51,7 @@
 .FaTimes-icon{
   cursor: pointer;
 }
+
 @media screen and (max-width: 376px) {
   .cart-item {
     padding: 15px;
