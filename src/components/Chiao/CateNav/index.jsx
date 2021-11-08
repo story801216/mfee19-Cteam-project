@@ -18,8 +18,8 @@ function CateNav(props) {
       <div className="cate">
         {/* 小標題 */}
         <div className="title">
-          <div
-            href="#/"
+          <Link
+            to="/HealthEnCyc"
             onClick={() => {
               setControlCate(0)
             }}
@@ -32,7 +32,7 @@ function CateNav(props) {
                 className={controlCate === 0 ? 'right now' : 'right'}
               />
             </div>
-          </div>
+          </Link>
         </div>
       </div>
       {/* 分隔線 */}
@@ -41,8 +41,8 @@ function CateNav(props) {
       <div className="body">
         {/* 小標題 */}
         <div className="title">
-          <div
-            href="/IconSearch_p1"
+          <Link
+            to="/IconSearch_p1"
             onClick={() => {
               setControlCate(1)
             }}
@@ -55,7 +55,7 @@ function CateNav(props) {
                 className={controlCate === 1 ? 'right now' : 'right'}
               />
             </div>
-          </div>
+          </Link>
         </div>
       </div>
       {/* 分隔線 */}

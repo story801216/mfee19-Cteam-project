@@ -22,6 +22,7 @@ function Navbar(props) {
     setControlSmallBody,
     productCount,
     isAuth,
+    isManager
   } = props
 
   /*下拉式選單狀態 */
@@ -88,7 +89,7 @@ function Navbar(props) {
                 <Link to="/Login" className="navChandePageEnc">
                   <FaRegUserCircle />
                 </Link>
-                {isAuth ? (
+                {isManager ? (
                   <Link
                     to="/back-stage/Backstage_Member_Management"
                     className="navChandePageEnc"
