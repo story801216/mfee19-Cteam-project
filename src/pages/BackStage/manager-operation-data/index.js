@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from 'react'
+import './index.css'
 import axios from 'axios'
+import { Spinner } from 'react-bootstrap'
 import LineChart from '../../../components/Stanley/LineChart/LineChart'
 
 function App() {
@@ -22,19 +24,19 @@ function App() {
       // 拿到
       setTimeout(() => {
         setIsloading(false)
-      }, 500)
+      }, 700)
     }
     getInfo()
   }, [])
 
-  console.log(purchasedList)
+  // 計算每天個別的營業額
   let datalist = []
   let dataobj = {}
 
-  // 計算每天個別的營業額
   orderlist.forEach((el) => {
     // 判斷這筆訂單的日期
     const orderDate = el.order_date.slice(5, 10).split('-').join('/')
+    // 如果此日期沒有在obj裡面，就建立一個
     if (!dataobj[orderDate]) {
       const item = {
         orderDate: orderDate,
@@ -48,21 +50,81 @@ function App() {
   })
 
   // 計算商品銷量排行
-  // purchasedList.forEach(()=>{
+  let saleslist = []
+  let salesobj = {}
 
-  // })
+  purchasedList.forEach((el) => {
+    if (!salesobj[el.product_id]) {
+      const item = {
+        product_id: el.product_id,
+        Name: el.Name,
+        quantity: el.quantity,
+      }
+      salesobj[el.product_id] = item
+      saleslist.push(item)
+    } else {
+      salesobj[el.product_id].quantity += el.quantity
+    }
+  })
+
+  // 把銷量進行排序
+  saleslist.sort(function (a, b) {
+    if (a.quantity < b.quantity) {
+      return 1
+    }
+    if (a.quantity > b.quantity) {
+      return -1
+    }
+    return 0
+  })
+
+  // spinner動畫
+  const spinner = (
+    <Spinner animation="grow" variant="primary" className="spinner" />
+  )
+
   return (
     <>
       <div className="container">
-        <div className="row">
-          {/* 營業額圖表 */}
-          <div className="col-8">
-            {/* datalist是orderDate DESC排序，後續需要 */}
-            <LineChart datalist={datalist.reverse()} />
+        {isLoading ? (
+          spinner
+        ) : (
+          <div className="row">
+            {/* 營業額圖表 */}
+            <div className="col-xl-8 col-12">
+              {/* datalist是orderDate DESC排序，後續需要 */}
+              <LineChart datalist={datalist.reverse()} />
+            </div>
+            {/* 商品銷量排行表 */}
+            <div className="col-xl-4 col-12">
+              <div className="product-sales-box">
+                <div className="title">
+                  <div className="row">
+                    <div className="col-2">排行</div>
+                    <div className="col-7">品項</div>
+                    <div className="col-3 text-right">銷量</div>
+                  </div>
+                </div>
+                <div className="content-box">
+                  {/* 銷量內容 */}
+                  {saleslist.map((v, i) => {
+                    return (
+                      <>
+                        <div className="content">
+                          <div className="row mb-1">
+                            <div className="col-2">{i + 1}</div>
+                            <div className="col-7">{v.Name}</div>
+                            <div className="col-3 text-right">{v.quantity}</div>
+                          </div>
+                        </div>
+                      </>
+                    )
+                  })}
+                </div>
+              </div>
+            </div>
           </div>
-          {/* 商品銷量排行表 */}
-          <div className="col-4"></div>
-        </div>
+        )}
       </div>
     </>
   )

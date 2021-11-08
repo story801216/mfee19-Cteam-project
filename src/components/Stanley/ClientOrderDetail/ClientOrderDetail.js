@@ -22,7 +22,7 @@ function OrderDetail(props) {
                 電話：{order_list.member_mobile}
                 <br />
                 {/* 訂購人信箱 */}
-                信箱：xiaohai@gmail.com
+                信箱：{order_list.member_email}
               </div>
             </div>
             <div className="col-xl-4 col-12">
