@@ -44,7 +44,7 @@ function Navbar(props) {
       <div
         className="navbarAll"
         onMouseLeave={(e) => {
-          setButtonIndex(0);
+          setButtonIndex(0)
           // console.log(e.target);
         }}
       >
@@ -64,14 +64,12 @@ function Navbar(props) {
                   </div>
                 </Link>
               </Link>
-              <Link to="/User/Member_revise">
-                <Link to="/User/Member_revise" className="navChandePageEnc">
-                  <div className="positionIconA">
-                    <FaRegUserCircle />
-                    <p>會員中心</p>
-                  </div>
-                </Link>
-              </Link>
+              {/* <Link to={isAuth ? '/User/Member_revise' : '/Login'}>
+                <div className="positionIconA">
+                  <FaRegUserCircle />
+                  <p>會員中心</p>
+                </div>
+              </Link> */}
               <div className="navbarAllIcon">
                 <Link
                   to={isAuth ? '/followdPage' : '/Login'}
@@ -86,7 +84,10 @@ function Navbar(props) {
                     <span className="cart-count">{productCount}</span>
                   )}
                 </Link>
-                <Link to="/Login" className="navChandePageEnc">
+                <Link
+                  to={isAuth ? '/User/Member_revise' : '/Login'}
+                  className="navChandePageEnc"
+                >
                   <FaRegUserCircle />
                 </Link>
                 {isManager ? (
