@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import "./airQuality.css";
-//import { GoogleKey } from "../StoresMap/Key";
+// import { GoogleKey } from "../StoresMap/Key";
 
 
 function AirQuality(props) {
@@ -31,7 +31,7 @@ function AirQuality(props) {
 
     if ((getGps.lat !== 0) & (getGps.lng !== 0)) {
       const result = await fetch(
-       // `https://maps.google.com/maps/api/geocode/json?latlng=${getGps.lat},${getGps.lng}&result_type=street_address&language=zh-TW&sensor=true&key=${GoogleKey}`
+        // `https://maps.google.com/maps/api/geocode/json?latlng=${getGps.lat},${getGps.lng}&result_type=street_address&language=zh-TW&sensor=true&key=${GoogleKey}`
       ).then((res) => res.json());
       let addrApi = result.results[0].address_components;
 
@@ -64,7 +64,7 @@ function AirQuality(props) {
       // console.log(aqiApi);
 
       aqiApi.forEach((e) => {
-        //console.log(e);
+        // console.log(e);
         if (addr.site === e.SiteName) {
           setAqi(e.AQI);
           setAqiState(e.Status);
@@ -145,7 +145,7 @@ function AirQuality(props) {
 
     if (inputValue !== "") {
       const result = await fetch(
-       // `https://maps.google.com/maps/api/geocode/json?&address=${inputValue}&result_type=street_address&language=zh-TW&sensor=true&key=${GoogleKey}`
+        // `https://maps.google.com/maps/api/geocode/json?&address=${inputValue}&result_type=street_address&language=zh-TW&sensor=true&key=${GoogleKey}`
       ).then((res) => res.json());
       let addrApi = result.results[0].address_components;
 
