@@ -1,87 +1,87 @@
-import React, { useState, useEffect } from "react";
-import "./storesMap.css";
-import { GoSearch } from "react-icons/go"; //引用search icon
-import CardStores from "../../../components/Yiling/StoresMap/CardStores"; //門市卡片
+import React, { useState, useEffect } from 'react'
+import './storesMap.css'
+import { GoSearch } from 'react-icons/go' //引用search icon
+import CardStores from '../../../components/Yiling/StoresMap/CardStores' //門市卡片
 import {
   fetchSql,
   addressSelector,
   selectCityA,
   selectSiteA,
-} from "../HealthEnIndex/HealthDatabase"; //引入方法
+} from '../HealthEnIndex/HealthDatabase' //引入方法
 
 //引入元件
 // import Navbar from "../Navbar/Navbar"; //共用元件 Nav
-import SelectTagStore from "../../../components/Yiling/StoresMap/SelectTagStore"; //下拉選單
+import SelectTagStore from '../../../components/Yiling/StoresMap/SelectTagStore' //下拉選單
 
 function StoresMap() {
-  const [storesMapCity, setStoresMapCity] = useState(""); //下拉選單城市
-  const [storesMapSite, setStoresMapSite] = useState(""); //下拉選單區域
-  const [searchDataStore, setSearchDataStore] = useState([]); //抓取門市資料庫
-  const [inputCityIn, setInputCityIn] = useState([]); //city
-  const [inputSiteIn, setInputSiteIn] = useState([]); //Site
-  const [searchInStores, setSearchInStores] = useState(""); //輸入框即時文字
-  const [renderDataStore, setRenderDataStore] = useState([]); //顯示門市資料庫
-  const [searchClick, setSearchClick] = useState(""); //搜尋文字
+  const [storesMapCity, setStoresMapCity] = useState('') //下拉選單城市
+  const [storesMapSite, setStoresMapSite] = useState('') //下拉選單區域
+  const [searchDataStore, setSearchDataStore] = useState([]) //抓取門市資料庫
+  const [inputCityIn, setInputCityIn] = useState([]) //city
+  const [inputSiteIn, setInputSiteIn] = useState([]) //Site
+  const [searchInStores, setSearchInStores] = useState('') //輸入框即時文字
+  const [renderDataStore, setRenderDataStore] = useState([]) //顯示門市資料庫
+  const [searchClick, setSearchClick] = useState('') //搜尋文字
 
   const dataBaseStore = async (v) => {
-    const dataBaseStore = await fetchSql(v);
+    const dataBaseStore = await fetchSql(v)
     // console.log(dataBaseStore);
-    setSearchDataStore(dataBaseStore.rows);
-  };
+    setSearchDataStore(dataBaseStore.rows)
+  }
 
   function fillterContent(arr, word) {
-    const catchWord = [];
-    console.log(word);
+    const catchWord = []
+    console.log(word)
     for (let i = 0; i < arr.length; i++) {
-      const plus = arr[i].sName + arr[i].s_address;
+      const plus = arr[i].sName + arr[i].s_address
       if (plus.indexOf(word) >= 0) {
-        catchWord.push(arr[i]);
+        catchWord.push(arr[i])
       }
     }
-    setRenderDataStore(catchWord);
+    setRenderDataStore(catchWord)
   }
 
   useEffect(() => {
-    dataBaseStore("stores_list");
-    setInputCityIn(selectCityA); //城市
-  }, []);
+    dataBaseStore('stores_list')
+    setInputCityIn(selectCityA) //城市
+  }, [])
 
   //篩選
   useEffect(() => {
-    if (storesMapCity === "" || storesMapCity === "縣市") {
-      if (searchClick === "") {
-        setRenderDataStore(searchDataStore);
+    if (storesMapCity === '' || storesMapCity === '縣市') {
+      if (searchClick === '') {
+        setRenderDataStore(searchDataStore)
       }
     } else {
-      fillterContent(searchDataStore, storesMapCity + storesMapSite);
+      fillterContent(searchDataStore, storesMapCity + storesMapSite)
     }
-  }, [searchDataStore, storesMapCity, storesMapSite]);
+  }, [searchDataStore, storesMapCity, storesMapSite])
 
   //搜尋框文字篩選
   useEffect(() => {
-    if (searchClick === "") {
-      setRenderDataStore(searchDataStore);
-      setStoresMapCity("");
+    if (searchClick === '') {
+      setRenderDataStore(searchDataStore)
+      setStoresMapCity('')
     } else {
-      fillterContent(searchDataStore, searchClick);
-      setStoresMapCity("");
+      fillterContent(searchDataStore, searchClick)
+      setStoresMapCity('')
     }
-  }, [searchClick]);
+  }, [searchClick])
 
   //清空區域狀態
   useEffect(() => {
-    if (storesMapCity !== "" && storesMapCity !== "縣市") {
-      setStoresMapSite("");
+    if (storesMapCity !== '' && storesMapCity !== '縣市') {
+      setStoresMapSite('')
     } else {
-      setInputSiteIn([]);
+      setInputSiteIn([])
     }
-  }, [storesMapCity]);
+  }, [storesMapCity])
 
   useEffect(() => {
-    if (storesMapCity !== "" && storesMapCity !== "縣市") {
-      setInputSiteIn(selectSiteA(storesMapCity)); //把城市帶入區域
+    if (storesMapCity !== '' && storesMapCity !== '縣市') {
+      setInputSiteIn(selectSiteA(storesMapCity)) //把城市帶入區域
     }
-  }, [storesMapCity]);
+  }, [storesMapCity])
 
   return (
     <>
@@ -93,11 +93,11 @@ function StoresMap() {
             <a href="">
               <p>首頁</p>
             </a>
-            <p className="arrowarooo">{">"}</p>
+            <p className="arrowarooo">{'>'}</p>
             <a href="">
               <p>關於我們</p>
             </a>
-            <p className="arrowarooo">{">"}</p>
+            <p className="arrowarooo">{'>'}</p>
             <a href="">
               <p>門市資訊</p>
             </a>
@@ -126,15 +126,15 @@ function StoresMap() {
                 className="storesInputMap"
                 placeholder="店家、所屬道路名稱"
                 onChange={(e) => {
-                  setSearchInStores(e.target.value);
+                  setSearchInStores(e.target.value)
                 }}
                 value={searchInStores}
               />
               <button
                 className="searchIconStores"
                 onClick={(e) => {
-                  setSearchClick(searchInStores);
-                  setSearchInStores(""); //清空即時文字區
+                  setSearchClick(searchInStores)
+                  setSearchInStores('') //清空即時文字區
                 }}
               >
                 <GoSearch />
@@ -150,7 +150,7 @@ function StoresMap() {
         </div>
       </div>
     </>
-  );
+  )
 }
 
-export default StoresMap;
+export default StoresMap

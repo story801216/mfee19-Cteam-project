@@ -83,7 +83,10 @@ function App() {
 
   // 銷量的前10名
   let Top10list = []
-  for (let i = 0; i < 10; i++) {
+  for (let i = 0; i < saleslist.length; i++) {
+    if (i >= 10) {
+      break
+    }
     Top10list.push(saleslist[i])
   }
 

@@ -29,7 +29,6 @@ function Prescription_Reserve(props) {
   }
   console.log(file)
 
-
   const submit = (e) => {
     e.preventDefault()
     if (
@@ -164,7 +163,7 @@ function Prescription_Reserve(props) {
                 onChange={onChange}
               />
               <div className="zi-Prescription-uploadpic">
-                <img src={file.img} />
+                <img src={file.img} alt="" />
               </div>
             </div>
             <div className="zi-Prescription-button-flex">

@@ -1,6 +1,6 @@
 /* eslint-disable no-unused-vars */
 import './Select_shop.css'
-import {Link} from "react-router-dom";
+import { Link } from 'react-router-dom'
 // import Googlemap from './Googlemap.js'
 import _ from 'lodash' //引入方法函示庫，react內建不需安裝
 import StoresMapForGoogle from '../../../components/Yiling/StoresMap/StoresMapForGoogle'
@@ -187,7 +187,7 @@ function Select_shop(props) {
               自動搜尋最近門市
             </div>
             <form className="zi-select-shop-form-content" action="">
-              <label className="zi-select-shop-city-label" for="city">
+              <label className="zi-select-shop-city-label" htmlFor="city">
                 城市
               </label>
               <select
@@ -250,10 +250,10 @@ function Select_shop(props) {
           {/* <button type="submit" className="zi-select-shop-backstep" onClick={backpage}>
             上一步
           </button> */}
-          <Link to='/Prescription_Reserve'>
-          <button type="submit" className="zi-select-shop-form-submit" >
-            下一步
-          </button>
+          <Link to="/Prescription_Reserve">
+            <button type="submit" className="zi-select-shop-form-submit">
+              下一步
+            </button>
           </Link>
         </div>
       </div>

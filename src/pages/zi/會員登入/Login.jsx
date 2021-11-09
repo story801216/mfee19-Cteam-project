@@ -47,7 +47,7 @@ function Login(props) {
             <p>請填寫「欲至門市領藥的聯絡人」註冊資料</p>
             <div className="zi-Login-card-line"></div>
             <form className="zi-Login-form-content" action="">
-              <label for="E-mail">電子郵件</label>
+              <label htmlFor="E-mail">電子郵件</label>
               <input
                 type="email"
                 id="E-mail"
@@ -59,7 +59,7 @@ function Login(props) {
                 }}
               />
               <div className="zi-Login-password-text">
-                <label for="Password">密碼</label>
+                <label htmlFor="Password">密碼</label>
                 <a className="zi-Login-forget-pw" href="/#">
                   忘記密碼?
                 </a>

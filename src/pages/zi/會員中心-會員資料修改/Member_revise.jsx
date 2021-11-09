@@ -6,7 +6,7 @@ function Member_revise() {
       <div className="zi-member-revise">
         {/* <Member_bookMark /> */}
         <form className="zi-member-revise-form-content" action="">
-          <label for="E-mail">電子郵件(不可修改)</label>
+          <label htmlFor="E-mail">電子郵件(不可修改)</label>
           <input
             type="email"
             id="E-mail"
@@ -16,7 +16,7 @@ function Member_revise() {
             value="123456@yahoo.com.tw"
           />
 
-          <label for="Password">密碼</label>
+          <label htmlFor="Password">密碼</label>
           <input
             type="password"
             id="Password"
@@ -27,7 +27,7 @@ function Member_revise() {
             value="123456"
           />
 
-          <label for="Name">姓名</label>
+          <label htmlFor="Name">姓名</label>
           <input
             type="text"
             id="Name"
@@ -36,7 +36,7 @@ function Member_revise() {
             value="留梓庭"
           />
 
-          <label for="zi-member-revise-Birthday">生日</label>
+          <label htmlFor="zi-member-revise-Birthday">生日</label>
           <input
             type="date"
             id="zi-member-revise-Birthday"
@@ -45,7 +45,7 @@ function Member_revise() {
             value="2021-01-01"
           />
 
-          <label for="Id-number">
+          <label htmlFor="Id-number">
             身分證字號<p>(不可修改)</p>
           </label>
           <input
@@ -57,7 +57,7 @@ function Member_revise() {
             value="F123456789"
           />
 
-          <label for="Mobile">手機號碼</label>
+          <label htmlFor="Mobile">手機號碼</label>
           <input
             type="text"
             id="Mobile"
@@ -68,7 +68,7 @@ function Member_revise() {
             value="0988123456"
           />
 
-          <label for="Address">聯絡地址</label>
+          <label htmlFor="Address">聯絡地址</label>
           <input
             type="text"
             id="Address"
