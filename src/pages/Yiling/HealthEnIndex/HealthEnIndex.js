@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import './healthEnIndex.css'
 import { fetchSql, dataNameImport } from './HealthDatabase' //引入方法
-import { useParams } from 'react-router-dom'
+import { useParams, withRouter } from 'react-router-dom'
 import _ from 'lodash' //引入方法函示庫，react內建不需安裝
 
 function HealthEnIndex(props) {
@@ -24,6 +24,12 @@ function HealthEnIndex(props) {
     searchInDatabase(Id)
     setDataPathId(_.get(dataNameImport, `${Id}.name`))
   }, [])
+
+  // Id改變時，重新渲染頁面
+  useEffect(() => {
+    searchInDatabase(Id)
+    setDataPathId(_.get(dataNameImport, `${Id}.name`))
+  }, [props.match.params.Id])
 
   // console.log(dataNameImport.Id.name);
   // const name = _.get(dataNameImport, `${Id}.name`);
@@ -89,4 +95,4 @@ function HealthEnIndex(props) {
   )
 }
 
-export default HealthEnIndex
+export default withRouter(HealthEnIndex)
