@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { useHistory } from 'react-router-dom'
 import './Summary.css'
-import { Modal, Button } from 'react-bootstrap'
+import { Modal} from 'react-bootstrap'
 import { BsFillExclamationTriangleFill } from 'react-icons/bs'
 
 function Summary(props) {

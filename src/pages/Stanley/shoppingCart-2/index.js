@@ -1,14 +1,17 @@
 import React, { useEffect, useState, useRef } from 'react'
 import { useHistory } from 'react-router-dom'
+import { Modal } from 'react-bootstrap'
 import './index.scss'
 import axios from 'axios'
 import { IoIosArrowBack } from 'react-icons/io'
+import { BsFillCheckCircleFill } from 'react-icons/bs'
 import Checkline from '../../../components/Stanley/Checkline/Checkline'
 import Cart2 from '../../../components/Stanley/Cart2/Cart2'
 import storeDataCD from '../../../hotData/7-11CD.json'
 import storeDataDS from '../../../hotData/7-11DS.json'
 import storeDataSS from '../../../hotData/7-11SS.json'
 import CreditCard from '../../../components/Stanley/CreditCard/CreditCard'
+
 const cities = [
   '台北市',
   '新北市',
@@ -35,26 +38,36 @@ const cities = [
   '',
 ]
 
-function App() {
+function App(props) {
   // Checkline state
   const state = [1, 1, 2]
 
+  // 購物車、會員資料
   const [mycart, setMycart] = useState([])
   const [orderInfo, setOrderInfo] = useState('')
   const [memberInfo, setMemberInfo] = useState(
     JSON.parse(localStorage.getItem('Member')) || []
   )
 
+  // 超商選擇
   const [storeOption, setStoreOption] = useState('')
   const [mycity, setMycity] = useState('')
   const [mydist, setMydist] = useState('')
   const [mystreet, setMystreet] = useState('')
   const [mystore, setMystore] = useState('')
 
-  let history = useHistory('')
+  // modal功能
+  const [show, setShow] = useState(false)
+  const [word, setWord] = useState('')
+  const handleCloseModal = () => setShow(false)
+  const handleShowModal = () => {
+    setShow(true)
+    setTimeout(() => {
+      setShow(false)
+    }, 1000)
+  }
 
-  console.log(memberInfo[0].sid)
-
+  // 如果有登入會員，會自動帶入會員資訊
   useEffect(() => {
     if (memberInfo) {
       const a = (document.getElementById('member_name').value =
@@ -70,7 +83,7 @@ function App() {
   const handleChange = (e) => {
     const name = e.target.name
     e.target.classList.remove('error')
-    console.log(e.target)
+    // console.log(e.target)
   }
 
   // ======== 發送表單 =================
@@ -134,8 +147,13 @@ function App() {
 
     // 4. 如果回傳值是成功，則跳轉到下一步的頁面
     if (r.data.success) {
-      alert('訂單送出成功!')
-      window.location.href = `./order-check/${r.data.order_sid}` // 需要用整個重整的跳轉方式 (navbar購物車重新render)
+      setWord('訂單送出成功')
+      handleShowModal()
+      // 等一秒後再執行跳轉
+      setTimeout(() => {
+        window.location.href = `./order-check/${r.data.order_sid}` // 需要用整個重整的跳轉方式 (navbar購物車重新render)
+      }, 1000)
+
       localStorage.removeItem('cart')
       localStorage.removeItem('orderInfo')
     }
@@ -157,6 +175,20 @@ function App() {
 
   return (
     <>
+      {/* modal */}
+      <Modal
+        show={show}
+        onHide={handleCloseModal}
+        {...props}
+        size="sm"
+        aria-labelledby="contained-modal-title-vcenter"
+        centered
+      >
+        <Modal.Body className="text-center">
+          <BsFillCheckCircleFill className="BsFillCheckCircleFill  mr-3" />
+          <span className="modal-body-word">{word}</span>
+        </Modal.Body>
+      </Modal>
       <div className="SC2">
         <div className="container">
           {/* 進度條 */}
@@ -168,6 +200,8 @@ function App() {
             orderInfo={orderInfo}
             setOrderInfo={setOrderInfo}
           />
+
+          {/* 表單 */}
           <form onSubmit={handleSubmit}>
             {/* 訂購人資訊 */}
             <div className="order-info-box">
@@ -364,6 +398,9 @@ function App() {
                                         e.currentTarget.classList.add(
                                           'storeActive'
                                         )
+                                        // modal
+                                        setWord(`已選擇${v.storename}門市`)
+                                        handleShowModal()
                                       }}
                                     >
                                       <div className="store-name">
@@ -385,6 +422,7 @@ function App() {
                 </div>
               )}
 
+              {/* 訂單備註 */}
               <div className="order-note-box">
                 <div className="note-title">訂單備註(選填)</div>
                 <textarea
