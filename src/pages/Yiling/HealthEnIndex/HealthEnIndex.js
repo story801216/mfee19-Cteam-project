@@ -1,33 +1,32 @@
-import React, { useState, useEffect } from "react";
-import "./healthEnIndex.css";
-import { fetchSql, dataNameImport } from "./HealthDatabase"; //引入方法
-import { useParams } from "react-router-dom";
-import _ from "lodash"; //引入方法函示庫，react內建不需安裝
+import React, { useState, useEffect } from 'react'
+import './healthEnIndex.css'
+import { fetchSql, dataNameImport } from './HealthDatabase' //引入方法
+import { useParams } from 'react-router-dom'
+import _ from 'lodash' //引入方法函示庫，react內建不需安裝
 
 function HealthEnIndex(props) {
-  const [dataBaseAll, setDatabaseAll] = useState([]);
-  const [dataPathId, setDataPathId] = useState("");
+  const [dataBaseAll, setDatabaseAll] = useState([])
+  const [dataPathId, setDataPathId] = useState('')
 
-  let { Id } = useParams();
+  let { Id } = useParams()
 
   const searchInDatabase = async (v) => {
-    const searchInDatabase = await fetchSql(v);
+    const searchInDatabase = await fetchSql(v)
     // 依照位置排序
     searchInDatabase.rows.sort((a, b) => {
       // 陣列.sort()是排序功能
-      return a.sId - b.sId; //a-b是小到大,b-a是大到小
-    });
-    setDatabaseAll(searchInDatabase.rows);
-  };
+      return a.sId - b.sId //a-b是小到大,b-a是大到小
+    })
+    setDatabaseAll(searchInDatabase.rows)
+  }
 
   useEffect(() => {
-    searchInDatabase(Id);
-    setDataPathId(_.get(dataNameImport, `${Id}.name`));
-  }, );
+    searchInDatabase(Id)
+    setDataPathId(_.get(dataNameImport, `${Id}.name`))
+  }, [])
 
   // console.log(dataNameImport.Id.name);
   // const name = _.get(dataNameImport, `${Id}.name`);
-
 
   return (
     <>
@@ -45,15 +44,15 @@ function HealthEnIndex(props) {
             <a href="">
               <p>首頁 </p>
             </a>
-            <p className="arrowHealth">{">"}</p>
+            <p className="arrowHealth">{'>'}</p>
             <a href="">
               <p>保健知識</p>
             </a>
-            <p className="arrowHealth">{">"}</p>
+            <p className="arrowHealth">{'>'}</p>
             <a href="">
               <p>保健百科</p>
             </a>
-            <p className="arrowHealth">{">"}</p>
+            <p className="arrowHealth">{'>'}</p>
             <a href="">
               <p>{dataPathId}</p>
             </a>
@@ -75,7 +74,7 @@ function HealthEnIndex(props) {
                 <p className="pIndex">{v.sName}</p>
                 <p className="pIndexContent">{v.sContent}</p>
               </div>
-            );
+            )
           })}
 
           {/* <div className="pIndexAllOne">
@@ -87,7 +86,7 @@ function HealthEnIndex(props) {
         </div>
       </div>
     </>
-  );
+  )
 }
 
-export default HealthEnIndex;
+export default HealthEnIndex
