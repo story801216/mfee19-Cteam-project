@@ -10,10 +10,10 @@ function NewPopularProduct() {
         </div>
         <div className="cardBackColor">
           <div className="forPic">
-            <img src="./images/products/products(52).png"></img>
+            <img src="./images/products/products(19).jpeg"></img>
           </div>
           <div className="forWord">
-            <p>克司博75%酒精液(500ml/瓶)</p>
+            <p>三多金盞花葉黃素複方-100PC粒</p>
           </div>
         </div>
         <br />

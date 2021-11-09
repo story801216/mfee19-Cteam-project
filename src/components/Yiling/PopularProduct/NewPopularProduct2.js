@@ -1,5 +1,5 @@
-import React from "react";
-import "./newPopularProduct.css";
+import React from 'react'
+import './newPopularProduct.css'
 
 function NewPopularProduct() {
   return (
@@ -10,16 +10,16 @@ function NewPopularProduct() {
         </div>
         <div className="cardBackColor">
           <div className="forPic">
-            <img src="./images/products/products(21).png"></img>
+            <img src="./images/products/products(3).jpeg"></img>
           </div>
           <div className="forWord">
-            <p>綜合鈣+D3粉包-完美鈣鎂比例</p>
+            <p>三多 高纖乳酸菌PP粉末食品-2gx20</p>
           </div>
         </div>
         <br />
       </div>
     </>
-  );
+  )
 }
 
-export default NewPopularProduct;
+export default NewPopularProduct

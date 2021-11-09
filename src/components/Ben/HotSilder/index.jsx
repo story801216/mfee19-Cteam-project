@@ -35,11 +35,11 @@ export default class HotSilder extends Component {
     return (
       <div>
         <Slider className="hotSilder" {...settings}>
-          {this.props.hotProductData.map((product, i) => {
+          {this.props.Top5list.map((product, i) => {
             return (
               <Link
-                key={product.sid}
-                to={'/prod-list/prod/' + product.sid}
+                key={product.product_id}
+                to={'/prod-list/prod/' + product.product_id}
                 onClick={() => {
                   this.props.updateBrowseRecordToLocalStorage(product)
                 }}

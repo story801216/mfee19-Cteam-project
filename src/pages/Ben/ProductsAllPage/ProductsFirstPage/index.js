@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
+import axios from 'axios'
 import { hotData } from '../../../../hotData'
 import Banner from '../../../../components/Ben/Banner'
 import MultiLevelBreadcrumb from '../../../../components/Ben/MultiLevelBreadcrumb'
@@ -32,15 +33,14 @@ function ProductsFirstPage(props) {
     setSearchWord,
   } = props
 
-  // 設定熱門商品資料
-  const [hotProductData, setHotProductData] = useState([])
-
   const [controlCateButton, setControlCateButton] = useState(0)
 
   const [myBrowseRecord, setMyBrowseRecord] = useState([])
 
   // 資料庫資料
   let [data, setData] = useState([])
+
+  const [purchasedList, setPurchasedList] = useState([])
 
   // 商品類別
   const handleCate = () => {
@@ -84,8 +84,63 @@ function ProductsFirstPage(props) {
 
   useEffect(() => {
     getBrowseRecordFromLocalStorage()
-    setHotProductData(hotData)
   }, [])
+
+  // 獲取熱門商品前5名
+  useEffect(() => {
+    // fetch 最新一筆資料
+    const getInfo = async () => {
+      const r = await axios.get(
+        'http://localhost:3001/cart/purchased-product/all'
+      )
+      // data 是回傳的自動命名
+      setPurchasedList(r.data)
+    }
+    getInfo()
+  }, [])
+
+  // 計算商品銷量加總
+  let saleslist = []
+  let salesobj = {}
+
+  purchasedList.forEach((el) => {
+    if (!salesobj[el.product_id]) {
+      const item = {
+        product_id: el.product_id,
+        sid: el.product_id,
+        Name: el.Name,
+        quantity: el.quantity,
+        image: el.image,
+        price: el.price,
+      }
+      salesobj[el.product_id] = item
+      saleslist.push(item)
+    } else {
+      salesobj[el.product_id].quantity += el.quantity
+    }
+  })
+
+  // 銷量進行排序(大->小)
+  saleslist.sort(function (a, b) {
+    if (a.quantity < b.quantity) {
+      return 1
+    }
+    if (a.quantity > b.quantity) {
+      return -1
+    }
+    return 0
+  })
+
+  // 銷量的前5名
+  let Top5list = []
+  for (let i = 0; i < saleslist.length; i++) {
+    if (i >= 5) {
+      break
+    }
+    Top5list.push(saleslist[i])
+  }
+
+  console.log('Top5list', Top5list)
 
   return (
     <>
@@ -155,7 +210,7 @@ function ProductsFirstPage(props) {
             </div>
             {/* 熱門商品輪播 */}
             <HotSilder
-              hotProductData={hotProductData}
+              Top5list={Top5list}
               updateBrowseRecordToLocalStorage={
                 updateBrowseRecordToLocalStorage
               }

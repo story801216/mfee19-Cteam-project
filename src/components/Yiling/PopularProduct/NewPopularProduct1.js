@@ -10,10 +10,10 @@ function NewPopularProduct() {
         </div>
         <div className="cardBackColor">
           <div className="forPic">
-            <img src="./images/products/products(37).png"></img>
+            <img src="./images/products/products(1).jpeg"></img>
           </div>
           <div className="forWord">
-            <p>益植酵【睡著酵代謝夜酵素】</p>
+            <p>保佳兆UCII複合錠60PC</p>
           </div>
         </div>
         <br />

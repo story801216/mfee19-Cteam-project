@@ -40,9 +40,7 @@ function EditProductsPage(props) {
       })
 
     alert('商品更新成功')
-    props.history.push(
-      '/back-stage/products/page/' + Math.ceil(props.match.params.sid / 12)
-    )
+    props.history.push('/back-stage/products/page/1')
     // window.location.reload()
   }
 

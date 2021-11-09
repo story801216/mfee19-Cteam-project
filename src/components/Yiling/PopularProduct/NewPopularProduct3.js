@@ -10,10 +10,10 @@ function NewPopularProduct() {
         </div>
         <div className="cardBackColor">
           <div className="forPic">
-            <img src="./images/products/products(71).png"></img>
+            <img src="./images/products/products(5).jpeg"></img>
           </div>
           <div className="forWord">
-            <p>《白博士》抗菌洗手乳-500ml</p>
+            <p>視易適葉黃素</p>
           </div>
         </div>
         <br />

@@ -67,7 +67,7 @@ export default class PopularProduct extends Component {
           <div className="SliderP">
             <Slider className="hotSilder" {...settings} className="portiaMove">
               <Link
-                to="/prod-list/prod/33"
+                to="/prod-list/prod/2"
                 onClick={() => {
                   this.props.updateBrowseRecordToLocalStorage(hotData[0])
                 }}
@@ -75,7 +75,7 @@ export default class PopularProduct extends Component {
                 <NewPopularProduct />
               </Link>
               <Link
-                to="/prod-list/prod/38"
+                to="/prod-list/prod/1"
                 onClick={() => {
                   this.props.updateBrowseRecordToLocalStorage(hotData[1])
                 }}
@@ -83,7 +83,7 @@ export default class PopularProduct extends Component {
                 <NewPopularProduct1 />
               </Link>
               <Link
-                to="/prod-list/prod/21"
+                to="/prod-list/prod/3"
                 onClick={() => {
                   this.props.updateBrowseRecordToLocalStorage(hotData[2])
                 }}
@@ -91,7 +91,7 @@ export default class PopularProduct extends Component {
                 <NewPopularProduct2 />
               </Link>
               <Link
-                to="/prod-list/prod/72"
+                to="/prod-list/prod/5"
                 onClick={() => {
                   this.props.updateBrowseRecordToLocalStorage(hotData[3])
                 }}
@@ -99,7 +99,7 @@ export default class PopularProduct extends Component {
                 <NewPopularProduct3 />
               </Link>
               <Link
-                to="/prod-list/prod/53"
+                to="/prod-list/prod/19"
                 onClick={() => {
                   this.props.updateBrowseRecordToLocalStorage(hotData[4])
                 }}
