@@ -370,7 +370,7 @@ function ProductsDetailPage(props) {
                         setChangeBookMark(1)
                       }}
                     >
-                      運送需知
+                      運送說明
                     </div>
                   </div>
                   <div className="return-notice">
