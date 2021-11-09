@@ -12,6 +12,9 @@ import SpecialOfferSlider from '../../../../components/Ben/SpecialOfferSlider'
 import OtherProductsSlider from '../../../../components/Ben/OtherProductsSlider'
 import ProductItem from '../../../../components/Ben/ProductItem'
 import './index.css'
+// Modal功能
+import { Modal, Button } from 'react-bootstrap'
+import { BsFillCheckCircleFill } from 'react-icons/bs'
 
 function ProductsDetailPage(props) {
   console.log(props)
@@ -56,6 +59,19 @@ function ProductsDetailPage(props) {
   const [myCart, setMyCart] = useState(
     JSON.parse(localStorage.getItem('cart') || '[]')
   )
+
+  // modal狀態
+  const [show, setShow] = useState(false)
+  // modal要顯示的字
+  const [word, setWord] = useState('')
+
+  const handleCloseModal = () => setShow(false)
+  const handleShowModal = () => {
+    setShow(true)
+    setTimeout(() => {
+      setShow(false)
+    }, 1500)
+  }
 
   // 資料庫的資料
   let [data, setData] = useState([])
@@ -232,6 +248,19 @@ function ProductsDetailPage(props) {
     <>
       <Banner />
       <div className="container">
+        <Modal
+          show={show}
+          onHide={handleCloseModal}
+          {...props}
+          size="sm"
+          aria-labelledby="contained-modal-title-vcenter"
+          centered
+        >
+          <Modal.Body className="text-center">
+            <BsFillCheckCircleFill className="BsFillCheckCircleFill  mr-3" />
+            <span className="modal-body-word">{word}</span>
+          </Modal.Body>
+        </Modal>
         <Search
           searchWord={searchWord}
           setSearchWord={setSearchWord}
@@ -341,6 +370,9 @@ function ProductsDetailPage(props) {
                       className="cart-button"
                       onClick={() => {
                         updateCartToLocalStorage(data)
+                        // modal
+                        setWord('加入成功')
+                        handleShowModal()
                       }}
                     >
                       加入購物車

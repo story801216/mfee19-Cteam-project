@@ -46,6 +46,14 @@
 .checkout-btn:hover {
   background-color: #00a0f0;
 }
+
+.BsFillExclamationTriangleFill {
+  color: rgb(218, 105, 105);
+  font-size: 22px;
+}
+.modal-body-word {
+  font-size: 22px;
+}
 @media screen and (max-width: 376px) {
   /* 訂單明細 */
   .summary-box {

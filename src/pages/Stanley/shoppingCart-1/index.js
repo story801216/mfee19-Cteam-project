@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
 import { IoIosArrowForward } from 'react-icons/io'
 import './index.scss'
@@ -6,6 +6,7 @@ import Checkline from '../../../components/Stanley/Checkline/Checkline'
 import Cart1 from '../../../components/Stanley/Cart1/Cart1'
 import Summary from '../../../components/Stanley/Summary/Summary'
 import { devUrl } from '../../../config/index'
+
 // SC1
 function App(props) {
   const { productCount, setProductCount } = props
