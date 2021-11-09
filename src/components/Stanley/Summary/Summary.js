@@ -1,6 +1,8 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { useHistory } from 'react-router-dom'
 import './Summary.css'
+import { Modal, Button } from 'react-bootstrap'
+import { BsFillExclamationTriangleFill } from 'react-icons/bs'
 
 function Summary(props) {
   const {
@@ -12,20 +14,32 @@ function Summary(props) {
     paymentMethod,
   } = props
 
+  const [show, setShow] = useState(false)
+  const [error, setError] = useState('')
+  const handleCloseModal = () => setShow(false)
+  const handleShowModal = () => {
+    setShow(true)
+    setTimeout(() => {
+      setShow(false)
+    }, 1500)
+  }
   let history = useHistory()
 
   // 傳送表單(儲存資料到local，給下一步去讀取用)
   const handlecheckout = () => {
     if (!deliveryLocation) {
-      alert('未選取送貨地點')
+      setError('未選擇送貨地點')
+      handleShowModal()
       return
     }
     if (!deliveryMethod) {
-      alert('未選取送貨方式')
+      setError('未選擇送貨方式')
+      handleShowModal()
       return
     }
     if (!paymentMethod) {
-      alert('未選取付款方式')
+      setError('未選擇付款方式')
+      handleShowModal()
       return
     }
     const obj = {
@@ -42,6 +56,20 @@ function Summary(props) {
   }
   return (
     <>
+      <Modal
+        show={show}
+        onHide={handleCloseModal}
+        {...props}
+        size="sm"
+        aria-labelledby="contained-modal-title-vcenter"
+        centered
+      >
+        <Modal.Body className="text-center">
+          <BsFillExclamationTriangleFill className="BsFillExclamationTriangleFill  mr-3" />
+          <span className="modal-body-word">{error}</span>
+        </Modal.Body>
+      </Modal>
+
       <div className="summary-box">
         <div className="summary-title">訂單資訊</div>
         <div className="summary-detail-box">

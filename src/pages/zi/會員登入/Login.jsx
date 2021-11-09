@@ -60,16 +60,16 @@ function Login(props) {
               />
               <div className="zi-Login-password-text">
                 <label htmlFor="Password">密碼</label>
-                <a className="zi-Login-forget-pw" href="/#">
+                {/* <a className="zi-Login-forget-pw" href="/#">
                   忘記密碼?
-                </a>
+                </a> */}
               </div>
               <input
                 type="password"
                 id="Password"
                 className="zi-Login-Password-text"
                 placeholder="請輸入6位數密碼"
-                minlength="6"
+                minLength="6"
                 value={password}
                 onChange={(e) => {
                   setPassword(e.target.value)
@@ -78,11 +78,11 @@ function Login(props) {
 
               <div className="zi-Login-button-flex">
                 <Link to="/register">
-                  <a src="/register">
+                  {/* <a src="/register"> */}
                     <button type="button" className="zi-Login-register">
                       註冊會員
                     </button>
-                  </a>
+                  {/* </a> */}
                 </Link>
                 <button
                   type="submit"

@@ -40,6 +40,10 @@ p {
     width: 100%;
 }
 
+.BsFillCheckCircleFill{
+    color: green;
+    font-size: 22px;
+}
 @media screen and (min-width: 992px) {
 
     /* 頁面水平 */

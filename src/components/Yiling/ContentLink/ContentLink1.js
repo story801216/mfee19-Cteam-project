@@ -1,5 +1,5 @@
-import React from "react";
-import "./contentLink1.css";
+import React from 'react'
+import './contentLink1.css'
 
 function ContentLink1() {
   return (
@@ -10,10 +10,7 @@ function ContentLink1() {
           target="_blank"
           href="https://news.tvbs.com.tw/health"
         >
-          <img
-            src="./images/LogoLink/Tbvs健康新聞.png"
-            alt="Tbvs健康新聞"
-          />
+          <img src="./images/LogoLink/Tbvs健康新聞.png" alt="Tbvs健康新聞" />
         </a>
         <a className="changeLinkTo" target="_blank" href="https://heho.com.tw/">
           <img src="./images/LogoLink/Heho健康.png" alt="Heho健康" />
@@ -40,20 +37,14 @@ function ContentLink1() {
           <img src="./images/LogoLink/衛生福利部.png" alt="衛生福利部" />
         </a>
         <a className="changeLinkTo" target="_blank" href="https://www.edh.tw/">
-          <img
-            src="./images/LogoLink/早安健康新聞.png"
-            alt="早安健康新聞"
-          />
+          <img src="./images/LogoLink/早安健康新聞.png" alt="早安健康新聞" />
         </a>
         <a
           className="changeLinkTo"
           target="_blank"
           href="https://news.tvbs.com.tw/health"
         >
-          <img
-            src="./images/LogoLink/Tbvs健康新聞.png"
-            alt="Tbvs健康新聞"
-          />
+          <img src="./images/LogoLink/Tbvs健康新聞.png" alt="Tbvs健康新聞" />
         </a>
         <a className="changeLinkTo" target="_blank" href="https://heho.com.tw/">
           <img src="./images/LogoLink/Heho健康.png" alt="Heho健康" />
@@ -80,14 +71,11 @@ function ContentLink1() {
           <img src="./images/LogoLink/衛生福利部.png" alt="衛生福利部" />
         </a>
         <a className="changeLinkTo" target="_blank" href="https://www.edh.tw/">
-          <img
-            src="./images/LogoLink/早安健康新聞.png"
-            alt="早安健康新聞"
-          />
+          <img src="./images/LogoLink/早安健康新聞.png" alt="早安健康新聞" />
         </a>
       </div>
     </>
-  );
+  )
 }
 
-export default ContentLink1;
+export default ContentLink1

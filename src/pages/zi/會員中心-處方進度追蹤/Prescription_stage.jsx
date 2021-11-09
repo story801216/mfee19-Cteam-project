@@ -46,7 +46,10 @@ function Prescription_stage() {
         </div>
         {prescription.map((prescription, i) => {
           return (
-            <div className="zi-prescription_stage-prescription-card">
+            <div
+              key={prescription.sid}
+              className="zi-prescription_stage-prescription-card"
+            >
               <div className="zi-prescription_stage-infolist">
                 <div className="zi-prescription_stage-hidden-bar">
                   <img
@@ -56,10 +59,6 @@ function Prescription_stage() {
                 </div>
                 <ul>
                   <div>
-                    <li
-                      className="Prescription_stage-sid"
-                      key={prescription.sid}
-                    ></li>
                     <li>目前進度:{prescription.stage}</li>
                     <li>病患姓名:{prescription.name}</li>
                     <li>上傳時間:{prescription.uploadtime}</li>

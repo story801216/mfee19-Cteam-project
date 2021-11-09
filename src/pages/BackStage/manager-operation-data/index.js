@@ -140,7 +140,7 @@ function App() {
                   {Top10list.map((v, i) => {
                     return (
                       <>
-                        <div className="content">
+                        <div className="content" key={i}>
                           <div className="row mb-1">
                             <div className="col-2">{i + 1}</div>
                             <div className="col-7">{v.Name}</div>
