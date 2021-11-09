@@ -48,106 +48,110 @@ function Backstage_Member_Management() {
         </div>
 
         <table className="Backstage-Member-Management-memberlist">
-          <tr className="Backstage-Member-Management-table-title">
-            <td className="Backstage-Member-Management-table-title-sid">
-              編號
-            </td>
-            <td className="Backstage-Member-Management-table-title-name">
-              姓名
-            </td>
-            <td className="Backstage-Member-Management-table-title-mail">
-              信箱
-            </td>
-            <td className="Backstage-Member-Management-table-title-phone">
-              電話
-            </td>
-            <td className="Backstage-Member-Management-table-title-id">
-              身分證字號
-            </td>
-            <td className="Backstage-Member-Management-table-title-birthday">
-              生日
-            </td>
-            <td
-              className="Backstage-Member-Management-table-title-address"
-              id="Backstage-Member-Management-table-title-address"
-            >
-              地址
-            </td>
-          </tr>
-          {getMember.map((val, i) => {
-            return (
-              <tr className="Backstage-Member-Management-table-list">
-                <td
-                  className="Backstage-Member-Management-table-list-sid"
+          <tbody>
+            <tr className="Backstage-Member-Management-table-title">
+              <td className="Backstage-Member-Management-table-title-sid">
+                編號
+              </td>
+              <td className="Backstage-Member-Management-table-title-name">
+                姓名
+              </td>
+              <td className="Backstage-Member-Management-table-title-mail">
+                信箱
+              </td>
+              <td className="Backstage-Member-Management-table-title-phone">
+                電話
+              </td>
+              <td className="Backstage-Member-Management-table-title-id">
+                身分證字號
+              </td>
+              <td className="Backstage-Member-Management-table-title-birthday">
+                生日
+              </td>
+              <td
+                className="Backstage-Member-Management-table-title-address"
+                id="Backstage-Member-Management-table-title-address"
+              >
+                地址
+              </td>
+            </tr>
+            {getMember.map((val, i) => {
+              return (
+                <tr
                   key={val.sid}
+                  className="Backstage-Member-Management-table-list"
                 >
-                  {val.sid + 1}
-                </td>
-                <td className="Backstage-Member-Management-table-list-name">
-                  {val.name}
-                </td>
-                <td className="Backstage-Member-Management-table-list-mail">
-                  {val.email}
-                </td>
-                <td className="Backstage-Member-Management-table-list-phone">
-                  {val.mobile}
-                </td>
-                <td className="Backstage-Member-Management-table-list-id">
-                  {val.idNumber}
-                </td>
-                <td className="Backstage-Member-Management-table-list-birthday">
-                  {val.birthday.substr(0, 10)}
-                </td>
-                <td
-                  className="Backstage-Member-Management-table-list-address"
-                  id="Backstage-Member-Management-table-list-address"
-                >
-                  {val.address}
-                </td>
+                  <td className="Backstage-Member-Management-table-list-sid">
+                    {val.sid + 1}
+                  </td>
+                  <td className="Backstage-Member-Management-table-list-name">
+                    {val.name}
+                  </td>
+                  <td className="Backstage-Member-Management-table-list-mail">
+                    {val.email}
+                  </td>
+                  <td className="Backstage-Member-Management-table-list-phone">
+                    {val.mobile}
+                  </td>
+                  <td className="Backstage-Member-Management-table-list-id">
+                    {val.idNumber}
+                  </td>
+                  <td className="Backstage-Member-Management-table-list-birthday">
+                    {val.birthday.substr(0, 10)}
+                  </td>
+                  <td
+                    className="Backstage-Member-Management-table-list-address"
+                    id="Backstage-Member-Management-table-list-address"
+                  >
+                    {val.address}
+                  </td>
 
-                <td>
-                  <div className="Backstage-Member-Management-table-list-buttons">
-                    <a
-                      href="#/"
-                      className="Backstage-Member-Management-table-list-buttons-edit"
-                    >
-                      <div>
-                        <img
-                          src="http://localhost:3000/images/icon/edit.png"
-                          alt=""
-                        />
-                      </div>
-                    </a>
-                    <a
-                      href="#/"
-                      className="Backstage-Member-Management-table-list-buttons-edit-delete"
-                    >
-                      <div>
-                        <img
-                          src="http://localhost:3000/images/icon/delete.png"
-                          alt=""
-                        />
-                      </div>
-                    </a>
-                  </div>
-                </td>
-              </tr>
-            )
-          })}
+                  <td>
+                    <div className="Backstage-Member-Management-table-list-buttons">
+                      <a
+                        href="#/"
+                        className="Backstage-Member-Management-table-list-buttons-edit"
+                      >
+                        <div>
+                          <img
+                            src="http://localhost:3000/images/icon/edit.png"
+                            alt=""
+                          />
+                        </div>
+                      </a>
+                      <a
+                        href="#/"
+                        className="Backstage-Member-Management-table-list-buttons-edit-delete"
+                      >
+                        <div>
+                          <img
+                            src="http://localhost:3000/images/icon/delete.png"
+                            alt=""
+                          />
+                        </div>
+                      </a>
+                    </div>
+                  </td>
+                </tr>
+              )
+            })}
+          </tbody>
         </table>
 
         {getMember.map((val, i) => {
           return (
-            <div className="Backstage-Member-Management-mobile-memberlist">
+            <div
+              key={val.sid}
+              className="Backstage-Member-Management-mobile-memberlist"
+            >
               <div className="Backstage-Member-Management-mobile-memberlist-cardline"></div>
               <div className="Backstage-Member-Management-mobile-memberlist-title">
                 <ul>
                   <li
                     className="Backstage-Member-Management-mobile-memberlist-title-sid"
                     id="Backstage-Member-Management-mobile-memberlist-title-sid"
-                    key={val.sid}
                   >
-                    {val.sid + 1}
+                    {val.sid}
                   </li>
                   <li className="Backstage-Member-Management-mobile-memberlist-title-mail">
                     信箱

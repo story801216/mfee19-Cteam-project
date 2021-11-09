@@ -61,7 +61,7 @@ function Backstage_Prescription_Management() {
         </div>
         {getPrescription.map((val, i) => {
           return (
-            <div className="Backstage-Prescription-Management-prescription-card">
+            <div key={val.sid} className="Backstage-Prescription-Management-prescription-card">
               <div className="Backstage-Prescription-Management-infolist">
                 <div className="Backstage-Prescription-Management-hidden-bar">
                   <img src="http://localhost:3000/images/icon/up-arrow.png" alt="" />
