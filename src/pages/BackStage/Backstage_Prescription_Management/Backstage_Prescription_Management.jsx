@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import './Backstage_Prescription_Management.css'
 import Axios from 'axios'
 
@@ -12,7 +12,10 @@ function Backstage_Prescription_Management() {
       }
     )
   }
-  getPrescriptions()
+  useEffect(() => {
+    getPrescriptions()
+  }, [])
+
   return (
     <>
       <div className="Backstage-Prescription-Management">
@@ -25,7 +28,10 @@ function Backstage_Prescription_Management() {
                 placeholder="姓名查詢"
               />
               <button className="Backstage-Prescription-Management-search-button">
-                <img src="http://localhost:3000/images/icon/magnifier.png" alt="" />
+                <img
+                  src="http://localhost:3000/images/icon/magnifier.png"
+                  alt=""
+                />
               </button>
             </div>
 
@@ -36,7 +42,10 @@ function Backstage_Prescription_Management() {
                 placeholder="身分證字號查詢"
               />
               <button className="Backstage-Prescription-Management-search-button">
-                <img src="http://localhost:3000/images/icon/magnifier.png" alt="" />
+                <img
+                  src="http://localhost:3000/images/icon/magnifier.png"
+                  alt=""
+                />
               </button>
             </div>
           </div>
@@ -61,10 +70,16 @@ function Backstage_Prescription_Management() {
         </div>
         {getPrescription.map((val, i) => {
           return (
-            <div key={val.sid} className="Backstage-Prescription-Management-prescription-card">
+            <div
+              key={val.sid}
+              className="Backstage-Prescription-Management-prescription-card"
+            >
               <div className="Backstage-Prescription-Management-infolist">
                 <div className="Backstage-Prescription-Management-hidden-bar">
-                  <img src="http://localhost:3000/images/icon/up-arrow.png" alt="" />
+                  <img
+                    src="http://localhost:3000/images/icon/up-arrow.png"
+                    alt=""
+                  />
                 </div>
                 <ul>
                   <div>
@@ -99,7 +114,10 @@ function Backstage_Prescription_Management() {
                   src="http://localhost:3000/images/prescriptionimg/台大處方簽.jpg"
                   alt=""
                 />
-                <a href="http://localhost:3000/images/prescriptionimg/台大處方簽.jpg" target="_blank">
+                <a
+                  href="http://localhost:3000/images/prescriptionimg/台大處方簽.jpg"
+                  target="_blank"
+                >
                   <img
                     className="Backstage-Prescription-Management-magnifier"
                     src="http://localhost:3000/images/icon/magnifier.png"

@@ -1,6 +1,6 @@
 import './Backstage_Member_Management.css'
 import Axios from 'axios'
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 
 function Backstage_Member_Management() {
   const [getMember, setGetMembers] = useState([])
@@ -12,7 +12,9 @@ function Backstage_Member_Management() {
       }
     )
   }
-  getMembers()
+  useEffect(() => {
+    getMembers()
+  }, [])
 
   return (
     <>
