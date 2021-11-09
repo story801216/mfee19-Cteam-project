@@ -1,11 +1,14 @@
 import React, { useState } from 'react'
 import { useHistory } from 'react-router-dom'
 import './Summary.css'
-import { Modal, Button } from 'react-bootstrap'
+import { Modal } from 'react-bootstrap'
 import { BsFillExclamationTriangleFill } from 'react-icons/bs'
 
 function Summary(props) {
   const {
+    subTotal,
+    shippingFee,
+    discount,
     total,
     mycart,
     productCount,
@@ -75,11 +78,15 @@ function Summary(props) {
         <div className="summary-detail-box">
           <div className="summary-detail d-flex justify-content-between">
             <div className="subject">小計</div>
-            <div className="price text-right">NT${total}</div>
+            <div className="price text-right">NT${subTotal}</div>
           </div>
           <div className="summary-detail d-flex justify-content-between">
             <div className="subject">運費</div>
-            <div className="price text-right">$0</div>
+            <div className="price text-right">${shippingFee}</div>
+          </div>
+          <div className="summary-detail d-flex justify-content-between">
+            <div className="subject">折扣</div>
+            <div className="price text-right">${discount}</div>
           </div>
           <div className="border"></div>
           <div className="summary-detail total-number d-flex justify-content-between">

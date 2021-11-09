@@ -1,14 +1,14 @@
-.empty-cart{
+.empty-cart {
   width: 150px;
   margin: 30px auto 5px;
   transform: translateX(-20px);
 }
 
-.empty-cart img{
+.empty-cart img {
   width: 100%;
 }
 
-.go-shop-btn{
+.go-shop-btn {
   width: 150px;
   height: 50px;
   background-color: rgb(235, 138, 73);
@@ -18,17 +18,28 @@
   color: white;
 }
 
-.go-shop-btn:hover{
-  background-color:  rgb(243, 113, 26);
+.go-shop-btn:hover {
+  background-color: rgb(243, 113, 26);
   color: white;
 }
 
-.arrow-right{
+.arrow-right {
   margin-left: 20px;
   margin-bottom: 3px;
 }
+
+@media screen and (max-width: 375px) {
+  .empty-cart {
+    width: 120px;
+    margin: 30px auto 5px;
+    transform: translateX(-10px);
+  }
+
+  .empty-cart img {
+    width: 100%;
+  }
+}
 .SC1 {
- 
   /* 送貨及付款方式 */
   .delivery-payment-box {
     height: 430px;
@@ -70,8 +81,6 @@
 
   /* 購物車 */
   @media screen and (max-width: 376px) {
-    
-
     /* 送貨及付款方式 */
     .delivery-payment-box {
       height: auto;
@@ -116,6 +125,5 @@
       font-size: 16px;
       margin-bottom: 10px;
     }
-
   }
 }

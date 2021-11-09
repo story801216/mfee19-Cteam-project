@@ -4,6 +4,9 @@ import './index.css'
 import axios from 'axios'
 import Cart3 from '../../../components/Stanley/Cart3/Cart3'
 import Checkline2 from '../../../components/Stanley/Checkline2/Checkline2'
+// Modal功能
+import { Modal, Button } from 'react-bootstrap'
+import { BsFillCheckCircleFill } from 'react-icons/bs'
 
 function App(props) {
   const [orderDetails, setOrderDetails] = useState('')
@@ -12,6 +15,19 @@ function App(props) {
   const [isLoading, setIsloading] = useState(true)
 
   const order_sid = props.match.params.order_sid
+
+  // modal狀態
+  const [show, setShow] = useState(false)
+  // modal要顯示的字
+  const [word, setWord] = useState('')
+
+  const handleCloseModal = () => setShow(false)
+  const handleShowModal = () => {
+    setShow(true)
+    setTimeout(() => {
+      setShow(false)
+    }, 1500)
+  }
 
   // componentdidMount：讀取訂單資訊
   useEffect(() => {
@@ -46,12 +62,28 @@ function App(props) {
     )
     console.log(r)
     if (r.data.success) {
-      alert(`訂單狀態已修改為「${orderStatus}」`)
+      setWord(`修改為「${orderStatus}」`)
+      handleShowModal()
     }
   }
 
   return (
     <>
+      {/* modal */}
+      <Modal
+        show={show}
+        onHide={handleCloseModal}
+        {...props}
+        size="sm"
+        aria-labelledby="contained-modal-title-vcenter"
+        centered
+      >
+        <Modal.Body className="text-center">
+          <BsFillCheckCircleFill className="BsFillCheckCircleFill  mr-3" />
+          <span className="modal-body-word">{word}</span>
+        </Modal.Body>
+      </Modal>
+
       <div className="container">
         <Checkline2 orderStatus={orderStatus} />
         {orderDetails && (

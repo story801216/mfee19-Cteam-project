@@ -54,7 +54,7 @@ function HospitalMap(props) {
       lat: 25.0339007,
       lng: 121.5412095,
     },
-    zoom: 14,
+    zoom: 9,
   }
   //人物icon是否顯示的狀態
   const [peopleShow, setPeopleShow] = useState(false)
@@ -141,7 +141,7 @@ function HospitalMap(props) {
 
     setStores(newStores) //子元素的狀態
     setAllShop(newStores) //父元素門市資訊的狀態
-    setAllHospital(newStores)//未算距離前也要有醫院資訊
+    setAllHospital(newStores) //未算距離前也要有醫院資訊
   }
   useEffect(() => {
     fetchSql()
@@ -227,7 +227,7 @@ function HospitalMap(props) {
         setStoresLocalShow(true) //最近門市已找到(true)
         setInputValue(newStores[0].sName) //輸入框放入最近門市的名稱
 
-        setAllHospital(newStores);//把排序過後的醫院丟到上層
+        setAllHospital(newStores) //把排序過後的醫院丟到上層
 
         //[0]一次只顯示最近的一間
         setNearShop(newStores[0]) //把值傳遞到父元素

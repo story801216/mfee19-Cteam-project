@@ -4,7 +4,7 @@ import ProductItem from './ProductItem/ProductItem'
 
 // Cart1是結帳第一步還可以選取商品數量的地方
 function Cart1(props) {
-  const { mycart, setMycart, productCount, setProductCount } = props
+  const { total, mycart, setMycart, productCount, setProductCount } = props
 
   return (
     <>
@@ -51,15 +51,16 @@ function Cart1(props) {
             />
           )
         })}
-
-        {/* 全站優惠 */}
-        <div className="AllStore-discount-box">
-          <div className="column-1">已享有之優惠</div>
-          <div className="column-2 d-flex align-items-center">
-            <div className="color-box">全站優惠</div>
-            <div className="discount-word">全站滿500元免運</div>
+        {/* 全站優惠 (大於500顯示)*/}
+        {total > 500 && (
+          <div className="AllStore-discount-box">
+            <div className="column-1">已享有之優惠</div>
+            <div className="column-2 d-flex align-items-center">
+              <div className="color-box">全站優惠</div>
+              <div className="discount-word">全站滿500元免運</div>
+            </div>
           </div>
-        </div>
+        )}
       </div>
     </>
   )
