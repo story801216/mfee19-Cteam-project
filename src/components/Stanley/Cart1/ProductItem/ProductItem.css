@@ -33,6 +33,7 @@
   align-items: center;
   justify-content: center;
   cursor: pointer;
+  transition: 0.2s;
 }
 
 .number {
@@ -46,9 +47,14 @@
   align-items: center;
   justify-content: center;
   cursor: pointer;
+  transition: 0.2s;
+}
+.plus:hover,
+.minus:hover {
+  background-color: rgb(236, 234, 234);
 }
 
-.FaTimes-icon{
+.FaTimes-icon {
   cursor: pointer;
 }
 
