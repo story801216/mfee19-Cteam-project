@@ -68,9 +68,14 @@ function Cart2(props) {
               <ProductItem2
                 image={mycart.image}
                 Name={mycart.Name}
+                special_offer={mycart.special_offer}
                 price={mycart.price}
                 amount={mycart.amount}
-                subtotal={mycart.price * mycart.amount}
+                subtotal={
+                  mycart.special_offer
+                    ? mycart.special_offer * mycart.amount
+                    : mycart.price * mycart.amount
+                }
                 key={i}
               />
             )

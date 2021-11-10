@@ -60,6 +60,9 @@ function App() {
   // 後台商品編輯sid
   const [editSid, setEditSid] = useState(0)
 
+  // 控制後台頁簽Now顏色
+  const [optionNow, setOptionNow] = useState(0)
+
   // 購物車的商品數量(不重複的)
   const [productCount, setProductCount] = useState(
     localStorage.getItem('cart')
@@ -121,6 +124,8 @@ function App() {
           productCount={productCount}
           isAuth={isAuth}
           isManager={isManager}
+          optionNow={optionNow}
+          setOptionNow={setOptionNow}
         />
         <MobileNavBar />
         <ScrollToTop>
@@ -157,7 +162,12 @@ function App() {
                 }
               />
               {/* 後臺管理頁面 */}
-              <BackStage editSid={editSid} setEditSid={setEditSid} />
+              <BackStage
+                editSid={editSid}
+                setEditSid={setEditSid}
+                optionNow={optionNow}
+                setOptionNow={setOptionNow}
+              />
 
               {/* 首頁門市資訊地圖 */}
               <PortiaAllPage

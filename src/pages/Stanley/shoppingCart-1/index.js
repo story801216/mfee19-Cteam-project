@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import { IoIosArrowForward } from 'react-icons/io'
 import './index.scss'
@@ -17,12 +17,14 @@ function App(props) {
   const [deliveryLocation, setDeliveryLocation] = useState('')
   const [deliveryMethod, setDeliveryMethod] = useState('')
   const [paymentMethod, setPaymentMethod] = useState('')
+
   // localStorage裡面加入購物車的商品
   const [mycart, setMycart] = useState(
     JSON.parse(localStorage.getItem('cart')) || []
   )
 
-  const total = () => {
+  // 商品小計
+  const subTotal = () => {
     let sum = 0
     for (let i = 0; i < mycart.length; i++) {
       sum +=
@@ -32,8 +34,72 @@ function App(props) {
     return sum
   }
 
+  // 運費計算
+  const shippingFee = () => {
+    let fee = 0
+    if (deliveryLocation === '台灣') {
+      fee = 60
+    }
+    if (deliveryLocation === '離島') {
+      fee = 80
+    }
+    return fee
+  }
+
+  // 折扣計算
+  const discount = () => {
+    let sum = 0
+    let discount = 0
+    // 商品總計
+    for (let i = 0; i < mycart.length; i++) {
+      sum +=
+        mycart[i].amount *
+        (mycart[i].special_offer ? mycart[i].special_offer : mycart[i].price)
+    }
+    if (sum > 500) {
+      if (deliveryLocation === '台灣') {
+        discount = -60
+      }
+      if (deliveryLocation === '離島') {
+        discount = -80
+      }
+    }
+    return discount
+  }
+
+  // 計算總額
+  const totalCount = () => {
+    let sum = 0
+    // 商品總計
+    for (let i = 0; i < mycart.length; i++) {
+      sum +=
+        mycart[i].amount *
+        (mycart[i].special_offer ? mycart[i].special_offer : mycart[i].price)
+    }
+    // 折扣計算
+    if (sum > 500) {
+      if (deliveryLocation === '台灣') {
+        sum += -60
+      }
+      if (deliveryLocation === '離島') {
+        sum += -80
+      }
+    }
+    // 運費計算
+    if (deliveryLocation === '台灣') {
+      sum += 60
+    }
+    if (deliveryLocation === '離島') {
+      sum += 80
+    }
+    
+    // 折扣計算
+    return sum
+  }
+
   return (
     <>
+      {/* 未加入商品圖示 */}
       {mycart.length === 0 && (
         <div className="container text-center">
           <div className="empty-cart">
@@ -56,6 +122,7 @@ function App(props) {
             {/* checkline 進度條 */}
             <Checkline state={state} />
             <Cart1
+              total={totalCount()}
               mycart={mycart}
               setMycart={setMycart}
               productCount={productCount}
@@ -79,8 +146,8 @@ function App(props) {
                       }}
                     >
                       <option value="">-選擇送貨地點-</option>
-                      <option value="台灣">台灣</option>
-                      <option value="離島">離島</option>
+                      <option value="台灣">台灣 (+60運費)</option>
+                      <option value="離島">離島 (+80運費)</option>
                     </select>
                     <div className="subtitle">送貨方式</div>
                     <select
@@ -115,7 +182,10 @@ function App(props) {
               <div className="col-xl-5">
                 {/* 訂單資訊框(右) */}
                 <Summary
-                  total={total()}
+                  subTotal={subTotal()}
+                  shippingFee={shippingFee()}
+                  discount={discount()}
+                  total={totalCount()}
                   mycart={mycart}
                   productCount={productCount}
                   deliveryLocation={deliveryLocation}

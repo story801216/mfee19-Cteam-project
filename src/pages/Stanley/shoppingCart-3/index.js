@@ -42,7 +42,7 @@ function App(props) {
             <FaCheckCircle className="finished-icon" />
             訂單送出成功 <br />
             可至
-            <Link to={'/User/order-list'} className="link-style">
+            <Link to={'/User/Member_revise'} className="link-style">
               會員中心
             </Link>
             查看歷史訂單資訊，或

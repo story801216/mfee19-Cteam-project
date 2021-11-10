@@ -70,7 +70,7 @@ function ProductsDetailPage(props) {
     setShow(true)
     setTimeout(() => {
       setShow(false)
-    }, 1500)
+    }, 500)
   }
 
   // 資料庫的資料

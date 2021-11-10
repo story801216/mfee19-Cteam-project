@@ -23,6 +23,7 @@ function Navbar(props) {
     productCount,
     isAuth,
     isManager,
+    setOptionNow,
   } = props
 
   /*下拉式選單狀態 */
@@ -79,7 +80,8 @@ function Navbar(props) {
                   {/* 商品購物車數量 */}
                   <BsCart2 />
                   {productCount !== 0 && (
-                    <span className="cart-count">{productCount}</span>
+                    <div className="cart-count">
+                    {productCount}</div>
                   )}
                 </Link>
                 <Link
@@ -92,6 +94,9 @@ function Navbar(props) {
                   <Link
                     to="/back-stage/Backstage_Member_Management"
                     className="navChandePageEnc"
+                    onClick={() => {
+                      setOptionNow(0)
+                    }}
                   >
                     <GrUserManager />
                   </Link>
