@@ -1,8 +1,10 @@
-import AddFormInput from '../../../components/Ben/AddFormInput'
+import React, { useState, useEffect } from 'react'
 import { withRouter } from 'react-router-dom'
+import AddFormInput from '../../../components/Ben/AddFormInput'
 import './index.css'
 function AddProductsPage(props) {
   const { backStageProdsTotalPages, setOptionNow } = props
+  const [autoInput, setAutoInput] = useState(false)
   const addForm = (e) => {
     e.preventDefault()
     const fd = new FormData(document.add_form)
@@ -33,8 +35,19 @@ function AddProductsPage(props) {
             <div className="main">
               <h2 className="title">新增商品</h2>
               <form name="add_form" onSubmit={addForm}>
-                <AddFormInput />
-                <button type="sumbit">新增</button>
+                <AddFormInput autoInput={autoInput} />
+                <div className="buttons">
+                  <button
+                    className="auto-input"
+                    type="button"
+                    onClick={() => {
+                      setAutoInput(true)
+                    }}
+                  >
+                    自動輸入
+                  </button>
+                  <button type="sumbit">新增</button>
+                </div>
               </form>
             </div>
           </div>
