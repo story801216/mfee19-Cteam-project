@@ -8,7 +8,6 @@
   position: fixed;
   z-index: 9999;
   font-size: 18px;
-
 }
 
 .homeIconLogo {
@@ -41,7 +40,7 @@
   align-items: center;
   gap: 10px;
 }
-.positionIconA  p{
+.positionIconA p {
   margin-bottom: 0;
 }
 .navbarLinkDesTop2 {
@@ -105,18 +104,23 @@
   color: black;
 }
 
-.cart-count-box{
+/* 購物車數量 */
+.cart-count-box {
   position: relative;
 }
-.cart-count{
+.cart-count {
   position: absolute;
-  color: red;
-  border: 1px solid rgb(133, 129, 129);
-  border-radius: 15px;
-  background-color: rgb(255, 255, 255);
-  padding: 2px 6px;
-  bottom: 5px;
-  left: 10px;
+  width: 22px;
+  height: 20px;
+  text-align: center;
+  font-size: 14px;
+  font-weight: bold;
+  line-height: 22px;
+  color: #ffffff;
+  border-radius: 10px;
+  background-color: #1e9ddd;
+  bottom: 7px;
+  left: 8px;
 }
 
 @media screen and (max-width: 900px) {

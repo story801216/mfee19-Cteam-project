@@ -80,7 +80,8 @@ function Navbar(props) {
                   {/* 商品購物車數量 */}
                   <BsCart2 />
                   {productCount !== 0 && (
-                    <span className="cart-count">{productCount}</span>
+                    <div className="cart-count">
+                    {productCount}</div>
                   )}
                 </Link>
                 <Link
