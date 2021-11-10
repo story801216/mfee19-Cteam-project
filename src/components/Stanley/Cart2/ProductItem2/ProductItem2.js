@@ -3,7 +3,7 @@ import './ProductItem2.css'
 
 // item2是已經進行到不能調整數量的狀態
 function ProductItem2(props) {
-  const { image, Name, price, amount, subtotal } = props
+  const { image, Name, special_offer, price, amount, subtotal } = props
   return (
     <>
       <div className="productItem2">
@@ -17,7 +17,9 @@ function ProductItem2(props) {
                 </div>
                 <div className="product-description">{Name}</div>
               </div>
-              <div className="col-2 text-center">NT${price}</div>
+              <div className="col-2 text-center">
+                NT${special_offer ? special_offer : price}
+              </div>
               <div className="col-2 text-center">{amount}</div>
               <div className="col-2 text-right">NT${subtotal}</div>
             </div>
@@ -46,7 +48,9 @@ function ProductItem2(props) {
                 {/* 價格(中區) */}
                 <div className="row">
                   <div className="col">
-                    <div className="price text-left">NT${price}</div>
+                    <div className="price text-left">
+                      NT${special_offer ? special_offer : price}
+                    </div>
                   </div>
                 </div>
               </div>
