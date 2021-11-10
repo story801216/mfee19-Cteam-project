@@ -14,8 +14,8 @@ import ManagerOperationData from './manager-operation-data'
 
 // forceRefresh={true}
 function BackStage(props) {
-  // 控制頁簽Now顏色
-  const [optionNow, setOptionNow] = useState(0)
+  const { optionNow, setOptionNow } = props
+
   // 回傳給footer商品sid
   const { editSid, setEditSid } = props
   // 後臺商品搜索關鍵字

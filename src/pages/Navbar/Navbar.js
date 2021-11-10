@@ -23,6 +23,7 @@ function Navbar(props) {
     productCount,
     isAuth,
     isManager,
+    setOptionNow,
   } = props
 
   /*下拉式選單狀態 */
@@ -92,6 +93,9 @@ function Navbar(props) {
                   <Link
                     to="/back-stage/Backstage_Member_Management"
                     className="navChandePageEnc"
+                    onClick={() => {
+                      setOptionNow(0)
+                    }}
                   >
                     <GrUserManager />
                   </Link>
