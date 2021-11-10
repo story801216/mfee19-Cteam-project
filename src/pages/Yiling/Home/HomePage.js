@@ -10,8 +10,8 @@ import AboutUS from '../AboutUs/AboutUS' //關於我們
 import Link from '../ContentLink/Link' //相關連結
 
 function HomePage(props) {
-  const { updateBrowseRecordToLocalStorage } = props
-  const [dis, setDis] = useState(true)
+  const { updateBrowseRecordToLocalStorage, dis , setDis } = props
+  // const [dis, setDis] = useState(true)
 
   return (
     <div className="homePage">

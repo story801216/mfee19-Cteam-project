@@ -51,6 +51,9 @@ function App() {
   const [controlSmallCate, setControlSmallCate] = useState('')
   const [controlSmallBody, setControlSmallBody] = useState('')
 
+  //首頁跳出活動訊息
+  const [dis, setDis] = useState(true)
+
   //給梓庭抓最近門市資料
   const [closeStore, setCloseStore] = useState({})
 
@@ -174,6 +177,8 @@ function App() {
                 updateBrowseRecordToLocalStorage={
                   updateBrowseRecordToLocalStorage
                 }
+                dis={dis}
+                setDis={setDis}
               />
               {/* 症狀頁 */}
               <Route path="/IconSearch_p1">
