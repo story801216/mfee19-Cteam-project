@@ -161,6 +161,7 @@ function App() {
                             <div className="col-7 product-name">
                               <a
                                 href={`http://localhost:3000/prod-list/prod/${v.product_id}`}
+                                target="_blank"
                               >
                                 {v.Name}
                               </a>
