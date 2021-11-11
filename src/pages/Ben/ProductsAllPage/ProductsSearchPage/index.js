@@ -180,7 +180,11 @@ function ProductsSearchPage(props) {
             />
 
             {/* 瀏覽過的商品 輪播 手機 */}
-            <BrowseRecordSlider />
+            <BrowseRecordSlider
+              updateBrowseRecordToLocalStorage={
+                updateBrowseRecordToLocalStorage
+              }
+            />
           </div>
 
           {/* 瀏覽過的商品 aside 桌機 */}
@@ -191,7 +195,13 @@ function ProductsSearchPage(props) {
               .reverse()
               .map((product) => {
                 return (
-                  <Link key={product.sid} to={'/prod-list/prod/' + product.sid}>
+                  <Link
+                    key={product.sid}
+                    to={'/prod-list/prod/' + product.sid}
+                    onClick={() => {
+                      updateBrowseRecordToLocalStorage(product)
+                    }}
+                  >
                     <ProductItem {...product} />
                   </Link>
                 )

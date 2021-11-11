@@ -1,9 +1,13 @@
-import React, { useRef } from 'react'
-import { Link } from 'react-router-dom'
+import React, { useEffect } from 'react'
+import { Link, withRouter } from 'react-router-dom'
 import './index.css'
 
 function SearchComputerBackStage(props) {
   const { backStageProdSearchWord, setBackStageProdSearchWord } = props
+
+  useEffect(() => {
+    setBackStageProdSearchWord('')
+  }, [props.location.pathname])
 
   return (
     <div className="search-computer">
@@ -32,4 +36,4 @@ function SearchComputerBackStage(props) {
   )
 }
 
-export default SearchComputerBackStage
+export default withRouter(SearchComputerBackStage)

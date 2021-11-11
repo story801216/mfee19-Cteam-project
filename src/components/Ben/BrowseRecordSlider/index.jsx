@@ -61,7 +61,13 @@ export default class BrowseRecordSlider extends Component {
             .reverse()
             .map((product) => {
               return (
-                <Link key={product.sid} to={'/prod-list/prod/' + product.sid}>
+                <Link
+                  key={product.sid}
+                  to={'/prod-list/prod/' + product.sid}
+                  onClick={() => {
+                    this.props.updateBrowseRecordToLocalStorage(product)
+                  }}
+                >
                   <ProductItem {...product} />
                 </Link>
               )

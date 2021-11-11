@@ -336,7 +336,12 @@ function ProductsFirstPage(props) {
             </div>
             {/* 瀏覽過的商品 */}
             {/* 手機輪播 */}
-            <BrowseRecordSlider myBrowseRecord={myBrowseRecord} />
+            <BrowseRecordSlider
+              myBrowseRecord={myBrowseRecord}
+              updateBrowseRecordToLocalStorage={
+                updateBrowseRecordToLocalStorage
+              }
+            />
             {/* 桌機 */}
             <div className="browse-record-item-group">
               {myBrowseRecord
@@ -348,6 +353,9 @@ function ProductsFirstPage(props) {
                         <Link
                           key={product.sid}
                           to={'/prod-list/prod/' + product.sid}
+                          onClick={() => {
+                            updateBrowseRecordToLocalStorage(product)
+                          }}
                         >
                           <ProductItem {...product} />
                         </Link>
