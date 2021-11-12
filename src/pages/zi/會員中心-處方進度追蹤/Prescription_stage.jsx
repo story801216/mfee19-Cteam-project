@@ -5,23 +5,23 @@ const prescription = [
     sid: '0',
     stage: '等候領取',
     name: '留梓庭',
-    uploadtime: '2021.09.10 09:00',
-    shop: '中正店',
+    phone: '0988123456',
+    shop: '士林天母',
     date: '8月15日',
     hospital: '臺大醫院',
-    division: '家醫科',
-    times: '第二次',
+    IdNumber: 'F123456789',
+    times: '2',
   },
   {
     sid: '1',
     stage: '等候領取',
     name: '留梓庭',
-    uploadtime: '2021.09.10 09:00',
-    shop: '中正店',
+    phone: '0988123456',
+    shop: '板橋四維',
     date: '8月15日',
     hospital: '臺大醫院',
-    division: '家醫科',
-    times: '第二次',
+    IdNumber: 'F123456789',
+    times: '1',
   },
 ]
 
@@ -61,13 +61,13 @@ function Prescription_stage() {
                   <div>
                     <li>目前進度:{prescription.stage}</li>
                     <li>病患姓名:{prescription.name}</li>
-                    <li>上傳時間:{prescription.uploadtime}</li>
+                    <li>連絡電話:{prescription.phone}</li>
                     <li>領藥門市:{prescription.shop}</li>
                   </div>
                   <div>
                     <li>看診日期:{prescription.date}</li>
                     <li>醫院:{prescription.hospital}</li>
-                    <li>科別:{prescription.division}</li>
+                    <li>科別:{prescription.IdNumber}</li>
                     <li>調劑次數:{prescription.times}</li>
                   </div>
                 </ul>
