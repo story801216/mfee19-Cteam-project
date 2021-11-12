@@ -58,7 +58,10 @@ function Navbar(props) {
           </div>
           <div className="navbarLinkDesTop">
             <div className="navbarLinkDesTop1">
-              <Link to="/Select_Shop" className="navChandePageEnc">
+              <Link
+                to={isAuth ? '/Select_Shop' : '/Login'}
+                className="navChandePageEnc"
+              >
                 <div className="positionIconA">
                   <MdOutlineAssignment />
                   <p>處方領藥</p>
@@ -111,7 +114,6 @@ function Navbar(props) {
                       alert('您已登出')
                       window.location.reload()
                     }}
-                    to="/"
                   >
                     <BsDoorOpen />
                   </Link>
