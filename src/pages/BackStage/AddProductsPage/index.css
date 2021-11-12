@@ -75,9 +75,22 @@ p {
   margin: 0 auto
 }
 
+.addProductsPage .auto-input {
+  margin: 0 auto 20px
+}
+
 /* 桌機 調整新增按鈕寬度 */
 @media screen and (min-width: 992px) {
   .addProductsPage button {
     width: 295px;
+  }
+
+  .addProductsPage .buttons {
+    display: flex;
+    justify-content:space-between
+  }
+
+  .addProductsPage .auto-input {
+    margin: 0 auto
   }
 }

@@ -81,9 +81,12 @@ function App() {
 
     const index = currentBrowseRecord.findIndex((v) => v.sid === product.sid)
 
-    // index > -1 等於已在瀏覽過的商品裡，不需要重複加入
+    // index > -1 等於已在瀏覽過的商品裡，先將原本的刪掉，再重新添加
     if (index > -1) {
-      return
+      currentBrowseRecord = currentBrowseRecord.filter((v, i) => {
+        return v.sid !== product.sid
+      })
+      currentBrowseRecord.push(product)
     } else {
       currentBrowseRecord.push(product)
     }

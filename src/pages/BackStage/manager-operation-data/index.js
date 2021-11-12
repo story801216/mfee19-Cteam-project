@@ -62,12 +62,20 @@ function App() {
         product_id: el.product_id,
         Name: el.Name,
         quantity: el.quantity,
+        unit_price: el.unit_price,
+        subtotal: el.subtotal,
       }
       salesobj[el.product_id] = item
       saleslist.push(item)
     } else {
       salesobj[el.product_id].quantity += el.quantity
+      salesobj[el.product_id].subtotal += el.subtotal
     }
+  })
+
+  let prodcutTotal = 0
+  saleslist.forEach((el) => {
+    prodcutTotal += el.subtotal
   })
 
   // 銷量進行排序(大->小)
@@ -89,7 +97,7 @@ function App() {
     }
     Top10list.push(saleslist[i])
   }
-
+  console.log(Top10list)
   // spinner動畫
   const spinner = (
     <Spinner animation="grow" variant="primary" className="spinner" />
@@ -105,8 +113,9 @@ function App() {
             {/* 營業額圖表 */}
             <div className="col-xl-8 col-12">
               <div className="line-chart">
-                {/* datalist是orderDate DESC排序，後續需要 */}
-                <LineChart datalist={datalist.reverse()} count={count} />
+                {/* 標題 */}
+                <h2 className="title">營業額</h2>
+                {/* 控制欄位 */}
                 <div className="control-arrow">
                   <AiOutlineArrowLeft
                     onClick={() => {
@@ -121,36 +130,52 @@ function App() {
                     className="ml-3 pointer"
                   />
                 </div>
+                {/* 圖表內容 */}
+                <div className="chart-content">
+                  {/* datalist是orderDate DESC排序，後續需要 */}
+                  <LineChart datalist={datalist.reverse()} count={count} />
+                </div>
               </div>
             </div>
 
             {/* 商品銷量排行表 */}
             <div className="col-xl-4 col-12">
-              <h1 className="chart-title">熱銷商品排行</h1>
               <div className="product-sales-box">
-                <div className="title">
+                {/* 標題 */}
+                <h2 className="title">熱銷商品排行</h2>
+                {/* 次標題 */}
+                <h3 className="subtitle">
                   <div className="row">
-                    <div className="col-2">排行</div>
                     <div className="col-7">品項</div>
-                    <div className="col-3 text-right">銷量</div>
+                    <div className="col-2 text-right">銷量</div>
+                    <div className="col-3 text-right">營收比</div>
                   </div>
-                </div>
-                <div className="content-box">
-                  {/* 銷量內容 */}
+                </h3>
+                {/* 銷量內容 */}
+                <ul className="content-box">
                   {Top10list.map((v, i) => {
                     return (
                       <>
-                        <div className="content" key={i}>
-                          <div className="row mb-1">
-                            <div className="col-2">{i + 1}</div>
-                            <div className="col-7">{v.Name}</div>
-                            <div className="col-3 text-right">{v.quantity}</div>
+                        <li className="content" key={i}>
+                          <div className="row">
+                            <div className="col-7 product-name">
+                              <a
+                                href={`http://localhost:3000/prod-list/prod/${v.product_id}`}
+                                target="_blank"
+                              >
+                                {v.Name}
+                              </a>
+                            </div>
+                            <div className="col-2 text-right">{v.quantity}</div>
+                            <div className="col-3 text-right">
+                              {((v.subtotal / prodcutTotal) * 100).toFixed(1)}%
+                            </div>
                           </div>
-                        </div>
+                        </li>
                       </>
                     )
                   })}
-                </div>
+                </ul>
               </div>
             </div>
           </div>

@@ -50,9 +50,6 @@ function LineChart(props) {
   }
   return (
     <>
-      <div className="header">
-        <h1 className="chart-title">營業額</h1>
-      </div>
       <Line data={data} options={options} key={1}/>
     </>
   )

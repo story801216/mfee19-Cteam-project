@@ -66,7 +66,7 @@ function ProductItem(props) {
             <div className="col-5 ">
               <div className="product-info d-flex align-items-center">
                 <div className="product-img">
-                  <Link to={`prod-list/prod/${sid}`}>
+                  <Link to={`prod-list/prod/${sid}`} target="_blank">
                     <img src={picture} alt="" />
                   </Link>
                 </div>

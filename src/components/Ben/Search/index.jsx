@@ -1,5 +1,5 @@
-import React from 'react'
-import { Link } from 'react-router-dom'
+import React, { useRef, useEffect } from 'react'
+import { Link, withRouter } from 'react-router-dom'
 import './index.css'
 
 function Search(props) {
@@ -10,6 +10,10 @@ function Search(props) {
     setControlSmallCate,
     setControlSmallBody,
   } = props
+
+  useEffect(() => {
+    setSearchWord('')
+  }, [props.location.pathname])
   return (
     <div className="search">
       <input
@@ -42,4 +46,4 @@ function Search(props) {
   )
 }
 
-export default Search
+export default withRouter(Search)
