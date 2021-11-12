@@ -84,7 +84,7 @@ function Backstage_Member_Management() {
                   className="Backstage-Member-Management-table-list"
                 >
                   <td className="Backstage-Member-Management-table-list-sid">
-                    {val.sid + 1}
+                    {val.sid}
                   </td>
                   <td className="Backstage-Member-Management-table-list-name">
                     {val.name}
