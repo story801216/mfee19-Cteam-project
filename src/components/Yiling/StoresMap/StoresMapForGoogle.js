@@ -10,7 +10,7 @@ import { MdOutlineEmojiPeople } from 'react-icons/md' //人物招手
 // 標記樣式
 const AnyReactComponent = ({ text, src }) => (
   <div>
-    <p className="googleIconColorFor">{text}</p> + {src}
+    <p className="googleIconColorFor">{text}</p> {src}
   </div>
 )
 

@@ -3,7 +3,7 @@ import { AiFillHeart } from 'react-icons/ai'
 import './index.css'
 
 function ProductItem(props) {
-  const { price, Name, image } = props
+  const { price, Name, image, special_offer } = props
   // console.log(product)
   return (
     <div className="product">
@@ -22,8 +22,23 @@ function ProductItem(props) {
           {/* 下層線 */}
           <div className="line-bottom"></div>
           {/* 價格 */}
-          <div className="price">
-            <p>${price}</p>
+          <div class="price-area">
+            <div
+              className="price"
+              style={{
+                fontSize: special_offer !== '' ? '16px' : '18px',
+                textDecoration: special_offer !== '' ? 'line-through' : 'none',
+              }}
+            >
+              <p>${price}</p>
+            </div>
+            {special_offer !== '' ? (
+              <div className="product-special-offer">
+                <p>${special_offer}</p>
+              </div>
+            ) : (
+              ''
+            )}
           </div>
         </div>
       </div>

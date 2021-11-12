@@ -101,7 +101,7 @@ function Backstage_Prescription_Management() {
                     <li>領藥門市:{val.Shop}</li>
                   </div>
                   <div>
-                    <li>看診日期:{val.birthday.substr(0, 10)}</li>
+                    <li>病患出生年月日:{val.birthday.substr(0, 10)}</li>
                     <li>醫院:{val.hospital}</li>
                     <li>身分證字號:{val.idNumber}</li>
                     <li>調劑次數:{val.selectFreq}</li>
