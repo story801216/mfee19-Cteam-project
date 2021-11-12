@@ -112,6 +112,7 @@ function ProductsFirstPage(props) {
         quantity: el.quantity,
         image: el.image,
         price: el.price,
+        special_offer: el.special_offer,
       }
       salesobj[el.product_id] = item
       saleslist.push(item)

@@ -60,12 +60,26 @@
 }
 
 /* 價格 */
-.product .item .price {
-    color: #000;
-    margin: 10px 0 0 0;
-    font-size: 18px;
+.product .price-area {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
 }
 
-.product .item .price p {
+.product .price-area .price,
+.product .price-area .product-special-offer {
+    color: #000;
+    margin: 10px 0 0 0;
+}
+
+.product .price-area .product-special-offer{
+    color:red;
+    font-size: 18px; 
+    font-weight: 500;
+}
+
+.product .price-area .price p,
+.product .price-area .product-special-offer p {
     margin-bottom: 0 ;
 }
+
