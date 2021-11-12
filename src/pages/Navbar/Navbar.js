@@ -5,6 +5,7 @@ import './navbar.css'
 import { BsCart2 } from 'react-icons/bs' //購物車
 import { FaRegUserCircle } from 'react-icons/fa' //會員
 import { FiHeart } from 'react-icons/fi' //愛心
+import { BsDoorOpen } from 'react-icons/bs' //登出
 import { GrUserManager } from 'react-icons/gr' //後臺管理
 import { MdOutlineAssignment } from 'react-icons/md' //處方籤
 
@@ -80,8 +81,7 @@ function Navbar(props) {
                   {/* 商品購物車數量 */}
                   <BsCart2 />
                   {productCount !== 0 && (
-                    <div className="cart-count">
-                    {productCount}</div>
+                    <div className="cart-count">{productCount}</div>
                   )}
                 </Link>
                 <Link
@@ -99,6 +99,21 @@ function Navbar(props) {
                     }}
                   >
                     <GrUserManager />
+                  </Link>
+                ) : (
+                  ''
+                )}
+                {isAuth ? (
+                  <Link
+                    className="navChandePageEnc"
+                    onClick={() => {
+                      localStorage.removeItem('Member')
+                      alert('您已登出')
+                      window.location.reload()
+                    }}
+                    to="/"
+                  >
+                    <BsDoorOpen />
                   </Link>
                 ) : (
                   ''
