@@ -13,7 +13,7 @@ function Member_revise() {
             className="zi-member-revise-Email-text"
             placeholder="請輸入電子郵件"
             disabled="disabled"
-            defaultValue="123456@yahoo.com.tw"
+            defaultValue="123@yahoo.com.tw"
           />
 
           <label htmlFor="Password">密碼</label>
@@ -42,7 +42,7 @@ function Member_revise() {
             id="zi-member-revise-Birthday"
             className="zi-member-revise-Birthday-text"
             placeholder="請輸入生日"
-            defaultValue="2021-01-01"
+            defaultValue="2021-11-01"
           />
 
           <label htmlFor="Id-number">
