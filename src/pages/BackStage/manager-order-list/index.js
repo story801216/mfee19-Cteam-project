@@ -118,6 +118,7 @@ function App(props) {
               ? orderlist.map((v, i) => {
                   return (
                     <ManagerOrderList
+                      key={i}
                       sid={v.sid}
                       member_name={v.member_name}
                       amount={v.amount}
