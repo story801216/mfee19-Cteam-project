@@ -201,7 +201,7 @@ function AirQuality(props) {
                 keyUp(e);
               }}
               value={inputValue}
-              placeholder="    請輸入城市名稱"
+              placeholder="請輸入城市名稱"
             />
           </div>
           <div className="seBtn">
