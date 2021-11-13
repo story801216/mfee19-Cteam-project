@@ -112,7 +112,7 @@ function Navbar(props) {
                     onClick={() => {
                       localStorage.removeItem('Member')
                       alert('您已登出')
-                      window.location.reload()
+                      window.location.href = `/Login`
                     }}
                   >
                     <BsDoorOpen />

@@ -479,7 +479,7 @@ function App(props) {
                     className="checkout-btn text-center mx-auto"
                     type="submit"
                   >
-                    前往結帳
+                    送出訂單
                   </button>
                 </div>
               </div>
