@@ -21,10 +21,8 @@ function ProductsManagementItem(props) {
       method: 'DELETE',
     })
     alert('商品刪除成功')
-    // props.history.push('/back-stage/products/page/' + backStageProdsTotalPages)
     window.location.href =
       '/back-stage/products/page/' + backStageProdsTotalPages
-    // window.location.reload()
   }
 
   return (
