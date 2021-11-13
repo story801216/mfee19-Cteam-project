@@ -58,41 +58,53 @@ function Navbar(props) {
           </div>
           <div className="navbarLinkDesTop">
             <div className="navbarLinkDesTop1">
-              <Link
-                to={isAuth ? '/Select_Shop' : '/Login'}
-                className="navChandePageEnc"
-              >
-                <div className="positionIconA">
-                  <MdOutlineAssignment />
-                  <p>處方領藥</p>
-                </div>
-              </Link>
+              {!isManager && (
+                <Link
+                  to={isAuth ? '/Select_Shop' : '/Login'}
+                  className="navChandePageEnc"
+                >
+                  <div className="positionIconA">
+                    <MdOutlineAssignment />
+                    <p>處方領藥</p>
+                  </div>
+                </Link>
+              )}
+
               {/* <Link to={isAuth ? '/User/Member_revise' : '/Login'}>
                 <div className="positionIconA">
                   <FaRegUserCircle />
                   <p>會員中心</p>
                 </div>
               </Link> */}
+
               <div className="navbarAllIcon">
-                <Link
-                  to={isAuth ? '/followdPage' : '/Login'}
-                  className="navChandePageEnc"
-                >
-                  <FiHeart />
-                </Link>
-                <Link to="/cart" className="navChandePageEnc cart-count-box">
-                  {/* 商品購物車數量 */}
-                  <BsCart2 />
-                  {productCount !== 0 && (
-                    <div className="cart-count">{productCount}</div>
-                  )}
-                </Link>
-                <Link
-                  to={isAuth ? '/User/Member_revise' : '/Login'}
-                  className="navChandePageEnc"
-                >
-                  <FaRegUserCircle />
-                </Link>
+                {!isManager && (
+                  <Link
+                    to={isAuth ? '/followdPage' : '/Login'}
+                    className="navChandePageEnc"
+                  >
+                    <FiHeart />
+                  </Link>
+                )}
+                {!isManager && (
+                  <Link to="/cart" className="navChandePageEnc cart-count-box">
+                    {/* 商品購物車數量 */}
+                    <BsCart2 />
+                    {productCount !== 0 && (
+                      <div className="cart-count">{productCount}</div>
+                    )}
+                  </Link>
+                )}
+
+                {!isManager && (
+                  <Link
+                    to={isAuth ? '/User/Member_revise' : '/Login'}
+                    className="navChandePageEnc"
+                  >
+                    <FaRegUserCircle />
+                  </Link>
+                )}
+
                 {isManager ? (
                   <Link
                     to="/back-stage/Backstage_Member_Management"

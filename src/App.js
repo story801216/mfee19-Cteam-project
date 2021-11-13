@@ -39,11 +39,12 @@ import StanleyAllPage from './pages/Stanley/App'
 import BackStage from './pages/BackStage'
 
 import './App.css'
+import { BsWindowSidebar } from 'react-icons/bs'
 
 function App() {
   // 是否為登入狀態
   const [isAuth, setIsAuth] = useState(false)
-  // 是否為登入狀態
+  // 是否為管理者登入狀態
   const [isManager, setIsManager] = useState(false)
 
   // navbar 商品類別欄顏色切換
@@ -113,6 +114,7 @@ function App() {
       // 如果登入的是這個帳號，就讓管理者狀態顯示true
       if (userLogin[0].email === '123@yahoo.com.tw') {
         setIsManager(true)
+        window.location.href = '/'
       }
     }
   }, [])
