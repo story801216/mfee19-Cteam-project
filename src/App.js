@@ -114,7 +114,7 @@ function App() {
       // 如果登入的是這個帳號，就讓管理者狀態顯示true
       if (userLogin[0].email === '123@yahoo.com.tw') {
         setIsManager(true)
-        window.location.href = '/'
+        // window.location.href = '/'
       }
     }
   }, [])
