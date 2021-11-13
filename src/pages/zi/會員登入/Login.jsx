@@ -19,7 +19,8 @@ function Login(props) {
           alert('登入成功!')
           console.log(res)
           localStorage.setItem('Member', JSON.stringify(res.data))
-          props.history.goBack()
+          // 登入成功跳轉至首頁 (原本是goback，但這樣登出原帳號後換下一個帳號登入，會跳轉至前一個人的頁面)
+          props.history.push('/')
         })
         .catch((e) => {
           if (e.res.status === 500) {

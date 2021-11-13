@@ -6,6 +6,7 @@ function LineChart(props) {
   const { datalist, count } = props
 
   // 最近7天的日期
+  // TODO：確認時間地區為台灣?
   let last7days = []
   for (let i = 1; i <= 7; i++) {
     const date = moment()

@@ -3,7 +3,7 @@ import { withRouter, Link } from 'react-router-dom'
 import Slider from 'react-slick'
 import 'slick-carousel/slick/slick.css'
 import 'slick-carousel/slick/slick-theme.css'
-import SpecialOfferProductItem from '../SpecialOfferProductItem'
+import ProductItem from '../ProductItem'
 import './index.css'
 
 class SpecialOfferSlider extends Component {
@@ -13,8 +13,11 @@ class SpecialOfferSlider extends Component {
   }
 
   componentDidMount() {
+    // 查詢特惠價大於0的商品
     ;(async () => {
-      let r = await fetch('http://localhost:3001/product?special_offer=0')
+      let r = await fetch(
+        'http://localhost:3001/product/no-paging?special_offer=0'
+      )
       let j = await r.json()
       if (j.totalRows) {
         this.setState({ data: j.rows })
@@ -78,7 +81,7 @@ class SpecialOfferSlider extends Component {
                         this.props.updateBrowseRecordToLocalStorage(product)
                       }}
                     >
-                      <SpecialOfferProductItem {...product} />
+                      <ProductItem {...product} />
                     </Link>
                   )
                 })

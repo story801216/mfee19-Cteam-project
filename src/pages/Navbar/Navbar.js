@@ -5,6 +5,7 @@ import './navbar.css'
 import { BsCart2 } from 'react-icons/bs' //購物車
 import { FaRegUserCircle } from 'react-icons/fa' //會員
 import { FiHeart } from 'react-icons/fi' //愛心
+import { BsDoorOpen } from 'react-icons/bs' //登出
 import { GrUserManager } from 'react-icons/gr' //後臺管理
 import { MdOutlineAssignment } from 'react-icons/md' //處方籤
 
@@ -57,39 +58,53 @@ function Navbar(props) {
           </div>
           <div className="navbarLinkDesTop">
             <div className="navbarLinkDesTop1">
-              <Link to="/Select_Shop" className="navChandePageEnc">
-                <div className="positionIconA">
-                  <MdOutlineAssignment />
-                  <p>處方領藥</p>
-                </div>
-              </Link>
+              {!isManager && (
+                <Link
+                  to={isAuth ? '/Select_Shop' : '/Login'}
+                  className="navChandePageEnc"
+                >
+                  <div className="positionIconA">
+                    <MdOutlineAssignment />
+                    <p>處方領藥</p>
+                  </div>
+                </Link>
+              )}
+
               {/* <Link to={isAuth ? '/User/Member_revise' : '/Login'}>
                 <div className="positionIconA">
                   <FaRegUserCircle />
                   <p>會員中心</p>
                 </div>
               </Link> */}
+
               <div className="navbarAllIcon">
-                <Link
-                  to={isAuth ? '/followdPage' : '/Login'}
-                  className="navChandePageEnc"
-                >
-                  <FiHeart />
-                </Link>
-                <Link to="/cart" className="navChandePageEnc cart-count-box">
-                  {/* 商品購物車數量 */}
-                  <BsCart2 />
-                  {productCount !== 0 && (
-                    <div className="cart-count">
-                    {productCount}</div>
-                  )}
-                </Link>
-                <Link
-                  to={isAuth ? '/User/Member_revise' : '/Login'}
-                  className="navChandePageEnc"
-                >
-                  <FaRegUserCircle />
-                </Link>
+                {!isManager && (
+                  <Link
+                    to={isAuth ? '/followdPage' : '/Login'}
+                    className="navChandePageEnc"
+                  >
+                    <FiHeart />
+                  </Link>
+                )}
+                {!isManager && (
+                  <Link to="/cart" className="navChandePageEnc cart-count-box">
+                    {/* 商品購物車數量 */}
+                    <BsCart2 />
+                    {productCount !== 0 && (
+                      <div className="cart-count">{productCount}</div>
+                    )}
+                  </Link>
+                )}
+
+                {!isManager && (
+                  <Link
+                    to={isAuth ? '/User/Member_revise' : '/Login'}
+                    className="navChandePageEnc"
+                  >
+                    <FaRegUserCircle />
+                  </Link>
+                )}
+
                 {isManager ? (
                   <Link
                     to="/back-stage/Backstage_Member_Management"
@@ -99,6 +114,20 @@ function Navbar(props) {
                     }}
                   >
                     <GrUserManager />
+                  </Link>
+                ) : (
+                  ''
+                )}
+                {isAuth ? (
+                  <Link
+                    className="navChandePageEnc"
+                    onClick={() => {
+                      localStorage.removeItem('Member')
+                      alert('您已登出')
+                      window.location.href = `/Login`
+                    }}
+                  >
+                    <BsDoorOpen />
                   </Link>
                 ) : (
                   ''
