@@ -125,7 +125,10 @@ function App(props) {
                   <br />
                   運送方式：{orderlist.delivery_method}
                   <br />
-                  運送地址：{orderlist.address}
+                  運送地址：
+                  {orderlist.address
+                    ? orderlist.address
+                    : orderlist.convenience_store + '門市'}
                   <br />
                   訂單備註：{orderlist.order_note}
                 </div>
