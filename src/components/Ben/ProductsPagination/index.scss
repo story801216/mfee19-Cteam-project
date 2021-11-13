@@ -1,6 +1,7 @@
 .pagination-wrap {
     display: flex;
     justify-content: center;
+    margin-bottom: 25px;
 }
 
 ul.pagination .page-item.active{
@@ -40,4 +41,10 @@ ul.pagination .page-item.active .page-link {
     color: #000;
     margin: .175rem .5rem;
     border-radius: 50%;
+}
+
+@media screen and (min-width:992px){
+    .pagination-wrap {
+        margin-bottom: 0;
+    }
 }
