@@ -22,7 +22,7 @@ function ProductItem(props) {
           {/* 下層線 */}
           <div className="line-bottom"></div>
           {/* 價格 */}
-          <div class="price-area">
+          <div className="price-area">
             <div
               className="price"
               style={{
