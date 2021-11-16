@@ -131,50 +131,6 @@ function Select_shop(props) {
   }
   return (
     <>
-      {/* <h1 className="poSelectStore">選取領藥門市</h1>
-      <p className="poNearByMe">可自行選取門市，也可自動找尋最近門市</p>
-      <div className="poLineBlue"></div>
-
-      <form className="poFormAll" action="">
-        <label className="" for="city">
-          城市
-        </label>
-        <select
-          onChange={(e) => {
-            setValueCity(e.target.value);
-          }}
-          value={valueCity}
-        >
-          <option className="optionCityChoose">請選取指定城市</option>
-          {selectShop.length > 0 &&
-            selectShop.map((v, i) => <option key={i}>{v.city}</option>)}
-        </select>
-        <label>區域</label>
-
-        <select
-          onChange={(e) => {
-            setValueSite(e.target.value);
-          }}
-          value={valueSite}
-        >
-          <option>請選取區域</option>
-          {dataSite.length > 0 &&
-            dataSite.map((v, i) => <option key={i}>{v.site}</option>)}
-        </select>
-
-        <label>門市</label>
-        <select
-          onChange={(e) => {
-            setValueShop(e.target.value);
-          }}
-          value={valueShop}
-        >
-          <option>請選取指定門市</option>
-          {dataShop.length > 0 &&
-            dataShop.map((v, i) => <option key={i}>{v}</option>)}
-        </select>
-      </form> */}
-
       <div className="zi-select-shop">
         <img className="zi-select-shop-background" src={Background} alt="" />
         <div className="zi-select-shop-form-list">

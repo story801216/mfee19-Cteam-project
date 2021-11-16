@@ -1,11 +1,7 @@
 import React from "react";
 import "./selectTagStore.css";
 
-const storeMap = [
-  { city: "台北市", site: ["大安區", "信義區", "松山區"] },
-  { city: "新北市", site: ["板橋區", "土城區", "新莊區"] },
-  { city: "台中市", site: ["北屯區", "大甲區", "后里區"] },
-];
+
 
 class SelectTagStore extends React.Component {
   constructor(props) {
@@ -20,13 +16,7 @@ class SelectTagStore extends React.Component {
 
     if (event.target.value === "縣市") {
       this.setState({ SiteArr: [] });
-    } else {
-      storeMap.forEach((v) => {
-        if (event.target.value === v.city) {
-          this.setState({ SiteArr: v.site });
-        }
-      });
-    }
+    } 
   }
 
   handleChangeSite(event) {

@@ -15,7 +15,7 @@ function AirQuality(props) {
     site: '地區',
   })
 
-  const [aqi, setAqi] = useState(0)
+  const [aqi, setAqi] = useState(0) //顯示AQI狀態
   const [aqiState, setAqiState] = useState('')
   const [inputValue, setInputValue] = useState('')
 
