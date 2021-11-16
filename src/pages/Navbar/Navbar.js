@@ -24,6 +24,8 @@ function Navbar(props) {
     productCount,
     isAuth,
     isManager,
+    setIsAuth,
+    setIsManager,
     setOptionNow,
   } = props
 
@@ -120,11 +122,14 @@ function Navbar(props) {
                 )}
                 {isAuth ? (
                   <Link
+                    to="/Login"
                     className="navChandePageEnc"
                     onClick={() => {
                       localStorage.removeItem('Member')
                       alert('您已登出')
-                      window.location.href = `/Login`
+                      setIsAuth(false)
+                      setIsManager(false)
+                      // window.location.href = `/Login`
                     }}
                   >
                     <BsDoorOpen />

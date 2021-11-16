@@ -129,6 +129,8 @@ function App() {
           productCount={productCount}
           isAuth={isAuth}
           isManager={isManager}
+          setIsAuth={setIsAuth}
+          setIsManager={setIsManager}
           optionNow={optionNow}
           setOptionNow={setOptionNow}
         />
