@@ -245,29 +245,6 @@ function StoresMapForGoogle(props) {
 
   return (
     <div className="allBoxForGoogle">
-      {/* <div>
-        <button
-          onClick={() => {
-            getG();
-          }}
-        >
-          定位
-        </button>
-        輸入地址  onKeyup是鍵盤事件
-        <input
-          type="text"
-          onChange={(e) => {
-            inputEnter(e);
-          }}
-          value={inputValue}
-        />
-        {storesLocalShow && (
-          <p>
-            {storesState[0].sName},{storesState[0].s_address},
-            {storesState[0].sLocal_phone},{storesState[0].s_time}
-          </p>
-        )}
-      </div> */}
 
       {/* 改變地圖寬度尺寸 */}
       <div style={{ height: '863px', width: '585px' }}>

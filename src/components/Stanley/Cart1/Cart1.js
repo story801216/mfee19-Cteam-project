@@ -52,12 +52,18 @@ function Cart1(props) {
           )
         })}
         {/* 全站優惠 (大於500顯示)*/}
-        {total > 500 && (
+        {total > 500 ? (
           <div className="AllStore-discount-box">
             <div className="column-1">已享有之優惠</div>
             <div className="column-2 d-flex align-items-center">
               <div className="color-box">全站優惠</div>
               <div className="discount-word">全站滿500元免運</div>
+            </div>
+          </div>
+        ) : (
+          <div className="AllStore-discount-box">
+            <div className="column-1">
+              {`提醒您~只要再${500 - total}元即可享有免運優惠!`}
             </div>
           </div>
         )}
