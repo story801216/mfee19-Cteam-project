@@ -1,5 +1,5 @@
-import React, { useState, useRef } from 'react'
-import { Link } from 'react-router-dom'
+import React, { useState, useRef, useEffect } from 'react'
+import { Link, withRouter } from 'react-router-dom'
 import './Member_BookMark.css'
 
 function BookMart(props) {
@@ -10,6 +10,19 @@ function BookMart(props) {
     { name: '會員處方簽進度與追蹤', link: '/User/Prescription_stage' },
     { name: '訂單查詢', link: '/User/order-list' },
   ]
+
+  useEffect(() => {
+    if (props.location.pathname === '/User/order-list') {
+      setOptionNow(2)
+    }
+    if (props.location.pathname === '/User/Prescription_stage') {
+      setOptionNow(1)
+    }
+    if (props.location.pathname === '/User/Member_revise') {
+      setOptionNow(0)
+    }
+  }, [props.location.pathname])
+
   return (
     <>
       <h2 className="Member-bookMark-title">會員中心</h2>
@@ -81,4 +94,4 @@ function BookMart(props) {
   )
 }
 
-export default BookMart
+export default withRouter(BookMart)
