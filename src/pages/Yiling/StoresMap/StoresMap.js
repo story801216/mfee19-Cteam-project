@@ -29,16 +29,17 @@ function StoresMap() {
     setSearchDataStore(dataBaseStore.rows)
   }
 
+  //關鍵字篩選，fillterStore過濾後的門市資訊列表
   function fillterContent(arr, word) {
-    const catchWord = []
+    const fillterStore = []
     console.log(word)
     for (let i = 0; i < arr.length; i++) {
-      const plus = arr[i].sName + arr[i].s_address
-      if (plus.indexOf(word) >= 0) {
-        catchWord.push(arr[i])
+      const keyWords = arr[i].sName + arr[i].s_address
+      if (keyWords.indexOf(word) >= 0) {
+        fillterStore.push(arr[i])
       }
     }
-    setRenderDataStore(catchWord)
+    setRenderDataStore(fillterStore)
   }
 
   useEffect(() => {
