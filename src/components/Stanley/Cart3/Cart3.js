@@ -11,7 +11,7 @@ function Cart3(props) {
   // dh = droplist.height的狀態
   const [dh, setDh] = useState('')
 
-  // ComponentDidMount ?
+  // componentdidUpdata
   useEffect(() => {
     const droplist = document.querySelector('.drop-list')
 

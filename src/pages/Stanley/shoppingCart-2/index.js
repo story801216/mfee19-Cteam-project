@@ -372,22 +372,23 @@ function App(props) {
                               )
                             })}
                         </select>
-                        <select
-                          name=""
+                        {/* 選擇街道 */}
+                        <input
+                          autocomplete="off"
+                          name="district"
                           id="district"
+                          list="district1"
+                          placeholder="-選擇街道-"
                           onChange={(e) => {
                             setMystreet(e.target.value)
                           }}
-                        >
-                          {/* 選擇街道 */}
-                          <option value="">-選擇街道-</option>
+                        />
+                        <datalist id="district1">
                           {mydist !== '' &&
                             storeDataDS[mydist].streets.map((v, i) => {
-                              return (
-                                <option value={v.street}>{v.street}</option>
-                              )
+                              return <option value={v.street} key={i} />
                             })}
-                        </select>
+                        </datalist>
                       </div>
                       {/* 門市選擇區 */}
                       {mystreet && (
@@ -395,45 +396,53 @@ function App(props) {
                           <div className="store-info-box justify-content-between">
                             <div className="row">
                               {/* 門市的迴圈 */}
-                              {storeDataSS[mystreet].storeNames.map((v, i) => {
-                                return (
-                                  <div className="col-6">
-                                    <div
-                                      id={`store${i}`}
-                                      className="store-info"
-                                      onClick={(e) => {
-                                        // 設定門市狀態
-                                        setMystore(v.storename)
+                              {storeDataSS[mystreet]
+                                ? storeDataSS[mystreet].storeNames.map(
+                                    (v, i) => {
+                                      return (
+                                        <div className="col-6">
+                                          <div
+                                            id={`store${i}`}
+                                            className="store-info"
+                                            onClick={(e) => {
+                                              // 設定門市狀態
+                                              setMystore(v.storename)
 
-                                        //給予選擇的門市特效
-                                        const storeInfo =
-                                          document.querySelectorAll(
-                                            '.store-info'
-                                          )
-                                        // 因storeInfo是array，利用迴圈個別移除class
-                                        storeInfo.forEach((el) => {
-                                          el.classList.remove('storeActive')
-                                        })
-                                        // 為現在的目標增加active標籤
-                                        e.currentTarget.classList.add(
-                                          'storeActive'
-                                        )
-                                        // modal
-                                        setIsWarning(false)
-                                        setWord(`已選擇${v.storename}門市`)
-                                        handleShowModal()
-                                      }}
-                                    >
-                                      <div className="store-name">
-                                        {`${v.storename}門市`}
-                                      </div>
-                                      <div className="store-address ">
-                                        {v.storeAddress}
-                                      </div>
-                                    </div>
-                                  </div>
-                                )
-                              })}
+                                              //給予選擇的門市特效
+                                              const storeInfo =
+                                                document.querySelectorAll(
+                                                  '.store-info'
+                                                )
+                                              // 因storeInfo是array，利用迴圈個別移除class
+                                              storeInfo.forEach((el) => {
+                                                el.classList.remove(
+                                                  'storeActive'
+                                                )
+                                              })
+                                              // 為現在的目標增加active標籤
+                                              e.currentTarget.classList.add(
+                                                'storeActive'
+                                              )
+                                              // modal
+                                              setIsWarning(false)
+                                              setWord(
+                                                `已選擇${v.storename}門市`
+                                              )
+                                              handleShowModal()
+                                            }}
+                                          >
+                                            <div className="store-name">
+                                              {`${v.storename}門市`}
+                                            </div>
+                                            <div className="store-address ">
+                                              {v.storeAddress}
+                                            </div>
+                                          </div>
+                                        </div>
+                                      )
+                                    }
+                                  )
+                                : ''}
                             </div>
                           </div>
                         </div>

@@ -92,7 +92,7 @@ function App(props) {
     if (deliveryLocation === '離島') {
       sum += 80
     }
-    
+
     // 折扣計算
     return sum
   }
