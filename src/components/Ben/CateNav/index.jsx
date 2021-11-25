@@ -20,6 +20,60 @@ function CateNav(props) {
     setLocationWord,
   } = props
 
+  // 用js控制高度
+  /*// 獲取ul
+  const cateRef = useRef()
+  const bodyRef = useRef()
+
+  // ul高度狀態
+  const [cateHeight, setCateHeight] = useState(0)
+  const [bodyHeight, setBodyHeight] = useState(0)
+
+  useEffect(() => {
+    // 獲取ul高度
+    const cateH = cateRef.current.scrollHeight
+    const bodyH = bodyRef.current.scrollHeight
+
+    // 設定ul高度狀態
+    setCateHeight(cateH)
+    setBodyHeight(bodyH)
+
+    // 預設
+    cateRef.current.style.height = 0
+    bodyRef.current.style.height = 0
+  }, [cateHeight, bodyHeight])
+
+  const cateHandleShow = () => {
+    let catelh = parseInt(cateRef.current.style.height)
+
+    console.log(catelh)
+
+    if (catelh === 0) {
+      cateRef.current.style.height = cateHeight + 'px'
+      bodyRef.current.style.height = 0
+      setControlCate(0)
+    } else {
+      cateRef.current.style.height = 0
+      bodyRef.current.style.height = 0
+      setControlCate('')
+    }
+  }
+  const bodyHandleShow = () => {
+    let bodylh = parseInt(bodyRef.current.style.height)
+
+    console.log(bodylh)
+
+    if (bodylh === 0) {
+      bodyRef.current.style.height = bodyHeight + 'px'
+      cateRef.current.style.height = 0
+      setControlCate(1)
+    } else {
+      bodyRef.current.style.height = 0
+      cateRef.current.style.height = 0
+      setControlCate('')
+    }
+  }*/
+
   return (
     <div className="cate-nav">
       {/* 藍色標題 */}
@@ -34,8 +88,7 @@ function CateNav(props) {
         <div className="title">
           <div
             onClick={() => {
-              setControlCate(0)
-              setControlSmallBody('')
+              controlCate === 0 ? setControlCate('') : setControlCate(0)
             }}
           >
             <div className={controlCate === 0 ? 'text now' : 'text'}>
@@ -97,8 +150,7 @@ function CateNav(props) {
         <div className="title">
           <div
             onClick={() => {
-              setControlCate(1)
-              setControlSmallCate('')
+              controlCate === 1 ? setControlCate('') : setControlCate(1)
             }}
           >
             <div className={controlCate === 1 ? 'text now' : 'text'}>
