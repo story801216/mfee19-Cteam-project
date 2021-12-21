@@ -5,20 +5,20 @@ import './index.css'
 function AddProductsPage(props) {
   const { backStageProdsTotalPages, setOptionNow } = props
   const [autoInput, setAutoInput] = useState(false)
-  const addForm = (e) => {
+  const addForm = async (e) => {
     e.preventDefault()
     const fd = new FormData(document.add_form)
-    fetch('http://localhost:3001/product', {
+    let r = await fetch('http://localhost:3001/product', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/x-www-form-urlencoded',
       },
       body: new URLSearchParams(fd).toString(),
     })
-      .then((r) => r.json())
-      .then((obj) => {
-        console.log(JSON.stringify(obj, null, 4))
-      })
+    let j = await r.json()
+
+    console.log(JSON.stringify(j, null, 4))
+
     alert('商品添加成功')
     props.history.push('/back-stage/products/page/' + backStageProdsTotalPages)
     // window.location.reload()

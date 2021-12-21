@@ -4,11 +4,11 @@ import './index.css'
 function AddFormInput(props) {
   const { autoInput } = props
   const inputTitle = [
-    { title: '商品名稱', englishTitle: 'Name', example: '五彩葉黃素' },
+    { title: '商品名稱', englishTitle: 'Name', example: '海豚葉黃素' },
     {
       title: '商品圖片',
       englishTitle: 'image',
-      example: 'http://localhost:3000/images/products/products(33).jpeg',
+      example: 'http://localhost:3000/images/demo.jpeg',
     },
     { title: '商品類別', englishTitle: 'categories', example: '保健食品' },
     { title: '身體部位', englishTitle: 'Location', example: '眼睛' },

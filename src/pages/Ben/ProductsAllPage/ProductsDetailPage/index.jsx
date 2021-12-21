@@ -307,7 +307,7 @@ function ProductsDetailPage(props) {
               <div className="product-area">
                 {/* 商品圖 */}
                 <div className="pic">
-                  <Magnifier src={data.image} mgShape="square" />
+                  <Magnifier src={data.images2} mgShape="square" />
                 </div>
                 {/* 結帳資訊 */}
                 <div className="content">

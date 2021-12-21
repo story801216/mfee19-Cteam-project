@@ -6,7 +6,7 @@ function ProductsManagementItem(props) {
   const {
     sid,
     Name,
-    image,
+    images2,
     categories,
     Location,
     brand_company,
@@ -33,7 +33,7 @@ function ProductsManagementItem(props) {
           <p>{sid}</p>
           <p className="name">{Name}</p>
           <div className="pic">
-            <img src={image} alt="" />
+            <img src={images2} alt="" />
           </div>
           <p>{categories}</p>
           <p>{Location}</p>

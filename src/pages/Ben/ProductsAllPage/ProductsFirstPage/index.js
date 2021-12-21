@@ -110,7 +110,7 @@ function ProductsFirstPage(props) {
         sid: el.product_id,
         Name: el.Name,
         quantity: el.quantity,
-        image: el.image,
+        image: 'http://localhost:3000/images/products/demo.jpeg',
         price: el.price,
         special_offer: el.special_offer,
       }

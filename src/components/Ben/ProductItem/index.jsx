@@ -3,14 +3,14 @@ import { AiFillHeart } from 'react-icons/ai'
 import './index.css'
 
 function ProductItem(props) {
-  const { price, Name, image, special_offer } = props
+  const { price, Name, images2, special_offer } = props
   // console.log(product)
   return (
     <div className="product">
       <div className="item">
         {/* 圖片 */}
         <div className="pic">
-          <img src={image} alt="" />
+          <img src={images2} alt="" />
         </div>
         {/* 上層線 */}
         <div className="line-top"></div>
